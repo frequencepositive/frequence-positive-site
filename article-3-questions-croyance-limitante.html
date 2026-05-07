@@ -3,10 +3,13 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Fréquence Positive — Blog</title>
-<meta name="description" content="Articles de développement personnel par Max & Sandra — croyances limitantes, mindset, confiance en soi, émotions et transformation intérieure.">
+
+<title>Fréquence Positive — 3 questions puissantes pour remettre en doute une croyance limitante</title>
+<meta name="description" content="Tu veux défaire une croyance limitante ? Voici 3 questions simples mais puissantes pour la regarder en face et la remettre doucement à sa place">
+
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400;1,500&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+
 <style>
 *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
@@ -39,10 +42,11 @@ body {
 
 #waveCanvas {
   position: fixed;
-  inset: 0; width: 100%; height: 100%;
+  inset: 0;
+  width: 100%; height: 100%;
   pointer-events: none;
   z-index: 0;
-  opacity: 0.28;
+  opacity: 0.3;
 }
 
 nav {
@@ -78,7 +82,6 @@ nav {
   transition: color 0.2s;
 }
 .nav-links a:hover { color: var(--brown); }
-.nav-links a.active { color: var(--brown); font-weight: 500; }
 .nav-cta {
   background: var(--brown) !important;
   color: white !important;
@@ -89,13 +92,15 @@ nav {
 }
 .nav-cta:hover { background: var(--brown-dark) !important; }
 
-.blog-hero {
+.article-hero {
   position: relative;
   z-index: 1;
+  padding: 140px 24px 64px;
   text-align: center;
-  padding: 140px 24px 72px;
+  max-width: 780px;
+  margin: 0 auto;
 }
-.blog-tag {
+.article-tag {
   display: inline-flex;
   align-items: center;
   gap: 8px;
@@ -108,247 +113,349 @@ nav {
   letter-spacing: 0.12em;
   text-transform: uppercase;
   color: var(--brown);
-  margin-bottom: 24px;
+  margin-bottom: 28px;
   animation: fadeDown 0.7s ease both;
 }
-.blog-title {
+.article-title {
   font-family: 'Cormorant Garamond', serif;
-  font-size: clamp(2.2rem, 5vw, 3.6rem);
+  font-size: clamp(2rem, 5.5vw, 3.6rem);
   font-weight: 400;
-  color: var(--text-main);
   line-height: 1.18;
-  margin-bottom: 16px;
+  color: var(--text-main);
+  margin-bottom: 22px;
   animation: fadeDown 0.8s 0.08s ease both;
 }
-.blog-title em { font-style: italic; color: var(--brown); }
-.blog-intro {
-  font-size: 15.5px;
-  color: var(--text-muted);
-  max-width: 520px;
-  margin: 0 auto 48px;
-  line-height: 1.75;
-  font-weight: 300;
-  animation: fadeDown 0.8s 0.15s ease both;
-}
-
-.filtres {
-  position: relative;
-  z-index: 1;
+.article-title em { font-style: italic; color: var(--brown); }
+.article-meta {
   display: flex;
   align-items: center;
   justify-content: center;
-  flex-wrap: wrap;
-  gap: 10px;
-  max-width: 900px;
-  margin: 0 auto 56px;
-  padding: 0 24px;
-  animation: fadeUp 0.8s 0.2s ease both;
-}
-.filtre-btn {
-  background: var(--card-bg);
-  border: 1px solid var(--card-border);
-  border-radius: 50px;
-  padding: 8px 20px;
+  gap: 20px;
   font-size: 12px;
-  font-weight: 500;
-  color: var(--text-muted);
-  cursor: pointer;
-  transition: all 0.2s;
-  letter-spacing: 0.03em;
-  backdrop-filter: blur(8px);
+  color: var(--text-light);
+  letter-spacing: 0.05em;
+  margin-bottom: 48px;
+  animation: fadeDown 0.8s 0.15s ease both;
 }
-.filtre-btn:hover,
-.filtre-btn.active {
-  background: var(--brown);
-  color: white;
-  border-color: var(--brown);
-}
+.article-meta span { display: flex; align-items: center; gap: 6px; }
+.meta-divider { width: 3px; height: 3px; border-radius: 50%; background: var(--text-light); }
 
-.blog-grid {
-  position: relative;
-  z-index: 1;
-  max-width: 1100px;
-  margin: 0 auto;
-  padding: 0 24px 80px;
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 28px;
-}
-
-.article-card {
+.article-intro-card {
   background: var(--card-bg);
   border: 1px solid var(--card-border);
   border-radius: 20px;
-  overflow: hidden;
+  padding: 36px 40px;
+  text-align: left;
   backdrop-filter: blur(10px);
-  transition: border-color 0.25s, transform 0.2s, box-shadow 0.25s;
-  text-decoration: none;
-  display: flex;
-  flex-direction: column;
-  animation: fadeUp 0.6s ease both;
+  box-shadow: 0 4px 32px rgba(123,74,58,0.06);
+  animation: fadeUp 0.9s 0.2s ease both;
+  position: relative;
+  overflow: hidden;
 }
-.article-card:hover {
-  border-color: rgba(123,74,58,0.35);
-  transform: translateY(-4px);
-  box-shadow: 0 12px 40px rgba(123,74,58,0.10);
+.article-intro-card::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 50%;
+  transform: translateX(-50%);
+  width: 160px; height: 1.5px;
+  background: linear-gradient(90deg, transparent, var(--brown-light), transparent);
 }
+.article-intro-card p {
+  font-size: 16.5px;
+  line-height: 1.85;
+  color: var(--text-muted);
+  font-weight: 300;
+}
+.article-intro-card p strong { color: var(--brown-light); font-weight: 500; }
 
-.card-img {
-  width: 100%;
-  height: 200px;
-  object-fit: cover;
-  display: block;
-  transition: transform 0.4s ease;
-}
-.article-card:hover .card-img { transform: scale(1.04); }
-.card-img-wrap { overflow: hidden; flex-shrink: 0; }
-
-.card-body {
-  padding: 24px 26px 28px;
-  display: flex;
-  flex-direction: column;
-  flex: 1;
-}
-.card-cat {
-  font-size: 10px;
-  font-weight: 600;
-  letter-spacing: 0.13em;
-  text-transform: uppercase;
+.ornament {
+  text-align: center;
   color: var(--brown-light);
-  margin-bottom: 10px;
+  font-size: 1.1rem;
+  letter-spacing: 0.4em;
+  opacity: 0.5;
+  margin: 48px 0;
 }
-.card-title {
+
+.article-body {
+  position: relative;
+  z-index: 1;
+  max-width: 720px;
+  margin: 0 auto;
+  padding: 0 24px 80px;
+}
+.article-body p {
+  font-size: 16px;
+  line-height: 1.9;
+  color: var(--text-muted);
+  margin-bottom: 22px;
+  font-weight: 300;
+}
+.article-body p strong { color: var(--text-main); font-weight: 500; }
+.article-body p em { font-style: italic; color: var(--brown-light); }
+
+.article-body h2 {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: clamp(1.5rem, 3.5vw, 2.1rem);
+  font-weight: 500;
+  color: var(--text-main);
+  margin: 56px 0 18px;
+  line-height: 1.25;
+  position: relative;
+  padding-left: 20px;
+}
+.article-body h2::before {
+  content: '';
+  position: absolute;
+  left: 0; top: 8px;
+  width: 3px;
+  height: calc(100% - 8px);
+  background: linear-gradient(to bottom, var(--brown), var(--brown-light));
+  border-radius: 2px;
+}
+.article-body h3 {
   font-family: 'Cormorant Garamond', serif;
   font-size: 1.25rem;
   font-weight: 500;
-  color: var(--text-main);
-  line-height: 1.3;
-  margin-bottom: 12px;
-}
-.card-title em { font-style: italic; color: var(--brown); }
-.card-excerpt {
-  font-size: 13px;
-  color: var(--text-muted);
-  line-height: 1.7;
-  font-weight: 300;
-  flex: 1;
-  margin-bottom: 20px;
-  display: -webkit-box;
-  -webkit-line-clamp: 3;
-  -webkit-box-orient: vertical;
-  overflow: hidden;
-}
-.card-footer {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-}
-.card-meta {
-  font-size: 11px;
-  color: var(--text-light);
-  letter-spacing: 0.03em;
-}
-.card-lire {
-  font-size: 12px;
-  font-weight: 500;
   color: var(--brown);
-  letter-spacing: 0.05em;
+  margin: 36px 0 12px;
+  letter-spacing: 0.02em;
+}
+
+.article-body ul, .article-body ol {
+  margin: 0 0 22px 0;
+  padding-left: 0;
+  list-style: none;
+}
+.article-body ul li, .article-body ol li {
+  font-size: 15.5px;
+  line-height: 1.8;
+  color: var(--text-muted);
+  margin-bottom: 10px;
+  padding-left: 26px;
+  position: relative;
+}
+.article-body ul li::before {
+  content: '✦';
+  position: absolute;
+  left: 0;
+  color: var(--brown-light);
+  font-size: 11px;
+  top: 4px;
+}
+.article-body ol { counter-reset: ol-counter; }
+.article-body ol li::before {
+  content: counter(ol-counter);
+  counter-increment: ol-counter;
+  position: absolute;
+  left: 0;
+  width: 18px; height: 18px;
+  background: var(--brown);
+  color: white;
+  border-radius: 50%;
+  font-size: 10px;
+  font-weight: 600;
   display: flex;
   align-items: center;
-  gap: 5px;
-  transition: gap 0.2s;
+  justify-content: center;
+  top: 3px;
 }
-.article-card:hover .card-lire { gap: 8px; }
 
-.badge-bientot {
-  display: inline-block;
+.article-body blockquote {
+  background: rgba(123,74,58,0.06);
+  border-left: 3px solid var(--brown);
+  border-radius: 0 12px 12px 0;
+  padding: 22px 28px;
+  margin: 32px 0;
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 1.25rem;
+  font-style: italic;
+  color: var(--brown-dark);
+  line-height: 1.65;
+}
+
+.encadre {
+  background: var(--card-bg);
+  border: 1px solid var(--card-border);
+  border-radius: 16px;
+  padding: 28px 32px;
+  margin: 36px 0;
+  backdrop-filter: blur(8px);
+  position: relative;
+}
+.encadre-label {
+  position: absolute;
+  top: -12px; left: 24px;
   background: var(--brown);
   color: white;
   font-size: 10px;
-  font-weight: 700;
-  letter-spacing: 0.18em;
+  font-weight: 600;
+  letter-spacing: 0.12em;
   text-transform: uppercase;
-  padding: 5px 14px;
+  padding: 4px 14px;
   border-radius: 50px;
-  margin-bottom: 10px;
+}
+.encadre p { margin-bottom: 10px !important; }
+.encadre p:last-child { margin-bottom: 0 !important; }
+
+.article-img {
+  width: 100%;
+  border-radius: 16px;
+  margin: 36px 0;
+  display: block;
+  object-fit: cover;
+  max-height: 420px;
+  box-shadow: 0 8px 32px rgba(123,74,58,0.10);
 }
 
-.card-coming {
-  background: rgba(255,255,255,0.35);
-  border: 1px dashed rgba(123,74,58,0.2);
-  border-radius: 20px;
+.encadre-yt {
+  background: rgba(123,74,58,0.05);
+  border: 1px solid rgba(123,74,58,0.16);
+  border-left: 3px solid var(--brown-light);
+  border-radius: 0 12px 12px 0;
+  padding: 18px 24px;
+  margin: 32px 0;
   display: flex;
-  flex-direction: column;
   align-items: center;
-  justify-content: center;
-  text-align: center;
-  padding: 48px 28px;
-  min-height: 320px;
+  gap: 14px;
 }
-.card-coming-icon { font-size: 2rem; margin-bottom: 14px; opacity: 0.5; }
-.card-coming-text {
-  font-family: 'Cormorant Garamond', serif;
-  font-size: 1.1rem;
-  color: var(--text-light);
-  font-style: italic;
-}
+.encadre-yt-icon { font-size: 1.4rem; flex-shrink: 0; }
+.encadre-yt-text { font-size: 14px; color: var(--text-muted); line-height: 1.6; }
+.encadre-yt-text a { color: var(--brown); font-weight: 500; text-decoration: none; }
+.encadre-yt-text a:hover { text-decoration: underline; }
 
-.blog-cta {
+.prog-card-wrap {
+  position: relative;
+  z-index: 1;
+  max-width: 720px;
+  margin: 0 auto 40px;
+  padding: 0 24px;
+}
+.prog-card {
+  background: linear-gradient(135deg, rgba(74,122,106,0.10), rgba(123,74,58,0.08));
+  border: 1px solid rgba(74,122,106,0.25);
+  border-radius: 20px;
+  padding: 32px 36px;
+  display: flex;
+  align-items: center;
+  gap: 28px;
+  backdrop-filter: blur(10px);
+}
+.prog-card-icon { font-size: 2.4rem; flex-shrink: 0; }
+.prog-card-body { flex: 1; }
+.prog-card-label {
+  font-size: 10px;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--green-dark);
+  font-weight: 600;
+  margin-bottom: 6px;
+}
+.prog-card-title {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 1.3rem;
+  font-weight: 500;
+  color: var(--text-main);
+  margin-bottom: 6px;
+  line-height: 1.3;
+}
+.prog-card-text { font-size: 13px; color: var(--text-muted); line-height: 1.6; }
+.prog-card-btn {
+  display: inline-block;
+  background: linear-gradient(135deg, var(--green-dark), var(--green-deep));
+  color: white;
+  text-decoration: none;
+  padding: 12px 28px;
+  border-radius: 50px;
+  font-size: 13px;
+  font-weight: 500;
+  letter-spacing: 0.03em;
+  white-space: nowrap;
+  flex-shrink: 0;
+  transition: opacity 0.2s, transform 0.15s;
+  box-shadow: 0 3px 14px rgba(74,122,106,0.28);
+}
+.prog-card-btn:hover { opacity: 0.9; transform: translateY(-1px); }
+
+.yt-bloc {
+  position: relative;
+  z-index: 1;
+  max-width: 720px;
+  margin: 0 auto 40px;
+  padding: 0 24px;
+}
+.yt-bloc-title {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 1.35rem;
+  font-weight: 500;
+  color: var(--text-main);
+  text-align: center;
+  margin-bottom: 24px;
+  letter-spacing: 0.02em;
+}
+.yt-inner { display: grid; grid-template-columns: 1fr; gap: 16px; }
+.yt-card {
+  background: var(--card-bg);
+  border: 1px solid var(--card-border);
+  border-radius: 16px;
+  padding: 24px 28px;
+  text-align: center;
+  backdrop-filter: blur(8px);
+  transition: border-color 0.2s, transform 0.15s;
+}
+.yt-card:hover { border-color: rgba(123,74,58,0.32); transform: translateY(-2px); }
+.yt-logo { display: flex; justify-content: center; margin-bottom: 12px; }
+.yt-logo svg { width: 56px; height: 40px; border-radius: 8px; }
+.yt-name { font-family: 'Cormorant Garamond', serif; font-size: 1.1rem; font-weight: 500; color: var(--text-main); margin-bottom: 6px; }
+.yt-desc { font-size: 13px; color: var(--text-muted); line-height: 1.6; margin-bottom: 16px; }
+.yt-btn {
+  display: inline-block;
+  background: var(--brown);
+  color: white;
+  text-decoration: none;
+  padding: 9px 22px;
+  border-radius: 50px;
+  font-size: 12px;
+  font-weight: 500;
+  letter-spacing: 0.04em;
+  transition: background 0.2s, transform 0.15s;
+}
+.yt-btn:hover { background: var(--brown-dark); transform: translateY(-1px); }
+
+.article-nav {
   position: relative;
   z-index: 1;
   max-width: 720px;
   margin: 0 auto 80px;
   padding: 0 24px;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
 }
-.blog-cta-card {
-  background: linear-gradient(135deg, rgba(123,74,58,0.08), rgba(74,122,106,0.08));
+.article-nav a {
+  background: var(--card-bg);
   border: 1px solid var(--card-border);
-  border-radius: 24px;
-  padding: 48px 44px;
-  text-align: center;
-  position: relative;
-  overflow: hidden;
-  backdrop-filter: blur(10px);
-}
-.blog-cta-card::before {
-  content: '';
-  position: absolute;
-  top: 0; left: 50%;
-  transform: translateX(-50%);
-  width: 200px; height: 1.5px;
-  background: linear-gradient(90deg, transparent, var(--brown-light), transparent);
-}
-.blog-cta-title {
-  font-family: 'Cormorant Garamond', serif;
-  font-size: 1.9rem;
-  font-weight: 400;
-  color: var(--text-main);
-  margin-bottom: 12px;
-}
-.blog-cta-title em { font-style: italic; color: var(--brown); }
-.blog-cta-text {
-  font-size: 15px;
-  color: var(--text-muted);
-  line-height: 1.7;
-  margin-bottom: 32px;
-  max-width: 480px;
-  margin-left: auto;
-  margin-right: auto;
-}
-.blog-cta-btn {
-  display: inline-block;
-  background: linear-gradient(135deg, var(--brown-dark), var(--brown), var(--brown-light));
-  color: white;
+  border-radius: 14px;
+  padding: 20px 24px;
   text-decoration: none;
-  padding: 16px 40px;
-  border-radius: 50px;
-  font-size: 15px;
-  font-weight: 500;
-  letter-spacing: 0.04em;
-  box-shadow: 0 4px 20px rgba(123,74,58,0.3);
-  transition: opacity 0.2s, transform 0.15s;
+  transition: border-color 0.2s, transform 0.15s;
+  backdrop-filter: blur(8px);
 }
-.blog-cta-btn:hover { opacity: 0.92; transform: translateY(-2px); }
+.article-nav a:hover { border-color: rgba(123,74,58,0.35); transform: translateY(-2px); }
+.article-nav-label {
+  font-size: 10px;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--text-light);
+  margin-bottom: 6px;
+}
+.article-nav-title {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 1.05rem;
+  color: var(--text-main);
+  line-height: 1.3;
+}
+.article-nav .next { text-align: right; }
 
 footer {
   position: relative;
@@ -361,7 +468,7 @@ footer {
   letter-spacing: 0.04em;
 }
 footer a { color: inherit; text-decoration: underline; opacity: 0.7; }
-.footer-logo {
+footer .footer-logo {
   font-family: 'Cormorant Garamond', serif;
   font-size: 1.1rem;
   color: var(--brown);
@@ -379,10 +486,6 @@ footer a { color: inherit; text-decoration: underline; opacity: 0.7; }
   to   { opacity: 1; transform: translateY(0); }
 }
 
-@media (max-width: 960px) {
-  .blog-grid { grid-template-columns: repeat(2, 1fr); }
-}
-/* ── BURGER MENU ── */
 .nav-burger {
   display: none;
   background: none;
@@ -432,8 +535,10 @@ footer a { color: inherit; text-decoration: underline; opacity: 0.7; }
 @media (max-width: 640px) {
   nav { padding: 14px 20px; }
   .nav-links { display: none; }
-  .blog-grid { grid-template-columns: 1fr; }
-  .blog-cta-card { padding: 36px 24px; }
+  .article-intro-card { padding: 28px 22px; }
+  .article-body h2 { margin-top: 40px; }
+  .article-nav { grid-template-columns: 1fr; }
+  .prog-card { flex-direction: column; text-align: center; }
 }
 </style>
 </head>
@@ -447,297 +552,265 @@ footer a { color: inherit; text-decoration: underline; opacity: 0.7; }
     Fréquence Positive
   </a>
   <div class="nav-links">
-    <a href="index.html#ecouter">Écouter</a>
-    <a href="index.html#themes">Thèmes</a>
-    <a href="index.html#avis-clients">Avis</a>
-    <a href="blog.html" class="active">Blog</a>
-    <a href="commander.html#step-1" class="nav-cta">✦ Ma séance</a>
+    <a href='index.html'>Accueil</a>
+    <a href='blog.html'>Blog</a>
+    <a href='index.html#programme'>Le Programme</a>
+    <a class='nav-cta' href='acces-prioritaire.html'>Accès Prioritaire</a>
   </div>
   <button class="nav-burger" aria-label="Menu" aria-expanded="false" onclick="(function(b){var l=document.querySelector('.nav-links');b.classList.toggle('open');l.classList.toggle('open');b.setAttribute('aria-expanded',b.classList.contains('open'));})(this)">
     <span></span><span></span><span></span>
   </button>
 </nav>
 
-<div class="blog-hero">
-  <div class="blog-tag">✦ Le blog Fréquence Positive</div>
-  <h1 class="blog-title">Des mots pour <em>avancer</em></h1>
-  <p class="blog-intro">
-    Articles de développement personnel écrits avec le cœur — pour t'aider à mieux te connaître, transformer tes croyances et avancer à ton rythme.
-  </p>
-</div>
+<!-- ══ HERO ══ -->
+<div class="article-hero">
 
-<div class="filtres">
-  <button class="filtre-btn active" onclick="filtrer('tous', this)">Tous les articles</button>
-  <button class="filtre-btn" onclick="filtrer('croyances', this)">Croyances limitantes</button>
-  <button class="filtre-btn" onclick="filtrer('mindset', this)">Mindset & Habitudes</button>
-  <button class="filtre-btn" onclick="filtrer('confiance', this)">Confiance en soi</button>
-  <button class="filtre-btn" onclick="filtrer('emotions', this)">Émotions & Lâcher-prise</button>
-  <button class="filtre-btn" onclick="filtrer('energie', this)">Énergie & Fréquence</button>
-  <button class="filtre-btn" onclick="filtrer('transformation', this)">Transformation</button>
-</div>
+  <div class="article-tag">✦ Croyances limitantes</div>
 
-<div class="blog-grid" id="blogGrid">
+  <h1 class="article-title">
+    3 questions puissantes pour <em>remettre en doute</em><br>
+    une croyance limitante
+  </h1>
 
-  <!-- ARTICLE 1 — Croyances limitantes -->
-  <a href="article-croyances-limitantes.html" class="article-card" data-cat="croyances">
-    <div class="card-img-wrap">
-      <img class="card-img"
-           src="https://images.unsplash.com/photo-1508214751196-bcfd4ca60f91?w=600&q=80"
-           alt="Comment identifier tes croyances limitantes" loading="lazy">
-    </div>
-    <div class="card-body">
-      <div class="card-cat">✦ Croyances limitantes</div>
-      <div class="card-title">Comment identifier tes croyances limitantes <em>sans te juger</em></div>
-      <p class="card-excerpt">
-        Tu veux changer, mais quelque chose te retient ? Ce n'est pas un manque de volonté — ce sont souvent des croyances qui tournent en boucle sans que tu les voies. On t'explique comment les repérer, doucement.
-      </p>
-      <div class="card-footer">
-        <span class="card-meta">23 mars 2026 · 7 min</span>
-        <span class="card-lire">Lire →</span>
-      </div>
-    </div>
-  </a>
-
-  <!-- ARTICLE 2 — Affirmations positives (NOUVEAU) -->
-  <a href="article-affirmations-positives-science.html" class="article-card" data-cat="mindset">
-    <div class="card-img-wrap">
-      <img class="card-img"
-           src="https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=600&q=80"
-           alt="Les affirmations positives fonctionnent-elles vraiment ?" loading="lazy">
-    </div>
-    <div class="card-body">
-      <div class="card-cat">✦ Mindset & Habitudes</div>
-      <div class="card-title">Les affirmations positives <em>fonctionnent-elles vraiment ?</em></div>
-      <p class="card-excerpt">
-        Répéter des phrases encourageantes devant son miroir : pratique révolutionnaire ou simple effet placebo ? La science apporte des réponses nuancées — et surprenantes.
-      </p>
-      <div class="card-footer">
-        <span class="card-meta">1 avril 2026 · 9 min</span>
-        <span class="card-lire">Lire →</span>
-      </div>
-    </div>
-  </a>
-
-  <!-- ARTICLE 3 — 30 mars 2026 -->
-  <a href="article-phrases-qui-freinent.html" class="article-card" data-cat="croyances">
-    <div class="card-img-wrap">
-      <img class="card-img"
-           src="https://images.unsplash.com/photo-1544716278-ca5e3f4abd8c?w=600&q=80"
-           alt="5 phrases que tu te dis chaque jour qui te freinent" loading="lazy">
-    </div>
-    <div class="card-body">
-      <div class="card-cat">✦ Croyances limitantes</div>
-      <div class="card-title">5 phrases que tu te dis chaque jour <em>qui te freinent sans que tu le saches</em></div>
-      <p class="card-excerpt">
-        Certaines phrases qu'on se répète semblent anodines — et pourtant elles façonnent silencieusement ce qu'on croit possible. Est-ce que tu te reconnais dans l'une d'elles ?
-      </p>
-      <div class="card-footer">
-        <span class="card-meta">30 mars 2026 · 8 min</span>
-        <span class="card-lire">Lire →</span>
-      </div>
-    </div>
-  </a>
-
-  <!-- ARTICLE 4 — 20 avril 2026 -->
-  <a href="article-transformer-croyance-limitante.html" class="article-card" data-cat="croyances" data-pubdate="2026-04-20" data-duree="10 min">
-    <div class="card-img-wrap">
-      <img class="card-img"
-           src="https://images.unsplash.com/photo-1490730141103-6cac27aaab94?w=600&q=80"
-           alt="Transformer une croyance limitante en croyance aidante" loading="lazy">
-    </div>
-    <div class="card-body">
-      <div class="card-cat">✦ Croyances limitantes</div>
-      <div class="card-title">Transformer une croyance limitante en croyance aidante <em>: le guide complet</em></div>
-      <p class="card-excerpt">
-        Identifier ses croyances c'est bien — savoir les transformer, c'est là que tout change vraiment. Un guide concret, étape par étape, pour passer de l'autre côté.
-      </p>
-      <div class="card-footer">
-        <span class="card-meta">20 avril 2026 · 10 min</span>
-        <span class="card-lire">Lire →</span>
-      </div>
-    </div>
-  </a>
-
-  <!-- ARTICLE 5 — 20 avril 2026 -->
-  <a href="article-pas-fait-pour-ca.html" class="article-card" data-cat="croyances" data-pubdate="2026-04-20" data-duree="9 min">
-    <div class="card-img-wrap">
-      <img class="card-img"
-           src="https://images.unsplash.com/photo-1529626455594-4ff0802cfb7e?w=600&q=80"
-           alt="Je ne suis pas faite pour ça — démanteler ce mensonge" loading="lazy">
-    </div>
-    <div class="card-body">
-      <div class="card-cat">✦ Croyances limitantes</div>
-      <div class="card-title">« Je ne suis pas fait(e) pour ça » <em>— démanteler ce mensonge</em></div>
-      <p class="card-excerpt">
-        Combien de rêves ont été abandonnés à cause de cette seule phrase ? On va la regarder en face — et te montrer d'où elle vient vraiment.
-      </p>
-      <div class="card-footer">
-        <span class="card-meta">20 avril 2026 · 9 min</span>
-        <span class="card-lire">Lire →</span>
-      </div>
-    </div>
-  </a>
-
-  <!-- ARTICLE 6 — 30 avril 2026 -->
-  <a href="article-origine-croyances-enfance.html" class="article-card" data-cat="croyances" data-pubdate="2026-04-30" data-duree="10 min">
-    <div class="card-img-wrap">
-      <img class="card-img"
-           src="https://images.unsplash.com/photo-1503454537195-1dcabb73ffb9?w=600&q=80"
-           alt="D'où viennent tes croyances limitantes ? Le rôle de l'enfance" loading="lazy">
-    </div>
-    <div class="card-body">
-      <div class="card-cat">✦ Croyances limitantes</div>
-      <div class="card-title">D'où viennent tes croyances limitantes ? <em>Le rôle de l'enfance</em></div>
-      <p class="card-excerpt">
-        Ce que tu crois sur toi-même aujourd'hui s'est souvent forgé bien avant que tu aies les mots pour le remettre en question. On plonge dans les origines, avec douceur.
-      </p>
-      <div class="card-footer">
-        <span class="card-meta">30 avril 2026 · 10 min</span>
-        <span class="card-lire">Lire →</span>
-      </div>
-    </div>
-  </a>
-
-  <a href="article-meriter-le-bonheur.html" class="article-card" data-cat="croyances" data-pubdate="2026-05-05" data-duree="9 min">
-    <div class="card-img-wrap">
-      <img class="card-img"
-           src="https://images.unsplash.com/photo-1518609878373-06d740f60d8b?w=600&q=80"
-           alt="Je ne mérite pas d'être heureux(se) — l'origine de cette croyance" loading="lazy">
-    </div>
-    <div class="card-body">
-      <div class="card-cat">✦ Croyances limitantes</div>
-      <div class="card-title">« Je ne mérite pas d'être heureux(se) » <em>l'origine de cette croyance</em></div>
-      <p class="card-excerpt">
-        Cette petite voix qui te chuchote que le bonheur n'est pas pour toi — d'où vient-elle ? On remonte le fil ensemble, sans jugement, pour la défaire avec douceur.
-      </p>
-      <div class="card-footer">
-        <span class="card-meta">5 mai 2026 · 9 min</span>
-        <span class="card-lire">Lire →</span>
-      </div>
-    </div>
-  </a>
-
-  <a href="article-syndrome-imposteur.html" class="article-card" data-cat="mindset" data-pubdate="2026-05-15" data-duree="10 min">
-    <div class="card-img-wrap">
-      <img class="card-img"
-           src="https://images.unsplash.com/photo-1544717305-2782549b5136?w=600&q=80"
-           alt="Le syndrome de l'imposteur : ce que c'est vraiment et comment le dépasser" loading="lazy">
-    </div>
-    <div class="card-body">
-      <div class="card-cat">✦ Mindset & Habitudes</div>
-      <div class="card-title">Le syndrome de l'imposteur <em>ce que c'est vraiment et comment le dépasser</em></div>
-      <p class="card-excerpt">
-        Ce sentiment de ne pas être à ta place, malgré tout ce que tu accomplis. Tu n'es pas seul(e) — et surtout, ce n'est pas une fatalité. On décortique ce mécanisme.
-      </p>
-      <div class="card-footer">
-        <span class="card-meta">15 mai 2026 · 10 min</span>
-        <span class="card-lire">Lire →</span>
-      </div>
-    </div>
-  </a>
-
-  <a href="article-sabotage-dernier-moment.html" class="article-card" data-cat="mindset" data-pubdate="2026-05-25" data-duree="9 min">
-    <div class="card-img-wrap">
-      <img class="card-img"
-           src="https://images.unsplash.com/photo-1488998427799-e3362cec87c3?w=600&q=80"
-           alt="Pourquoi tu sabotes toujours au dernier moment (et comment arrêter)" loading="lazy">
-    </div>
-    <div class="card-body">
-      <div class="card-cat">✦ Mindset & Habitudes</div>
-      <div class="card-title">Pourquoi tu sabotes toujours au dernier moment <em>(et comment arrêter)</em></div>
-      <p class="card-excerpt">
-        Tout va bien… puis tu fais exploser ton plan, ta relation, ton projet. Ce n'est pas un défaut de caractère — c'est un mécanisme de protection qu'on peut comprendre et désamorcer.
-      </p>
-      <div class="card-footer">
-        <span class="card-meta">25 mai 2026 · 9 min</span>
-        <span class="card-lire">Lire →</span>
-      </div>
-    </div>
-  </a>
-
-  <a href="article-3-questions-croyance-limitante.html" class="article-card" data-cat="croyances" data-pubdate="2026-06-05" data-duree="8 min">
-    <div class="card-img-wrap">
-      <img class="card-img"
-           src="https://images.unsplash.com/photo-1493612276216-ee3925520721?w=600&q=80"
-           alt="3 questions puissantes pour remettre en doute une croyance limitante" loading="lazy">
-    </div>
-    <div class="card-body">
-      <div class="card-cat">✦ Croyances limitantes</div>
-      <div class="card-title">3 questions puissantes <em>pour remettre en doute une croyance limitante</em></div>
-      <p class="card-excerpt">
-        Une croyance limitante n'a qu'un seul vrai pouvoir : celui de se présenter comme une vérité indiscutable. Voici 3 questions simples à te poser pour faire fissurer cette certitude — doucement, sans la combattre.
-      </p>
-      <div class="card-footer">
-        <span class="card-meta">5 juin 2026 · 8 min</span>
-        <span class="card-lire">Lire →</span>
-      </div>
-    </div>
-  </a>
-
-  <a href="article-10-croyances-communes.html" class="article-card" data-cat="croyances" data-pubdate="2026-06-15" data-duree="12 min">
-    <div class="card-img-wrap">
-      <img class="card-img"
-           src="https://images.unsplash.com/photo-1517021897933-0e0319cfbc28?w=600&q=80"
-           alt="Les 10 croyances limitantes les plus communes" loading="lazy">
-    </div>
-    <div class="card-body">
-      <div class="card-cat">✦ Croyances limitantes</div>
-      <div class="card-title">Les 10 croyances limitantes <em>les plus communes en développement personnel</em></div>
-      <p class="card-excerpt">
-        Ces croyances-là, on les a presque tous traversées. Les reconnaître, c'est déjà commencer à les défaire. Voici les 10 plus fréquentes — avec leurs déguisements quotidiens. Laquelle te traverse le plus souvent ?
-      </p>
-      <div class="card-footer">
-        <span class="card-meta">15 juin 2026 · 12 min</span>
-        <span class="card-lire">Lire →</span>
-      </div>
-    </div>
-  </a>
-
-  <a href="article-argent-croyances-abondance.html" class="article-card" data-cat="croyances" data-pubdate="2026-06-25" data-duree="10 min">
-    <div class="card-img-wrap">
-      <img class="card-img"
-           src="https://images.unsplash.com/photo-1554224155-6726b3ff858f?w=600&q=80"
-           alt="Argent et croyances : pourquoi tu bloques l'abondance" loading="lazy">
-    </div>
-    <div class="card-body">
-      <div class="card-cat">✦ Croyances limitantes</div>
-      <div class="card-title">Argent et croyances <em>: pourquoi tu bloques inconsciemment l'abondance</em></div>
-      <p class="card-excerpt">
-        Tu travailles dur sans voir l'argent venir comme tu voudrais ? Ce n'est presque jamais une question de capacité. C'est presque toujours une question de croyances — héritées avant même que tu aies les mots pour les choisir.
-      </p>
-      <div class="card-footer">
-        <span class="card-meta">25 juin 2026 · 10 min</span>
-        <span class="card-lire">Lire →</span>
-      </div>
-    </div>
-  </a>
-
-</div>
-
-<div class="blog-cta">
-  <div class="blog-cta-card">
-    <div style="font-size:2rem;margin-bottom:14px;">🌿</div>
-    <div class="blog-cta-title">Tu veux aller <em>plus loin</em> ?</div>
-    <p class="blog-cta-text">
-      Nos séances audio personnalisées vont encore plus loin que les mots. Une voix, ton prénom, tes affirmations — créées uniquement pour toi.
-    </p>
-    <a href="commander.html#step-1" class="blog-cta-btn">✦ Créer ma séance personnalisée</a>
+  <div class="article-meta">
+    <span>✦ Par Max &amp; Sandra</span>
+    <div class="meta-divider"></div>
+    <span>📅 5 juin 2026</span>
+    <div class="meta-divider"></div>
+    <span>⏱ 8 min</span>
   </div>
+
+  <div class="article-intro-card">
+    <p>
+      Tu sais que cette croyance te freine. Tu l'as identifiée, tu la connais. Mais elle reste là, solide, comme une vérité indiscutable qui pèse sur tes décisions. <strong>Le problème, ce n'est pas que tu n'as pas envie de la lâcher — c'est que ton cerveau la traite comme un fait, pas comme une opinion</strong>. Pour qu'elle commence à vaciller, il faut la questionner. Pas la combattre, juste l'interroger. Voici 3 questions simples, qu'on peut se poser n'importe où, qui ouvrent une fissure dans ce qui paraissait inébranlable.
+    </p>
+  </div>
+
+</div>
+
+<!-- ══ CORPS ══ -->
+<div class="article-body">
+
+  <div class="ornament">✦ · · ·</div>
+
+  <h2>Pourquoi questionner suffit (parfois) à faire bouger une croyance</h2>
+
+  <p>
+    Une croyance limitante a une force étrange : elle se présente comme une certitude. Tu ne te dis pas <em>« je crois que je ne suis pas à la hauteur »</em>, tu te dis <em>« je ne suis pas à la hauteur »</em>. Le verbe « croire » disparaît. Et tant qu'il disparaît, la croyance reste protégée.
+  </p>
+
+  <p>
+    Le simple fait de poser une question, à voix haute ou par écrit, vient remettre ce verbe à sa place. <strong>Tu reprends la posture d'un enquêteur, pas d'un condamné.</strong> Et ça change tout — parce qu'un enquêteur peut découvrir que la preuve qu'il avait n'en était pas vraiment une.
+  </p>
+
+  <blockquote>
+    Une croyance qu'on n'a jamais questionnée n'a pas vraiment été choisie. Elle a juste été acceptée.
+  </blockquote>
+
+  <img class="article-img"
+       src="https://images.unsplash.com/photo-1493612276216-ee3925520721?w=900&q=80"
+       alt="Un cahier ouvert avec un stylo — l'écriture comme outil de questionnement"
+       loading="lazy">
+
+  <h2>Question 1 — « Est-ce vraiment vrai, ou je le suppose ? »</h2>
+
+  <p>
+    C'est la question la plus simple, et pourtant la plus déstabilisante. Quand tu te dis <em>« je n'y arriverai jamais »</em>, <em>« personne ne m'aime vraiment »</em>, <em>« je suis nul(le) en relations »</em> — pose-toi cette question. Pas pour te convaincre du contraire. Juste pour vérifier d'où vient cette information.
+  </p>
+
+  <p>
+    Souvent, en cherchant des preuves concrètes, tu vas trouver soit <strong>des situations précises et limitées</strong> (une fois, un contexte, un moment) que ton cerveau a généralisées en règle universelle, soit <strong>des projections</strong> (« les autres pensent que… ») qui ne reposent sur aucune donnée vérifiable.
+  </p>
+
+  <h3>Comment la pratiquer concrètement</h3>
+
+  <p>
+    Prends un papier. Écris ta croyance en haut. Puis, en-dessous, écris : <em>« Quelle preuve concrète et vérifiable est-ce que j'ai pour soutenir ça ? »</em>. Note tout ce qui te vient. Sans jugement. Tu remarqueras vite que la liste est étonnamment courte — et que ce qui s'y trouve est souvent exagéré, ancien, ou mal interprété.
+  </p>
+
+  <div class="encadre">
+    <div class="encadre-label">✦ Exemple</div>
+    <p>Croyance : <em>« Je ne suis pas une personne intéressante. »</em></p>
+    <p>Preuves "concrètes" : <em>« Pierre m'a dit en 2018 que j'étais ennuyeux. Ma sœur ne me rappelle jamais. Je n'ai pas beaucoup d'amis. »</em></p>
+    <p>Réalité : <strong>3 anecdotes en 7 ans, dont 2 qui parlent plus des autres que de toi</strong>. Ce n'est pas une vérité — c'est un récit que tu t'es construit avec très peu de matière.</p>
+  </div>
+
+  <h2>Question 2 — « Qui m'a appris à croire ça ? »</h2>
+
+  <p>
+    Aucune croyance limitante ne pousse spontanément en nous. Elle a toujours une origine — un message reçu, une expérience interprétée, une voix qu'on a fini par intérioriser. <strong>Quand tu identifies cette source, la croyance perd une partie de sa neutralité apparente.</strong> Elle redevient ce qu'elle a toujours été : l'opinion de quelqu'un, dans un contexte donné, à un moment donné.
+  </p>
+
+  <p>
+    Cette question fait remonter, parfois, des choses inattendues. Une remarque d'un professeur. Le regard d'un parent. Une moquerie d'enfance. Le ton d'un ex. Tout ce qui s'est gravé sans que tu aies les moyens, à l'époque, de filtrer. <em>Ce n'est pas pour blâmer la source — c'est pour comprendre que ta croyance n'est pas une production de toi, mais un héritage</em>.
+  </p>
+
+  <h3>Comment la pratiquer concrètement</h3>
+
+  <p>
+    Ferme les yeux quelques secondes. Repose-toi cette question : <em>« Si je devais identifier la première fois où j'ai entendu, vu ou ressenti que c'était vrai, ça remonterait à quand ? »</em>. Laisse venir une image, un visage, une scène. Souvent, tu seras surpris(e) par la précision du souvenir qui remonte.
+  </p>
+
+  <img class="article-img"
+       src="https://images.unsplash.com/photo-1455390582262-044cdead277a?w=900&q=80"
+       alt="Reflet pensif — chercher l'origine de ce qu'on croit"
+       loading="lazy">
+
+  <h2>Question 3 — « Qui je serais sans cette croyance ? »</h2>
+
+  <p>
+    Cette troisième question est la plus douce, et peut-être la plus libératrice. Elle ne demande pas de prouver que la croyance est fausse. Elle demande juste d'imaginer un instant. <strong>Si demain matin, tu te réveillais et que cette croyance avait disparu, qu'est-ce qui changerait ?</strong>
+  </p>
+
+  <p>
+    Réponds vraiment. Pas en généralités — en détails. Tu te lèverais à quelle heure ? Tu écrirais ce mail que tu repousses depuis 6 mois ? Tu poserais cette candidature ? Tu dirais oui à cette invitation ? Tu prendrais soin de ton corps autrement ? Tu pardonnerais à cette personne ?
+  </p>
+
+  <p>
+    Ce que tu vois dans cet exercice, ce n'est pas un fantasme — c'est <em>une partie de toi qui existe déjà, et que la croyance recouvre</em>. Le travail intérieur consiste à laisser un peu de cet espace devenir réalité, jour après jour, en faisant un pas concret à la fois.
+  </p>
+
+  <div class="encadre-yt">
+    <div class="encadre-yt-icon">▶</div>
+    <div class="encadre-yt-text">
+      Pour aller plus loin sur la transformation des croyances en douceur, on partage des affirmations en voix off conçues pour t'accompagner sur notre chaîne :
+      <a href="https://www.youtube.com/@FREQUENCE.POSITIVE" target="_blank">@FREQUENCE.POSITIVE</a>
+    </div>
+  </div>
+
+  <!-- CTA SECONDAIRE — [C] Séance personnalisée -->
+  <div style="background:linear-gradient(135deg,rgba(123,74,58,0.07),rgba(74,122,106,0.07));border:1px solid rgba(123,74,58,0.18);border-radius:18px;padding:28px 32px;margin:36px 0;text-align:center;backdrop-filter:blur(10px);position:relative;overflow:hidden;">
+    <div style="position:absolute;top:0;left:50%;transform:translateX(-50%);width:140px;height:1.5px;background:linear-gradient(90deg,transparent,rgba(123,74,58,0.45),transparent);"></div>
+    <div style="font-size:1.5rem;margin-bottom:10px;">🎧</div>
+    <p style="font-family:'Cormorant Garamond',serif;font-size:1.35rem;font-weight:400;color:var(--text-main);line-height:1.3;margin-bottom:8px;">
+      Tu veux remplacer une croyance par <em style="font-style:italic;color:var(--brown)">une nouvelle voix intérieure ?</em>
+    </p>
+    <p style="font-size:13.5px;color:var(--text-muted);line-height:1.65;margin-bottom:20px;">
+      Une séance audio personnalisée — avec ton prénom, tes affirmations, créée uniquement pour toi — peut t'accompagner dans cette transformation, à ton rythme.
+    </p>
+    <a href='commander.html#step-1' onmouseout="this.style.opacity='1'" onmouseover="this.style.opacity='0.88'" style='display:inline-block;background:linear-gradient(135deg,var(--brown-dark),var(--brown),var(--brown-light));color:white;text-decoration:none;padding:12px 28px;border-radius:50px;font-size:13px;font-weight:500;letter-spacing:0.04em;box-shadow:0 4px 16px rgba(123,74,58,0.25);'>
+      ✦ &nbsp; Découvrir la séance personnalisée
+    </a>
+  </div>
+
+  <h2>Comment utiliser ces 3 questions au quotidien</h2>
+
+  <p>
+    Ces questions ne servent à rien si on les pose une fois et qu'on n'y revient jamais. Elles deviennent puissantes quand elles deviennent <strong>un réflexe</strong> — une petite voix qui se met à émerger automatiquement, dès qu'une pensée limitante passe.
+  </p>
+
+  <ol>
+    <li><strong>Choisis UNE croyance pour commencer.</strong> Pas dix. Pas la plus grosse. Une croyance courante, qui revient régulièrement dans ta journée. C'est elle qu'on va questionner pendant 21 jours.</li>
+    <li><strong>Garde un mini-carnet ou une note dans ton téléphone.</strong> À chaque fois que la croyance se présente, prends 30 secondes pour te poser une des 3 questions. Pas besoin de répondre longuement — juste de marquer la pause.</li>
+    <li><strong>Fais le bilan le dimanche soir.</strong> Relis ce que tu as noté. Repère les schémas. Tu verras que la croyance se met à perdre en intensité — non pas parce qu'elle a disparu, mais parce qu'elle a perdu son statut d'évidence.</li>
+  </ol>
+
+  <img class="article-img"
+       src="https://images.unsplash.com/photo-1469474968028-56623f02e42e?w=900&q=80"
+       alt="Horizon de montagnes — la clarté qui vient quand on prend de la hauteur"
+       loading="lazy">
+
+  <div class="ornament">✦ · · ·</div>
+
+  <h2>Pour aller plus loin</h2>
+
+  <p>
+    Questionner une croyance limitante, ce n'est pas la combattre. C'est lui retirer son privilège de vérité absolue. Et ce simple fait — qu'elle redevienne <em>une opinion parmi d'autres</em> — est souvent la première fissure par laquelle la lumière commence à passer.
+  </p>
+
+  <p>
+    Pour aller plus loin, tu peux découvrir notre article sur <a href="https://frequence-positive.fr/article-transformer-croyance-limitante" style="color:var(--brown);font-weight:500;">comment transformer une croyance limitante en croyance aidante</a>, ou plonger dans <a href="https://frequence-positive.fr/article-origine-croyances-enfance" style="color:var(--brown);font-weight:500;">l'origine de tes croyances dans l'enfance</a>.
+  </p>
+
+  <p>
+    Tu n'as pas à devenir quelqu'un d'autre. Tu as juste à laisser tomber, doucement, ce que tu n'as jamais vraiment choisi.
+  </p>
+
+</div>
+
+<!-- ══ CTA PRINCIPAL — [B] Guide gratuit ══ -->
+<div style="max-width:720px;margin:0 auto 40px;padding:0 24px;position:relative;z-index:1;">
+  <div style="background:rgba(255,255,255,0.70);border:1px solid rgba(123,74,58,0.22);border-radius:20px;padding:36px 40px;backdrop-filter:blur(10px);box-shadow:0 4px 32px rgba(123,74,58,0.07);position:relative;overflow:hidden;">
+    <div style="position:absolute;top:0;left:50%;transform:translateX(-50%);width:120px;height:1.5px;background:linear-gradient(90deg,transparent,rgba(123,74,58,0.5),transparent);"></div>
+    <div style="font-size:11px;font-weight:500;letter-spacing:0.14em;text-transform:uppercase;color:#7B4A3A;margin-bottom:14px;">✦ Guide gratuit</div>
+    <p style="font-family:'Cormorant Garamond',serif;font-size:clamp(1.25rem,3vw,1.7rem);font-weight:400;line-height:1.3;color:#3A2820;margin-bottom:14px;">
+      Et si tu avais <em style="color:#7B4A3A;">les bonnes phrases pour remplacer chaque croyance ?</em>
+    </p>
+    <p style="font-size:15px;line-height:1.75;color:#6A5A52;font-weight:300;margin-bottom:24px;">
+      Notre guide gratuit de 13 pages te donne les affirmations exactes à te répéter pour reconstruire, doucement, un dialogue intérieur plus juste — celui qui t'autorise à te faire confiance, à recevoir, à oser.
+    </p>
+    <div style="text-align:center;">
+      <a href='acces-guide-gratuit.html' onmouseout="this.style.background='#7B4A3A'" onmouseover="this.style.background='#5A3028'" style='display:inline-flex;align-items:center;gap:10px;background:#7B4A3A;color:white;text-decoration:none;padding:14px 30px;border-radius:50px;font-size:14px;font-weight:500;letter-spacing:0.03em;'>
+        ✦ &nbsp; Télécharger le guide gratuit
+      </a>
+      <p style="font-size:12px;color:#9A8A80;margin-top:14px;">PDF 13 pages · Affirmations + exercices · 100% gratuit</p>
+    </div>
+  </div>
+</div>
+
+<!-- ══ CARTE PROGRAMME CONTEXTUELLE ══ -->
+<div class="prog-card-wrap">
+  <div class="prog-card">
+    <div class="prog-card-icon">🌿</div>
+    <div class="prog-card-body">
+      <div class="prog-card-label">✦ Le programme Fréquence Positive</div>
+      <div class="prog-card-title">Tu veux défaire les croyances qui te freinent en profondeur ?</div>
+      <p class="prog-card-text">
+        Le programme Fréquence Positive t'accompagne pour identifier, questionner et reconstruire en douceur les croyances qui sabotent tes choix au quotidien — sans pression, à ton rythme.
+      </p>
+    </div>
+    <a class='prog-card-btn' href='index.html'>✦ Découvrir</a>
+  </div>
+</div>
+
+<!-- ══ BLOC YOUTUBE ══ -->
+<div class="yt-bloc">
+  <div class="yt-bloc-title">✦ La chaîne YouTube de Fréquence Positive</div>
+  <p style="text-align:center;font-size:14px;color:var(--text-muted);line-height:1.7;margin:-16px 0 28px;font-weight:300;">
+    Des affirmations en voix off pour t'accompagner dans la déconstruction de tes croyances, jour après jour.
+  </p>
+  <div class="yt-inner">
+    <div class="yt-card">
+      <div class="yt-logo">
+        <svg viewBox="0 0 90 63" xmlns="http://www.w3.org/2000/svg">
+          <rect width="90" height="63" rx="14" fill="#7B4F2E"/>
+          <polygon points="36,18 36,45 62,31.5" fill="#FDF6EC"/>
+        </svg>
+      </div>
+      <div class="yt-name">Fréquence Positive</div>
+      <p class="yt-desc">Affirmations positives en voix off + musique — pour reprogrammer ton mental au quotidien.</p>
+      <a href="https://www.youtube.com/@FREQUENCE.POSITIVE" target="_blank" class="yt-btn">▶ Voir la chaîne</a>
+    </div>
+  </div>
+</div>
+
+<!-- ══ NAVIGATION ARTICLES ══ -->
+<div class="article-nav">
+  <a class='prev' href='article-meriter-le-bonheur.html'>
+    <div class="article-nav-label">← Article précédent</div>
+    <div class="article-nav-title">« Je ne mérite pas d'être heureux(se) » — l'origine de cette croyance</div>
+  </a>
+  <a class='next' href='blog.html'>
+    <div class="article-nav-label">Tous les articles →</div>
+    <div class="article-nav-title">Retour au blog</div>
+  </a>
 </div>
 
 <footer>
   <span class="footer-logo">✦ Fréquence Positive</span>
   <p>© 2026 Fréquence Positive —
-    <a href="mentions-legales.html">Mentions légales</a> ·
-    <a href="confidentialite.html">Confidentialité</a> ·
-    <a href="commander.html#step-1">Commander</a>
+    <a href='mentions-legales.html'>Mentions légales</a> ·
+    <a href='confidentialite.html'>Confidentialité</a> ·
+    <a href='blog.html'>Blog</a>
   </p>
   <p style="margin-top:6px">Avec ✦ par Max &amp; Sandra</p>
 </footer>
 
+<!-- ══ CANVAS VAGUES ══ -->
 <script>
 (function() {
   const canvas = document.getElementById('waveCanvas');
+  if (!canvas) return;
   const ctx = canvas.getContext('2d');
   function resize() {
     canvas.width  = window.innerWidth;
@@ -746,12 +819,12 @@ footer a { color: inherit; text-decoration: underline; opacity: 0.7; }
   resize();
   window.addEventListener('resize', resize);
   const waves = [
-    { y:.22, a:18, f:.007, s:.012, o:0,   c:'rgba(123,74,58,0.48)',  w:1.4 },
-    { y:.38, a:24, f:.005, s:.008, o:2,   c:'rgba(123,74,58,0.30)',  w:1.1 },
-    { y:.55, a:14, f:.009, s:.014, o:4,   c:'rgba(123,74,58,0.42)',  w:1.7 },
-    { y:.70, a:20, f:.006, s:.010, o:1,   c:'rgba(123,74,58,0.22)',  w:0.9 },
-    { y:.32, a:10, f:.011, s:.017, o:3,   c:'rgba(74,122,106,0.24)', w:0.8 },
-    { y:.62, a:28, f:.004, s:.006, o:5,   c:'rgba(74,122,106,0.16)', w:1.9 },
+    { y:.22, a:18, f:.007, s:.012, o:0,   c:'rgba(123,74,58,0.50)',  w:1.4 },
+    { y:.38, a:24, f:.005, s:.008, o:2,   c:'rgba(123,74,58,0.32)',  w:1.1 },
+    { y:.55, a:14, f:.009, s:.014, o:4,   c:'rgba(123,74,58,0.44)',  w:1.7 },
+    { y:.70, a:20, f:.006, s:.010, o:1,   c:'rgba(123,74,58,0.24)',  w:0.9 },
+    { y:.32, a:10, f:.011, s:.017, o:3,   c:'rgba(74,122,106,0.26)', w:0.8 },
+    { y:.62, a:28, f:.004, s:.006, o:5,   c:'rgba(74,122,106,0.18)', w:1.9 },
   ];
   let tick = 0;
   function draw() {
@@ -773,85 +846,6 @@ footer a { color: inherit; text-decoration: underline; opacity: 0.7; }
   }
   draw();
 })();
-
-// ── DÉBLOCAGE AUTOMATIQUE PAR DATE ──────────────────────────────
-// Chaque carte avec data-pubdate="YYYY-MM-DD" se débloque
-// automatiquement à la date de publication.
-// Les cartes sans data-pubdate sont toujours actives (articles anciens).
-(function() {
-  var today = new Date();
-  today.setHours(0, 0, 0, 0);
-
-  document.querySelectorAll('.article-card[data-pubdate]').forEach(function(card) {
-    var pubdate = new Date(card.dataset.pubdate);
-    pubdate.setHours(0, 0, 0, 0);
-    var publie = today >= pubdate;
-
-    // Retirer le badge "Bientôt" existant s'il y en a un
-    var badge = card.querySelector('.badge-bientot');
-    if (badge) badge.remove();
-
-    var lire = card.querySelector('.card-lire');
-    var meta = card.querySelector('.card-meta');
-
-    if (publie) {
-      // Article publié — carte cliquable, style normal
-      card.style.pointerEvents = '';
-      card.style.cursor = '';
-      card.style.opacity = '';
-      if (lire) { lire.textContent = 'Lire →'; lire.style.opacity = '1'; }
-    } else {
-      // Article à venir — carte non cliquable
-      card.style.pointerEvents = 'none';
-      card.style.cursor = 'default';
-      card.style.opacity = '0.82';
-
-      // Injecter le badge "Bientôt"
-      var newBadge = document.createElement('div');
-      newBadge.className = 'badge-bientot';
-      newBadge.textContent = '✦ Bientôt';
-      var cardBody = card.querySelector('.card-body');
-      cardBody.insertBefore(newBadge, cardBody.firstChild);
-
-      // Mettre à jour le lien et la meta
-      if (lire) { lire.textContent = 'Bientôt →'; lire.style.opacity = '0.4'; }
-      if (meta && card.dataset.duree) {
-        // Remplacer le temps de lecture par "à venir"
-        meta.textContent = meta.textContent.replace(card.dataset.duree, 'à venir');
-      }
-    }
-  });
-})();
-
-// ── FILTRE PAR CATÉGORIE ─────────────────────────────────────────
-function filtrer(cat, btn) {
-  document.querySelectorAll('.filtre-btn').forEach(b => b.classList.remove('active'));
-  btn.classList.add('active');
-  document.querySelectorAll('.article-card').forEach(function(card) {
-    if (cat === 'tous' || card.dataset.cat === cat) {
-      card.style.display = 'flex';
-    } else {
-      card.style.display = 'none';
-    }
-  });
-}
-
-// ── ANIMATION APPARITION ─────────────────────────────────────────
-const observer = new IntersectionObserver(function(entries) {
-  entries.forEach(function(el) {
-    if (el.isIntersecting) {
-      el.target.style.opacity = el.target.style.pointerEvents === 'none' ? '0.82' : '1';
-      el.target.style.transform = 'translateY(0)';
-    }
-  });
-}, { threshold: 0.08 });
-
-document.querySelectorAll('.article-card').forEach(function(el) {
-  el.style.opacity = '0';
-  el.style.transform = 'translateY(20px)';
-  el.style.transition = 'opacity 0.5s ease, transform 0.5s ease, border-color 0.25s, box-shadow 0.25s';
-  observer.observe(el);
-});
 </script>
 
 </body>
