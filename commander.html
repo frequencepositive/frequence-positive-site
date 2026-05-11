@@ -1337,6 +1337,14 @@
             <div class="radio-desc">Le format signature de <strong>Fréquence Positive</strong>, conçu pour couvrir les nuances de votre besoin. <em style="font-size:12px; color: rgba(255,255,255,0.4)">(Disponible pour toutes les durées)</em></div>
           </div>
         </label>
+        <label class="radio-option hidden" id="opt-30aff" onclick="selectAffirmations30(this)">
+          <input type="radio" name="affirmations" value="30">
+          <div class="radio-letter">C</div>
+          <div class="radio-content">
+            <div class="radio-title">📋 30 Affirmations — Couverture étendue <span class="price-badge" id="badge-30aff">Inclus</span></div>
+            <div class="radio-desc">Pour explorer plus largement votre thématique. <em style="font-size:12px; color: rgba(0,0,0,0.4)">(Inclus pour les formats 30 min, 1 h et 10 h)</em></div>
+          </div>
+        </label>
       </div>
     </div>
 
@@ -1824,18 +1832,15 @@ function selectDuree(el, label, prix) {
 function update30AffOption() {
   const opt30 = document.getElementById('opt-30aff');
   const badge = document.getElementById('badge-30aff');
+  if (!opt30 || !badge) return;
+  const is30min = state.duree.includes('30 minutes');
   const is1h = state.duree.includes('1 heure');
   const is10h = state.duree.includes('10 heures');
-  if (is10h) {
+  if (is30min || is1h || is10h) {
     opt30.classList.remove('hidden');
-    badge.textContent = 'Offert';
+    badge.textContent = 'Inclus';
     badge.style.background = 'rgba(138,158,136,0.15)';
     badge.style.color = '#3A6A38';
-  } else if (is1h) {
-    opt30.classList.remove('hidden');
-    badge.textContent = '+2,90€';
-    badge.style.background = '';
-    badge.style.color = '';
   } else {
     opt30.classList.add('hidden');
   }
