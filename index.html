@@ -789,9 +789,7 @@ footer a:hover { color: rgba(255,255,255,0.9); }
 
 <!-- OFFRIR -->
 
-<!-- ===== INTRO DÉPLACÉE DEPUIS COMMANDER (11 mai 2026) — Vidéo Max + Accroche + Stats + Avis ===== -->
-<!-- ===== INTRO (vidéo + accroche) — masquée quand on avance dans le formulaire ===== -->
-<div id="intro-sections">
+<!-- ===== STRUCTURE REFONDUE (12 mai 2026) — Ordre validé Denis ===== -->
 
 <!-- ===== BANDE STATS ===== -->
 <div style="
@@ -811,12 +809,17 @@ footer a:hover { color: rgba(255,255,255,0.9); }
     <!-- Bandeau "Séances créées" retiré (à remettre quand on aura dépassé 40 séances) -->
     <div style="text-align:center; padding: 12px 40px; flex: 1; min-width: 140px;">
       <div style="font-family:'Playfair Display',Georgia,serif; font-size: clamp(36px,5vw,52px); font-weight:400; color:#7b4a3a; line-height:1;">2</div>
-      <div style="font-size:11px; letter-spacing:2px; text-transform:uppercase; color:#999; margin-top:8px; font-weight:500;">Voix & formats</div>
+      <div style="font-size:11px; letter-spacing:2px; text-transform:uppercase; color:#999; margin-top:8px; font-weight:500;">Voix</div>
     </div>
+    <div style="text-align:center; padding: 12px 40px; flex: 1; min-width: 140px;">
+      <div style="font-family:'Playfair Display',Georgia,serif; font-size: clamp(36px,5vw,52px); font-weight:400; color:#7b4a3a; line-height:1;">4</div>
+      <div style="font-size:11px; letter-spacing:2px; text-transform:uppercase; color:#999; margin-top:8px; font-weight:500;">Formats</div>
+    </div>
+    <div style="width:1px; height:50px; background:rgba(123,74,58,0.2); flex-shrink:0;"></div>
     <div style="width:1px; height:50px; background:rgba(123,74,58,0.2); flex-shrink:0;"></div>
     <div style="text-align:center; padding: 12px 40px; flex: 1; min-width: 140px;">
       <div style="font-family:'Playfair Display',Georgia,serif; font-size: clamp(36px,5vw,52px); font-weight:400; color:#7b4a3a; line-height:1;">10</div>
-      <div style="font-size:11px; letter-spacing:2px; text-transform:uppercase; color:#999; margin-top:8px; font-weight:500;">Thèmes de transformation</div>
+      <div style="font-size:11px; letter-spacing:2px; text-transform:uppercase; color:#999; margin-top:8px; font-weight:500;">Univers à explorer</div>
     </div>
     <div style="width:1px; height:50px; background:rgba(123,74,58,0.2); flex-shrink:0;"></div>
     <div style="text-align:center; padding: 12px 40px; flex: 1; min-width: 140px;">
@@ -826,107 +829,7 @@ footer a:hover { color: rgba(255,255,255,0.9); }
   </div>
 </div>
 
-<div style="
-  background: linear-gradient(180deg, #3D1F16 0%, #2e1710 100%);
-  padding: 70px 24px 60px;
-  text-align: center;
-  position: relative;
-  overflow: hidden;
-">
-  <!-- Cercles décoratifs en fond -->
-  <div style="position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);width:600px;height:600px;border-radius:50%;border:1px solid rgba(123,74,58,0.08);pointer-events:none;"></div>
-  <div style="position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);width:400px;height:400px;border-radius:50%;border:1px solid rgba(123,74,58,0.12);pointer-events:none;"></div>
 
-  <div style="max-width: 720px; margin: 0 auto; position: relative; z-index: 1;">
-    <div style="
-      display: inline-block;
-      font-size: 11px;
-      letter-spacing: 2.5px;
-      text-transform: uppercase;
-      color: rgba(200,168,130,0.8);
-      margin-bottom: 18px;
-      font-weight: 500;
-    ">✦ Découvrez Fréquence Positive</div>
-
-    <h2 style="
-      font-family: 'Playfair Display', Georgia, serif;
-      font-size: clamp(24px, 4vw, 34px);
-      font-weight: 400;
-      color: #f0e8dd;
-      margin: 0 0 14px;
-      line-height: 1.3;
-    ">Max vous explique tout :</h2>
-
-    <p style="
-      color: rgba(240,232,221,0.6);
-      font-size: 15px;
-      margin: 0 0 36px;
-      font-weight: 300;
-      line-height: 1.6;
-    ">Comprenez comment votre séance est créée — uniquement pour vous.</p>
-
-    <!-- Player YouTube — remplacer VIDEO_ID par votre identifiant YouTube -->
-    <div style="
-      position: relative;
-      width: 100%;
-      padding-bottom: 56.25%;
-      border-radius: 18px;
-      overflow: hidden;
-      box-shadow: 0 24px 60px rgba(0,0,0,0.5), 0 0 0 1px rgba(200,168,130,0.18);
-      background: #0d1a16;
-      cursor: pointer;
-    " id="video-wrapper" onclick="lancerVideo()">
-
-      <!-- Miniature / placeholder avant lecture -->
-      <div id="video-thumbnail" style="
-        position: absolute; inset: 0;
-        background: #000;
-        display: flex; flex-direction: column;
-        align-items: center; justify-content: center;
-        gap: 20px;
-        transition: opacity 0.3s;
-        overflow: hidden;
-      ">
-        <!-- Vraie miniature YouTube -->
-        <img
-          src="https://img.youtube.com/vi/pcbrEMoP9oE/maxresdefault.jpg"
-          onerror="this.src='https://img.youtube.com/vi/pcbrEMoP9oE/hqdefault.jpg'"
-          style="position:absolute; inset:0; width:100%; height:100%; object-fit:cover; opacity:0.75;"
-          alt="Miniature vidéo"
-        >
-        <!-- Overlay sombre dégradé -->
-        <div style="position:absolute; inset:0; background: linear-gradient(to top, rgba(0,0,0,0.7) 0%, rgba(0,0,0,0.15) 60%, rgba(0,0,0,0.1) 100%);"></div>
-        <!-- Bouton play -->
-        <div style="
-          position:relative; z-index:2;
-          width: 78px; height: 78px;
-          background: linear-gradient(135deg, rgba(200,168,130,0.95), rgba(180,140,100,0.85));
-          border-radius: 50%;
-          display: flex; align-items: center; justify-content: center;
-          box-shadow: 0 8px 30px rgba(0,0,0,0.4), 0 0 0 12px rgba(200,168,130,0.12);
-          transition: transform 0.2s, box-shadow 0.2s;
-        " id="play-btn">
-          <svg width="28" height="28" viewBox="0 0 24 24" fill="white" style="margin-left:4px">
-            <path d="M8 5v14l11-7z"/>
-          </svg>
-        </div>
-        <div style="position:relative; z-index:2; color: rgba(255,255,255,0.85); font-size: 14px; letter-spacing: 0.5px;">▶ Lancer la vidéo</div>
-      </div>
-
-      <!-- iframe YouTube (caché jusqu'au clic) -->
-      <iframe
-        id="yt-iframe"
-        style="position:absolute;inset:0;width:100%;height:100%;border:none;opacity:0;transition:opacity 0.4s;pointer-events:none;"
-        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-        allowfullscreen
-      ></iframe>
-    </div>
-
-    <p style="margin-top: 16px; font-size: 12px; color: rgba(240,232,221,0.35); font-style: italic;">
-      💡 Pensez à activer le son avant de lancer la vidéo
-    </p>
-  </div>
-</div>
 
 <!-- ===== SECTION ACCROCHE ===== -->
 <div style="
@@ -1041,296 +944,112 @@ footer a:hover { color: rgba(255,255,255,0.9); }
   </div>
 </div>
 
-<!-- ===== BOUTON JE CRÉE MA SÉANCE ===== -->
-<div style="background: #fff; padding: 48px 24px; text-align: center;">
-  <div style="max-width: 600px; margin: 0 auto;">
-    <button onclick="showStep(1)" style="
+
+
+<div style="
+  background: linear-gradient(180deg, #3D1F16 0%, #2e1710 100%);
+  padding: 70px 24px 60px;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+">
+  <!-- Cercles décoratifs en fond -->
+  <div style="position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);width:600px;height:600px;border-radius:50%;border:1px solid rgba(123,74,58,0.08);pointer-events:none;"></div>
+  <div style="position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);width:400px;height:400px;border-radius:50%;border:1px solid rgba(123,74,58,0.12);pointer-events:none;"></div>
+
+  <div style="max-width: 720px; margin: 0 auto; position: relative; z-index: 1;">
+    <div style="
       display: inline-block;
-      background: linear-gradient(135deg, #7b4a3a 0%, #a0614e 100%);
-      color: white;
+      font-size: 11px;
+      letter-spacing: 2.5px;
+      text-transform: uppercase;
+      color: rgba(200,168,130,0.8);
+      margin-bottom: 18px;
+      font-weight: 500;
+    ">✦ Découvrez Fréquence Positive</div>
+
+    <h2 style="
       font-family: 'Playfair Display', Georgia, serif;
-      font-size: clamp(18px, 3vw, 24px);
-      font-weight: 600;
-      padding: 22px 48px;
-      border: none;
-      border-radius: 50px;
-      cursor: pointer;
-      box-shadow: 0 8px 32px rgba(123,74,58,0.35);
-      letter-spacing: 0.5px;
-      transition: transform 0.2s, box-shadow 0.2s;
+      font-size: clamp(24px, 4vw, 34px);
+      font-weight: 400;
+      color: #f0e8dd;
+      margin: 0 0 14px;
+      line-height: 1.3;
+    ">Max vous explique tout :</h2>
+
+    <p style="
+      color: rgba(240,232,221,0.6);
+      font-size: 15px;
+      margin: 0 0 36px;
+      font-weight: 300;
+      line-height: 1.6;
+    ">Comprenez comment votre séance est créée — uniquement pour vous.</p>
+
+    <!-- Player YouTube — remplacer VIDEO_ID par votre identifiant YouTube -->
+    <div style="
+      position: relative;
       width: 100%;
-      max-width: 500px;
-    "
-    onmouseover="this.style.transform='translateY(-2px)'; this.style.boxShadow='0 12px 40px rgba(123,74,58,0.45)'"
-    onmouseout="this.style.transform=''; this.style.boxShadow='0 8px 32px rgba(123,74,58,0.35)'"
-    >✨ Je crée ma séance</button>
-    <p style="margin-top: 14px; font-size: 13px; color: #999;">Personnalisée à 100% · Livraison par email · Paiement sécurisé</p>
-  </div>
-</div>
-
-<!-- ===== SECTION AVIS CLIENTS ===== -->
-<div id="avis-clients" style="background: #eef4f0; padding: 64px 24px 72px;">
-  <div style="max-width: 1000px; margin: 0 auto;">
-
-    <!-- En-tête -->
-    <div style="margin-bottom: 48px;">
-      <div style="display:flex; align-items:center; gap:12px; margin-bottom:14px;">
-        <div style="width:32px; height:1px; background:#7b4a3a;"></div>
-        <div style="font-size:11px; letter-spacing:2.5px; text-transform:uppercase; color:#7b4a3a; font-weight:500;">Ils ont transformé leur réalité</div>
-      </div>
-      <h2 style="font-family:'Playfair Display',Georgia,serif; font-size:clamp(28px,4vw,42px); font-weight:400; color:#2c2c2c; margin:0; line-height:1.2;">
-        Ce qu'ils <em style="color:#7b4a3a;">vivent.</em>
-      </h2>
-    </div>
-
-    <!-- Grille avis -->
-    <div style="display:grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap:20px;">
-
-      <!-- AVIS 1 — dès maintenant -->
-      <div class="avis-card" style="background:white; border-radius:16px; padding:28px; box-shadow:0 2px 20px rgba(0,0,0,0.06); border:1px solid rgba(123,74,58,0.08);">
-        <div style="color:#7b4a3a; font-size:16px; margin-bottom:16px;">★★★★★</div>
-        <p style="font-style:italic; color:#555; font-size:14.5px; line-height:1.75; margin:0 0 20px;">
-          "J'ai eu la chance de profiter de l'offre de lancement et franchement je ne le regrette pas une seconde. J'écoutais des affirmations sur YouTube depuis des semaines sans vraiment ressentir de changement. Là, dès la première écoute avec mon prénom, quelque chose s'est passé. C'est difficile à expliquer mais c'est comme si les mots entraient vraiment."
-        </p>
-        <div style="display:flex; align-items:center; gap:12px;">
-          <div style="width:38px; height:38px; border-radius:50%; background:#7b4a3a; display:flex; align-items:center; justify-content:center; font-size:13px; font-weight:600; color:white; flex-shrink:0;">NB</div>
-          <div>
-            <div style="font-weight:600; font-size:14px; color:#2c2c2c;">Nathalie B.</div>
-            <div style="font-size:12px; color:#999;">Séance Confiance & Estime — 30 min · offre de lancement</div>
-          </div>
-        </div>
-      </div>
-
-      <!-- AVIS 2 — dès maintenant -->
-      <div class="avis-card" style="background:white; border-radius:16px; padding:28px; box-shadow:0 2px 20px rgba(0,0,0,0.06); border:1px solid rgba(123,74,58,0.08);">
-        <div style="color:#7b4a3a; font-size:16px; margin-bottom:16px;">★★★★★</div>
-        <p style="font-style:italic; color:#555; font-size:14.5px; line-height:1.75; margin:0 0 20px;">
-          "J'ai profité de l'offre de lancement mercredi et tant qu'à faire j'ai aussi pris la livraison express. Reçue en moins de 2 jours, exactement comme promis. Première écoute hier soir — la voix de Max est vraiment apaisante et le fait que ce soit pensé uniquement pour moi ça se sent immédiatement. Très bonne première impression."
-        </p>
-        <div style="display:flex; align-items:center; gap:12px;">
-          <div style="width:38px; height:38px; border-radius:50%; background:#7b4a3a; display:flex; align-items:center; justify-content:center; font-size:13px; font-weight:600; color:white; flex-shrink:0;">TM</div>
-          <div>
-            <div style="font-weight:600; font-size:14px; color:#2c2c2c;">Thomas M.</div>
-            <div style="font-size:12px; color:#999;">Séance Abondance — 1 heure · offre de lancement</div>
-          </div>
-        </div>
-      </div>
-
-      <!-- AVIS 3 & 4 — affichés après 7 jours -->
-      <div class="avis-semaine-1" style="display:none; background:white; border-radius:16px; padding:28px; box-shadow:0 2px 20px rgba(0,0,0,0.06); border:1px solid rgba(123,74,58,0.08);">
-        <div style="color:#7b4a3a; font-size:16px; margin-bottom:16px;">★★★★★</div>
-        <p style="font-style:italic; color:#555; font-size:14.5px; line-height:1.75; margin:0 0 20px;">
-          "J'ai offert cette séance à ma sœur qui traversait une période très difficile après une rupture. Elle m'a appelée en pleurant après la première écoute — de joie. Entendre son prénom dans les affirmations, c'est quelque chose que les vidéos classiques ne peuvent pas faire. Merci infiniment."
-        </p>
-        <div style="display:flex; align-items:center; gap:12px;">
-          <div style="width:38px; height:38px; border-radius:50%; background:#7b4a3a; display:flex; align-items:center; justify-content:center; font-size:13px; font-weight:600; color:white; flex-shrink:0;">LF</div>
-          <div>
-            <div style="font-weight:600; font-size:14px; color:#2c2c2c;">Laura F.</div>
-            <div style="font-size:12px; color:#999;">Séance Reconstruction — offerte à un proche</div>
-          </div>
-        </div>
-      </div>
-
-      <div class="avis-semaine-1" style="display:none; background:white; border-radius:16px; padding:28px; box-shadow:0 2px 20px rgba(0,0,0,0.06); border:1px solid rgba(123,74,58,0.08);">
-        <div style="color:#7b4a3a; font-size:16px; margin-bottom:16px;">★★★★★</div>
-        <p style="font-style:italic; color:#555; font-size:14.5px; line-height:1.75; margin:0 0 20px;">
-          "Je suis très sceptique de nature et j'avais des doutes. Mais la qualité de la production, la précision des affirmations par rapport à ce que j'avais décrit dans le formulaire... c'est bluffant. On sent vraiment que c'est fait à la main, avec soin. Je l'écoute le soir et je dors bien mieux depuis."
-        </p>
-        <div style="display:flex; align-items:center; gap:12px;">
-          <div style="width:38px; height:38px; border-radius:50%; background:#7b4a3a; display:flex; align-items:center; justify-content:center; font-size:13px; font-weight:600; color:white; flex-shrink:0;">RC</div>
-          <div>
-            <div style="font-weight:600; font-size:14px; color:#2c2c2c;">Romain C.</div>
-            <div style="font-size:12px; color:#999;">Séance Sommeil & Sérénité — 10 heures</div>
-          </div>
-        </div>
-      </div>
-
-      <!-- AVIS 5 & 6 — affichés après 14 jours -->
-      <div class="avis-semaine-2" style="display:none; background:white; border-radius:16px; padding:28px; box-shadow:0 2px 20px rgba(0,0,0,0.06); border:1px solid rgba(123,74,58,0.08);">
-        <div style="color:#7b4a3a; font-size:16px; margin-bottom:16px;">★★★★★</div>
-        <p style="font-style:italic; color:#555; line-height:1.75; margin:0 0 20px; font-size:14.5px;">
-          "Ce qui m'a convaincue c'est la fréquence sonore en arrière-plan. Je n'entends presque rien mais je sens quelque chose de différent. En trois semaines d'écoute quotidienne ma relation à moi-même a changé. Je me parle différemment. Je me juge moins. C'est doux et profond à la fois."
-        </p>
-        <div style="display:flex; align-items:center; gap:12px;">
-          <div style="width:38px; height:38px; border-radius:50%; background:#7b4a3a; display:flex; align-items:center; justify-content:center; font-size:13px; font-weight:600; color:white; flex-shrink:0;">AV</div>
-          <div>
-            <div style="font-weight:600; font-size:14px; color:#2c2c2c;">Amélie V.</div>
-            <div style="font-size:12px; color:#999;">Séance Corps & Bien-être — 1 heure</div>
-          </div>
-        </div>
-      </div>
-
-      <div class="avis-semaine-2" style="display:none; background:white; border-radius:16px; padding:28px; box-shadow:0 2px 20px rgba(0,0,0,0.06); border:1px solid rgba(123,74,58,0.08);">
-        <div style="color:#7b4a3a; font-size:16px; margin-bottom:16px;">★★★★★</div>
-        <p style="font-style:italic; color:#555; line-height:1.75; margin:0 0 20px; font-size:14.5px;">
-          "J'ai commandé pour travailler ma confiance avant un entretien important. J'ai reçu ma séance en moins de 24h, je l'ai écoutée trois soirs de suite. L'entretien s'est très bien passé. Je ne dis pas que c'est uniquement grâce à ça, mais j'étais dans un état intérieur que je ne connaissais pas. Calme, ancré, confiant."
-        </p>
-        <div style="display:flex; align-items:center; gap:12px;">
-          <div style="width:38px; height:38px; border-radius:50%; background:#7b4a3a; display:flex; align-items:center; justify-content:center; font-size:13px; font-weight:600; color:white; flex-shrink:0;">KD</div>
-          <div>
-            <div style="font-weight:600; font-size:14px; color:#2c2c2c;">Karim D.</div>
-            <div style="font-size:12px; color:#999;">Séance Confiance & Leadership — 30 min</div>
-          </div>
-        </div>
-      </div>
-
-      <!-- AVIS 7 & 8 — affichés fin avril (J+30) -->
-      <div class="avis-avril" style="display:none; background:white; border-radius:16px; padding:28px; box-shadow:0 2px 20px rgba(0,0,0,0.06); border:1px solid rgba(123,74,58,0.08);">
-        <div style="color:#7b4a3a; font-size:16px; margin-bottom:16px;">★★★★★</div>
-        <p style="font-style:italic; color:#555; line-height:1.75; margin:0 0 20px; font-size:14.5px;">
-          "Je cherchais quelque chose de vraiment différent pour travailler mon rapport à l'argent. Cette séance m'a surprise dès la première écoute — entendre mon prénom dans les affirmations change tout. C'est comme si le message m'était adressé personnellement. Je la réécoute chaque matin depuis trois semaines."
-        </p>
-        <div style="display:flex; align-items:center; gap:12px;">
-          <div style="width:38px; height:38px; border-radius:50%; background:#7b4a3a; display:flex; align-items:center; justify-content:center; font-size:13px; font-weight:600; color:white; flex-shrink:0;">SL</div>
-          <div>
-            <div style="font-weight:600; font-size:14px; color:#2c2c2c;">Sophie L.</div>
-            <div style="font-size:12px; color:#999;">Séance Abondance & Réussite financière — 1 heure</div>
-          </div>
-        </div>
-      </div>
-
-      <div class="avis-avril" style="display:none; background:white; border-radius:16px; padding:28px; box-shadow:0 2px 20px rgba(0,0,0,0.06); border:1px solid rgba(123,74,58,0.08);">
-        <div style="color:#7b4a3a; font-size:16px; margin-bottom:16px;">★★★★★</div>
-        <p style="font-style:italic; color:#555; line-height:1.75; margin:0 0 20px; font-size:14.5px;">
-          "J'ai offert cette séance à mon père pour son anniversaire. Il est du genre discret, pas du tout habitué à ce type de chose. Il m'a rappelé deux jours après pour me dire qu'il l'écoutait chaque soir avant de dormir. C'est le plus beau retour que je pouvais espérer."
-        </p>
-        <div style="display:flex; align-items:center; gap:12px;">
-          <div style="width:38px; height:38px; border-radius:50%; background:#7b4a3a; display:flex; align-items:center; justify-content:center; font-size:13px; font-weight:600; color:white; flex-shrink:0;">MB</div>
-          <div>
-            <div style="font-weight:600; font-size:14px; color:#2c2c2c;">Marie B.</div>
-            <div style="font-size:12px; color:#999;">Séance Sérénité & Sommeil — 30 min · offerte à un proche</div>
-          </div>
-        </div>
-      </div>
-
-      <!-- AVIS 9 & 10 — affichés vers le 15 mai (J+46) -->
-      <div class="avis-mai" style="display:none; background:white; border-radius:16px; padding:28px; box-shadow:0 2px 20px rgba(0,0,0,0.06); border:1px solid rgba(123,74,58,0.08);">
-        <div style="color:#7b4a3a; font-size:16px; margin-bottom:16px;">★★★★★</div>
-        <p style="font-style:italic; color:#555; line-height:1.75; margin:0 0 20px; font-size:14.5px;">
-          "Je suis kinésithérapeute et je recommande maintenant cette séance à certains de mes patients qui traversent des périodes de stress intense. La qualité sonore est irréprochable, les affirmations sont bien construites et le fait que ce soit personnalisé fait vraiment la différence. Plusieurs m'ont remercié."
-        </p>
-        <div style="display:flex; align-items:center; gap:12px;">
-          <div style="width:38px; height:38px; border-radius:50%; background:#7b4a3a; display:flex; align-items:center; justify-content:center; font-size:13px; font-weight:600; color:white; flex-shrink:0;">PV</div>
-          <div>
-            <div style="font-weight:600; font-size:14px; color:#2c2c2c;">Pierre V.</div>
-            <div style="font-size:12px; color:#999;">Séance Stress & Apaisement — 10 heures</div>
-          </div>
-        </div>
-      </div>
-
-      <div class="avis-mai" style="display:none; background:white; border-radius:16px; padding:28px; box-shadow:0 2px 20px rgba(0,0,0,0.06); border:1px solid rgba(123,74,58,0.08);">
-        <div style="color:#7b4a3a; font-size:16px; margin-bottom:16px;">★★★★★</div>
-        <p style="font-style:italic; color:#555; line-height:1.75; margin:0 0 20px; font-size:14.5px;">
-          "Au départ j'étais sceptique sur la durée 10 heures — je me disais que c'était trop. Mais en mode lecture en boucle toute la nuit, c'est une toute autre expérience. Je me réveille dans un état de calme que je n'avais plus depuis des années. Je ne peux plus m'en passer."
-        </p>
-        <div style="display:flex; align-items:center; gap:12px;">
-          <div style="width:38px; height:38px; border-radius:50%; background:#7b4a3a; display:flex; align-items:center; justify-content:center; font-size:13px; font-weight:600; color:white; flex-shrink:0;">CG</div>
-          <div>
-            <div style="font-weight:600; font-size:14px; color:#2c2c2c;">Clara G.</div>
-            <div style="font-size:12px; color:#999;">Séance Sommeil profond & Sérénité — 10 heures</div>
-          </div>
-        </div>
-      </div>
-
-    </div>
-  </div>
-</div>
-
-<!-- ===== BOUTON C'EST PARTI (sous les avis) ===== -->
-<div style="background: #fff; padding: 48px 24px; text-align: center;">
-  <div style="max-width: 600px; margin: 0 auto;">
-    <button onclick="showStep(1)" style="
-      display: inline-block;
-      background: linear-gradient(135deg, #7b4a3a 0%, #a0614e 100%);
-      color: white;
-      font-family: 'Playfair Display', Georgia, serif;
-      font-size: clamp(18px, 3vw, 24px);
-      font-weight: 600;
-      padding: 22px 48px;
-      border: none;
-      border-radius: 50px;
+      padding-bottom: 56.25%;
+      border-radius: 18px;
+      overflow: hidden;
+      box-shadow: 0 24px 60px rgba(0,0,0,0.5), 0 0 0 1px rgba(200,168,130,0.18);
+      background: #0d1a16;
       cursor: pointer;
-      box-shadow: 0 8px 32px rgba(123,74,58,0.35);
-      letter-spacing: 0.5px;
-      transition: transform 0.2s, box-shadow 0.2s;
-      width: 100%;
-      max-width: 500px;
-    "
-    onmouseover="this.style.transform='translateY(-2px)'; this.style.boxShadow='0 12px 40px rgba(123,74,58,0.45)'"
-    onmouseout="this.style.transform=''; this.style.boxShadow='0 8px 32px rgba(123,74,58,0.35)'"
-    >💫 C'est parti, je me lance !</button>
-    <p style="margin-top: 14px; font-size: 13px; color: #999;">Personnalisée à 100% · Livraison par email · Paiement sécurisé</p>
+    " id="video-wrapper" onclick="lancerVideo()">
+
+      <!-- Miniature / placeholder avant lecture -->
+      <div id="video-thumbnail" style="
+        position: absolute; inset: 0;
+        background: #000;
+        display: flex; flex-direction: column;
+        align-items: center; justify-content: center;
+        gap: 20px;
+        transition: opacity 0.3s;
+        overflow: hidden;
+      ">
+        <!-- Vraie miniature YouTube -->
+        <img
+          src="https://img.youtube.com/vi/pcbrEMoP9oE/maxresdefault.jpg"
+          onerror="this.src='https://img.youtube.com/vi/pcbrEMoP9oE/hqdefault.jpg'"
+          style="position:absolute; inset:0; width:100%; height:100%; object-fit:cover; opacity:0.75;"
+          alt="Miniature vidéo"
+        >
+        <!-- Overlay sombre dégradé -->
+        <div style="position:absolute; inset:0; background: linear-gradient(to top, rgba(0,0,0,0.7) 0%, rgba(0,0,0,0.15) 60%, rgba(0,0,0,0.1) 100%);"></div>
+        <!-- Bouton play -->
+        <div style="
+          position:relative; z-index:2;
+          width: 78px; height: 78px;
+          background: linear-gradient(135deg, rgba(200,168,130,0.95), rgba(180,140,100,0.85));
+          border-radius: 50%;
+          display: flex; align-items: center; justify-content: center;
+          box-shadow: 0 8px 30px rgba(0,0,0,0.4), 0 0 0 12px rgba(200,168,130,0.12);
+          transition: transform 0.2s, box-shadow 0.2s;
+        " id="play-btn">
+          <svg width="28" height="28" viewBox="0 0 24 24" fill="white" style="margin-left:4px">
+            <path d="M8 5v14l11-7z"/>
+          </svg>
+        </div>
+        <div style="position:relative; z-index:2; color: rgba(255,255,255,0.85); font-size: 14px; letter-spacing: 0.5px;">▶ Lancer la vidéo</div>
+      </div>
+
+      <!-- iframe YouTube (caché jusqu'au clic) -->
+      <iframe
+        id="yt-iframe"
+        style="position:absolute;inset:0;width:100%;height:100%;border:none;opacity:0;transition:opacity 0.4s;pointer-events:none;"
+        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+        allowfullscreen
+      ></iframe>
+    </div>
+
+    <p style="margin-top: 16px; font-size: 12px; color: rgba(240,232,221,0.35); font-style: italic;">
+      💡 Pensez à activer le son avant de lancer la vidéo
+    </p>
   </div>
 </div>
 
 
 
-<!-- ===== FIN INTRO DÉPLACÉE ===== -->
-
-<section class="offrir-section">
-  <div class="offrir-inner">
-    <div class="offrir-card">
-      <div class="icon">🎁</div>
-      <div class="text">
-        <h3>Une idée cadeau unique et profondément personnelle</h3>
-        <p>Offrez à quelqu'un que vous aimez une séance créée spécialement pour lui — avec son prénom, ses affirmations, son univers. Un cadeau qui marque durablement, bien au-delà d'un objet.</p>
-      </div>
-      <a href="commander.html" style="display:inline-flex;align-items:center;gap:8px;background:var(--brown);color:white;padding:14px 28px;border-radius:50px;text-decoration:none;font-size:14px;font-weight:500;white-space:nowrap;flex-shrink:0;transition:background 0.2s;" onmouseover="this.style.background='var(--brown-dark)'" onmouseout="this.style.background='var(--brown)'">
-        Offrir une séance ✦
-      </a>
-    </div>
-  </div>
-</section>
-
-<!-- APERÇU BLOG -->
-<section style="background:var(--green-bg2);padding:60px 24px;">
-  <div style="max-width:900px;margin:0 auto;">
-    <div style="font-family:'DM Sans',sans-serif;font-size:11px;letter-spacing:0.12em;text-transform:uppercase;color:var(--brown);margin-bottom:12px;">✦ Le blog</div>
-    <h2 style="font-family:'Cormorant Garamond',serif;font-size:2rem;font-weight:400;color:var(--text-main);margin-bottom:8px;">Des mots pour <em>avancer</em></h2>
-    <p style="color:var(--text-muted);font-size:14px;margin-bottom:36px;">Articles de développement personnel — croyances, mindset, confiance en soi.</p>
-    <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:24px;margin-bottom:32px;">
-      <a href="blog.html" style="background:rgba(255,255,255,0.7);border:1px solid var(--card-border);border-radius:16px;padding:24px;text-decoration:none;color:var(--text-main);transition:box-shadow 0.2s;" onmouseover="this.style.boxShadow='0 4px 20px rgba(123,74,58,0.12)'" onmouseout="this.style.boxShadow='none'">
-        <div style="font-size:11px;letter-spacing:0.08em;text-transform:uppercase;color:var(--brown);margin-bottom:8px;">✦ Croyances limitantes</div>
-        <div style="font-family:'Cormorant Garamond',serif;font-size:1.15rem;font-weight:500;margin-bottom:8px;">Comment identifier tes croyances limitantes <em>sans te juger</em></div>
-        <div style="font-size:12px;color:var(--text-light);">23 mars 2026 · 7 min → Lire</div>
-      </a>
-      <a href="blog.html" style="background:rgba(255,255,255,0.7);border:1px solid var(--card-border);border-radius:16px;padding:24px;text-decoration:none;color:var(--text-main);transition:box-shadow 0.2s;" onmouseover="this.style.boxShadow='0 4px 20px rgba(123,74,58,0.12)'" onmouseout="this.style.boxShadow='none'">
-        <div style="font-size:11px;letter-spacing:0.08em;text-transform:uppercase;color:var(--brown);margin-bottom:8px;">✦ Mindset & Habitudes</div>
-        <div style="font-family:'Cormorant Garamond',serif;font-size:1.15rem;font-weight:500;margin-bottom:8px;">Les affirmations positives <em>fonctionnent-elles vraiment ?</em></div>
-        <div style="font-size:12px;color:var(--text-light);">18 mars 2026 · 5 min → Lire</div>
-      </a>
-      <a href="blog.html" style="background:rgba(255,255,255,0.7);border:1px solid var(--card-border);border-radius:16px;padding:24px;text-decoration:none;color:var(--text-main);transition:box-shadow 0.2s;" onmouseover="this.style.boxShadow='0 4px 20px rgba(123,74,58,0.12)'" onmouseout="this.style.boxShadow='none'">
-        <div style="font-size:11px;letter-spacing:0.08em;text-transform:uppercase;color:var(--brown);margin-bottom:8px;">✦ Confiance en soi</div>
-        <div style="font-family:'Cormorant Garamond',serif;font-size:1.15rem;font-weight:500;margin-bottom:8px;">5 habitudes matinales pour <em>te recentrer</em></div>
-        <div style="font-size:12px;color:var(--text-light);">12 mars 2026 · 6 min → Lire</div>
-      </a>
-    </div>
-    <a href="blog.html" style="display:inline-flex;align-items:center;gap:8px;border:1px solid var(--brown);color:var(--brown);padding:12px 28px;border-radius:50px;text-decoration:none;font-size:13px;font-weight:500;transition:all 0.2s;" onmouseover="this.style.background='var(--brown)';this.style.color='white'" onmouseout="this.style.background='transparent';this.style.color='var(--brown)'">Voir tous les articles →</a>
-  </div>
-</section>
-<!-- STATS -->
-<section class="stats-section">
-  <div class="stats-inner">
-    <div class="stats-row">
-           <div class="stat-item">
-        <div class="stat-num">5</div>
-        <div class="stat-label">Voix & Formats</div>
-      </div>
-      <div class="stat-sep"></div>
-      <div class="stat-item">
-        <div class="stat-num">10</div>
-        <div class="stat-label">Thèmes disponibles</div>
-      </div>
-      <div class="stat-sep"></div>
-      <div class="stat-item">
-        <div class="stat-num">52</div>
-        <div class="stat-label">Combinaisons possibles</div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- POURQUOI -->
 <section class="pourquoi" id="methode">
   <div class="section-inner">
     <div class="pourquoi-grid">
@@ -1371,6 +1090,8 @@ footer a:hover { color: rgba(255,255,255,0.9); }
 </section>
 
 <!-- COMMENT ÇA MARCHE -->
+
+
 <section class="comment" id="comment">
   <svg class="comment-mountains" viewBox="0 0 1440 200" preserveAspectRatio="xMidYMax slice" xmlns="http://www.w3.org/2000/svg">
     <path d="M0,200 L0,140 L120,80 L260,130 L400,60 L540,110 L680,40 L820,100 L960,30 L1100,90 L1240,20 L1380,75 L1440,55 L1440,200 Z" fill="#7BA898"/>
@@ -1399,19 +1120,8 @@ footer a:hover { color: rgba(255,255,255,0.9); }
 </section>
 
 <!-- AUDIO -->
-<section class="audio-section" id="ecouter" style="position:relative;overflow:hidden;">
-  <canvas id="waveCanvas" style="position:absolute;top:0;left:0;width:100%;height:100%;opacity:0.4;pointer-events:none;z-index:0;"></canvas>
-  <div class="section-inner audio-inner" style="position:relative;z-index:1;">
-    <div class="section-tag">Avant-goût</div>
-    <h2 class="section-title">Ressentez <em>la différence.</em></h2>
-    <p class="audio-desc">Fermez les yeux. Respirez. Laissez cette séance de démonstration vous donner un aperçu — une voix, une musique, un moment pour vous.</p>
-    <div class="youtube-wrapper">
-      <iframe src="https://www.youtube.com/embed/4_u72bJ77Uk?rel=0&color=white&origin=https://frequence-positive.netlify.app" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen loading="lazy"></iframe>
-    </div>
-  </div>
-</section>
 
-<!-- CATALOGUE -->
+
 <section class="catalogue" id="themes">
   <div class="section-inner">
     <div class="section-tag">10 univers à explorer</div>
@@ -1432,6 +1142,80 @@ footer a:hover { color: rgba(255,255,255,0.9); }
 </section>
 
 <!-- FAQ -->
+
+
+<section class="cta-final" style="position:relative;">
+  <div class="cta-pulse">
+    <div class="cta-ring"></div>
+    <div class="cta-ring"></div>
+    <div class="cta-ring"></div>
+    <div class="cta-ring"></div>
+  </div>
+  <svg class="cta-final-mountains" viewBox="0 0 1440 280" preserveAspectRatio="xMidYMax slice" xmlns="http://www.w3.org/2000/svg">
+    <path d="M0,280 L0,180 L140,100 L300,160 L460,70 L620,140 L780,50 L940,130 L1100,45 L1260,115 L1440,60 L1440,280 Z" fill="#4A7A6A"/>
+  </svg>
+  <div class="section-inner" style="position:relative;z-index:2;text-align:center;">
+    <div class="section-tag" style="justify-content:center"><span style="display:none">•</span>Prêt(e) à commencer ?</div>
+    <h2 class="section-title">Tout commence<br><em>ici.</em></h2>
+    <p>En quelques minutes, configurez la séance qui vous ressemble. Max ou Sandra créera pour vous une expérience sonore unique, à votre image.</p>
+    <a href="commander.html" class="cta-btn-big">✦ Configurer ma séance personnalisée</a>
+    <p style="margin-top:20px;font-size:12px;color:var(--text-light);">À partir de 29,90€ · Livraison sous 2 à 7 jours · Paiement sécurisé Stripe</p>
+  </div>
+</section>
+
+
+<!-- SECTION CAPTURE EMAIL -->
+
+
+<section class="offrir-section">
+  <div class="offrir-inner">
+    <div class="offrir-card">
+      <div class="icon">🎁</div>
+      <div class="text">
+        <h3>Une idée cadeau unique et profondément personnelle</h3>
+        <p>Offrez à quelqu'un que vous aimez une séance créée spécialement pour lui — avec son prénom, ses affirmations, son univers. Un cadeau qui marque durablement, bien au-delà d'un objet.</p>
+      </div>
+      <a href="commander.html" style="display:inline-flex;align-items:center;gap:8px;background:var(--brown);color:white;padding:14px 28px;border-radius:50px;text-decoration:none;font-size:14px;font-weight:500;white-space:nowrap;flex-shrink:0;transition:background 0.2s;" onmouseover="this.style.background='var(--brown-dark)'" onmouseout="this.style.background='var(--brown)'">
+        Offrir une séance ✦
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- APERÇU BLOG -->
+
+
+<section class="audio-section" id="ecouter" style="position:relative;overflow:hidden;">
+  <canvas id="waveCanvas" style="position:absolute;top:0;left:0;width:100%;height:100%;opacity:0.4;pointer-events:none;z-index:0;"></canvas>
+  <div class="section-inner audio-inner" style="position:relative;z-index:1;">
+    <div class="section-tag">Avant-goût</div>
+    <h2 class="section-title">Ressentez <em>la différence.</em></h2>
+    <p class="audio-desc">Fermez les yeux. Respirez. Laissez cette séance de démonstration vous donner un aperçu — une voix, une musique, un moment pour vous.</p>
+    <div class="youtube-wrapper">
+      <iframe src="https://www.youtube.com/embed/4_u72bJ77Uk?rel=0&color=white&origin=https://frequence-positive.netlify.app" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen loading="lazy"></iframe>
+    </div>
+  </div>
+</section>
+
+<!-- CATALOGUE -->
+
+
+
+<!-- ===== CTA #11 — Rendez-vous quotidien ===== -->
+<section style="background: linear-gradient(135deg, #3D1F16 0%, #2e1710 100%); padding: 70px 24px; text-align: center;">
+  <div style="max-width: 720px; margin: 0 auto;">
+    <p style="margin:0 0 14px; font-size:11px; letter-spacing:2.5px; text-transform:uppercase; color:rgba(200,168,130,0.8); font-weight:500;">✦ Votre moment, votre rythme</p>
+    <h2 style="font-family:'Playfair Display',Georgia,serif; font-size:clamp(26px,4vw,38px); font-weight:400; color:#f0e8dd; margin:0 0 28px; line-height:1.3;">
+      Votre rendez-vous quotidien<br><em style="color:#C8A882;">commence ici.</em>
+    </h2>
+    <a href="commander.html" style="display:inline-block; background:linear-gradient(135deg, #C8A882, #a07850); color:white; font-family:'Playfair Display',Georgia,serif; font-size:17px; font-weight:500; padding:18px 44px; border-radius:50px; text-decoration:none; letter-spacing:0.5px; box-shadow:0 8px 24px rgba(200,168,130,0.3);">
+      ✦ Créer ma séance personnalisée
+    </a>
+    <p style="margin-top: 18px; font-size: 12.5px; color: rgba(240,232,221,0.5); font-weight:300;">À partir de 29,90 € · Livraison par email · Paiement sécurisé</p>
+  </div>
+</section>
+
+
 <section class="faq-section" id="faq">
   <div class="section-inner">
     <div class="section-tag">Vos questions</div>
@@ -1465,27 +1249,237 @@ footer a:hover { color: rgba(255,255,255,0.9); }
 </section>
 
 <!-- CTA FINAL -->
-<section class="cta-final" style="position:relative;">
-  <div class="cta-pulse">
-    <div class="cta-ring"></div>
-    <div class="cta-ring"></div>
-    <div class="cta-ring"></div>
-    <div class="cta-ring"></div>
+
+
+<!-- ===== SECTION AVIS CLIENTS ===== -->
+<div id="avis-clients" style="background: #eef4f0; padding: 64px 24px 72px;">
+  <div style="max-width: 1000px; margin: 0 auto;">
+
+    <!-- En-tête -->
+    <div style="margin-bottom: 48px;">
+      <div style="display:flex; align-items:center; gap:12px; margin-bottom:14px;">
+        <div style="width:32px; height:1px; background:#7b4a3a;"></div>
+        <div style="font-size:11px; letter-spacing:2.5px; text-transform:uppercase; color:#7b4a3a; font-weight:500;">Ce qu'ils en disent</div>
+      </div>
+      <h2 style="font-family:'Playfair Display',Georgia,serif; font-size:clamp(28px,4vw,42px); font-weight:400; color:#2c2c2c; margin:0; line-height:1.2;">
+        Ce qu'ils <em style="color:#7b4a3a;">vivent.</em>
+      </h2>
+    </div>
+
+    <!-- Grille avis -->
+    <div style="display:grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap:20px;">
+
+      <!-- AVIS 1 — dès maintenant -->
+      <div class="avis-card" style="background:white; border-radius:16px; padding:28px; box-shadow:0 2px 20px rgba(0,0,0,0.06); border:1px solid rgba(123,74,58,0.08);">
+        <div style="color:#7b4a3a; font-size:16px; margin-bottom:16px;">★★★★★</div>
+        <p style="font-style:italic; color:#555; font-size:14.5px; line-height:1.75; margin:0 0 20px;">
+          "J'ai eu la chance de profiter de l'offre de lancement et franchement je ne le regrette pas une seconde. J'écoutais des affirmations sur YouTube depuis des semaines sans vraiment ressentir de changement. Là, dès la première écoute avec mon prénom, quelque chose s'est passé. C'est difficile à expliquer mais c'est comme si les mots entraient vraiment."
+        </p>
+        <div style="display:flex; align-items:center; gap:12px;">
+          <div style="width:38px; height:38px; border-radius:50%; background:#7b4a3a; display:flex; align-items:center; justify-content:center; font-size:13px; font-weight:600; color:white; flex-shrink:0;">NB</div>
+          <div>
+            <div style="font-weight:600; font-size:14px; color:#2c2c2c;">Nathalie B.</div>
+            <div style="font-size:12px; color:#999;">Séance Confiance & Estime — 30 min · offre de lancement</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- AVIS 2 — dès maintenant -->
+      <div class="avis-card" style="background:white; border-radius:16px; padding:28px; box-shadow:0 2px 20px rgba(0,0,0,0.06); border:1px solid rgba(123,74,58,0.08);">
+        <div style="color:#7b4a3a; font-size:16px; margin-bottom:16px;">★★★★★</div>
+        <p style="font-style:italic; color:#555; font-size:14.5px; line-height:1.75; margin:0 0 20px;">
+          "J'ai profité de l'offre de lancement mercredi et tant qu'à faire j'ai aussi pris la livraison express. Reçue en moins de 2 jours, exactement comme promis. Première écoute hier soir — la voix de Max est vraiment apaisante et le fait que ce soit pensé uniquement pour moi ça se sent immédiatement. Très bonne première impression."
+        </p>
+        <div style="display:flex; align-items:center; gap:12px;">
+          <div style="width:38px; height:38px; border-radius:50%; background:#7b4a3a; display:flex; align-items:center; justify-content:center; font-size:13px; font-weight:600; color:white; flex-shrink:0;">TM</div>
+          <div>
+            <div style="font-weight:600; font-size:14px; color:#2c2c2c;">Thomas M.</div>
+            <div style="font-size:12px; color:#999;">Séance Abondance — 1 heure · offre de lancement</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- AVIS 3 & 4 — affichés après 7 jours -->
+      <div class="avis-semaine-1" style="background:white; border-radius:16px; padding:28px; box-shadow:0 2px 20px rgba(0,0,0,0.06); border:1px solid rgba(123,74,58,0.08);">
+        <div style="color:#7b4a3a; font-size:16px; margin-bottom:16px;">★★★★★</div>
+        <p style="font-style:italic; color:#555; font-size:14.5px; line-height:1.75; margin:0 0 20px;">
+          "J'ai offert cette séance à ma sœur qui traversait une période très difficile après une rupture. Elle m'a appelée en pleurant après la première écoute — de joie. Entendre son prénom dans les affirmations, c'est quelque chose que les vidéos classiques ne peuvent pas faire. Merci infiniment."
+        </p>
+        <div style="display:flex; align-items:center; gap:12px;">
+          <div style="width:38px; height:38px; border-radius:50%; background:#7b4a3a; display:flex; align-items:center; justify-content:center; font-size:13px; font-weight:600; color:white; flex-shrink:0;">LF</div>
+          <div>
+            <div style="font-weight:600; font-size:14px; color:#2c2c2c;">Laura F.</div>
+            <div style="font-size:12px; color:#999;">Séance Reconstruction — offerte à un proche</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="avis-semaine-1" style="background:white; border-radius:16px; padding:28px; box-shadow:0 2px 20px rgba(0,0,0,0.06); border:1px solid rgba(123,74,58,0.08);">
+        <div style="color:#7b4a3a; font-size:16px; margin-bottom:16px;">★★★★★</div>
+        <p style="font-style:italic; color:#555; font-size:14.5px; line-height:1.75; margin:0 0 20px;">
+          "Je suis très sceptique de nature et j'avais des doutes. Mais la qualité de la production, la précision des affirmations par rapport à ce que j'avais décrit dans le formulaire... c'est bluffant. On sent vraiment que c'est fait à la main, avec soin. Je l'écoute le soir et je dors bien mieux depuis."
+        </p>
+        <div style="display:flex; align-items:center; gap:12px;">
+          <div style="width:38px; height:38px; border-radius:50%; background:#7b4a3a; display:flex; align-items:center; justify-content:center; font-size:13px; font-weight:600; color:white; flex-shrink:0;">RC</div>
+          <div>
+            <div style="font-weight:600; font-size:14px; color:#2c2c2c;">Romain C.</div>
+            <div style="font-size:12px; color:#999;">Séance Sommeil & Sérénité — 10 heures</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- AVIS 5 & 6 — affichés après 14 jours -->
+      <div class="avis-semaine-2" style="background:white; border-radius:16px; padding:28px; box-shadow:0 2px 20px rgba(0,0,0,0.06); border:1px solid rgba(123,74,58,0.08);">
+        <div style="color:#7b4a3a; font-size:16px; margin-bottom:16px;">★★★★★</div>
+        <p style="font-style:italic; color:#555; line-height:1.75; margin:0 0 20px; font-size:14.5px;">
+          "Ce qui m'a convaincue c'est la fréquence sonore en arrière-plan. Je n'entends presque rien mais je sens quelque chose de différent. En trois semaines d'écoute quotidienne ma relation à moi-même a changé. Je me parle différemment. Je me juge moins. C'est doux et profond à la fois."
+        </p>
+        <div style="display:flex; align-items:center; gap:12px;">
+          <div style="width:38px; height:38px; border-radius:50%; background:#7b4a3a; display:flex; align-items:center; justify-content:center; font-size:13px; font-weight:600; color:white; flex-shrink:0;">AV</div>
+          <div>
+            <div style="font-weight:600; font-size:14px; color:#2c2c2c;">Amélie V.</div>
+            <div style="font-size:12px; color:#999;">Séance Corps & Bien-être — 1 heure</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="avis-semaine-2" style="background:white; border-radius:16px; padding:28px; box-shadow:0 2px 20px rgba(0,0,0,0.06); border:1px solid rgba(123,74,58,0.08);">
+        <div style="color:#7b4a3a; font-size:16px; margin-bottom:16px;">★★★★★</div>
+        <p style="font-style:italic; color:#555; line-height:1.75; margin:0 0 20px; font-size:14.5px;">
+          "J'ai commandé pour travailler ma confiance avant un entretien important. J'ai reçu ma séance en moins de 24h, je l'ai écoutée trois soirs de suite. L'entretien s'est très bien passé. Je ne dis pas que c'est uniquement grâce à ça, mais j'étais dans un état intérieur que je ne connaissais pas. Calme, ancré, confiant."
+        </p>
+        <div style="display:flex; align-items:center; gap:12px;">
+          <div style="width:38px; height:38px; border-radius:50%; background:#7b4a3a; display:flex; align-items:center; justify-content:center; font-size:13px; font-weight:600; color:white; flex-shrink:0;">KD</div>
+          <div>
+            <div style="font-weight:600; font-size:14px; color:#2c2c2c;">Karim D.</div>
+            <div style="font-size:12px; color:#999;">Séance Confiance & Leadership — 30 min</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- AVIS 7 & 8 — affichés fin avril (J+30) -->
+      <div class="avis-avril" style="background:white; border-radius:16px; padding:28px; box-shadow:0 2px 20px rgba(0,0,0,0.06); border:1px solid rgba(123,74,58,0.08);">
+        <div style="color:#7b4a3a; font-size:16px; margin-bottom:16px;">★★★★★</div>
+        <p style="font-style:italic; color:#555; line-height:1.75; margin:0 0 20px; font-size:14.5px;">
+          "Je cherchais quelque chose de vraiment différent pour travailler mon rapport à l'argent. Cette séance m'a surprise dès la première écoute — entendre mon prénom dans les affirmations change tout. C'est comme si le message m'était adressé personnellement. Je la réécoute chaque matin depuis trois semaines."
+        </p>
+        <div style="display:flex; align-items:center; gap:12px;">
+          <div style="width:38px; height:38px; border-radius:50%; background:#7b4a3a; display:flex; align-items:center; justify-content:center; font-size:13px; font-weight:600; color:white; flex-shrink:0;">SL</div>
+          <div>
+            <div style="font-weight:600; font-size:14px; color:#2c2c2c;">Sophie L.</div>
+            <div style="font-size:12px; color:#999;">Séance Abondance & Réussite financière — 1 heure</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="avis-avril" style="background:white; border-radius:16px; padding:28px; box-shadow:0 2px 20px rgba(0,0,0,0.06); border:1px solid rgba(123,74,58,0.08);">
+        <div style="color:#7b4a3a; font-size:16px; margin-bottom:16px;">★★★★★</div>
+        <p style="font-style:italic; color:#555; line-height:1.75; margin:0 0 20px; font-size:14.5px;">
+          "J'ai offert cette séance à mon père pour son anniversaire. Il est du genre discret, pas du tout habitué à ce type de chose. Il m'a rappelé deux jours après pour me dire qu'il l'écoutait chaque soir avant de dormir. C'est le plus beau retour que je pouvais espérer."
+        </p>
+        <div style="display:flex; align-items:center; gap:12px;">
+          <div style="width:38px; height:38px; border-radius:50%; background:#7b4a3a; display:flex; align-items:center; justify-content:center; font-size:13px; font-weight:600; color:white; flex-shrink:0;">MB</div>
+          <div>
+            <div style="font-weight:600; font-size:14px; color:#2c2c2c;">Marie B.</div>
+            <div style="font-size:12px; color:#999;">Séance Sérénité & Sommeil — 30 min · offerte à un proche</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- AVIS 9 & 10 — affichés vers le 15 mai (J+46) -->
+      <div class="avis-mai" style="background:white; border-radius:16px; padding:28px; box-shadow:0 2px 20px rgba(0,0,0,0.06); border:1px solid rgba(123,74,58,0.08);">
+        <div style="color:#7b4a3a; font-size:16px; margin-bottom:16px;">★★★★★</div>
+        <p style="font-style:italic; color:#555; line-height:1.75; margin:0 0 20px; font-size:14.5px;">
+          "Je suis kinésithérapeute et je recommande maintenant cette séance à certains de mes patients qui traversent des périodes de stress intense. La qualité sonore est irréprochable, les affirmations sont bien construites et le fait que ce soit personnalisé fait vraiment la différence. Plusieurs m'ont remercié."
+        </p>
+        <div style="display:flex; align-items:center; gap:12px;">
+          <div style="width:38px; height:38px; border-radius:50%; background:#7b4a3a; display:flex; align-items:center; justify-content:center; font-size:13px; font-weight:600; color:white; flex-shrink:0;">PV</div>
+          <div>
+            <div style="font-weight:600; font-size:14px; color:#2c2c2c;">Pierre V.</div>
+            <div style="font-size:12px; color:#999;">Séance Stress & Apaisement — 10 heures</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="avis-mai" style="background:white; border-radius:16px; padding:28px; box-shadow:0 2px 20px rgba(0,0,0,0.06); border:1px solid rgba(123,74,58,0.08);">
+        <div style="color:#7b4a3a; font-size:16px; margin-bottom:16px;">★★★★★</div>
+        <p style="font-style:italic; color:#555; line-height:1.75; margin:0 0 20px; font-size:14.5px;">
+          "Au départ j'étais sceptique sur la durée 10 heures — je me disais que c'était trop. Mais en mode lecture en boucle toute la nuit, c'est une toute autre expérience. Je me réveille dans un état de calme que je n'avais plus depuis des années. Je ne peux plus m'en passer."
+        </p>
+        <div style="display:flex; align-items:center; gap:12px;">
+          <div style="width:38px; height:38px; border-radius:50%; background:#7b4a3a; display:flex; align-items:center; justify-content:center; font-size:13px; font-weight:600; color:white; flex-shrink:0;">CG</div>
+          <div>
+            <div style="font-weight:600; font-size:14px; color:#2c2c2c;">Clara G.</div>
+            <div style="font-size:12px; color:#999;">Séance Sommeil profond & Sérénité — 10 heures</div>
+          </div>
+        </div>
+      </div>
+
+    </div>
   </div>
-  <svg class="cta-final-mountains" viewBox="0 0 1440 280" preserveAspectRatio="xMidYMax slice" xmlns="http://www.w3.org/2000/svg">
-    <path d="M0,280 L0,180 L140,100 L300,160 L460,70 L620,140 L780,50 L940,130 L1100,45 L1260,115 L1440,60 L1440,280 Z" fill="#4A7A6A"/>
-  </svg>
-  <div class="section-inner" style="position:relative;z-index:2;text-align:center;">
-    <div class="section-tag" style="justify-content:center"><span style="display:none">•</span>Prêt(e) à commencer ?</div>
-    <h2 class="section-title">Tout commence<br><em>ici.</em></h2>
-    <p>En quelques minutes, configurez la séance qui vous ressemble. Max ou Sandra créera pour vous une expérience sonore unique, à votre image.</p>
-    <a href="commander.html" class="cta-btn-big">✦ Configurer ma séance personnalisée</a>
-    <p style="margin-top:20px;font-size:12px;color:var(--text-light);">À partir de 29,90€ · Livraison sous 2 à 7 jours · Paiement sécurisé Stripe</p>
+</div>
+
+
+
+<!-- ===== BOUTON C'EST PARTI (sous les avis) ===== -->
+<div style="background: #fff; padding: 48px 24px; text-align: center;">
+  <div style="max-width: 600px; margin: 0 auto;">
+    <button onclick="showStep(1)" style="
+      display: inline-block;
+      background: linear-gradient(135deg, #7b4a3a 0%, #a0614e 100%);
+      color: white;
+      font-family: 'Playfair Display', Georgia, serif;
+      font-size: clamp(18px, 3vw, 24px);
+      font-weight: 600;
+      padding: 22px 48px;
+      border: none;
+      border-radius: 50px;
+      cursor: pointer;
+      box-shadow: 0 8px 32px rgba(123,74,58,0.35);
+      letter-spacing: 0.5px;
+      transition: transform 0.2s, box-shadow 0.2s;
+      width: 100%;
+      max-width: 500px;
+    "
+    onmouseover="this.style.transform='translateY(-2px)'; this.style.boxShadow='0 12px 40px rgba(123,74,58,0.45)'"
+    onmouseout="this.style.transform=''; this.style.boxShadow='0 8px 32px rgba(123,74,58,0.35)'"
+    >💫 C'est parti, je me lance !</button>
+    <p style="margin-top: 14px; font-size: 13px; color: #999;">Personnalisée à 100% · Livraison par email · Paiement sécurisé</p>
+  </div>
+</div>
+
+
+
+
+
+<section style="background:var(--green-bg2);padding:60px 24px;">
+  <div style="max-width:900px;margin:0 auto;">
+    <div style="font-family:'DM Sans',sans-serif;font-size:11px;letter-spacing:0.12em;text-transform:uppercase;color:var(--brown);margin-bottom:12px;">✦ Le blog</div>
+    <h2 style="font-family:'Cormorant Garamond',serif;font-size:2rem;font-weight:400;color:var(--text-main);margin-bottom:8px;">Des mots pour <em>avancer</em></h2>
+    <p style="color:var(--text-muted);font-size:14px;margin-bottom:36px;">Articles de développement personnel — croyances, mindset, confiance en soi.</p>
+    <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:24px;margin-bottom:32px;">
+      <a href="blog.html" style="background:rgba(255,255,255,0.7);border:1px solid var(--card-border);border-radius:16px;padding:24px;text-decoration:none;color:var(--text-main);transition:box-shadow 0.2s;" onmouseover="this.style.boxShadow='0 4px 20px rgba(123,74,58,0.12)'" onmouseout="this.style.boxShadow='none'">
+        <div style="font-size:11px;letter-spacing:0.08em;text-transform:uppercase;color:var(--brown);margin-bottom:8px;">✦ Croyances limitantes</div>
+        <div style="font-family:'Cormorant Garamond',serif;font-size:1.15rem;font-weight:500;margin-bottom:8px;">Comment identifier tes croyances limitantes <em>sans te juger</em></div>
+        <div style="font-size:12px;color:var(--text-light);">23 mars 2026 · 7 min → Lire</div>
+      </a>
+      <a href="blog.html" style="background:rgba(255,255,255,0.7);border:1px solid var(--card-border);border-radius:16px;padding:24px;text-decoration:none;color:var(--text-main);transition:box-shadow 0.2s;" onmouseover="this.style.boxShadow='0 4px 20px rgba(123,74,58,0.12)'" onmouseout="this.style.boxShadow='none'">
+        <div style="font-size:11px;letter-spacing:0.08em;text-transform:uppercase;color:var(--brown);margin-bottom:8px;">✦ Mindset & Habitudes</div>
+        <div style="font-family:'Cormorant Garamond',serif;font-size:1.15rem;font-weight:500;margin-bottom:8px;">Les affirmations positives <em>fonctionnent-elles vraiment ?</em></div>
+        <div style="font-size:12px;color:var(--text-light);">18 mars 2026 · 5 min → Lire</div>
+      </a>
+      <a href="blog.html" style="background:rgba(255,255,255,0.7);border:1px solid var(--card-border);border-radius:16px;padding:24px;text-decoration:none;color:var(--text-main);transition:box-shadow 0.2s;" onmouseover="this.style.boxShadow='0 4px 20px rgba(123,74,58,0.12)'" onmouseout="this.style.boxShadow='none'">
+        <div style="font-size:11px;letter-spacing:0.08em;text-transform:uppercase;color:var(--brown);margin-bottom:8px;">✦ Confiance en soi</div>
+        <div style="font-family:'Cormorant Garamond',serif;font-size:1.15rem;font-weight:500;margin-bottom:8px;">5 habitudes matinales pour <em>te recentrer</em></div>
+        <div style="font-size:12px;color:var(--text-light);">12 mars 2026 · 6 min → Lire</div>
+      </a>
+    </div>
+    <a href="blog.html" style="display:inline-flex;align-items:center;gap:8px;border:1px solid var(--brown);color:var(--brown);padding:12px 28px;border-radius:50px;text-decoration:none;font-size:13px;font-weight:500;transition:all 0.2s;" onmouseover="this.style.background='var(--brown)';this.style.color='white'" onmouseout="this.style.background='transparent';this.style.color='var(--brown)'">Voir tous les articles →</a>
   </div>
 </section>
+<!-- STATS -->
 
 
-<!-- SECTION CAPTURE EMAIL -->
 <section style="background: linear-gradient(135deg, var(--green-bg2) 0%, var(--green-fog) 100%); padding: 80px 24px; text-align: center; border-top: 1px solid rgba(123,74,58,0.1);">
   <div style="max-width: 560px; margin: 0 auto;">
     <div style="font-family:'Cormorant Garamond',serif; font-size:0.75rem; font-weight:500; letter-spacing:0.18em; text-transform:uppercase; color:var(--brown); margin-bottom:16px; opacity:0.8;">✦ Rejoindre la communauté</div>
@@ -1526,6 +1520,8 @@ footer a:hover { color: rgba(255,255,255,0.9); }
 
 <!-- AUDIO -->
 <audio id="bgMusic" loop><source src="ambiance.mp3" type="audio/mpeg"></audio>
+
+
 
 <!-- BOUTON MUSIQUE -->
 <div class="music-btn" id="musicBtn" onclick="toggleMusic()" title="Ambiance sonore">
