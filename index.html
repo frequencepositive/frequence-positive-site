@@ -711,6 +711,32 @@ footer a:hover { color: rgba(255,255,255,0.9); }
   .stats-row { gap: 32px; }
   .stat-sep { display: none; }
 }
+
+/* === CTA #11 — Rendez-vous quotidien (bouton clair sur fond foncé) === */
+.cta-rdv-quotidien {
+  display: inline-block;
+  background: linear-gradient(135deg, #f5e6c8 0%, #e8d4a8 100%);
+  color: #3D1F16 !important;
+  font-family: 'Playfair Display', Georgia, serif;
+  font-size: 18px;
+  font-weight: 600;
+  padding: 18px 44px;
+  border-radius: 50px;
+  text-decoration: none !important;
+  letter-spacing: 0.3px;
+  box-shadow: 0 8px 32px rgba(0,0,0,0.35);
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+.cta-rdv-quotidien:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 12px 40px rgba(0,0,0,0.45);
+  color: #3D1F16 !important;
+}
+.cta-rdv-quotidien .cta-icon {
+  color: #d4a04a;
+  margin-right: 4px;
+}
+
 </style>
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="Fréquence Positive">
@@ -1209,9 +1235,7 @@ footer a:hover { color: rgba(255,255,255,0.9); }
     <h2 style="font-family:'Playfair Display',Georgia,serif; font-size:clamp(26px,4vw,38px); font-weight:400; color:#f0e8dd; margin:0 0 28px; line-height:1.3;">
       Votre rendez-vous quotidien<br><em style="color:#C8A882;">commence ici.</em>
     </h2>
-    <a href="commander.html" style="display:inline-block; background:linear-gradient(135deg, #f5e6c8 0%, #e8d4a8 100%); color:#3D1F16; font-family:'Playfair Display',Georgia,serif; font-size:18px; font-weight:600; padding:18px 44px; border-radius:50px; text-decoration:none; letter-spacing:0.3px; box-shadow:0 8px 32px rgba(0,0,0,0.35); transition:transform 0.2s, box-shadow 0.2s;" onmouseover="this.style.transform='translateY(-2px)'; this.style.boxShadow='0 12px 40px rgba(0,0,0,0.45)';" onmouseout="this.style.transform=''; this.style.boxShadow='0 8px 32px rgba(0,0,0,0.35)';">
-      <span style="color:#d4a04a;">💫</span> Créer ma séance personnalisée
-    </a>
+    <a href="commander.html" class="cta-rdv-quotidien"><span class="cta-icon">💫</span> Créer ma séance personnalisée</a>
     <p style="margin-top: 18px; font-size: 12.5px; color: rgba(240,232,221,0.5); font-weight:300;">À partir de 29,90 € · Livraison par email · Paiement sécurisé</p>
   </div>
 </section>
