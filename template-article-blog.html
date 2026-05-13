@@ -12,8 +12,157 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Fréquence Positive — 5 phrases que tu te dis chaque jour qui te freinent sans que tu le saches</title>
-<meta name="description" content="Certaines phrases qu'on se répète semblent banales — et pourtant elles sabotent silencieusement ta vie. Découvre lesquelles et comment t'en libérer.">
+<!-- ============================================================
+     INSTRUCTIONS POUR CLAUDE — TEMPLATE FRÉQUENCE POSITIVE
+     ─────────────────────────────────────────────────────────
+
+     ╔══════════════════════════════════════════════════════╗
+     ║  ÉTAPE 0 — À FAIRE EN PREMIER À CHAQUE CONVERSATION ║
+     ╚══════════════════════════════════════════════════════╝
+
+     Avant toute chose, pose cette question :
+     "As-tu de nouveaux articles à ajouter à la liste ?"
+
+     Si oui → mettre à jour la section ARTICLES EXISTANTS
+     ci-dessous avec les nouveaux titres + URLs fournis,
+     puis commencer le travail demandé.
+
+
+     ╔══════════════════════════════════════════════════════╗
+     ║  RÈGLES GÉNÉRALES                                    ║
+     ╚══════════════════════════════════════════════════════╝
+
+     - Remplace les zones [COMME CECI] par le contenu réel.
+     - Ne modifie jamais le CSS ni la structure HTML.
+     - Conserve toutes les classes et balises telles quelles.
+
+
+     ╔══════════════════════════════════════════════════════╗
+     ║  ARTICLES EXISTANTS (à jour au 08/04/2026)           ║
+     ╚══════════════════════════════════════════════════════╝
+
+     Utiliser pour :
+     a) La navigation inter-articles (bloc en bas de page)
+     b) Les mentions naturelles dans le corps du texte
+        quand le lien thématique est évident
+
+     1. Comment identifier tes croyances limitantes sans te juger
+        → https://frequence-positive.netlify.app/article-croyances-limitantes
+
+     2. Les affirmations positives fonctionnent-elles vraiment ?
+        → https://frequence-positive.netlify.app/article-affirmations-positives-science
+
+     3. 5 phrases que tu te dis chaque jour qui te freinent sans que tu le saches
+        → https://frequence-positive.netlify.app/article-phrases-qui-freinent
+
+     Syntaxe pour un lien dans le corps :
+     <a href="URL" style="color:var(--brown);font-weight:500;">Titre de l'article</a>
+
+
+     ╔══════════════════════════════════════════════════════╗
+     ║  LES 3 CTAs DISPONIBLES                              ║
+     ╚══════════════════════════════════════════════════════╝
+
+     Il existe 3 destinations possibles pour les CTAs :
+
+     [A] SITE PRINCIPAL
+         URL : https://frequence-positive.netlify.app/
+         Quand : article généraliste, découverte de la marque,
+                 bien-être général.
+
+     [B] GUIDE GRATUIT — "exercices pour écrire ses affirmations"
+         URL : acces-guide-gratuit.html
+         Quand : article sur les affirmations, le dialogue intérieur,
+                 les croyances, l'écriture de soi, les phrases limitantes.
+
+     [C] SÉANCE PERSONNALISÉE
+         URL : commander.html
+         Quand : article sur la transformation, le mindset, l'identité,
+                 les émotions, les routines, la confiance en soi.
+
+
+     ╔══════════════════════════════════════════════════════╗
+     ║  RÈGLE DES CTAs — OBLIGATOIRE                        ║
+     ╚══════════════════════════════════════════════════════╝
+
+     CHOISIR EXACTEMENT 2 CTAs parmi [A], [B], [C].
+     JAMAIS les 3 en même temps.
+
+     Les 2 CTAs choisis s'affichent à 2 endroits différents :
+
+     — CTA PRINCIPAL : bloc complet après "Pour aller plus loin"
+       (grand encadré avec titre, description, bouton centré)
+
+     — CTA SECONDAIRE : mini-bloc compact dans le corps de l'article
+       (plus petit, placé après le passage le plus fort sur le sujet)
+
+     EXEMPLES DE COMBINAISONS :
+     • Article sur les affirmations      → [B] principal + [C] secondaire
+     • Article sur les croyances         → [B] principal + [C] secondaire
+     • Article sur les routines/mindset  → [C] principal + [B] secondaire
+     • Article généraliste               → [A] principal + [B] ou [C] secondaire
+
+     Le texte du titre et de la description de chaque bloc
+     doit TOUJOURS être adapté au thème précis de l'article.
+     Ne jamais copier-coller un texte générique.
+
+
+     ╔══════════════════════════════════════════════════════╗
+     ║  STRUCTURE HTML DES BLOCS CTA                        ║
+     ╚══════════════════════════════════════════════════════╝
+
+     ── BLOC CTA PRINCIPAL (après "Pour aller plus loin") ──
+     (grand format, centré, avec titre Cormorant)
+
+     <div style="max-width:720px;margin:0 auto 40px;padding:0 24px;position:relative;z-index:1;">
+       <div style="background:rgba(255,255,255,0.70);border:1px solid rgba(123,74,58,0.22);border-radius:20px;padding:36px 40px;backdrop-filter:blur(10px);box-shadow:0 4px 32px rgba(123,74,58,0.07);position:relative;overflow:hidden;">
+         <div style="position:absolute;top:0;left:50%;transform:translateX(-50%);width:120px;height:1.5px;background:linear-gradient(90deg,transparent,rgba(123,74,58,0.5),transparent);"></div>
+         <div style="font-size:11px;font-weight:500;letter-spacing:0.14em;text-transform:uppercase;color:#7B4A3A;margin-bottom:14px;">✦ [LABEL — ex : Guide gratuit / Séance personnalisée]</div>
+         <p style="font-family:'Cormorant Garamond',serif;font-size:clamp(1.25rem,3vw,1.7rem);font-weight:400;line-height:1.3;color:#3A2820;margin-bottom:14px;">
+           [TITRE ADAPTÉ AU THÈME] <em style="color:#7B4A3A;">[partie en italique brun]</em>
+         </p>
+         <p style="font-size:15px;line-height:1.75;color:#6A5A52;font-weight:300;margin-bottom:24px;">
+           [DESCRIPTION — 2 phrases max, en lien direct avec le thème de l'article.]
+         </p>
+         <div style="text-align:center;">
+           <a href="[URL]" style="display:inline-flex;align-items:center;gap:10px;background:#7B4A3A;color:white;text-decoration:none;padding:14px 30px;border-radius:50px;font-size:14px;font-weight:500;letter-spacing:0.03em;" onmouseover="this.style.background='#5A3028'" onmouseout="this.style.background='#7B4A3A'">
+             ✦ &nbsp; [TEXTE DU BOUTON]
+           </a>
+           <p style="font-size:12px;color:#9A8A80;margin-top:14px;">[Ligne de réassurance — ex : Gratuit · Sans engagement · Livré par e-mail]</p>
+         </div>
+       </div>
+     </div>
+
+     ── BLOC CTA SECONDAIRE (dans le corps de l'article) ──
+     (compact, placé après le passage le plus fort sur le sujet)
+
+     <div style="background:linear-gradient(135deg,rgba(123,74,58,0.07),rgba(74,122,106,0.07));border:1px solid rgba(123,74,58,0.18);border-radius:18px;padding:28px 32px;margin:36px 0;text-align:center;backdrop-filter:blur(10px);position:relative;overflow:hidden;">
+       <div style="position:absolute;top:0;left:50%;transform:translateX(-50%);width:140px;height:1.5px;background:linear-gradient(90deg,transparent,rgba(123,74,58,0.45),transparent);"></div>
+       <div style="font-size:1.5rem;margin-bottom:10px;">🌿</div>
+       <p style="font-family:'Cormorant Garamond',serif;font-size:1.35rem;font-weight:400;color:var(--text-main);line-height:1.3;margin-bottom:8px;">
+         [TITRE COURT] <em style="font-style:italic;color:var(--brown)">[partie en italique]</em>
+       </p>
+       <p style="font-size:13.5px;color:var(--text-muted);line-height:1.65;margin-bottom:20px;">
+         [1-2 phrases courtes adaptées au thème.]
+       </p>
+       <a href="[URL]" style="display:inline-block;background:linear-gradient(135deg,var(--brown-dark),var(--brown),var(--brown-light));color:white;text-decoration:none;padding:12px 28px;border-radius:50px;font-size:13px;font-weight:500;letter-spacing:0.04em;box-shadow:0 4px 16px rgba(123,74,58,0.25);" onmouseover="this.style.opacity='0.88'" onmouseout="this.style.opacity='1'">
+         ✦ &nbsp; [TEXTE DU BOUTON]
+       </a>
+     </div>
+
+
+     ╔══════════════════════════════════════════════════════╗
+     ║  CARTE PROGRAMME CONTEXTUELLE                        ║
+     ╚══════════════════════════════════════════════════════╝
+
+     CONSERVER si l'article parle de : croyances, mindset,
+     transformation, confiance, émotions, énergie, relations.
+     RETIRER si l'article est trop généraliste ou hors-sujet.
+
+     ============================================================ -->
+
+<title>Fréquence Positive — [TITRE DE L'ARTICLE]</title>
+<meta name="description" content="[MÉTA-DESCRIPTION : 155 caractères max]">
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400;1,500&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
@@ -204,6 +353,7 @@ nav {
   padding: 0 24px 80px;
 }
 
+/* Paragraphes */
 .article-body p {
   font-size: 16px;
   line-height: 1.9;
@@ -220,6 +370,7 @@ nav {
   color: var(--brown-light);
 }
 
+/* Titres H2 */
 .article-body h2 {
   font-family: 'Cormorant Garamond', serif;
   font-size: clamp(1.5rem, 3.5vw, 2.1rem);
@@ -240,6 +391,7 @@ nav {
   border-radius: 2px;
 }
 
+/* Titres H3 */
 .article-body h3 {
   font-family: 'Cormorant Garamond', serif;
   font-size: 1.25rem;
@@ -249,6 +401,7 @@ nav {
   letter-spacing: 0.02em;
 }
 
+/* Listes */
 .article-body ul, .article-body ol {
   margin: 0 0 22px 0;
   padding-left: 0;
@@ -288,6 +441,7 @@ nav {
   top: 3px;
 }
 
+/* Citation / Encadré mise en valeur */
 .article-body blockquote {
   background: rgba(123,74,58,0.06);
   border-left: 3px solid var(--brown);
@@ -301,6 +455,7 @@ nav {
   line-height: 1.65;
 }
 
+/* Encadré exercice pratique */
 .encadre {
   background: var(--card-bg);
   border: 1px solid var(--card-border);
@@ -326,31 +481,6 @@ nav {
   margin-bottom: 10px !important;
 }
 .encadre p:last-child { margin-bottom: 0 !important; }
-
-/* Numéro de phrase mis en valeur */
-.phrase-numero {
-  background: linear-gradient(135deg, rgba(123,74,58,0.08), rgba(74,122,106,0.06));
-  border: 1px solid rgba(123,74,58,0.15);
-  border-left: 4px solid var(--brown);
-  border-radius: 0 14px 14px 0;
-  padding: 24px 28px;
-  margin: 32px 0 16px;
-}
-.phrase-numero .phrase-label {
-  font-size: 10px;
-  font-weight: 600;
-  letter-spacing: 0.14em;
-  text-transform: uppercase;
-  color: var(--brown-light);
-  margin-bottom: 6px;
-}
-.phrase-numero .phrase-texte {
-  font-family: 'Cormorant Garamond', serif;
-  font-size: 1.3rem;
-  font-style: italic;
-  color: var(--brown-dark);
-  line-height: 1.4;
-}
 
 /* ── CTA FIN D'ARTICLE ── */
 .article-cta {
@@ -424,26 +554,17 @@ nav {
   margin: 0 auto 48px;
   padding: 0 24px;
 }
-.yt-intro {
-  text-align: center;
-  font-size: 14px;
-  color: var(--text-muted);
-  line-height: 1.7;
-  margin-bottom: 28px;
-  max-width: 480px;
-  margin-left: auto;
-  margin-right: auto;
-}
 .yt-inner {
+  background: var(--card-bg);
+  border: 1px solid var(--card-border);
+  border-radius: 20px;
+  padding: 36px 40px;
+  backdrop-filter: blur(10px);
   display: grid;
   grid-template-columns: 1fr 1fr;
-  gap: 16px;
-  max-width: 640px;
-  margin: 0 auto;
+  gap: 24px;
 }
-@media (max-width: 520px) {
-  .yt-inner { grid-template-columns: 1fr; max-width: 340px; }
-}
+.yt-inner.single { grid-template-columns: 1fr; max-width: 420px; margin: 0 auto; }
 .yt-bloc-title {
   font-family: 'Cormorant Garamond', serif;
   font-size: 1.1rem;
@@ -462,6 +583,7 @@ nav {
   transition: border-color 0.2s, transform 0.15s;
 }
 .yt-card:hover { border-color: rgba(123,74,58,0.3); transform: translateY(-2px); }
+.yt-icon { font-size: 1.6rem; margin-bottom: 10px; }
 .yt-logo { margin-bottom: 12px; }
 .yt-logo svg { width: 52px; height: 36px; }
 .yt-name {
@@ -491,7 +613,7 @@ nav {
 }
 .yt-btn:hover { background: var(--brown-dark); transform: translateY(-1px); }
 
-/* ── CARTE PROGRAMME ── */
+/* ── CARTE PROGRAMME CONTEXTUELLE ── */
 .prog-card-wrap {
   position: relative;
   z-index: 1;
@@ -550,6 +672,7 @@ nav {
 .prog-card-btn:hover { opacity: 0.9; transform: translateY(-1px); }
 @media (max-width: 580px) {
   .prog-card { flex-direction: column; text-align: center; }
+  .yt-inner { grid-template-columns: 1fr; }
 }
 
 /* ── ENCADRÉ YOUTUBE DANS LE CORPS ── */
@@ -636,6 +759,7 @@ footer .footer-logo {
   to   { opacity: 1; transform: translateY(0); }
 }
 
+/* ── RESPONSIVE ── */
 @media (max-width: 640px) {
   nav { padding: 14px 20px; }
   .nav-links { display: none; }
@@ -660,31 +784,37 @@ footer .footer-logo {
     <a href="accueil.html">Accueil</a>
     <a href="blog.html">Blog</a>
     <a href="accueil.html#programme">Le Programme</a>
-    <a href="commander.html" class="nav-cta">✦ Ma séance</a>
+    <a href="acces-prioritaire.html" class="nav-cta">Accès Prioritaire</a>
   </div>
 </nav>
 
 <!-- ══ HERO ══ -->
 <div class="article-hero">
 
-  <div class="article-tag">✦ Croyances limitantes</div>
+  <!-- Catégorie de l'article -->
+  <div class="article-tag">✦ [CATÉGORIE — ex : Croyances limitantes]</div>
 
+  <!-- Titre principal H1 -->
   <h1 class="article-title">
-    5 phrases que tu te dis chaque jour<br>
-    <em>qui te freinent sans que tu le saches</em>
+    [TITRE PRINCIPAL DE L'ARTICLE —<br>
+    <em>peut tenir sur deux lignes si nécessaire</em>]
   </h1>
 
+  <!-- Métadonnées -->
   <div class="article-meta">
     <span>✦ Par Max &amp; Sandra</span>
     <div class="meta-divider"></div>
-    <span>📅 30 mars 2026</span>
+    <span>📅 [DATE — ex : 27 mars 2026]</span>
     <div class="meta-divider"></div>
-    <span>⏱ 8 min</span>
+    <span>⏱ [TEMPS DE LECTURE — ex : 6 min]</span>
   </div>
 
+  <!-- Introduction / accroche dans la carte -->
   <div class="article-intro-card">
     <p>
-      Tu te lèves le matin, tu prépares ton café, et sans même t'en rendre compte, ces petites phrases défilent dans ta tête. <strong>Anodines en apparence</strong>, répétées des centaines de fois par semaine, elles dessinent en silence les contours de ce que tu crois possible pour toi. Ce n'est pas un manque de volonté. Ce n'est pas un problème de motivation. C'est juste que <strong>certains mots qu'on se dit en boucle agissent comme un frein invisible</strong> — et aujourd'hui, on va les regarder en face ensemble.
+      [INTRODUCTION DE L'ARTICLE — 3 à 5 phrases. Commence par une situation concrète
+      que le lecteur reconnaît, crée le lien émotionnel, et annonce ce qu'il va découvrir.
+      Utilise <strong>strong pour les mots clés importants</strong> avec parcimonie.]
     </p>
   </div>
 
@@ -695,237 +825,175 @@ footer .footer-logo {
 
   <div class="ornament">✦ · · ·</div>
 
-  <h2>Pourquoi les mots qu'on se dit ont autant de pouvoir</h2>
+  <!-- ─────────────────────────────────────────
+       PARTIE 1
+       ───────────────────────────────────────── -->
+  <h2>[TITRE DE LA PREMIÈRE GRANDE PARTIE]</h2>
 
   <p>
-    Le cerveau ne fait pas vraiment la différence entre ce qui est vrai et ce qu'on lui répète souvent. C'est une réalité bien documentée en neurosciences : <strong>une pensée répétée devient une croyance, et une croyance répétée devient une certitude</strong>. Pas une certitude objective — mais une certitude ressentie, qui guide tes décisions sans que tu t'en aperçoives.
+    [Paragraphe de développement. Écris naturellement, comme tu parlerais à un ami.
+    Phrases courtes. Respirées. Mélange explication et exemple concret du quotidien.]
   </p>
 
   <p>
-    Pense à un enfant qu'on réprimande chaque jour avec les mêmes mots. À force, il finit par les croire. Ce mécanisme ne s'arrête pas à l'enfance. On continue, adulte, à se dire des choses sur soi — souvent les mêmes phrases, souvent héritées de quelqu'un d'autre — et elles continuent de faire leur travail en silence.
+    [Deuxième paragraphe. Tu peux utiliser <em>l'italique pour souligner une idée</em>
+    ou <strong>le gras pour un point essentiel</strong>.]
   </p>
 
+  <!-- Exemple de citation / mise en valeur -->
   <blockquote>
-    Ce n'est pas ta valeur qui est en question. C'est juste un vieux script qu'on peut réécrire.
+    [UNE PHRASE FORTE, une pensée inspirante, ou une citation personnelle à mettre en valeur.]
   </blockquote>
 
-  <p>
-    La bonne nouvelle, c'est que <em>prendre conscience d'une phrase, c'est déjà commencer à s'en libérer</em>. Alors voilà les cinq que l'on entend le plus souvent — et que beaucoup d'entre vous nous confient dans les messages.
-  </p>
+  <!-- ─────────────────────────────────────────
+       PARTIE 2
+       ───────────────────────────────────────── -->
+  <h2>[TITRE DE LA DEUXIÈME GRANDE PARTIE]</h2>
 
-  <!-- Image 1 -->
-  <img src="https://images.unsplash.com/photo-1544716278-ca5e3f4abd8c?w=800&q=80"
-       alt="Femme pensive près d'une fenêtre"
-       style="width:100%;border-radius:16px;margin:32px 0 8px;object-fit:cover;max-height:420px;">
-  <p style="font-size:12px;text-align:center;color:var(--text-light);margin-bottom:32px;font-style:italic;">Ces pensées passent souvent inaperçues — et pourtant elles façonnent tout.</p>
+  <p>[Paragraphe de développement.]</p>
 
-  <h2>Les 5 phrases — et ce qu'elles font vraiment</h2>
+  <h3>[Sous-titre H3 si nécessaire]</h3>
 
-  <!-- Phrase 1 -->
-  <div class="phrase-numero">
-    <div class="phrase-label">Phrase n°1</div>
-    <div class="phrase-texte">« De toute façon, c'est pas pour moi. »</div>
-  </div>
+  <p>[Développement du sous-point.]</p>
 
-  <p>
-    Celle-là, on la dit souvent avec un petit rire. Comme si c'était une évidence. Comme si certaines choses — la réussite, l'amour épanoui, la sérénité — étaient réservées aux autres. Elle se glisse partout : devant une belle opportunité, une offre d'emploi, un voyage rêvé.
-  </p>
+  <!-- Exemple de liste à puces -->
+  <ul>
+    <li>[Premier élément de la liste]</li>
+    <li>[Deuxième élément de la liste]</li>
+    <li>[Troisième élément de la liste]</li>
+    <li>[Quatrième élément si nécessaire]</li>
+  </ul>
 
-  <p>
-    Ce qu'elle fait en réalité : elle te désengage <em>avant même d'essayer</em>. Elle te protège de la déception, certes — mais elle te coupe aussi de tout ce qui pourrait changer ta vie. <strong>La question à te poser : qui a décidé que ce n'était pas pour toi ?</strong>
-  </p>
-
-  <!-- Phrase 2 -->
-  <div class="phrase-numero">
-    <div class="phrase-label">Phrase n°2</div>
-    <div class="phrase-texte">« J'aurais dû. »</div>
-  </div>
-
-  <p>
-    Les deux mots les plus lourds à porter. On rejoue la scène, on se condamne, on s'inflige une punition mentale pour quelque chose qui appartient déjà au passé. Le problème, c'est qu'on ne peut pas changer ce qui s'est passé — mais on peut <strong>choisir ce qu'on en fait maintenant</strong>.
-  </p>
-
-  <p>
-    Tu n'avais pas les mêmes informations à ce moment-là. Tu n'étais pas la même personne. Et cette phrase, si tu la laisses tourner en boucle, épuise une énergie qui pourrait aller vers ce que tu veux construire aujourd'hui.
-  </p>
-
-  <!-- Phrase 3 -->
-  <div class="phrase-numero">
-    <div class="phrase-label">Phrase n°3</div>
-    <div class="phrase-texte">« Je ne suis pas prêt(e). »</div>
-  </div>
-
-  <p>
-    Celle-ci ressemble à de la sagesse. À de la prudence. Et parfois, oui, c'en est. Mais la plupart du temps, <em>elle est le déguisement élégant de la peur</em>. On attend d'être "prêt" pour lancer ce projet, pour avoir cette conversation difficile, pour poser cette limite. Et on attend. Longtemps.
-  </p>
-
-  <p>
-    La vérité, c'est que la préparation parfaite n'existe pas. <strong>On ne se sent jamais totalement prêt avant les choses importantes.</strong> La confiance vient après l'action, pas avant. Rappelle-toi la dernière fois où tu t'es lancé(e) malgré la peur — est-ce que tu le regrettes ?
-  </p>
-
-  <!-- Phrase 4 -->
-  <div class="phrase-numero">
-    <div class="phrase-label">Phrase n°4</div>
-    <div class="phrase-texte">« C'est comme ça, on n'y peut rien. »</div>
-  </div>
-
-  <p>
-    Le fatalisme confortable. Cette phrase donne l'illusion d'une paix intérieure — accepter ce qu'on ne peut pas changer, c'est une sagesse réelle. Mais souvent, on l'applique à des choses <em>qu'on pourrait</em> changer, si on osait. Notre façon de réagir. Nos habitudes. Nos relations. Notre rapport à nous-même.
-  </p>
-
-  <p>
-    Elle coupe court à toute réflexion. Elle ferme les portes avant même de les avoir essayées. <strong>La nuance : accepter ce qui est hors de ton contrôle, oui. Mais ne pas confondre "ce qui est difficile à changer" avec "ce qui est impossible à changer".</strong>
-  </p>
-
+  <!-- ─────────────────────────────────────────
+       ENCADRÉ YOUTUBE — dans le corps
+       Placer après la partie la plus proche
+       du contenu vidéo. Adapter le texte.
+       Pour les articles méditation/énergie/bien-être :
+       ajouter aussi la ligne Healing Tunes.
+       ───────────────────────────────────────── -->
   <div class="encadre-yt">
     <div class="encadre-yt-icon">▶</div>
     <div class="encadre-yt-text">
-      On explore ce genre de croyances en vidéo chaque semaine — retrouve-nous sur
+      [TEXTE NATUREL EN LIEN AVEC L'ARTICLE — ex : "On approfondit ce sujet en vidéo,
+      retrouve-nous sur YouTube →"]
       <a href="https://www.youtube.com/@FREQUENCE.POSITIVE" target="_blank">@FREQUENCE.POSITIVE</a>
-      pour des affirmations et des prises de conscience qui font vraiment bouger les choses.
+      <!-- Sur articles méditation/énergie/bien-être, ajouter : -->
+      <!-- · Et pour accompagner cette pratique en musique :
+      <a href="https://www.youtube.com/@HealingTunesPositiveFrequency" target="_blank">@HealingTunesPositiveFrequency</a> -->
     </div>
   </div>
 
-  <!-- Phrase 5 -->
-  <div class="phrase-numero">
-    <div class="phrase-label">Phrase n°5</div>
-    <div class="phrase-texte">« Les autres s'en sortent mieux que moi. »</div>
-  </div>
+  <!-- ─────────────────────────────────────────
+       PARTIE 3
+       ───────────────────────────────────────── -->
+  <h2>[TITRE DE LA TROISIÈME GRANDE PARTIE]</h2>
 
-  <p>
-    L'ère des réseaux sociaux a décuplé celle-ci. On compare notre intérieur — nos doutes, nos nuits sans sommeil, nos rechutes — avec l'extérieur soigneusement mis en scène des autres. Et bien sûr, on perd à chaque fois. C'est une comparaison injuste par construction.
-  </p>
+  <p>[Paragraphe de développement.]</p>
 
-  <p>
-    Ce que tu ne vois pas : leurs propres peurs, leurs propres phrases qui tournent, leurs propres matins difficiles. <strong>Tu ne te bats pas contre les autres. Tu avances sur ton propre chemin</strong> — et l'unique bonne comparaison, c'est toi aujourd'hui versus toi hier.
-  </p>
-
-  <!-- Image 2 -->
-  <img src="https://images.unsplash.com/photo-1499209974431-9dddcece7f88?w=800&q=80"
-       alt="Chemin dans la nature, lumière dorée"
-       style="width:100%;border-radius:16px;margin:32px 0 8px;object-fit:cover;max-height:420px;">
-  <p style="font-size:12px;text-align:center;color:var(--text-light);margin-bottom:32px;font-style:italic;">Ton chemin t'appartient. La seule comparaison qui vaille, c'est avec toi-même d'hier.</p>
-
-  <h2>Comment commencer à les transformer</h2>
-
-  <p>
-    Identifier ces phrases, c'est déjà un grand pas. Mais la vraie question, c'est : <strong>qu'est-ce qu'on fait avec ça concrètement ?</strong> Pas besoin d'un retournement spectaculaire. Juste quelques petits gestes, régulièrement.
-  </p>
-
+  <!-- Exemple d'encadré exercice pratique -->
   <div class="encadre">
     <div class="encadre-label">✦ Exercice pratique</div>
-    <p>Pendant trois jours, pose-toi le soir avec un carnet. Demande-toi : <strong>quelle phrase me suis-je répété aujourd'hui ?</strong> Écris-la sans la juger. Ensuite, écris juste en dessous une alternative plus douce — pas forcément euphorique, juste un peu plus ouverte.</p>
-    <p>Exemple : <em>« Je ne suis pas prêt(e). »</em> → <em>« Je peux avancer même si je ne me sens pas parfaitement préparé(e). »</em> Ça ne transforme pas tout du jour au lendemain — mais ça crée une nouvelle voie neuronale, doucement.</p>
+    <p>[Description de l'exercice concret que le lecteur peut faire immédiatement.]</p>
+    <p>[Étapes ou précisions supplémentaires si nécessaire.]</p>
   </div>
 
-  <p>
-    L'autre outil puissant, c'est l'affirmation personnalisée. Pas une phrase générique copiée sur internet — <em>une phrase qui te ressemble, dans ta voix, avec ton prénom, qui parle de tes vraies peurs et de tes vraies aspirations.</em> C'est exactement ce sur quoi on travaille depuis des années avec les séances audio de Fréquence Positive.
-  </p>
+  <p>[Paragraphe de conclusion de partie.]</p>
 
-  <h3>Quelques questions à te poser</h3>
+  <!-- Exemple de liste numérotée -->
+  <ol>
+    <li>[Première étape ou point numéroté]</li>
+    <li>[Deuxième point]</li>
+    <li>[Troisième point]</li>
+  </ol>
 
-  <ul>
-    <li>D'où vient cette phrase ? Est-ce que quelqu'un me l'a dit un jour ?</li>
-    <li>Est-ce qu'elle est vraie à 100 % — ou juste vraie dans certaines circonstances ?</li>
-    <li>Si mon meilleur ami me disait la même chose sur lui, qu'est-ce que je lui répondrais ?</li>
-    <li>Est-ce que cette phrase me protège ou est-ce qu'elle me retient ?</li>
-  </ul>
+  <!-- ─────────────────────────────────────────
+       PARTIE 4 (optionnelle selon longueur)
+       ───────────────────────────────────────── -->
+  <h2>[TITRE DE LA QUATRIÈME PARTIE — si l'article est long]</h2>
 
-  <p>
-    Ces questions ne demandent pas de grandes séances d'introspection. Cinq minutes, le soir, suffisent. L'important, c'est la régularité — pas la profondeur.
-  </p>
+  <p>[Développement.]</p>
 
-  <!-- Image 3 -->
-  <img src="https://images.unsplash.com/photo-1528716321680-815a8cdb8cbe?w=800&q=80"
-       alt="Mains tenant une tasse de thé, atmosphère douce"
-       style="width:100%;border-radius:16px;margin:32px 0 8px;object-fit:cover;max-height:420px;">
-  <p style="font-size:12px;text-align:center;color:var(--text-light);margin-bottom:32px;font-style:italic;">Chaque petite prise de conscience, répétée doucement, change quelque chose de profond.</p>
+  <p>[Développement.]</p>
 
   <div class="ornament">✦ · · ·</div>
 
+  <!-- ─────────────────────────────────────────
+       CONCLUSION
+       ───────────────────────────────────────── -->
   <h2>Pour aller plus loin</h2>
 
   <p>
-    Ces cinq phrases, tu ne les as pas inventées. Elles viennent de quelque part — d'une enfance, d'une expérience douloureuse, d'une voix qu'on a finit par prendre pour la sienne. Le travail, ce n'est pas de les combattre violemment. C'est de <strong>les reconnaître, les accueillir, puis choisir de les remplacer par quelque chose de plus juste</strong>.
+    [CONCLUSION — 3 à 5 phrases. Résume l'idée principale en une formule forte.
+    Parle directement au lecteur, avec chaleur. Encourage sans forcer.
+    Termine sur une note positive et personnelle.]
   </p>
 
   <p>
-    Est-ce que tu t'es reconnu(e) dans l'une d'elles ? C'est normal — on les a presque tous. Le travail ne commence pas par les combattre, mais par les remplacer — une à une, avec des mots qui te ressemblent vraiment.
+    [Dernière phrase d'encouragement, comme si tu lui parlais directement,
+    en tête-à-tête. Douce mais sincère.]
   </p>
 
-  <div style="
-    background: rgba(255,255,255,0.70);
-    border: 1px solid rgba(123,74,58,0.22);
-    border-radius: 20px;
-    padding: 36px 40px;
-    margin: 40px 0;
-    backdrop-filter: blur(10px);
-    box-shadow: 0 4px 32px rgba(123,74,58,0.07);
-    position: relative;
-    overflow: hidden;
-  ">
-    <div style="
-      position: absolute;
-      top: 0; left: 50%;
-      transform: translateX(-50%);
-      width: 120px; height: 1.5px;
-      background: linear-gradient(90deg, transparent, rgba(123,74,58,0.5), transparent);
-    "></div>
-    <div style="font-size: 11px; font-weight: 500; letter-spacing: 0.14em; text-transform: uppercase; color: #7B4A3A; margin-bottom: 14px;">✦ Guide gratuit</div>
-    <p style="
-      font-family: 'Cormorant Garamond', serif;
-      font-size: clamp(1.25rem, 3vw, 1.7rem);
-      font-weight: 400;
-      line-height: 1.3;
-      color: #3A2820;
-      margin-bottom: 14px;
-    ">Prêt(e) à remplacer ces phrases par des mots <em style="color: #7B4A3A;">qui te font vraiment avancer</em> ?</p>
-    <p style="font-size: 15px; line-height: 1.75; color: #6A5A52; font-weight: 300; margin-bottom: 24px;">
-      On a créé un guide de 13 pages avec des exercices concrets pour t'aider à identifier ce qui te freine, reformuler ces phrases automatiques, et construire un dialogue intérieur qui te soutient — dans tes mots, à ton rythme.
-    </p>
-    <div style="text-align: center;">
-      <a href="acces-guide-gratuit.html" style="
-        display: inline-flex;
-        align-items: center;
-        gap: 10px;
-        background: #7B4A3A;
-        color: white;
-        text-decoration: none;
-        padding: 14px 30px;
-        border-radius: 50px;
-        font-size: 14px;
-        font-weight: 500;
-        letter-spacing: 0.03em;
-        transition: background 0.2s;
-      " onmouseover="this.style.background='#5A3028'" onmouseout="this.style.background='#7B4A3A'">
-        ✦ &nbsp; Accéder au guide gratuit
-      </a>
-      <p style="font-size: 12px; color: #9A8A80; margin-top: 14px;">Gratuit · Sans engagement · Livré par e-mail</p>
-    </div>
-  </div>
+  <!-- ─────────────────────────────────────────
+       LIENS INTER-ARTICLES (optionnel)
+       Si pertinent par rapport au thème, mentionner
+       naturellement 1 ou 2 autres articles dans le texte.
+       Articles disponibles :
+       - "Comment identifier tes croyances limitantes sans te juger"
+         → https://frequence-positive.netlify.app/article-croyances-limitantes
+       - "Les affirmations positives fonctionnent-elles vraiment ?"
+         → https://frequence-positive.netlify.app/article-affirmations-positives-science
+       - "5 phrases que tu te dis chaque jour qui te freinent sans que tu le saches"
+         → https://frequence-positive.netlify.app/article-phrases-qui-freinent
+       Exemple : <a href="..." style="color:var(--brown);font-weight:500;">titre de l'article</a>
+       ───────────────────────────────────────── -->
 
 </div>
 
-<!-- ══ CARTE PROGRAMME ══ -->
+<!-- ══ CTA PRINCIPAL — après "Pour aller plus loin" ══
+     Choisir 1 des 2 CTAs retenus pour cet article.
+     Copier la structure du BLOC CTA PRINCIPAL dans les instructions
+     et adapter : label, titre, description, URL, texte bouton,
+     ligne de réassurance.
+     Thème → choix : [B] guide gratuit ou [C] séance ou [A] site.
+-->
+
+<!-- ══ CARTE PROGRAMME CONTEXTUELLE ══
+     À INCLURE uniquement si l'article aborde des thèmes directement
+     en lien avec le programme : croyances, mindset, transformation,
+     confiance, émotions, énergie, relations.
+     RETIRER si l'article est trop généraliste ou hors-sujet programme.
+     Adapter [TEXTE CONTEXTUEL] selon l'article.
+-->
 <div class="prog-card-wrap">
   <div class="prog-card">
     <div class="prog-card-icon">🌿</div>
     <div class="prog-card-body">
       <div class="prog-card-label">✦ Le programme Fréquence Positive</div>
-      <div class="prog-card-title">Prêt(e) à réécrire ces phrases une bonne fois pour toutes ?</div>
+      <div class="prog-card-title">[TEXTE CONTEXTUEL — ex : "Tu veux aller plus loin sur ce que tu viens de lire ?"]</div>
       <p class="prog-card-text">
-        Le programme Fréquence Positive est un espace d'écoute pensé pour t'accompagner pas à pas — avec des affirmations rédigées sur-mesure, à partir de ce que tu nous confies.
+        [1-2 phrases qui font le lien naturel entre le thème de l'article et ce que propose le programme.
+        Doux, jamais forcé. Ex : "Le programme Fréquence Positive t'accompagne pas à pas pour transformer
+        ce genre de prise de conscience en vrai changement durable."]
       </p>
     </div>
     <a href="accueil.html" class="prog-card-btn">✦ Découvrir</a>
   </div>
 </div>
 
-<!-- ══ BLOC YOUTUBE ══ -->
+<!-- ══ BLOC YOUTUBE ══
+     Toujours inclure @FREQUENCE.POSITIVE.
+     Inclure @HealingTunesPositiveFrequency uniquement sur les articles
+     méditation / énergie / bien-être / lâcher-prise / routines.
+     Pour les autres articles, passer en mode .single et retirer la 2e carte.
+-->
 <div class="yt-bloc">
   <div class="yt-bloc-title">✦ Les chaînes YouTube de Fréquence Positive</div>
-  <p class="yt-intro">Affirmations en voix off ou musique pure pour méditer — deux univers complémentaires pour t'accompagner chaque jour.</p>
+  <p style="text-align:center;font-size:14px;color:var(--text-muted);line-height:1.7;margin:-16px 0 28px;font-weight:300;">
+    Affirmations en voix off ou musique pure pour méditer — deux univers<br>complémentaires pour t'accompagner chaque jour.
+  </p>
   <div class="yt-inner">
+
+    <!-- Chaîne principale — TOUJOURS présente -->
     <div class="yt-card">
       <div class="yt-logo">
         <svg viewBox="0 0 90 63" xmlns="http://www.w3.org/2000/svg">
@@ -937,29 +1005,32 @@ footer .footer-logo {
       <p class="yt-desc">Affirmations positives en voix off + musique — pour nourrir ton dialogue intérieur au quotidien.</p>
       <a href="https://www.youtube.com/@FREQUENCE.POSITIVE" target="_blank" class="yt-btn">▶ Voir la chaîne</a>
     </div>
+
+    <!-- Healing Tunes — uniquement sur articles méditation/énergie/bien-être -->
     <div class="yt-card">
       <div class="yt-logo">
         <svg viewBox="0 0 90 63" xmlns="http://www.w3.org/2000/svg">
           <rect width="90" height="63" rx="14" fill="#3B1F0E"/>
-          <polygon points="36,18 36,45 62,31.5" fill="#C8A96E"/>
+          <polygon points="36,18 36,45 62,31.5" fill="#FDF6EC"/>
         </svg>
       </div>
       <div class="yt-name">Healing Tunes</div>
       <p class="yt-desc">Musique instrumentale pure — relaxation, méditation, sommeil et concentration.</p>
       <a href="https://www.youtube.com/@HealingTunesPositiveFrequency" target="_blank" class="yt-btn">▶ Voir la chaîne</a>
     </div>
+
   </div>
 </div>
 
 <!-- ══ NAVIGATION ARTICLES ══ -->
 <div class="article-nav">
-  <a href="article-affirmations-positives-science.html" class="prev">
+  <a href="[URL-ARTICLE-PRECEDENT].html" class="prev">
     <div class="article-nav-label">← Article précédent</div>
-    <div class="article-nav-title">Les affirmations positives : ce que dit vraiment la science</div>
+    <div class="article-nav-title">[TITRE DE L'ARTICLE PRÉCÉDENT]</div>
   </a>
-  <a href="article-transformer-croyance-limitante.html" class="next">
+  <a href="[URL-ARTICLE-SUIVANT].html" class="next">
     <div class="article-nav-label">Article suivant →</div>
-    <div class="article-nav-title">Transformer une croyance limitante en croyance aidante : le guide complet</div>
+    <div class="article-nav-title">[TITRE DE L'ARTICLE SUIVANT]</div>
   </a>
 </div>
 
