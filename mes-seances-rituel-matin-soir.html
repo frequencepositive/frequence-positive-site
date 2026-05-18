@@ -1,0 +1,502 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Téléchargement des 2 séances Spécial Fête des Mères Matin & Soir.">
+<meta name="robots" content="noindex, nofollow">
+<title>Tes séances · Matin &amp; Soir · Fréquence Positive</title>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  :root {
+    --brown: #7B4A3A;
+    --brown-deep: #3D1F16;
+    --gold: #C8A882;
+    --pink-1: #F4D7DD;
+    --pink-2: #F8E5DC;
+    --green-bg: #E8F2ED;
+    --cream: #f5f0ea;
+    --text: #3A2820;
+    --text-muted: #6A5A52;
+    --border: rgba(123,74,58,0.18);
+  }
+
+  /* ──── PASSWORD OVERLAY ──── */
+  #password-overlay {
+    position: fixed; top: 0; left: 0; right: 0; bottom: 0;
+    background: linear-gradient(135deg, #F4D7DD 0%, #F8E5DC 100%);
+    display: flex; align-items: center; justify-content: center;
+    z-index: 9999;
+    padding: 24px;
+  }
+  #password-overlay .lock-card {
+    background: white;
+    border-radius: 20px;
+    padding: 48px 36px;
+    max-width: 440px; width: 100%;
+    text-align: center;
+    box-shadow: 0 16px 50px rgba(58,40,32,0.12);
+    font-family: 'DM Sans', system-ui, sans-serif;
+  }
+  #password-overlay .lock-icon {
+    font-size: 38px; margin-bottom: 14px;
+  }
+  #password-overlay h2 {
+    font-family: 'Cormorant Garamond', Georgia, serif;
+    font-size: 26px; font-weight: 500; color: #3D1F16;
+    margin-bottom: 8px;
+  }
+  #password-overlay .lock-sub {
+    color: #6A5A52; font-size: 14.5px; font-weight: 300;
+    margin-bottom: 24px; line-height: 1.7;
+  }
+  #password-overlay input[type="password"] {
+    width: 100%; padding: 14px 18px;
+    border: 1.5px solid rgba(123,74,58,0.25); border-radius: 50px;
+    font-size: 15px; font-family: 'DM Sans', sans-serif;
+    color: #3D1F16; text-align: center; letter-spacing: 0.05em;
+    margin-bottom: 14px; outline: none;
+    transition: border 0.2s ease;
+  }
+  #password-overlay input[type="password"]:focus {
+    border-color: #7B4A3A;
+  }
+  #password-overlay button {
+    width: 100%; padding: 14px 18px;
+    background: linear-gradient(135deg, #F4D7DD 0%, #F8E5DC 100%);
+    border: 1px solid rgba(123,74,58,0.18); border-radius: 50px;
+    color: #1a1a1a; font-size: 15px; font-weight: 500;
+    font-family: 'DM Sans', sans-serif;
+    cursor: pointer; letter-spacing: 0.03em;
+    transition: transform 0.15s ease, box-shadow 0.2s ease;
+  }
+  #password-overlay button:hover {
+    transform: translateY(-1px);
+    box-shadow: 0 6px 16px rgba(200,168,130,0.35);
+  }
+  #password-error {
+    display: none; color: #993333; font-size: 13px;
+    margin: 6px 0 12px; font-weight: 500;
+  }
+  #password-overlay .lock-hint {
+    margin-top: 18px; font-size: 12.5px; color: #888; font-weight: 300;
+  }
+
+  body {
+    font-family: 'DM Sans', system-ui, sans-serif;
+    background: var(--green-bg);
+    color: var(--text);
+    line-height: 1.65;
+    font-size: 16px;
+  }
+
+  /* ──── HERO ──── */
+  .hero {
+    background: linear-gradient(135deg, var(--pink-1) 0%, var(--pink-2) 100%);
+    padding: 64px 24px 56px;
+    text-align: center;
+  }
+
+  .hero-logo {
+    width: 64px; height: 64px;
+    border-radius: 50%;
+    background: var(--brown-deep);
+    color: var(--gold);
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 32px;
+    font-style: italic;
+    margin-bottom: 20px;
+  }
+
+  .hero-tag {
+    display: inline-block;
+    color: var(--brown);
+    font-size: 11px;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    font-weight: 700;
+    margin-bottom: 18px;
+  }
+
+  .hero h1 {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: clamp(2rem, 4.5vw, 3rem);
+    font-weight: 400;
+    line-height: 1.2;
+    color: var(--brown-deep);
+    margin: 0 0 14px;
+  }
+
+  .hero h1 em { font-style: italic; color: var(--brown); }
+
+  .hero-sub {
+    font-size: clamp(15px, 2vw, 16px);
+    color: var(--text);
+    max-width: 520px;
+    margin: 0 auto;
+    font-weight: 300;
+    line-height: 1.7;
+  }
+
+  /* ──── INTRO ──── */
+  .intro {
+    padding: 48px 24px 24px;
+    max-width: 680px;
+    margin: 0 auto;
+    text-align: center;
+  }
+
+  .intro p {
+    font-size: 16px;
+    line-height: 1.8;
+    margin-bottom: 14px;
+    font-weight: 300;
+  }
+
+  /* ──── DOWNLOADS ──── */
+  .downloads {
+    padding: 24px 24px 56px;
+    max-width: 1000px;
+    margin: 0 auto;
+  }
+
+  .downloads-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 24px;
+  }
+
+  .download-card {
+    background: white;
+    border: 1px solid var(--border);
+    border-radius: 18px;
+    padding: 32px 28px;
+    text-align: center;
+    box-shadow: 0 8px 30px rgba(58,40,32,0.08);
+  }
+
+  .download-icon {
+    font-size: 38px;
+    margin-bottom: 14px;
+    display: block;
+  }
+
+  .download-label {
+    font-size: 11px;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: var(--brown);
+    font-weight: 500;
+    margin-bottom: 10px;
+  }
+
+  .download-card h3 {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 24px;
+    font-weight: 500;
+    color: var(--brown-deep);
+    margin-bottom: 8px;
+  }
+
+  .download-card .meta {
+    color: var(--text-muted);
+    font-size: 13px;
+    font-weight: 300;
+    margin-bottom: 24px;
+  }
+
+  .download-buttons {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .download-btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    background: linear-gradient(135deg, var(--pink-1) 0%, var(--pink-2) 100%);
+    color: #1a1a1a;
+    font-family: 'DM Sans', sans-serif;
+    font-size: 14px;
+    font-weight: 500;
+    padding: 13px 20px;
+    border-radius: 50px;
+    text-decoration: none;
+    letter-spacing: 0.03em;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+    border: 1px solid rgba(123,74,58,0.12);
+  }
+
+  .download-btn:hover {
+    transform: translateY(-1px);
+    box-shadow: 0 6px 18px rgba(244,215,221,0.55);
+  }
+
+  .download-btn.video {
+    background: white;
+    border: 1px solid var(--brown);
+    color: var(--brown-deep);
+  }
+
+  /* ──── HOW TO ──── */
+  .howto {
+    padding: 48px 24px 64px;
+    background: var(--cream);
+  }
+
+  .howto-inner {
+    max-width: 760px;
+    margin: 0 auto;
+  }
+
+  .howto h2 {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: clamp(1.6rem, 3vw, 2rem);
+    font-weight: 400;
+    color: var(--brown-deep);
+    text-align: center;
+    margin-bottom: 8px;
+  }
+
+  .howto-sub {
+    text-align: center;
+    color: var(--text-muted);
+    font-weight: 300;
+    margin-bottom: 32px;
+    font-size: 14px;
+  }
+
+  .howto-grid {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 24px;
+    align-items: flex-start;
+  }
+
+  .howto-card {
+    background: white;
+    border-radius: 14px;
+    padding: 28px 26px;
+    border: 1px solid var(--border);
+    flex: 0 1 260px;
+    max-width: 280px;
+  }
+
+  .howto-card .device {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 14px;
+  }
+
+  .howto-card .device-icon {
+    font-size: 22px;
+  }
+
+  .howto-card h4 {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 20px;
+    font-weight: 500;
+    color: var(--brown-deep);
+  }
+
+  .howto-card ol {
+    margin-left: 18px;
+    color: var(--text);
+    font-size: 14.5px;
+    line-height: 1.8;
+    font-weight: 300;
+  }
+
+  .howto-card ol li {
+    margin-bottom: 4px;
+  }
+
+  /* ──── FOOTER ──── */
+  footer {
+    padding: 32px 24px;
+    text-align: center;
+    background: linear-gradient(135deg, var(--pink-1) 0%, var(--pink-2) 100%);
+    color: var(--brown);
+    font-size: 13px;
+  }
+
+  footer p { margin-bottom: 6px; font-weight: 300; }
+  footer a { color: var(--brown-deep); text-decoration: none; font-weight: 500; }
+</style>
+</head>
+<body>
+
+  <!-- PASSWORD OVERLAY -->
+  <div id="password-overlay">
+    <div class="lock-card">
+      <div class="lock-icon">🔒</div>
+      <h2>Accède à tes séances</h2>
+      <p class="lock-sub">Entre le mot de passe que tu as reçu dans ton email de livraison pour télécharger tes deux séances.</p>
+      <form id="password-form">
+        <input type="password" id="password-input" placeholder="Mot de passe" autocomplete="off" autofocus required />
+        <p id="password-error">Mot de passe incorrect — vérifie ton email de livraison.</p>
+        <button type="submit">Accéder à mes séances →</button>
+      </form>
+      <p class="lock-hint">💡 Un souci ? Réponds à ton email de livraison.</p>
+    </div>
+  </div>
+
+  <div id="protected-content" style="display:none;">
+
+  <section class="hero">
+    <div class="hero-logo">F</div>
+    <p class="hero-tag">🌸 Édition Fête des Mères 🌸</p>
+    <h1>Voilà ton rituel<br><em>Matin &amp; Soir</em></h1>
+    <p class="hero-sub">Tes deux séances sont prêtes. À télécharger sur ton téléphone et à garder pour toujours.</p>
+  </section>
+
+  <section class="intro">
+    <p>Merci d'avoir choisi de t'offrir ce moment.</p>
+    <p>Tu trouveras ci-dessous tes deux séances, en audio (MP3) et en vidéo (MP4). Choisis le format que tu préfères — tu peux télécharger les deux, ou juste un. C'est à toi.</p>
+  </section>
+
+  <section class="downloads">
+    <div class="downloads-grid">
+
+      <div class="download-card">
+        <span class="download-icon">🌅</span>
+        <p class="download-label">Au lever</p>
+        <h3>Partir du bon pied</h3>
+        <p class="meta">10 minutes · Voix de Max</p>
+        <div class="download-buttons">
+          <a href="/assets/audios/fdm-2026/partir-du-bon-pied.mp3" download class="download-btn">
+            🎵 Télécharger l'audio (MP3)
+          </a>
+          <a href="/assets/audios/fdm-2026/partir-du-bon-pied.mp4" download class="download-btn video">
+            🎬 Télécharger la vidéo (MP4)
+          </a>
+        </div>
+      </div>
+
+      <div class="download-card">
+        <span class="download-icon">🌙</span>
+        <p class="download-label">Au coucher</p>
+        <h3>Laisser les bagages</h3>
+        <p class="meta">10 minutes · Voix de Max</p>
+        <div class="download-buttons">
+          <a href="/assets/audios/fdm-2026/laisser-les-bagages.mp3" download class="download-btn">
+            🎵 Télécharger l'audio (MP3)
+          </a>
+          <a href="/assets/audios/fdm-2026/laisser-les-bagages.mp4" download class="download-btn video">
+            🎬 Télécharger la vidéo (MP4)
+          </a>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <section class="howto">
+    <div class="howto-inner">
+      <h2>Comment les garder sur ton téléphone</h2>
+      <p class="howto-sub">Pour pouvoir les écouter même sans connexion, où que tu sois.</p>
+
+      <div class="howto-grid">
+
+        <div class="howto-card">
+          <div class="device">
+            <span class="device-icon">📱</span>
+            <h4>Sur iPhone</h4>
+          </div>
+          <ol>
+            <li>Appuie longuement sur un bouton de téléchargement</li>
+            <li>Choisis <strong>"Télécharger le fichier lié"</strong></li>
+            <li>Le fichier va dans ton app <strong>Fichiers</strong> → dossier "Téléchargements"</li>
+            <li>Tu peux ensuite l'ouvrir avec Apple Music, VLC, ou n'importe quel lecteur audio/vidéo</li>
+          </ol>
+        </div>
+
+        <div class="howto-card">
+          <div class="device">
+            <span class="device-icon">🤖</span>
+            <h4>Sur Android</h4>
+          </div>
+          <ol>
+            <li>Touche un bouton de téléchargement</li>
+            <li>Le fichier va automatiquement dans ton dossier <strong>"Téléchargements"</strong></li>
+            <li>Ouvre l'app <strong>"Mes fichiers"</strong> ou <strong>"Files"</strong> pour le retrouver</li>
+            <li>Tu peux l'écouter avec n'importe quel lecteur (Google Files, VLC, etc.)</li>
+          </ol>
+        </div>
+
+        <div class="howto-card">
+          <div class="device">
+            <span class="device-icon">💻</span>
+            <h4>Sur ordinateur</h4>
+          </div>
+          <ol>
+            <li>Clic-droit sur un bouton → <strong>"Enregistrer le lien sous…"</strong></li>
+            <li>Choisis l'emplacement où tu veux le sauvegarder</li>
+            <li>Tu peux ensuite le transférer sur ton téléphone par AirDrop, câble USB, ou cloud</li>
+          </ol>
+        </div>
+
+      </div>
+
+      <p style="text-align:center; margin-top: 32px; color:#6A5A52; font-size:13px; font-weight:300;">
+        💡 <strong>Une fois téléchargés</strong>, tu peux écouter tes séances <strong>même sans connexion internet</strong>, où que tu sois — dans le train, en pleine nature, dans ton lit.
+      </p>
+    </div>
+  </section>
+
+  <footer>
+    <p><strong style="color:#3D1F16;">Fréquence Positive</strong> · Séances audio fabriquées à la main</p>
+    <p><a href="mailto:hello.frequencepositive@outlook.com">hello.frequencepositive@outlook.com</a></p>
+  </footer>
+
+  </div> <!-- /protected-content -->
+
+  <script>
+    (function() {
+      var CORRECT = "Rituel2026";
+      var STORAGE_KEY = "fp_fdm_2026_access";
+      var overlay = document.getElementById("password-overlay");
+      var content = document.getElementById("protected-content");
+      var form = document.getElementById("password-form");
+      var input = document.getElementById("password-input");
+      var error = document.getElementById("password-error");
+
+      function unlock() {
+        overlay.style.display = "none";
+        content.style.display = "block";
+      }
+
+      // Si déjà déverrouillé localement
+      try {
+        if (localStorage.getItem(STORAGE_KEY) === CORRECT) {
+          unlock();
+          return;
+        }
+      } catch(e) {}
+
+      form.addEventListener("submit", function(e) {
+        e.preventDefault();
+        var value = (input.value || "").trim();
+        if (value === CORRECT) {
+          try { localStorage.setItem(STORAGE_KEY, CORRECT); } catch(e) {}
+          unlock();
+        } else {
+          error.style.display = "block";
+          input.value = "";
+          input.focus();
+        }
+      });
+    })();
+  </script>
+
+</body>
+</html>
