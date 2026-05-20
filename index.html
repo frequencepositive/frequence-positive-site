@@ -1397,4 +1397,9 @@ function lancerVideoAccueil() {
   const DEBUT = new Date('2026-03-30T00:00:00').getTime();
   const now = Date.now();
   const jours = (now - DEBUT) / (1000 * 60 * 60 * 24);
-  if (jours >= 7)  { document.querySelectorAll('.avis-semaine-1').forEach(el => el.style.display =
+  if (jours >= 7)  { document.querySelectorAll('.avis-semaine-1').forEach(el => el.style.display = 'block'); }
+  if (jours >= 14) { document.querySelectorAll('.avis-semaine-2').forEach(el => el.style.display = 'block'); }
+})();
+</script>
+</body>
+</html>
