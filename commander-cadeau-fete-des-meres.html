@@ -406,6 +406,120 @@
     font-weight: 300;
   }
 
+  /* ──── FORMULAIRE INTÉGRÉ ──── */
+  .order-form {
+    margin-top: 28px;
+    text-align: left;
+  }
+
+  .order-form h3 {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 22px;
+    font-weight: 500;
+    color: var(--brown-deep);
+    margin-bottom: 6px;
+    text-align: center;
+  }
+
+  .order-form .form-intro {
+    color: var(--text-muted);
+    font-size: 14px;
+    font-weight: 300;
+    margin-bottom: 26px;
+    line-height: 1.6;
+    text-align: center;
+  }
+
+  .field { margin-bottom: 20px; }
+
+  .field label {
+    display: block;
+    font-size: 13px;
+    color: var(--brown-deep);
+    font-weight: 500;
+    margin-bottom: 8px;
+    letter-spacing: 0.02em;
+  }
+
+  .field label .req { color: var(--brown); font-weight: 400; }
+  .field label .opt { color: var(--text-muted); font-weight: 300; font-size: 12px; }
+
+  .field input[type="text"],
+  .field input[type="email"],
+  .field textarea {
+    width: 100%;
+    padding: 13px 16px;
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    background: #fafaf7;
+    font-family: 'DM Sans', sans-serif;
+    font-size: 15px;
+    color: var(--text);
+    transition: border-color 0.2s, background 0.2s;
+  }
+
+  .field input:focus, .field textarea:focus {
+    outline: none;
+    border-color: var(--brown);
+    background: white;
+  }
+
+  .field textarea {
+    min-height: 100px;
+    resize: vertical;
+    line-height: 1.6;
+  }
+
+  .field .hint {
+    margin-top: 6px;
+    font-size: 12.5px;
+    color: var(--text-muted);
+    font-weight: 300;
+    line-height: 1.5;
+  }
+
+  .submit-btn {
+    display: inline-block;
+    width: 100%;
+    background: linear-gradient(135deg, var(--gold), var(--gold-dark));
+    color: white;
+    font-family: 'DM Sans', sans-serif;
+    font-size: 16px;
+    font-weight: 500;
+    padding: 18px 32px;
+    border-radius: 50px;
+    text-decoration: none;
+    letter-spacing: 0.04em;
+    border: none;
+    cursor: pointer;
+    box-shadow: 0 8px 24px rgba(200,168,130,0.35);
+    transition: transform 0.2s, box-shadow 0.2s, opacity 0.2s;
+    margin-top: 8px;
+  }
+
+  .submit-btn:hover:not(:disabled) {
+    transform: translateY(-2px);
+    box-shadow: 0 12px 32px rgba(200,168,130,0.45);
+  }
+
+  .submit-btn:disabled { opacity: 0.7; cursor: wait; }
+
+  .submit-btn .spinner {
+    display: none;
+    width: 16px;
+    height: 16px;
+    border: 2px solid rgba(255,255,255,0.4);
+    border-top-color: white;
+    border-radius: 50%;
+    animation: spin 0.8s linear infinite;
+    margin-right: 10px;
+    vertical-align: middle;
+  }
+
+  .submit-btn.loading .spinner { display: inline-block; }
+
+  @keyframes spin { to { transform: rotate(360deg); } }
+
   footer {
     padding: 40px 24px;
     text-align: center;
@@ -510,21 +624,64 @@
     </div>
   </section>
 
-  <section class="order">
+  <section class="order" id="commander">
     <div class="order-card">
       <p class="order-tag">✦ Édition limitée</p>
       <h2 class="order-title">Spécial Fête des Mères<br>Pour offrir</h2>
       <p class="price">19,90 €</p>
       <p class="price-detail">4 fichiers · 20 minutes d'écoute · Livraison automatique le dim 31 mai à 9h</p>
 
-      <a href="https://buy.stripe.com/cNidRba1hev3dfW3FX5ZC0a" class="cta-button">
-        L'offrir maintenant →
-      </a>
+      <div class="order-form">
+        <h3>Quelques infos pour son cadeau</h3>
+        <p class="form-intro">On ne s'en sert que pour lui envoyer son cadeau de ta part le 31 mai.</p>
+
+        <form id="cadeau-form" name="cadeau-fdm" method="POST" data-netlify="true" data-netlify-honeypot="bot-field" action="/merci-commande-fdm.html">
+          <input type="hidden" name="form-name" value="cadeau-fdm" />
+          <p style="display:none;">
+            <label>Ne pas remplir : <input name="bot-field" /></label>
+          </p>
+
+          <div class="field">
+            <label for="acheteur_prenom">Ton prénom <span class="req">(à toi)</span></label>
+            <input type="text" id="acheteur_prenom" name="acheteur_prenom" required placeholder="Ex : Pierre">
+            <p class="hint">Il apparaîtra dans l'email qu'elle recevra : « [Ton prénom] a pensé à toi… »</p>
+          </div>
+
+          <div class="field">
+            <label for="acheteur_email">Ton email <span class="req">(à toi)</span></label>
+            <input type="email" id="acheteur_email" name="acheteur_email" required placeholder="ton.email@exemple.com">
+            <p class="hint">Le même que celui que tu utiliseras sur Stripe — pour qu'on puisse relier ton paiement à ta commande.</p>
+          </div>
+
+          <div class="field">
+            <label for="destinataire_prenom">Le prénom de la personne <span class="req">(à qui tu offres)</span></label>
+            <input type="text" id="destinataire_prenom" name="destinataire_prenom" required placeholder="Ex : Marie">
+            <p class="hint">Maman, conjointe, sœur, amie — celle à qui tu envoies le cadeau.</p>
+          </div>
+
+          <div class="field">
+            <label for="destinataire_email">Son email <span class="req">(à elle)</span></label>
+            <input type="email" id="destinataire_email" name="destinataire_email" required placeholder="son.email@exemple.com">
+            <p class="hint">C'est sur cet email qu'elle recevra son cadeau le 31 mai à 9h.</p>
+          </div>
+
+          <div class="field">
+            <label for="petit_mot">Un petit mot pour elle <span class="opt">(facultatif)</span></label>
+            <textarea id="petit_mot" name="petit_mot" placeholder="Quelques mots qui viennent du cœur — ils seront glissés dans son email du 31 mai. Si tu n'as pas d'idée, laisse vide, on s'en occupe."></textarea>
+            <p class="hint">Tu peux laisser vide : on rédigera une formulation chaleureuse avec ton prénom.</p>
+          </div>
+
+          <button type="submit" id="submit-btn" class="submit-btn">
+            <span class="spinner"></span>
+            <span class="btn-label">Confirmer et payer 19,90 € →</span>
+          </button>
+        </form>
+      </div>
 
       <p class="deadline">
         🗓️ Commandes acceptées jusqu'au mercredi 3 juin à minuit.
       </p>
-      <p class="secure-note">Paiement sécurisé via Stripe · On s'occupe de l'envoi pour toi</p>
+      <p class="secure-note">🔒 Paiement sécurisé via Stripe · On s'occupe de l'envoi pour toi</p>
     </div>
   </section>
 
@@ -538,6 +695,38 @@
       <a href="/mentions-legales.html">Mentions légales</a>
     </div>
   </footer>
+
+<script>
+  const STRIPE_URL = 'https://buy.stripe.com/cNidRba1hev3dfW3FX5ZC0a';
+
+  const form = document.getElementById('cadeau-form');
+  const btn = document.getElementById('submit-btn');
+  const btnLabel = btn.querySelector('.btn-label');
+
+  form.addEventListener('submit', async (e) => {
+    e.preventDefault();
+
+    btn.disabled = true;
+    btn.classList.add('loading');
+    btnLabel.textContent = 'Enregistrement…';
+
+    const formData = new FormData(form);
+    const body = new URLSearchParams(formData).toString();
+
+    try {
+      await fetch('/', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+        body: body
+      });
+    } catch (err) {
+      console.error('Netlify Forms error:', err);
+    }
+
+    btnLabel.textContent = 'Redirection vers le paiement…';
+    window.location.href = STRIPE_URL;
+  });
+</script>
 
 </body>
 </html>
