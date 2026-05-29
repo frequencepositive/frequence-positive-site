@@ -406,6 +406,90 @@
     font-weight: 300;
   }
 
+  /* ──── FAQ ──── */
+  .faq {
+    padding: 56px 24px 32px;
+    max-width: 800px;
+    margin: 0 auto;
+  }
+
+  .faq-tag {
+    display: inline-block;
+    color: var(--brown);
+    font-size: 11px;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    font-weight: 500;
+    margin-bottom: 14px;
+    text-align: center;
+    width: 100%;
+  }
+
+  .faq-list {
+    margin-top: 36px;
+  }
+
+  .faq-list details {
+    background: white;
+    border: 1px solid var(--border);
+    border-radius: 14px;
+    margin-bottom: 14px;
+    overflow: hidden;
+    transition: border-color 0.2s, box-shadow 0.2s;
+  }
+
+  .faq-list details[open] {
+    border-color: var(--gold);
+    box-shadow: 0 6px 22px rgba(58,40,32,0.06);
+  }
+
+  .faq-list summary {
+    cursor: pointer;
+    padding: 20px 24px;
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 19px;
+    font-weight: 500;
+    color: var(--brown-deep);
+    list-style: none;
+    position: relative;
+    padding-right: 56px;
+    line-height: 1.4;
+  }
+
+  .faq-list summary::-webkit-details-marker { display: none; }
+
+  .faq-list summary::after {
+    content: '+';
+    position: absolute;
+    right: 22px;
+    top: 50%;
+    transform: translateY(-50%);
+    font-family: 'DM Sans', sans-serif;
+    font-size: 26px;
+    font-weight: 300;
+    color: var(--brown);
+    transition: transform 0.2s;
+    line-height: 1;
+  }
+
+  .faq-list details[open] summary::after {
+    content: '−';
+    color: var(--gold-dark);
+  }
+
+  .faq-list .faq-answer {
+    padding: 0 24px 22px;
+    color: var(--text-muted);
+    font-size: 14.5px;
+    line-height: 1.7;
+    font-weight: 300;
+  }
+
+  .faq-list .faq-answer p { margin: 0; }
+  .faq-list .faq-answer p + p { margin-top: 10px; }
+  .faq-list .faq-answer strong { color: var(--brown-deep); font-weight: 500; }
+  .faq-list .faq-answer a { color: var(--brown); text-decoration: underline; }
+
   /* ──── FORMULAIRE INTÉGRÉ ──── */
   .order-form {
     margin-top: 28px;
@@ -621,6 +705,73 @@
     <div class="highlight-card">
       <p>« Coucou, c'est Max & Sandra. Aujourd'hui c'est ta fête, et [Ton prénom] a pensé à toi. Il nous a demandé de te préparer ce petit cadeau. Voilà ce qu'on a glissé pour toi… »</p>
       <p class="sub">— Extrait de l'email qu'elle recevra le dimanche 31 mai à 9h</p>
+    </div>
+  </section>
+
+  <section class="faq">
+    <p class="faq-tag">— Questions fréquentes —</p>
+    <h2 class="section-title">Tout ce que tu peux te demander</h2>
+
+    <div class="faq-list">
+
+      <details>
+        <summary>Comment ma maman recevra-t-elle son cadeau ?</summary>
+        <div class="faq-answer">
+          <p>Elle recevra un <strong>email de notre part</strong> le dimanche 31 mai à 9h pile, sur l'adresse que tu nous as donnée. Le message commencera par « Coucou, [son prénom] — aujourd'hui c'est ta fête, et [ton prénom] a pensé à toi… ». Elle n'aura qu'à cliquer pour accéder à ses 4 fichiers.</p>
+        </div>
+      </details>
+
+      <details>
+        <summary>Saura-t-elle combien ça a coûté ?</summary>
+        <div class="faq-answer">
+          <p>Non, à condition que tu utilises bien <strong>ton propre email</strong> lors du paiement Stripe (celui demandé dans "Coordonnées" — c'est sur cet email que tu reçois ton reçu). Le mail qu'elle recevra le 31 mai ne mentionne ni le prix, ni le mode de paiement — uniquement le cadeau et ton mot.</p>
+        </div>
+      </details>
+
+      <details>
+        <summary>Quelle est la différence avec les vidéos gratuites de votre chaîne YouTube ?</summary>
+        <div class="faq-answer">
+          <p>Les vidéos YouTube sont en accès libre, mais hébergées sur la plateforme — donc <strong>avec de la pub</strong>, des notifications, et les recommandations qui défilent à côté. Quand elle écoute, elle reste tributaire du wifi et des distractions de l'app.</p>
+          <p>Le rituel Fête des Mères, c'est <strong>les mêmes 10 minutes</strong> matin + soir, mais en MP3 et MP4 qu'elle <strong>télécharge sur son téléphone</strong>. Elle l'écoute partout — voiture, balade, jardin, lit — <strong>même hors connexion, sans pub, sans distractions</strong>. C'est à elle pour toujours.</p>
+        </div>
+      </details>
+
+      <details>
+        <summary>Doit-elle avoir un compte ou un mot de passe ?</summary>
+        <div class="faq-answer">
+          <p><strong>Aucun compte à créer.</strong> Elle aura juste un petit mot de passe simple à taper (<code>Rituel2026</code>) — qu'on lui glisse directement dans son email. Elle clique, elle entre le mot de passe, elle télécharge ses 4 fichiers. C'est aussi simple que ça.</p>
+        </div>
+      </details>
+
+      <details>
+        <summary>Peut-elle écouter hors connexion ?</summary>
+        <div class="faq-answer">
+          <p>Oui, c'est même l'idée. Une fois les fichiers téléchargés sur son téléphone, elle peut les écouter <strong>dans la voiture, en marchant, au lit, dans son jardin — sans wifi, sans 4G</strong>. Les fichiers restent dans son téléphone.</p>
+        </div>
+      </details>
+
+      <details>
+        <summary>Quelle voix entendra-t-elle ?</summary>
+        <div class="faq-answer">
+          <p>C'est <strong>la voix de Max</strong>. Une voix masculine douce, posée, qui accompagne la respiration et les affirmations. La même voix que sur nos vidéos YouTube, si tu veux te faire une idée du rendu.</p>
+        </div>
+      </details>
+
+      <details>
+        <summary>Et si je veux modifier le petit mot après avoir commandé ?</summary>
+        <div class="faq-answer">
+          <p>Pas de souci — écris-nous à <a href="mailto:hello.frequencepositive@outlook.com">hello.frequencepositive@outlook.com</a> avec ta nouvelle version, jusqu'au <strong>samedi 30 mai au soir</strong>. On l'ajoute manuellement avant l'envoi du dimanche matin.</p>
+        </div>
+      </details>
+
+      <details>
+        <summary>Pourquoi un rituel audio plutôt qu'un cadeau physique ?</summary>
+        <div class="faq-answer">
+          <p><strong>Rien ne t'empêche d'offrir les deux.</strong> Tu peux glisser un bouquet de fleurs, un parfum, ou un petit mot manuscrit en complément du rituel. C'est même pour ça qu'on a calibré le prix à <strong>19,90 €</strong> — un montant volontairement léger, pour te laisser de la marge si tu veux ajouter un autre cadeau.</p>
+          <p>L'idée du rituel audio, c'est d'offrir quelque chose qui <strong>dure dans le temps</strong>. Un parfum se finit, des fleurs fanent, un livre attend sur une étagère. Un rituel, elle le glisse dans son téléphone et l'écoute quand elle veut — partout, dans la durée.</p>
+        </div>
+      </details>
+
     </div>
   </section>
 

@@ -440,6 +440,88 @@
     margin: 0 10px;
   }
 
+  /* ──── FAQ ──── */
+  .faq {
+    padding: 56px 24px 32px;
+    max-width: 800px;
+    margin: 0 auto;
+  }
+
+  .faq-tag {
+    display: inline-block;
+    color: var(--brown);
+    font-size: 11px;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    font-weight: 500;
+    margin-bottom: 14px;
+    text-align: center;
+    width: 100%;
+  }
+
+  .faq-list { margin-top: 36px; }
+
+  .faq-list details {
+    background: white;
+    border: 1px solid var(--border);
+    border-radius: 14px;
+    margin-bottom: 14px;
+    overflow: hidden;
+    transition: border-color 0.2s, box-shadow 0.2s;
+  }
+
+  .faq-list details[open] {
+    border-color: var(--gold);
+    box-shadow: 0 6px 22px rgba(58,40,32,0.06);
+  }
+
+  .faq-list summary {
+    cursor: pointer;
+    padding: 20px 24px;
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 19px;
+    font-weight: 500;
+    color: var(--brown-deep);
+    list-style: none;
+    position: relative;
+    padding-right: 56px;
+    line-height: 1.4;
+  }
+
+  .faq-list summary::-webkit-details-marker { display: none; }
+
+  .faq-list summary::after {
+    content: '+';
+    position: absolute;
+    right: 22px;
+    top: 50%;
+    transform: translateY(-50%);
+    font-family: 'DM Sans', sans-serif;
+    font-size: 26px;
+    font-weight: 300;
+    color: var(--brown);
+    transition: transform 0.2s;
+    line-height: 1;
+  }
+
+  .faq-list details[open] summary::after {
+    content: '−';
+    color: var(--gold-dark);
+  }
+
+  .faq-list .faq-answer {
+    padding: 0 24px 22px;
+    color: var(--text-muted);
+    font-size: 14.5px;
+    line-height: 1.7;
+    font-weight: 300;
+  }
+
+  .faq-list .faq-answer p { margin: 0; }
+  .faq-list .faq-answer p + p { margin-top: 10px; }
+  .faq-list .faq-answer strong { color: var(--brown-deep); font-weight: 500; }
+  .faq-list .faq-answer a { color: var(--brown); text-decoration: underline; }
+
   /* ──── RESPONSIVE ──── */
   @media (max-width: 600px) {
     .hero { padding: 48px 20px 40px; }
@@ -544,6 +626,74 @@
         </div>
 
       </div>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section class="faq">
+    <p class="faq-tag">— Questions fréquentes —</p>
+    <h2 class="section-title">Tout ce que tu peux te demander</h2>
+
+    <div class="faq-list">
+
+      <details>
+        <summary>Quand vais-je recevoir mon rituel ?</summary>
+        <div class="faq-answer">
+          <p><strong>Immédiatement après ton paiement.</strong> Le lien de téléchargement arrive dans ta boîte mail en quelques secondes — tu peux télécharger tes 4 fichiers tout de suite et commencer dès demain matin si tu veux.</p>
+        </div>
+      </details>
+
+      <details>
+        <summary>Quelle est la différence avec les vidéos gratuites de votre chaîne YouTube ?</summary>
+        <div class="faq-answer">
+          <p>Les vidéos YouTube sont en accès libre, mais hébergées sur la plateforme — donc <strong>avec de la pub</strong>, des notifications, et les recommandations qui défilent à côté. Tu restes tributaire du wifi et des distractions de l'app.</p>
+          <p>Le rituel Fête des Mères, c'est <strong>les mêmes 10 minutes</strong> matin + soir, mais en MP3 et MP4 que tu <strong>télécharges sur ton téléphone</strong>. Tu écoutes partout — voiture, balade, jardin, lit — <strong>même hors connexion, sans pub, sans distractions</strong>. C'est à toi pour toujours.</p>
+        </div>
+      </details>
+
+      <details>
+        <summary>Dois-je créer un compte ou avoir un mot de passe ?</summary>
+        <div class="faq-answer">
+          <p><strong>Aucun compte à créer.</strong> Tu auras juste un petit mot de passe simple à taper (<code>Rituel2026</code>) — qu'on te glisse directement dans ton email. Tu cliques, tu entres le mot de passe, tu télécharges tes 4 fichiers. C'est aussi simple que ça.</p>
+        </div>
+      </details>
+
+      <details>
+        <summary>Puis-je écouter hors connexion ?</summary>
+        <div class="faq-answer">
+          <p>Oui, c'est même l'idée. Une fois les fichiers téléchargés sur ton téléphone, tu peux les écouter <strong>dans la voiture, en marchant, au lit, dans ton jardin — sans wifi, sans 4G</strong>. Les fichiers restent dans ton téléphone.</p>
+        </div>
+      </details>
+
+      <details>
+        <summary>Quelle voix vais-je entendre ?</summary>
+        <div class="faq-answer">
+          <p>C'est <strong>la voix de Max</strong>. Une voix masculine douce, posée, qui accompagne la respiration et les affirmations. La même voix que sur nos vidéos YouTube, si tu veux te faire une idée du rendu.</p>
+        </div>
+      </details>
+
+      <details>
+        <summary>Combien de fois puis-je écouter le rituel ?</summary>
+        <div class="faq-answer">
+          <p><strong>Autant de fois que tu veux.</strong> Une fois téléchargés, les 4 fichiers t'appartiennent. Tu peux les écouter tous les jours pendant des mois ou des années si ça te fait du bien — sans limite, sans abonnement, sans renouvellement.</p>
+        </div>
+      </details>
+
+      <details>
+        <summary>C'est compatible avec quel téléphone ?</summary>
+        <div class="faq-answer">
+          <p>Les fichiers sont en <strong>MP3 (audio) et MP4 (vidéo)</strong> — deux formats universels qui fonctionnent sur <strong>tous les téléphones, iPhone comme Android</strong>, sans application spéciale à installer. Tu peux aussi les écouter sur un ordinateur, une tablette, ou les envoyer sur ton enceinte connectée.</p>
+        </div>
+      </details>
+
+      <details>
+        <summary>Pourquoi 19,90 € si je peux trouver des vidéos gratuites ailleurs ?</summary>
+        <div class="faq-answer">
+          <p>Parce que ce n'est pas la même expérience. <strong>Pas de pub</strong>, pas de distractions, pas de wifi nécessaire. Un format dédié 10 minutes ramené à l'essentiel — le matin et le soir — pour <strong>installer un vrai rituel</strong> dans ton quotidien.</p>
+          <p>Et surtout : <strong>c'est à toi pour toujours</strong>, dans ton téléphone, à portée de main n'importe où, n'importe quand. Pas dépendant d'un algorithme qui peut décider de cacher la vidéo demain.</p>
+        </div>
+      </details>
+
     </div>
   </section>
 
