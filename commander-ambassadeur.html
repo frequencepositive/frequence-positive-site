@@ -679,7 +679,7 @@
 <div style="background: linear-gradient(135deg, #7B4A3A 0%, #5A3028 100%); color: #fff; padding: 18px 20px; text-align: center; font-family: 'DM Sans', Arial, sans-serif; box-shadow: 0 4px 20px rgba(0,0,0,0.15); position: relative; z-index: 100;">
   <div style="max-width: 720px; margin: 0 auto;">
     <p style="margin: 0 0 6px 0; font-size: 11px; letter-spacing: 3px; text-transform: uppercase; opacity: 0.85;">🎁 Offre exclusive ambassadeur</p>
-    <p style="margin: 0; font-size: 17px; font-weight: 600; line-height: 1.4;">Séance 1h Immersion Profonde — <span style="font-size: 20px;">35,70 €</span> <span style="font-size: 13px; opacity: 0.7; text-decoration: line-through; margin-left: 8px;">89,90 €</span></p>
+    <p id="bandeau-prix-ligne" style="margin: 0; font-size: 17px; font-weight: 600; line-height: 1.4;">Séance 1h Immersion Profonde — <span style="font-size: 20px;">35,70 €</span> <span style="font-size: 13px; opacity: 0.7; text-decoration: line-through; margin-left: 8px;">89,90 €</span></p>
     <p id="bandeau-mention-ref" style="margin: 6px 0 0 0; font-size: 13px; opacity: 0.9; font-style: italic;">Tarif réservé aux proches de nos ambassadeurs — valable jusqu'au 31 décembre 2026</p>
   </div>
 </div>
@@ -808,9 +808,15 @@
             <div class="radio-desc">Notre format le plus long — un moment d'écoute immersif et prolongé. <strong>Tarif Ambassadeur exclusif appliqué automatiquement.</strong></div>
           </div>
         </label>
-        <!-- Options 10min, 30min, 10h MASQUÉES dans la version ambassadeur -->
-        <label class="radio-option" style="display:none" onclick="selectDuree(this, '10 minutes (Format Express)', 29.9)">
+        <!-- Options 30min, 10h MASQUÉES dans la version ambassadeur -->
+        <!-- 10min : démasquée dynamiquement par JS si ?duree=10min dans l'URL (tarif ambassadeur 19,90 €) -->
+        <label class="radio-option" id="opt-10min-ambassadeur" style="display:none" onclick="selectDuree(this, '10 minutes (Format Express)', 19.9)">
           <input type="radio" name="duree" value="10min">
+          <div class="radio-letter">★</div>
+          <div class="radio-content">
+            <div class="radio-title">10 minutes — Format Express <span class="price-badge" style="background:#7B4A3A;color:#fff">19,90€ <span style="text-decoration:line-through;opacity:0.7;font-size:11px;margin-left:6px">29,90€</span></span></div>
+            <div class="radio-desc">Un focus ultra-précis sur une intention unique. <strong>Tarif Ambassadeur exclusif appliqué automatiquement.</strong></div>
+          </div>
         </label>
         <label class="radio-option" style="display:none" onclick="selectDuree(this, '30 minutes (Immersion Totale)', 54.9)">
           <input type="radio" name="duree" value="30min">
@@ -1612,7 +1618,7 @@ async function submitForm() {
           delai: state.delai || '—',
           prix_total: state.prix_total.toFixed(2) + ' €',
           ambassadeur: window.AMBASSADEUR_REF || 'Non spécifié',
-          tarif_special: 'Tarif Ambassadeur — 35,70 € au lieu de 89,90 €'
+          tarif_special: (state.duree && state.duree.includes('10 minutes')) ? 'Tarif Ambassadeur — 19,90 € au lieu de 29,90 €' : 'Tarif Ambassadeur — 35,70 € au lieu de 89,90 €'
         }
       })
     });
@@ -1723,31 +1729,79 @@ window.addEventListener('DOMContentLoaded', function() {
     }
   }
 
-  // Pré-sélectionner format 1h Immersion Profonde à 35,70 €
+  // ═══════════════════════════════════════════════════════════════
+  // Lecture du paramètre ?duree=10min pour basculer en format court
+  // (sinon : comportement par défaut = 1h Immersion Profonde à 35,70 €)
+  // ═══════════════════════════════════════════════════════════════
+  const dureeParam = urlParams.get('duree');
+  const is10minMode = (dureeParam === '10min');
+
+  // Configuration selon le mode
+  const ambassadeurConfig = is10minMode ? {
+    duree: '10 minutes (Format Express)',
+    prix: 19.9,
+    prixLabel: '19,90 €'
+  } : {
+    duree: '1 heure (Immersion Profonde)',
+    prix: 35.7,
+    prixLabel: '35,70 €'
+  };
+
+  // Si mode 10min : démasquer l'option 10min, masquer la 1h, basculer la sélection
+  if (is10minMode) {
+    const opt10min = document.getElementById('opt-10min-ambassadeur');
+    const opt1h = document.querySelector('label.radio-option[onclick*="1 heure"]');
+    if (opt10min) {
+      opt10min.style.display = '';
+      opt10min.classList.add('selected');
+      const radio10 = opt10min.querySelector('input[type="radio"]');
+      if (radio10) radio10.checked = true;
+    }
+    if (opt1h) {
+      opt1h.style.display = 'none';
+      opt1h.classList.remove('selected');
+      const radio1h = opt1h.querySelector('input[type="radio"]');
+      if (radio1h) radio1h.checked = false;
+    }
+    // Mettre à jour le sous-titre de la section format
+    const sectionLabel = document.querySelector('p[style*="🌅"]');
+    if (sectionLabel) sectionLabel.innerHTML = '⚡ Format ambassadeur — Express';
+    const sectionDesc = sectionLabel ? sectionLabel.nextElementSibling : null;
+    if (sectionDesc) sectionDesc.textContent = 'Format réservé à l\'offre Ambassadeur — 10 minutes d\'écoute ciblée et personnalisée.';
+    // Mettre à jour le bandeau haut de page
+    const bandeauPrix = document.getElementById('bandeau-prix-ligne');
+    if (bandeauPrix) {
+      bandeauPrix.innerHTML = 'Séance 10 min Express — <span style="font-size: 20px;">19,90 €</span> <span style="font-size: 13px; opacity: 0.7; text-decoration: line-through; margin-left: 8px;">29,90 €</span>';
+    }
+    // Mettre à jour le titre de la page
+    document.title = 'Offre Ambassadeur — 19,90 € — Fréquence Positive';
+  }
+
+  // Pré-sélectionner le format selon le mode
   if (typeof state !== 'undefined') {
-    state.duree = '1 heure (Immersion Profonde)';
-    state.duree_label = '1 heure (Immersion Profonde)';
-    state.prix_base = 35.7;
+    state.duree = ambassadeurConfig.duree;
+    state.duree_label = ambassadeurConfig.duree;
+    state.prix_base = ambassadeurConfig.prix;
     state.prix_extra = 0;
-    state.prix_total = 35.7;
+    state.prix_total = ambassadeurConfig.prix;
     state.delai = 'standard';
     if (typeof calcTotal === 'function') calcTotal();
     if (typeof update30AffOption === 'function') update30AffOption();
   }
-  // Sécurité : forcer le prix à 35,70 € même si l'utilisateur tente de modifier
+  // Sécurité : forcer le prix selon le format ambassadeur actif
   const originalCalc = window.calcTotal;
   if (typeof originalCalc === 'function') {
     window.calcTotal = function() {
-      state.prix_base = 35.7;
+      state.prix_base = ambassadeurConfig.prix;
       state.prix_extra = 0;
-      state.prix_total = 35.7;
-      state.duree = '1 heure (Immersion Profonde)';
-      state.duree_label = '1 heure (Immersion Profonde)';
+      state.prix_total = ambassadeurConfig.prix;
+      state.duree = ambassadeurConfig.duree;
+      state.duree_label = ambassadeurConfig.duree;
       state.delai = 'standard';
       const totalEl = document.getElementById('recap-total');
-      if (totalEl) totalEl.textContent = '35,70 €';
+      if (totalEl) totalEl.textContent = ambassadeurConfig.prixLabel;
       const dureeEl = document.getElementById('recap-duree');
-      if (dureeEl) dureeEl.textContent = '1 heure (Immersion Profonde)';
+      if (dureeEl) dureeEl.textContent = ambassadeurConfig.duree;
     };
     window.calcTotal();
   }
@@ -1768,4 +1822,10 @@ window.addEventListener('DOMContentLoaded', function() {
 });
 </script>
 
-<div style="background: #3D1F16; color: rgba(255,255,255,0.55); text-align: center; paddi
+<div style="background: #3D1F16; color: rgba(255,255,255,0.55); text-align: center; padding: 32px 24px; font-size: 12px;">
+  <div style="margin-bottom: 12px;">
+    <a href="accueil.html" style="color: rgba(255,255,255,0.75); text-decoration: none; margin: 0 12px;">Formulaire de commande</a>
+    <a href="faq.html" style="color: rgba(255,255,255,0.75); text-decoration: none; margin: 0 12px;">FAQ</a>
+    <a href="mentions-legales.html" style="color: rgba(255,255,255,0.75); text-decoration: none; margin: 0 12px;">Mentions légales</a>
+    <a href="cgv.html" style="color: rgba(255,255,255,0.75); text-decoration: none; margin: 0 12px;">CGV</a>
+    <a href="confidentialite.html" style="color: rgba(255,255,
