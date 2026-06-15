@@ -1718,7 +1718,17 @@ window.addEventListener('DOMContentLoaded', function() {
   // Lecture du paramètre URL ?ref=NOM
   const urlParams = new URLSearchParams(window.location.search);
   const refParam = urlParams.get('ref');
-  if (refParam) {
+  const sourceParam = urlParams.get('source');
+  const isNewsletterMode = (sourceParam === 'newsletter');
+
+  if (isNewsletterMode) {
+    // Mode "fidélité abonnés newsletter" — bandeau dédié
+    window.AMBASSADEUR_REF = 'Newsletter Fréquence Positive';
+    const mentionEl = document.getElementById('bandeau-mention-ref');
+    if (mentionEl) {
+      mentionEl.innerHTML = 'Tarif réservé à <strong>nos abonnés Fréquence Positive</strong> — valable jusqu\'au 31 décembre 2026';
+    }
+  } else if (refParam) {
     // Décodage + capitalize de chaque mot
     const refDecoded = decodeURIComponent(refParam.replace(/\+/g, ' '));
     const refFormatted = refDecoded.split(/\s+/).map(w => w.charAt(0).toUpperCase() + w.slice(1).toLowerCase()).join(' ');
