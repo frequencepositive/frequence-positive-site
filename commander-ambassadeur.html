@@ -678,7 +678,7 @@
 <!-- ═══════════════════════════════════════════════════════════════ -->
 <div style="background: linear-gradient(135deg, #7B4A3A 0%, #5A3028 100%); color: #fff; padding: 18px 20px; text-align: center; font-family: 'DM Sans', Arial, sans-serif; box-shadow: 0 4px 20px rgba(0,0,0,0.15); position: relative; z-index: 100;">
   <div style="max-width: 720px; margin: 0 auto;">
-    <p style="margin: 0 0 6px 0; font-size: 11px; letter-spacing: 3px; text-transform: uppercase; opacity: 0.85;">🎁 Offre exclusive ambassadeur</p>
+    <p id="bandeau-tagline" style="margin: 0 0 6px 0; font-size: 11px; letter-spacing: 3px; text-transform: uppercase; opacity: 0.85;">🎁 Offre exclusive ambassadeur</p>
     <p id="bandeau-prix-ligne" style="margin: 0; font-size: 17px; font-weight: 600; line-height: 1.4;">Séance 1h Immersion Profonde — <span style="font-size: 20px;">35,70 €</span> <span style="font-size: 13px; opacity: 0.7; text-decoration: line-through; margin-left: 8px;">89,90 €</span></p>
     <p id="bandeau-mention-ref" style="margin: 6px 0 0 0; font-size: 13px; opacity: 0.9; font-style: italic;">Tarif réservé aux proches de nos ambassadeurs — valable jusqu'au 31 décembre 2026</p>
   </div>
@@ -1724,9 +1724,13 @@ window.addEventListener('DOMContentLoaded', function() {
   if (isNewsletterMode) {
     // Mode "fidélité abonnés newsletter" — bandeau dédié, validité limitée fin juin 2026
     window.AMBASSADEUR_REF = 'Newsletter Fréquence Positive';
+    const taglineEl = document.getElementById('bandeau-tagline');
+    if (taglineEl) {
+      taglineEl.innerHTML = '🎁 Notre cadeau pour nos abonnés';
+    }
     const mentionEl = document.getElementById('bandeau-mention-ref');
     if (mentionEl) {
-      mentionEl.innerHTML = 'Tarif réservé à <strong>nos abonnés Fréquence Positive</strong> — valable jusqu\'au 30 juin 2026';
+      mentionEl.innerHTML = 'Tarif réservé à <strong>nos abonnés Fréquence Positive</strong> — valable jusqu\'au 31 juillet 2026';
     }
   } else if (refParam) {
     // Décodage + capitalize de chaque mot
