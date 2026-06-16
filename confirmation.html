@@ -417,5 +417,19 @@ footer a:hover { color: white; }
   </div>
 </footer>
 
+<script>
+(function(){
+  try {
+    var sid = new URLSearchParams(window.location.search).get('session_id');
+    if (sid) {
+      fetch('/.netlify/functions/mark-buyer', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ session_id: sid })
+      }).catch(function(){});
+    }
+  } catch (e) {}
+})();
+</script>
 </body>
 </html>
