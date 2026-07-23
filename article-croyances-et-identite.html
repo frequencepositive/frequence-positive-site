@@ -1,0 +1,858 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Fréquence Positive — Croyances et identité : qui serais-tu sans tes limitations ?</title>
+<meta name="description" content="Qui serais-tu vraiment si tu ne portais plus ces croyances limitantes ? Un voyage doux vers ton identité profonde — celle que tu as toujours été, sous les couches.">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400;1,500&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+
+<style>
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+:root {
+  --green-fog:   #C8DDD0;
+  --green-mid:   #A8C4B8;
+  --green-deep:  #7BA898;
+  --green-dark:  #4A7A6A;
+  --green-bg:    #E8F2ED;
+  --green-bg2:   #D4E8DF;
+  --brown:       #7B4A3A;
+  --brown-light: #A06B58;
+  --brown-dark:  #5A3028;
+  --brown-ultra: #3D1F16;
+  --text-main:   #3A2820;
+  --text-muted:  #6A5A52;
+  --text-light:  #9A8A80;
+  --card-bg:     rgba(255,255,255,0.65);
+  --card-border: rgba(123,74,58,0.18);
+}
+
+html { scroll-behavior: smooth; }
+
+body {
+  font-family: 'DM Sans', system-ui, sans-serif;
+  background: var(--green-bg);
+  color: var(--text-main);
+  overflow-x: hidden;
+}
+
+#waveCanvas {
+  position: fixed;
+  inset: 0;
+  width: 100%; height: 100%;
+  pointer-events: none;
+  z-index: 0;
+  opacity: 0.3;
+}
+
+nav {
+  position: fixed;
+  top: 0; left: 0; right: 0;
+  z-index: 100;
+  padding: 18px 48px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: rgba(200,221,208,0.88);
+  backdrop-filter: blur(12px);
+  border-bottom: 1px solid rgba(123,74,58,0.12);
+}
+.nav-logo {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 1.15rem;
+  font-weight: 500;
+  color: var(--brown);
+  letter-spacing: 0.06em;
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+.nav-links { display: flex; align-items: center; gap: 32px; }
+.nav-links a {
+  color: var(--text-muted);
+  text-decoration: none;
+  font-size: 13px;
+  font-weight: 400;
+  letter-spacing: 0.03em;
+  transition: color 0.2s;
+}
+.nav-links a:hover { color: var(--brown); }
+.nav-cta {
+  background: var(--brown) !important;
+  color: white !important;
+  padding: 10px 24px !important;
+  border-radius: 50px !important;
+  font-weight: 500 !important;
+  transition: background 0.2s !important;
+}
+.nav-cta:hover { background: var(--brown-dark) !important; }
+
+.article-hero {
+  position: relative;
+  z-index: 1;
+  padding: 140px 24px 64px;
+  text-align: center;
+  max-width: 780px;
+  margin: 0 auto;
+}
+.article-tag {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: rgba(123,74,58,0.1);
+  border: 1px solid rgba(123,74,58,0.22);
+  border-radius: 50px;
+  padding: 6px 18px;
+  font-size: 11px;
+  font-weight: 500;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--brown);
+  margin-bottom: 28px;
+  animation: fadeDown 0.7s ease both;
+}
+.article-title {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: clamp(2rem, 5.5vw, 3.6rem);
+  font-weight: 400;
+  line-height: 1.18;
+  color: var(--text-main);
+  margin-bottom: 22px;
+  animation: fadeDown 0.8s 0.08s ease both;
+}
+.article-title em { font-style: italic; color: var(--brown); }
+.article-meta {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 20px;
+  font-size: 12px;
+  color: var(--text-light);
+  letter-spacing: 0.05em;
+  margin-bottom: 48px;
+  animation: fadeDown 0.8s 0.15s ease both;
+}
+.article-meta span { display: flex; align-items: center; gap: 6px; }
+.meta-divider { width: 3px; height: 3px; border-radius: 50%; background: var(--text-light); }
+
+.article-intro-card {
+  background: var(--card-bg);
+  border: 1px solid var(--card-border);
+  border-radius: 20px;
+  padding: 36px 40px;
+  text-align: left;
+  backdrop-filter: blur(10px);
+  box-shadow: 0 4px 32px rgba(123,74,58,0.06);
+  animation: fadeUp 0.9s 0.2s ease both;
+  position: relative;
+  overflow: hidden;
+}
+.article-intro-card::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 50%;
+  transform: translateX(-50%);
+  width: 160px; height: 1.5px;
+  background: linear-gradient(90deg, transparent, var(--brown-light), transparent);
+}
+.article-intro-card p {
+  font-size: 16.5px;
+  line-height: 1.85;
+  color: var(--text-muted);
+  font-weight: 300;
+}
+.article-intro-card p strong { color: var(--brown-light); font-weight: 500; }
+
+.ornament {
+  text-align: center;
+  color: var(--brown-light);
+  font-size: 1.1rem;
+  letter-spacing: 0.4em;
+  opacity: 0.5;
+  margin: 48px 0;
+}
+
+.article-body {
+  position: relative;
+  z-index: 1;
+  max-width: 720px;
+  margin: 0 auto;
+  padding: 0 24px 80px;
+}
+.article-body p {
+  font-size: 16px;
+  line-height: 1.9;
+  color: var(--text-muted);
+  margin-bottom: 22px;
+  font-weight: 300;
+}
+.article-body p strong { color: var(--text-main); font-weight: 500; }
+.article-body p em { font-style: italic; color: var(--brown-light); }
+
+.article-body h2 {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: clamp(1.5rem, 3.5vw, 2.1rem);
+  font-weight: 500;
+  color: var(--text-main);
+  margin: 56px 0 18px;
+  line-height: 1.25;
+  position: relative;
+  padding-left: 20px;
+}
+.article-body h2::before {
+  content: '';
+  position: absolute;
+  left: 0; top: 8px;
+  width: 3px;
+  height: calc(100% - 8px);
+  background: linear-gradient(to bottom, var(--brown), var(--brown-light));
+  border-radius: 2px;
+}
+.article-body h3 {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 1.25rem;
+  font-weight: 500;
+  color: var(--brown);
+  margin: 36px 0 12px;
+  letter-spacing: 0.02em;
+}
+
+.article-body ul, .article-body ol {
+  margin: 0 0 22px 0;
+  padding-left: 0;
+  list-style: none;
+}
+.article-body ul li, .article-body ol li {
+  font-size: 15.5px;
+  line-height: 1.8;
+  color: var(--text-muted);
+  margin-bottom: 10px;
+  padding-left: 26px;
+  position: relative;
+}
+.article-body ul li::before {
+  content: '✦';
+  position: absolute;
+  left: 0;
+  color: var(--brown-light);
+  font-size: 11px;
+  top: 4px;
+}
+.article-body ol { counter-reset: ol-counter; }
+.article-body ol li::before {
+  content: counter(ol-counter);
+  counter-increment: ol-counter;
+  position: absolute;
+  left: 0;
+  width: 18px; height: 18px;
+  background: var(--brown);
+  color: white;
+  border-radius: 50%;
+  font-size: 10px;
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  top: 3px;
+}
+
+.article-body blockquote {
+  background: rgba(123,74,58,0.06);
+  border-left: 3px solid var(--brown);
+  border-radius: 0 12px 12px 0;
+  padding: 22px 28px;
+  margin: 32px 0;
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 1.25rem;
+  font-style: italic;
+  color: var(--brown-dark);
+  line-height: 1.65;
+}
+
+.encadre {
+  background: var(--card-bg);
+  border: 1px solid var(--card-border);
+  border-radius: 16px;
+  padding: 28px 32px;
+  margin: 36px 0;
+  backdrop-filter: blur(8px);
+  position: relative;
+}
+.encadre-label {
+  position: absolute;
+  top: -12px; left: 24px;
+  background: var(--brown);
+  color: white;
+  font-size: 10px;
+  font-weight: 600;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  padding: 4px 14px;
+  border-radius: 50px;
+}
+.encadre p { margin-bottom: 10px !important; }
+.encadre p:last-child { margin-bottom: 0 !important; }
+
+.article-img {
+  width: 100%;
+  border-radius: 16px;
+  margin: 36px 0;
+  display: block;
+  object-fit: cover;
+  max-height: 420px;
+  box-shadow: 0 8px 32px rgba(123,74,58,0.10);
+}
+
+.encadre-yt {
+  background: rgba(123,74,58,0.05);
+  border: 1px solid rgba(123,74,58,0.16);
+  border-left: 3px solid var(--brown-light);
+  border-radius: 0 12px 12px 0;
+  padding: 18px 24px;
+  margin: 32px 0;
+  display: flex;
+  align-items: center;
+  gap: 14px;
+}
+.encadre-yt-icon { font-size: 1.4rem; flex-shrink: 0; }
+.encadre-yt-text { font-size: 14px; color: var(--text-muted); line-height: 1.6; }
+.encadre-yt-text a { color: var(--brown); font-weight: 500; text-decoration: none; }
+.encadre-yt-text a:hover { text-decoration: underline; }
+
+.prog-card-wrap {
+  position: relative;
+  z-index: 1;
+  max-width: 720px;
+  margin: 0 auto 40px;
+  padding: 0 24px;
+}
+.prog-card {
+  background: linear-gradient(135deg, rgba(74,122,106,0.10), rgba(123,74,58,0.08));
+  border: 1px solid rgba(74,122,106,0.25);
+  border-radius: 20px;
+  padding: 32px 36px;
+  display: flex;
+  align-items: center;
+  gap: 28px;
+  backdrop-filter: blur(10px);
+}
+.prog-card-icon { font-size: 2.4rem; flex-shrink: 0; }
+.prog-card-body { flex: 1; }
+.prog-card-label {
+  font-size: 10px;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--green-dark);
+  font-weight: 600;
+  margin-bottom: 6px;
+}
+.prog-card-title {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 1.3rem;
+  font-weight: 500;
+  color: var(--text-main);
+  margin-bottom: 6px;
+  line-height: 1.3;
+}
+.prog-card-text { font-size: 13px; color: var(--text-muted); line-height: 1.6; }
+.prog-card-btn {
+  display: inline-block;
+  background: linear-gradient(135deg, var(--green-dark), var(--green-deep));
+  color: white;
+  text-decoration: none;
+  padding: 12px 28px;
+  border-radius: 50px;
+  font-size: 13px;
+  font-weight: 500;
+  letter-spacing: 0.03em;
+  white-space: nowrap;
+  flex-shrink: 0;
+  transition: opacity 0.2s, transform 0.15s;
+  box-shadow: 0 3px 14px rgba(74,122,106,0.28);
+}
+.prog-card-btn:hover { opacity: 0.9; transform: translateY(-1px); }
+
+.yt-bloc {
+  position: relative;
+  z-index: 1;
+  max-width: 720px;
+  margin: 0 auto 40px;
+  padding: 0 24px;
+}
+.yt-bloc-title {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 1.35rem;
+  font-weight: 500;
+  color: var(--text-main);
+  text-align: center;
+  margin-bottom: 24px;
+  letter-spacing: 0.02em;
+}
+.yt-inner { display: grid; grid-template-columns: 1fr; gap: 16px; }
+.yt-card {
+  background: var(--card-bg);
+  border: 1px solid var(--card-border);
+  border-radius: 16px;
+  padding: 24px 28px;
+  text-align: center;
+  backdrop-filter: blur(8px);
+  transition: border-color 0.2s, transform 0.15s;
+}
+.yt-card:hover { border-color: rgba(123,74,58,0.32); transform: translateY(-2px); }
+.yt-logo { display: flex; justify-content: center; margin-bottom: 12px; }
+.yt-logo svg { width: 56px; height: 40px; border-radius: 8px; }
+.yt-name { font-family: 'Cormorant Garamond', serif; font-size: 1.1rem; font-weight: 500; color: var(--text-main); margin-bottom: 6px; }
+.yt-desc { font-size: 13px; color: var(--text-muted); line-height: 1.6; margin-bottom: 16px; }
+.yt-btn {
+  display: inline-block;
+  background: var(--brown);
+  color: white;
+  text-decoration: none;
+  padding: 9px 22px;
+  border-radius: 50px;
+  font-size: 12px;
+  font-weight: 500;
+  letter-spacing: 0.04em;
+  transition: background 0.2s, transform 0.15s;
+}
+.yt-btn:hover { background: var(--brown-dark); transform: translateY(-1px); }
+
+.article-nav {
+  position: relative;
+  z-index: 1;
+  max-width: 720px;
+  margin: 0 auto 80px;
+  padding: 0 24px;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+}
+.article-nav a {
+  background: var(--card-bg);
+  border: 1px solid var(--card-border);
+  border-radius: 14px;
+  padding: 20px 24px;
+  text-decoration: none;
+  transition: border-color 0.2s, transform 0.15s;
+  backdrop-filter: blur(8px);
+}
+.article-nav a:hover { border-color: rgba(123,74,58,0.35); transform: translateY(-2px); }
+.article-nav-label {
+  font-size: 10px;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--text-light);
+  margin-bottom: 6px;
+}
+.article-nav-title {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 1.05rem;
+  color: var(--text-main);
+  line-height: 1.3;
+}
+.article-nav .next { text-align: right; }
+
+footer {
+  position: relative;
+  z-index: 1;
+  text-align: center;
+  padding: 40px 24px 48px;
+  border-top: 1px solid rgba(123,74,58,0.1);
+  font-size: 11px;
+  color: var(--text-light);
+  letter-spacing: 0.04em;
+}
+footer a { color: inherit; text-decoration: underline; opacity: 0.7; }
+footer .footer-logo {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 1.1rem;
+  color: var(--brown);
+  letter-spacing: 0.06em;
+  margin-bottom: 12px;
+  display: block;
+}
+
+@keyframes fadeDown {
+  from { opacity: 0; transform: translateY(-16px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+@keyframes fadeUp {
+  from { opacity: 0; transform: translateY(16px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+.nav-burger {
+  display: none;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 8px;
+  flex-direction: column;
+  justify-content: center;
+  gap: 5px;
+  width: 40px;
+  height: 40px;
+  z-index: 110;
+}
+.nav-burger span {
+  display: block;
+  width: 24px;
+  height: 2px;
+  background: var(--brown);
+  border-radius: 2px;
+  transition: transform 0.25s ease, opacity 0.25s ease;
+}
+.nav-burger.open span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
+.nav-burger.open span:nth-child(2) { opacity: 0; }
+.nav-burger.open span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
+
+@media (max-width: 768px) {
+  nav { padding: 14px 20px; }
+  .nav-burger { display: flex; }
+  .nav-links {
+    display: none;
+    position: fixed;
+    top: 64px;
+    left: 0;
+    right: 0;
+    background: rgba(200,221,208,0.98);
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 24px 28px;
+    gap: 22px;
+    box-shadow: 0 6px 24px rgba(0,0,0,0.1);
+    backdrop-filter: blur(8px);
+  }
+  .nav-links.open { display: flex; }
+  .nav-links a { font-size: 16px; }
+  .nav-links .nav-cta { margin-top: 8px; align-self: flex-start; }
+}
+@media (max-width: 640px) {
+  nav { padding: 14px 20px; }
+  .nav-links { display: none; }
+  .article-intro-card { padding: 28px 22px; }
+  .article-body h2 { margin-top: 40px; }
+  .article-nav { grid-template-columns: 1fr; }
+  .prog-card { flex-direction: column; text-align: center; }
+}
+</style>
+</head>
+<body>
+
+<canvas id="waveCanvas"></canvas>
+
+<nav>
+  <a class='nav-logo' href='index.html'>✦ Fréquence Positive</a>
+  <div class="nav-links">
+    <a href='index.html'>Accueil</a>
+    <a href='blog.html'>Blog</a>
+    <a href='index.html#programme'>Le Programme</a>
+    <a class='nav-cta' href='acces-prioritaire.html'>Accès Prioritaire</a>
+  </div>
+  <button class="nav-burger" aria-label="Menu" aria-expanded="false" onclick="(function(b){var l=document.querySelector('.nav-links');b.classList.toggle('open');l.classList.toggle('open');b.setAttribute('aria-expanded',b.classList.contains('open'));})(this)">
+    <span></span><span></span><span></span>
+  </button>
+</nav>
+
+<!-- ══ HERO ══ -->
+<div class="article-hero">
+
+  <div class="article-tag">✦ Croyances limitantes</div>
+
+  <h1 class="article-title">
+    Croyances et identité :<br>
+    <em>qui serais-tu sans tes limitations ?</em>
+  </h1>
+
+  <div class="article-meta">
+    <span>✦ Par Max &amp; Sandra</span>
+    <div class="meta-divider"></div>
+    <span>📅 15 août 2026</span>
+    <div class="meta-divider"></div>
+    <span>⏱ 11 min</span>
+  </div>
+
+  <div class="article-intro-card">
+    <p>
+      C'est une question qui bouleverse quand on ose se la poser vraiment : <em>qui serais-tu si tu ne croyais plus à tout ce que tu crois de limitant sur toi ?</em> Si tu ne pensais plus <em>« je ne suis pas assez »</em>, <em>« ce n'est pas pour moi »</em>, <em>« je ne mérite pas »</em>. La question fait peur autant qu'elle attire. Parce que ce qu'il y a en dessous — <strong>ton identité profonde, celle d'avant les blessures</strong> — est encore là. Elle t'attend. On va faire ce voyage ensemble, doucement.
+    </p>
+  </div>
+
+</div>
+
+<!-- ══ CORPS ══ -->
+<div class="article-body">
+
+  <div class="ornament">✦ · · ·</div>
+
+  <!-- ─── PARTIE 1 ─── -->
+  <h2>L'identité qu'on croit être vs celle qui est vraiment là</h2>
+
+  <p>
+    Ton identité, telle que tu la vis aujourd'hui, n'est pas ta nature. C'est une <strong>construction</strong>. Un assemblage de croyances, d'adaptations, de couches déposées par ton histoire. Comme un chêne qui aurait grandi dans un pot trop petit — sa forme actuelle ne dit rien de ce qu'il pourrait vraiment devenir dans une bonne terre.
+  </p>
+
+  <p>
+    Sous les phrases <em>« je suis timide »</em>, <em>« je suis nul en maths »</em>, <em>« je ne suis pas fait pour ça »</em>, il y a une personne que tu n'as peut-être jamais vraiment rencontrée. Pas parce qu'elle n'existe pas — mais parce qu'elle est enfouie sous des décennies de messages contraires. Le développement personnel, quand il est honnête, n'est pas un déguisement — c'est un <em>dévoilement</em>.
+  </p>
+
+  <blockquote>
+    Tu n'as pas à devenir quelqu'un d'autre. Tu as juste à retirer, doucement, ce qui n'était pas toi au départ.
+  </blockquote>
+
+  <img class="article-img"
+       src="https://images.unsplash.com/photo-1502139214982-d0ad755818d8?w=900&q=80"
+       alt="Personne en méditation face à la mer — reconnexion à soi"
+       loading="lazy">
+
+  <!-- ─── PARTIE 2 ─── -->
+  <h2>Comment tes croyances ont construit ton identité actuelle</h2>
+
+  <p>
+    L'identité que tu portes aujourd'hui s'est construite selon un mécanisme précis. En comprendre les étapes te permet de le défaire, doucement, dans le sens inverse.
+  </p>
+
+  <h3>1. Un message reçu → une croyance intégrée</h3>
+
+  <p>
+    Un enfant à qui on répète <em>« tu es fainéant »</em>, <em>« tu n'écoutes jamais »</em>, <em>« tu es difficile »</em> intègre ces phrases comme des vérités. Elles deviennent une lentille à travers laquelle il verra tout — ses réussites (<em>« c'est un hasard »</em>), ses échecs (<em>« évidemment, je suis nul »</em>). La croyance s'installe. Silencieuse. Structurante.
+  </p>
+
+  <h3>2. Une croyance → un comportement cohérent</h3>
+
+  <p>
+    L'enfant, puis l'adulte, va inconsciemment agir <em>en cohérence</em> avec ce qu'il croit. Si je crois que je suis nul, je vais éviter les situations où je pourrais être testé. Si je crois que je ne mérite pas, je vais refuser les cadeaux, les opportunités, les compliments. Ces comportements viennent <em>renforcer</em> la croyance : <em>« Tu vois bien, je n'ai pas réussi »</em>.
+  </p>
+
+  <h3>3. Un comportement répété → une identité figée</h3>
+
+  <p>
+    Répété assez longtemps, le comportement finit par <em>définir</em> qui l'on croit être. <em>« Je suis quelqu'un de timide. »</em> <em>« Je suis mauvaise en maths. »</em> <em>« Je suis toujours en retard. »</em> Ce ne sont plus des croyances — ce sont devenues, dans ta tête, ton <strong>identité</strong>. C'est là que le piège se referme. C'est là aussi qu'il faut le rouvrir.
+  </p>
+
+  <div class="encadre">
+    <div class="encadre-label">✦ Un exercice puissant</div>
+    <p>Sur une feuille, écris toutes les phrases qui commencent par <em>« Je suis... »</em> que tu appliques à toi-même. Sans filtre. <em>« Je suis anxieux. Je suis désorganisé. Je suis peu créatif. Je suis sensible... »</em></p>
+    <p>Maintenant, regarde ta liste et demande-toi pour chacune : <em>« Est-ce que c'est vraiment moi ? Ou est-ce ce qu'on m'a dit que j'étais ? »</em> Certaines vont te paraître complètement étrangères une fois posée la question. Ce sont celles-là qu'il faut commencer à défaire.
+  </div>
+
+  <img class="article-img"
+       src="https://images.unsplash.com/photo-1513836279014-a89f7a76ae86?w=900&q=80"
+       alt="Grand arbre dans une clairière — l'identité qui existe déjà en dessous"
+       loading="lazy">
+
+  <!-- ─── PARTIE 3 ─── -->
+  <h2>Le voyage vers l'identité profonde — étape par étape</h2>
+
+  <p>
+    Retrouver qui tu es vraiment sous les couches ne se fait pas en un jour. C'est un voyage en plusieurs étapes, chacune importante. On les traverse à son rythme — parfois plusieurs fois, en spirale.
+  </p>
+
+  <p>
+    <strong>Étape 1 — Séparer.</strong> Prendre du recul et voir qu'il y a une différence entre <em>« je suis »</em> et <em>« on m'a dit que j'étais »</em>. Cette prise de conscience initiale est déjà une révolution. Ce n'est plus fusionné, c'est distingué.
+  </p>
+
+  <p>
+    <strong>Étape 2 — Douter.</strong> Se permettre, pour chaque croyance limitante, de poser la question <em>« Et si ce n'était pas vrai ? »</em> Sans avoir besoin de réponse immédiate. Juste ouvrir la porte du possible. C'est là que le mouvement commence.
+  </p>
+
+  <!-- CTA SECONDAIRE — [B] Guide gratuit -->
+  <div style="background:linear-gradient(135deg,rgba(123,74,58,0.07),rgba(74,122,106,0.07));border:1px solid rgba(123,74,58,0.18);border-radius:18px;padding:28px 32px;margin:36px 0;text-align:center;backdrop-filter:blur(10px);position:relative;overflow:hidden;">
+    <div style="position:absolute;top:0;left:50%;transform:translateX(-50%);width:140px;height:1.5px;background:linear-gradient(90deg,transparent,rgba(123,74,58,0.45),transparent);"></div>
+    <div style="font-size:1.5rem;margin-bottom:10px;">📖</div>
+    <p style="font-family:'Cormorant Garamond',serif;font-size:1.35rem;font-weight:400;color:var(--text-main);line-height:1.3;margin-bottom:8px;">
+      Tu veux commencer à faire ce voyage <em style="font-style:italic;color:var(--brown)">vers ton identité profonde ?</em>
+    </p>
+    <p style="font-size:13.5px;color:var(--text-muted);line-height:1.65;margin-bottom:20px;">
+      Notre guide gratuit t'accompagne pour formuler des affirmations qui parlent à ton identité profonde — pas des phrases plaquées, mais des mots qui touchent le vrai toi enfoui.
+    </p>
+    <a href='acces-guide-gratuit.html' onmouseout='this.style.opacity=\'1'' onmouseover='this.style.opacity=\'0.88\'' style='display:inline-block;background:linear-gradient(135deg,var(--brown-dark),var(--brown),var(--brown-light));color:white;text-decoration:none;padding:12px 28px;border-radius:50px;font-size:13px;font-weight:500;letter-spacing:0.04em;box-shadow:0 4px 16px rgba(123,74,58,0.25);'>
+      ✦ &nbsp; Télécharger le guide gratuit
+    </a>
+  </div>
+
+  <!-- ─── PARTIE 4 ─── -->
+  <h2>4 gestes puissants pour retrouver ton identité profonde</h2>
+
+  <p>
+    Ces pratiques ne sont pas des recettes miracles. Ce sont des invitations, à explorer à ton rythme. Chacune agit à un niveau précis du chemin vers toi.
+  </p>
+
+  <ol>
+    <li><strong>Écrire une lettre à l'enfant que tu étais.</strong> Lui dire les mots qu'il aurait eu besoin d'entendre. Reconnaître ce qu'il a traversé. Cet enfant vit encore en toi. Il attend qu'on lui parle avec bienveillance. C'est un des exercices les plus puissants du travail identitaire.</li>
+    <li><strong>Faire, une fois par semaine, quelque chose qui contredit une ancienne croyance.</strong> Si tu crois que tu es timide, engage une conversation avec un inconnu. Si tu crois que tu n'es pas créatif, dessine quelque chose. Peu importe le résultat. C'est l'acte qui compte — il prouve à ton cerveau que la vérité peut être autre.</li>
+    <li><strong>Répéter chaque matin une phrase qui ancre la nouvelle identité.</strong> <em>« Je deviens quelqu'un qui... »</em> Pas <em>« Je suis... »</em> (trop violent). Le pont s'installe doucement. La régularité fait le reste.</li>
+    <li><strong>T'entourer différemment.</strong> Les gens autour de nous nous renvoient une image qui influence qui on croit être. Passer du temps avec des personnes qui te voient comme tu deviens (pas comme tu étais) accélère puissamment le voyage.</li>
+  </ol>
+
+  <div class="encadre-yt">
+    <div class="encadre-yt-icon">▶</div>
+    <div class="encadre-yt-text">
+      Pour t'accompagner dans ce voyage vers ton identité profonde, on partage des affirmations en voix off conçues pour parler à ce vrai toi enfoui, sur notre chaîne :
+      <a href="https://www.youtube.com/@FREQUENCE.POSITIVE" target="_blank">@FREQUENCE.POSITIVE</a>
+    </div>
+  </div>
+
+  <!-- ─── PARTIE 5 ─── -->
+  <h2>La question qui change tout : qui serais-tu si tu osais ?</h2>
+
+  <p>
+    Si tu prends dix minutes pour t'asseoir en silence et laisser cette question s'installer — <em>« Qui serais-je si je ne portais plus ces croyances qui me limitent ? »</em> — quelque chose bouge. Une émotion monte, souvent. Parce que <strong>tu sais déjà, quelque part, qui tu es vraiment</strong>. Tu l'as juste oublié.
+  </p>
+
+  <p>
+    Cette version de toi que tu entrevois — plus libre, plus douce avec elle-même, plus confiante, plus alignée avec ce qui compte pour elle — n'est pas un fantasme. Elle est déjà là. Elle a juste besoin que tu lui fasses de la place. Que tu retires, une couche à la fois, ce qui n'était pas toi. Le développement personnel, c'est ça : <em>revenir</em>, pas <em>fabriquer</em>.
+  </p>
+
+  <img class="article-img"
+       src="https://images.unsplash.com/photo-1519681393784-d120267933ba?w=900&q=80"
+       alt="Montagnes dans la brume — le voyage vers soi n'a pas de raccourci"
+       loading="lazy">
+
+  <div class="ornament">✦ · · ·</div>
+
+  <!-- ─── CONCLUSION ─── -->
+  <h2>Pour aller plus loin</h2>
+
+  <p>
+    Le voyage vers ton identité profonde n'a pas de fin, seulement des retours de plus en plus proches de toi. Chaque croyance limitante que tu défais te rapproche de ce noyau qui existait déjà avant. Chaque geste posé en cohérence avec cette identité retrouvée te consolide. Ce n'est pas une transformation — c'est une révélation lente.
+  </p>
+
+  <p>
+    Pour explorer d'où viennent les croyances qui ont construit ton identité actuelle, notre article sur <a href="https://frequence-positive.fr/article-origine-croyances-enfance" style="color:var(--brown);font-weight:500;">le rôle de l'enfance dans nos croyances limitantes</a> est incontournable. Et pour comprendre pourquoi travailler au niveau des croyances (et pas juste des habitudes) est le vrai levier, l'article précédent <a href="https://frequence-positive.fr/article-croyances-vs-habitudes" style="color:var(--brown);font-weight:500;">Pourquoi changer ses croyances est plus efficace que changer ses habitudes</a> pose les fondations.
+  </p>
+
+  <p>
+    Tu n'as pas à te réinventer. Tu as juste, doucement, à te retrouver.
+  </p>
+
+</div>
+
+<!-- ══ CTA PRINCIPAL — [C] Séance personnalisée ══ -->
+<div style="max-width:720px;margin:0 auto 40px;padding:0 24px;position:relative;z-index:1;">
+  <div style="background:rgba(255,255,255,0.70);border:1px solid rgba(123,74,58,0.22);border-radius:20px;padding:36px 40px;backdrop-filter:blur(10px);box-shadow:0 4px 32px rgba(123,74,58,0.07);position:relative;overflow:hidden;">
+    <div style="position:absolute;top:0;left:50%;transform:translateX(-50%);width:120px;height:1.5px;background:linear-gradient(90deg,transparent,rgba(123,74,58,0.5),transparent);"></div>
+    <div style="font-size:11px;font-weight:500;letter-spacing:0.14em;text-transform:uppercase;color:#7B4A3A;margin-bottom:14px;">✦ Séance personnalisée</div>
+    <p style="font-family:'Cormorant Garamond',serif;font-size:clamp(1.25rem,3vw,1.7rem);font-weight:400;line-height:1.3;color:#3A2820;margin-bottom:14px;">
+      Et si tu commençais à installer <em style="color:#7B4A3A;">l'identité profonde que tu portes déjà en toi ?</em>
+    </p>
+    <p style="font-size:15px;line-height:1.75;color:#6A5A52;font-weight:300;margin-bottom:24px;">
+      Nos séances audio personnalisées sont créées spécialement pour toi — ton prénom, tes affirmations, ta vraie identité. Un support puissant pour retrouver, jour après jour, qui tu es vraiment sous les couches — sans forcing, avec douceur.
+    </p>
+    <div style="text-align:center;">
+      <a href='commander.html#step-1' onmouseout='this.style.background=\'#7B4A3A\'' onmouseover='this.style.background=\'#5A3028\'' style='display:inline-flex;align-items:center;gap:10px;background:#7B4A3A;color:white;text-decoration:none;padding:14px 30px;border-radius:50px;font-size:14px;font-weight:500;letter-spacing:0.03em;'>
+        ✦ &nbsp; Découvrir la séance personnalisée
+      </a>
+      <p style="font-size:12px;color:#9A8A80;margin-top:14px;">Sur mesure · Voix off + musique · Livré sous 7 jours</p>
+    </div>
+  </div>
+</div>
+
+<!-- ══ CARTE PROGRAMME CONTEXTUELLE ══ -->
+<div class="prog-card-wrap">
+  <div class="prog-card">
+    <div class="prog-card-icon">🌿</div>
+    <div class="prog-card-body">
+      <div class="prog-card-label">✦ Le programme Fréquence Positive</div>
+      <div class="prog-card-title">Tu veux commencer le voyage vers ton identité profonde ?</div>
+      <p class="prog-card-text">
+        Le programme Fréquence Positive t'accompagne pour retirer les couches et retrouver l'identité qui t'appartient vraiment — à ton rythme, avec bienveillance.
+      </p>
+    </div>
+    <a class='prog-card-btn' href='index.html'>✦ Découvrir</a>
+  </div>
+</div>
+
+<!-- ══ BLOC YOUTUBE ══ -->
+<div class="yt-bloc">
+  <div class="yt-bloc-title">✦ La chaîne YouTube de Fréquence Positive</div>
+  <p style="text-align:center;font-size:14px;color:var(--text-muted);line-height:1.7;margin:-16px 0 28px;font-weight:300;">
+    Des affirmations en voix off pour retrouver, doucement, l'identité qui t'appartient vraiment.
+  </p>
+  <div class="yt-inner">
+    <div class="yt-card">
+      <div class="yt-logo">
+        <svg viewBox="0 0 90 63" xmlns="http://www.w3.org/2000/svg">
+          <rect width="90" height="63" rx="14" fill="#7B4F2E"/>
+          <polygon points="36,18 36,45 62,31.5" fill="#FDF6EC"/>
+        </svg>
+      </div>
+      <div class="yt-name">Fréquence Positive</div>
+      <p class="yt-desc">Affirmations positives en voix off + musique — pour reprogrammer ton mental au quotidien.</p>
+      <a href="https://www.youtube.com/@FREQUENCE.POSITIVE" target="_blank" class="yt-btn">▶ Voir la chaîne</a>
+    </div>
+  </div>
+</div>
+
+<!-- ══ NAVIGATION ARTICLES ══ -->
+<div class="article-nav">
+  <a class='prev' href='article-croyances-vs-habitudes.html'>
+    <div class="article-nav-label">← Article précédent</div>
+    <div class="article-nav-title">Pourquoi changer ses croyances est plus efficace que changer ses habitudes</div>
+  </a>
+  <a class='next' href='blog.html'>
+    <div class="article-nav-label">Tous les articles →</div>
+    <div class="article-nav-title">Retour au blog</div>
+  </a>
+</div>
+
+<!-- ══ FOOTER ══ -->
+<footer>
+  <span class="footer-logo">✦ Fréquence Positive</span>
+  <p>© 2026 Fréquence Positive —
+    <a href='mentions-legales.html'>Mentions légales</a> ·
+    <a href='confidentialite.html'>Confidentialité</a> ·
+    <a href='blog.html'>Blog</a>
+  </p>
+  <p style="margin-top:6px">Avec ✦ par Max &amp; Sandra</p>
+</footer>
+
+<!-- ══ CANVAS VAGUES ══ -->
+<script>
+(function() {
+  const canvas = document.getElementById('waveCanvas');
+  if (!canvas) return;
+  const ctx = canvas.getContext('2d');
+  function resize() {
+    canvas.width  = window.innerWidth;
+    canvas.height = window.innerHeight;
+  }
+  resize();
+  window.addEventListener('resize', resize);
+  const waves = [
+    { y:.22, a:18, f:.007, s:.012, o:0,   c:'rgba(123,74,58,0.50)',  w:1.4 },
+    { y:.38, a:24, f:.005, s:.008, o:2,   c:'rgba(123,74,58,0.32)',  w:1.1 },
+    { y:.55, a:14, f:.009, s:.014, o:4,   c:'rgba(123,74,58,0.44)',  w:1.7 },
+    { y:.70, a:20, f:.006, s:.010, o:1,   c:'rgba(123,74,58,0.24)',  w:0.9 },
+    { y:.32, a:10, f:.011, s:.017, o:3,   c:'rgba(74,122,106,0.26)', w:0.8 },
+    { y:.62, a:28, f:.004, s:.006, o:5,   c:'rgba(74,122,106,0.18)', w:1.9 },
+  ];
+  let tick = 0;
+  function draw() {
+    ctx.clearRect(0, 0, canvas.width, canvas.height);
+    waves.forEach(function(wv) {
+      ctx.beginPath();
+      ctx.strokeStyle = wv.c;
+      ctx.lineWidth   = wv.w;
+      for (var x = 0; x <= canvas.width; x += 2) {
+        var y = canvas.height * wv.y
+          + Math.sin(x * wv.f + tick * wv.s + wv.o) * wv.a
+          + Math.sin(x * wv.f * 0.5 + tick * wv.s * 0.7 + wv.o) * wv.a * 0.5;
+        x === 0 ? ctx.moveTo(x, y) : ctx.lineTo(x, y);
+      }
+      ctx.stroke();
+    });
+    tick++;
+    requestAnimationFrame(draw);
+  }
+  draw();
+})();
+</script>
+
+</body>
+</html>

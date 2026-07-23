@@ -1,0 +1,858 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Fréquence Positive — La technique du miroir pour détecter tes croyances cachées</title>
+<meta name="description" content="Tes croyances les plus limitantes se cachent souvent sous ton propre regard. La technique du miroir te les révèle en 5 minutes — simple, puissant, à faire chez toi.">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400;1,500&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+
+<style>
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+:root {
+  --green-fog:   #C8DDD0;
+  --green-mid:   #A8C4B8;
+  --green-deep:  #7BA898;
+  --green-dark:  #4A7A6A;
+  --green-bg:    #E8F2ED;
+  --green-bg2:   #D4E8DF;
+  --brown:       #7B4A3A;
+  --brown-light: #A06B58;
+  --brown-dark:  #5A3028;
+  --brown-ultra: #3D1F16;
+  --text-main:   #3A2820;
+  --text-muted:  #6A5A52;
+  --text-light:  #9A8A80;
+  --card-bg:     rgba(255,255,255,0.65);
+  --card-border: rgba(123,74,58,0.18);
+}
+
+html { scroll-behavior: smooth; }
+
+body {
+  font-family: 'DM Sans', system-ui, sans-serif;
+  background: var(--green-bg);
+  color: var(--text-main);
+  overflow-x: hidden;
+}
+
+#waveCanvas {
+  position: fixed;
+  inset: 0;
+  width: 100%; height: 100%;
+  pointer-events: none;
+  z-index: 0;
+  opacity: 0.3;
+}
+
+nav {
+  position: fixed;
+  top: 0; left: 0; right: 0;
+  z-index: 100;
+  padding: 18px 48px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: rgba(200,221,208,0.88);
+  backdrop-filter: blur(12px);
+  border-bottom: 1px solid rgba(123,74,58,0.12);
+}
+.nav-logo {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 1.15rem;
+  font-weight: 500;
+  color: var(--brown);
+  letter-spacing: 0.06em;
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+.nav-links { display: flex; align-items: center; gap: 32px; }
+.nav-links a {
+  color: var(--text-muted);
+  text-decoration: none;
+  font-size: 13px;
+  font-weight: 400;
+  letter-spacing: 0.03em;
+  transition: color 0.2s;
+}
+.nav-links a:hover { color: var(--brown); }
+.nav-cta {
+  background: var(--brown) !important;
+  color: white !important;
+  padding: 10px 24px !important;
+  border-radius: 50px !important;
+  font-weight: 500 !important;
+  transition: background 0.2s !important;
+}
+.nav-cta:hover { background: var(--brown-dark) !important; }
+
+.article-hero {
+  position: relative;
+  z-index: 1;
+  padding: 140px 24px 64px;
+  text-align: center;
+  max-width: 780px;
+  margin: 0 auto;
+}
+.article-tag {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: rgba(123,74,58,0.1);
+  border: 1px solid rgba(123,74,58,0.22);
+  border-radius: 50px;
+  padding: 6px 18px;
+  font-size: 11px;
+  font-weight: 500;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--brown);
+  margin-bottom: 28px;
+  animation: fadeDown 0.7s ease both;
+}
+.article-title {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: clamp(2rem, 5.5vw, 3.6rem);
+  font-weight: 400;
+  line-height: 1.18;
+  color: var(--text-main);
+  margin-bottom: 22px;
+  animation: fadeDown 0.8s 0.08s ease both;
+}
+.article-title em { font-style: italic; color: var(--brown); }
+.article-meta {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 20px;
+  font-size: 12px;
+  color: var(--text-light);
+  letter-spacing: 0.05em;
+  margin-bottom: 48px;
+  animation: fadeDown 0.8s 0.15s ease both;
+}
+.article-meta span { display: flex; align-items: center; gap: 6px; }
+.meta-divider { width: 3px; height: 3px; border-radius: 50%; background: var(--text-light); }
+
+.article-intro-card {
+  background: var(--card-bg);
+  border: 1px solid var(--card-border);
+  border-radius: 20px;
+  padding: 36px 40px;
+  text-align: left;
+  backdrop-filter: blur(10px);
+  box-shadow: 0 4px 32px rgba(123,74,58,0.06);
+  animation: fadeUp 0.9s 0.2s ease both;
+  position: relative;
+  overflow: hidden;
+}
+.article-intro-card::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 50%;
+  transform: translateX(-50%);
+  width: 160px; height: 1.5px;
+  background: linear-gradient(90deg, transparent, var(--brown-light), transparent);
+}
+.article-intro-card p {
+  font-size: 16.5px;
+  line-height: 1.85;
+  color: var(--text-muted);
+  font-weight: 300;
+}
+.article-intro-card p strong { color: var(--brown-light); font-weight: 500; }
+
+.ornament {
+  text-align: center;
+  color: var(--brown-light);
+  font-size: 1.1rem;
+  letter-spacing: 0.4em;
+  opacity: 0.5;
+  margin: 48px 0;
+}
+
+.article-body {
+  position: relative;
+  z-index: 1;
+  max-width: 720px;
+  margin: 0 auto;
+  padding: 0 24px 80px;
+}
+.article-body p {
+  font-size: 16px;
+  line-height: 1.9;
+  color: var(--text-muted);
+  margin-bottom: 22px;
+  font-weight: 300;
+}
+.article-body p strong { color: var(--text-main); font-weight: 500; }
+.article-body p em { font-style: italic; color: var(--brown-light); }
+
+.article-body h2 {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: clamp(1.5rem, 3.5vw, 2.1rem);
+  font-weight: 500;
+  color: var(--text-main);
+  margin: 56px 0 18px;
+  line-height: 1.25;
+  position: relative;
+  padding-left: 20px;
+}
+.article-body h2::before {
+  content: '';
+  position: absolute;
+  left: 0; top: 8px;
+  width: 3px;
+  height: calc(100% - 8px);
+  background: linear-gradient(to bottom, var(--brown), var(--brown-light));
+  border-radius: 2px;
+}
+.article-body h3 {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 1.25rem;
+  font-weight: 500;
+  color: var(--brown);
+  margin: 36px 0 12px;
+  letter-spacing: 0.02em;
+}
+
+.article-body ul, .article-body ol {
+  margin: 0 0 22px 0;
+  padding-left: 0;
+  list-style: none;
+}
+.article-body ul li, .article-body ol li {
+  font-size: 15.5px;
+  line-height: 1.8;
+  color: var(--text-muted);
+  margin-bottom: 10px;
+  padding-left: 26px;
+  position: relative;
+}
+.article-body ul li::before {
+  content: '✦';
+  position: absolute;
+  left: 0;
+  color: var(--brown-light);
+  font-size: 11px;
+  top: 4px;
+}
+.article-body ol { counter-reset: ol-counter; }
+.article-body ol li::before {
+  content: counter(ol-counter);
+  counter-increment: ol-counter;
+  position: absolute;
+  left: 0;
+  width: 18px; height: 18px;
+  background: var(--brown);
+  color: white;
+  border-radius: 50%;
+  font-size: 10px;
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  top: 3px;
+}
+
+.article-body blockquote {
+  background: rgba(123,74,58,0.06);
+  border-left: 3px solid var(--brown);
+  border-radius: 0 12px 12px 0;
+  padding: 22px 28px;
+  margin: 32px 0;
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 1.25rem;
+  font-style: italic;
+  color: var(--brown-dark);
+  line-height: 1.65;
+}
+
+.encadre {
+  background: var(--card-bg);
+  border: 1px solid var(--card-border);
+  border-radius: 16px;
+  padding: 28px 32px;
+  margin: 36px 0;
+  backdrop-filter: blur(8px);
+  position: relative;
+}
+.encadre-label {
+  position: absolute;
+  top: -12px; left: 24px;
+  background: var(--brown);
+  color: white;
+  font-size: 10px;
+  font-weight: 600;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  padding: 4px 14px;
+  border-radius: 50px;
+}
+.encadre p { margin-bottom: 10px !important; }
+.encadre p:last-child { margin-bottom: 0 !important; }
+
+.article-img {
+  width: 100%;
+  border-radius: 16px;
+  margin: 36px 0;
+  display: block;
+  object-fit: cover;
+  max-height: 420px;
+  box-shadow: 0 8px 32px rgba(123,74,58,0.10);
+}
+
+.encadre-yt {
+  background: rgba(123,74,58,0.05);
+  border: 1px solid rgba(123,74,58,0.16);
+  border-left: 3px solid var(--brown-light);
+  border-radius: 0 12px 12px 0;
+  padding: 18px 24px;
+  margin: 32px 0;
+  display: flex;
+  align-items: center;
+  gap: 14px;
+}
+.encadre-yt-icon { font-size: 1.4rem; flex-shrink: 0; }
+.encadre-yt-text { font-size: 14px; color: var(--text-muted); line-height: 1.6; }
+.encadre-yt-text a { color: var(--brown); font-weight: 500; text-decoration: none; }
+.encadre-yt-text a:hover { text-decoration: underline; }
+
+.prog-card-wrap {
+  position: relative;
+  z-index: 1;
+  max-width: 720px;
+  margin: 0 auto 40px;
+  padding: 0 24px;
+}
+.prog-card {
+  background: linear-gradient(135deg, rgba(74,122,106,0.10), rgba(123,74,58,0.08));
+  border: 1px solid rgba(74,122,106,0.25);
+  border-radius: 20px;
+  padding: 32px 36px;
+  display: flex;
+  align-items: center;
+  gap: 28px;
+  backdrop-filter: blur(10px);
+}
+.prog-card-icon { font-size: 2.4rem; flex-shrink: 0; }
+.prog-card-body { flex: 1; }
+.prog-card-label {
+  font-size: 10px;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--green-dark);
+  font-weight: 600;
+  margin-bottom: 6px;
+}
+.prog-card-title {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 1.3rem;
+  font-weight: 500;
+  color: var(--text-main);
+  margin-bottom: 6px;
+  line-height: 1.3;
+}
+.prog-card-text { font-size: 13px; color: var(--text-muted); line-height: 1.6; }
+.prog-card-btn {
+  display: inline-block;
+  background: linear-gradient(135deg, var(--green-dark), var(--green-deep));
+  color: white;
+  text-decoration: none;
+  padding: 12px 28px;
+  border-radius: 50px;
+  font-size: 13px;
+  font-weight: 500;
+  letter-spacing: 0.03em;
+  white-space: nowrap;
+  flex-shrink: 0;
+  transition: opacity 0.2s, transform 0.15s;
+  box-shadow: 0 3px 14px rgba(74,122,106,0.28);
+}
+.prog-card-btn:hover { opacity: 0.9; transform: translateY(-1px); }
+
+.yt-bloc {
+  position: relative;
+  z-index: 1;
+  max-width: 720px;
+  margin: 0 auto 40px;
+  padding: 0 24px;
+}
+.yt-bloc-title {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 1.35rem;
+  font-weight: 500;
+  color: var(--text-main);
+  text-align: center;
+  margin-bottom: 24px;
+  letter-spacing: 0.02em;
+}
+.yt-inner { display: grid; grid-template-columns: 1fr; gap: 16px; }
+.yt-card {
+  background: var(--card-bg);
+  border: 1px solid var(--card-border);
+  border-radius: 16px;
+  padding: 24px 28px;
+  text-align: center;
+  backdrop-filter: blur(8px);
+  transition: border-color 0.2s, transform 0.15s;
+}
+.yt-card:hover { border-color: rgba(123,74,58,0.32); transform: translateY(-2px); }
+.yt-logo { display: flex; justify-content: center; margin-bottom: 12px; }
+.yt-logo svg { width: 56px; height: 40px; border-radius: 8px; }
+.yt-name { font-family: 'Cormorant Garamond', serif; font-size: 1.1rem; font-weight: 500; color: var(--text-main); margin-bottom: 6px; }
+.yt-desc { font-size: 13px; color: var(--text-muted); line-height: 1.6; margin-bottom: 16px; }
+.yt-btn {
+  display: inline-block;
+  background: var(--brown);
+  color: white;
+  text-decoration: none;
+  padding: 9px 22px;
+  border-radius: 50px;
+  font-size: 12px;
+  font-weight: 500;
+  letter-spacing: 0.04em;
+  transition: background 0.2s, transform 0.15s;
+}
+.yt-btn:hover { background: var(--brown-dark); transform: translateY(-1px); }
+
+.article-nav {
+  position: relative;
+  z-index: 1;
+  max-width: 720px;
+  margin: 0 auto 80px;
+  padding: 0 24px;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+}
+.article-nav a {
+  background: var(--card-bg);
+  border: 1px solid var(--card-border);
+  border-radius: 14px;
+  padding: 20px 24px;
+  text-decoration: none;
+  transition: border-color 0.2s, transform 0.15s;
+  backdrop-filter: blur(8px);
+}
+.article-nav a:hover { border-color: rgba(123,74,58,0.35); transform: translateY(-2px); }
+.article-nav-label {
+  font-size: 10px;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--text-light);
+  margin-bottom: 6px;
+}
+.article-nav-title {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 1.05rem;
+  color: var(--text-main);
+  line-height: 1.3;
+}
+.article-nav .next { text-align: right; }
+
+footer {
+  position: relative;
+  z-index: 1;
+  text-align: center;
+  padding: 40px 24px 48px;
+  border-top: 1px solid rgba(123,74,58,0.1);
+  font-size: 11px;
+  color: var(--text-light);
+  letter-spacing: 0.04em;
+}
+footer a { color: inherit; text-decoration: underline; opacity: 0.7; }
+footer .footer-logo {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 1.1rem;
+  color: var(--brown);
+  letter-spacing: 0.06em;
+  margin-bottom: 12px;
+  display: block;
+}
+
+@keyframes fadeDown {
+  from { opacity: 0; transform: translateY(-16px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+@keyframes fadeUp {
+  from { opacity: 0; transform: translateY(16px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+.nav-burger {
+  display: none;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 8px;
+  flex-direction: column;
+  justify-content: center;
+  gap: 5px;
+  width: 40px;
+  height: 40px;
+  z-index: 110;
+}
+.nav-burger span {
+  display: block;
+  width: 24px;
+  height: 2px;
+  background: var(--brown);
+  border-radius: 2px;
+  transition: transform 0.25s ease, opacity 0.25s ease;
+}
+.nav-burger.open span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
+.nav-burger.open span:nth-child(2) { opacity: 0; }
+.nav-burger.open span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
+
+@media (max-width: 768px) {
+  nav { padding: 14px 20px; }
+  .nav-burger { display: flex; }
+  .nav-links {
+    display: none;
+    position: fixed;
+    top: 64px;
+    left: 0;
+    right: 0;
+    background: rgba(200,221,208,0.98);
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 24px 28px;
+    gap: 22px;
+    box-shadow: 0 6px 24px rgba(0,0,0,0.1);
+    backdrop-filter: blur(8px);
+  }
+  .nav-links.open { display: flex; }
+  .nav-links a { font-size: 16px; }
+  .nav-links .nav-cta { margin-top: 8px; align-self: flex-start; }
+}
+@media (max-width: 640px) {
+  nav { padding: 14px 20px; }
+  .nav-links { display: none; }
+  .article-intro-card { padding: 28px 22px; }
+  .article-body h2 { margin-top: 40px; }
+  .article-nav { grid-template-columns: 1fr; }
+  .prog-card { flex-direction: column; text-align: center; }
+}
+</style>
+</head>
+<body>
+
+<canvas id="waveCanvas"></canvas>
+
+<nav>
+  <a class='nav-logo' href='index.html'>✦ Fréquence Positive</a>
+  <div class="nav-links">
+    <a href='index.html'>Accueil</a>
+    <a href='blog.html'>Blog</a>
+    <a href='index.html#programme'>Le Programme</a>
+    <a class='nav-cta' href='acces-prioritaire.html'>Accès Prioritaire</a>
+  </div>
+  <button class="nav-burger" aria-label="Menu" aria-expanded="false" onclick="(function(b){var l=document.querySelector('.nav-links');b.classList.toggle('open');l.classList.toggle('open');b.setAttribute('aria-expanded',b.classList.contains('open'));})(this)">
+    <span></span><span></span><span></span>
+  </button>
+</nav>
+
+<!-- ══ HERO ══ -->
+<div class="article-hero">
+
+  <div class="article-tag">✦ Croyances limitantes</div>
+
+  <h1 class="article-title">
+    La technique du miroir<br>
+    <em>pour détecter tes croyances cachées</em>
+  </h1>
+
+  <div class="article-meta">
+    <span>✦ Par Max &amp; Sandra</span>
+    <div class="meta-divider"></div>
+    <span>📅 25 août 2026</span>
+    <div class="meta-divider"></div>
+    <span>⏱ 7 min</span>
+  </div>
+
+  <div class="article-intro-card">
+    <p>
+      Il y a une technique très simple, très ancienne, qui te met en face de tes croyances les plus profondes en <strong>5 minutes chrono</strong>. Elle ne demande ni carnet, ni méditation guidée, ni thérapeute. Juste un miroir, un peu de silence, et le courage de rester. Ce que tu vas y voir peut te surprendre. Ce que tu vas y entendre, en toi, va t'apprendre plus sur toi que beaucoup de livres. On regarde comment faire.
+    </p>
+  </div>
+
+</div>
+
+<!-- ══ CORPS ══ -->
+<div class="article-body">
+
+  <div class="ornament">✦ · · ·</div>
+
+  <!-- ─── PARTIE 1 ─── -->
+  <h2>Pourquoi le miroir ? Ce qui se passe vraiment</h2>
+
+  <p>
+    Le miroir a une propriété rare : il te renvoie <strong>ton propre regard</strong>. Et notre propre regard sur nous, quand il est soutenu quelques minutes, fait remonter à la surface toutes les phrases qu'on se dit habituellement en silence. Sans filtre. Sans mise en scène. Juste toi, face à toi.
+  </p>
+
+  <p>
+    C'est un exercice de sincérité radicale. C'est pour ça que la plupart des gens l'évitent — ou l'écourtent après trente secondes. On n'est pas habitué à se regarder <em>vraiment</em>. Sans juger, sans corriger, sans se maquiller intérieurement. Juste voir. C'est là que les vraies croyances remontent.
+  </p>
+
+  <blockquote>
+    Tu ne procrastines pas parce que la tâche est difficile. Tu procrastines parce qu'elle te fait peur — d'une peur que tu n'as pas encore nommée.
+  </blockquote>
+
+  <img class="article-img"
+       src="https://images.unsplash.com/photo-1524504388940-b1c1722653e1?w=900&q=80"
+       alt="Reflet d'une personne dans un miroir — face à soi-même"
+       loading="lazy">
+
+  <!-- ─── PARTIE 2 ─── -->
+  <h2>La technique en 5 étapes simples</h2>
+
+  <p>
+    Choisis un moment tranquille. Ferme la porte. Prends un miroir — celui de la salle de bain fait très bien l'affaire. C'est parti.
+  </p>
+
+  <h3>1. Installe-toi et respire (30 secondes)</h3>
+
+  <p>
+    Assieds-toi ou tiens-toi debout, en face du miroir. Regarde-toi dans les yeux. Fais 3 respirations lentes. Ne cherche pas à composer un visage — laisse celui qui est là, tel qu'il est.
+  </p>
+
+  <h3>2. Dis-toi une phrase gentille (à voix haute)</h3>
+
+  <p>
+    Regarde-toi et prononce, à voix haute : <em>« Je m'aime »</em>. Ou <em>« Je suis quelqu'un de bien »</em>. Ou <em>« Je mérite d'être heureux(se) »</em>. Choisis celle qui te touche. Et observe ce qui se passe en toi immédiatement après. C'est là que tout se joue.
+  </p>
+
+  <h3>3. Écoute ta voix intérieure — sans juger</h3>
+
+  <p>
+    Une réaction va monter. Un ricanement. Un <em>« mouais »</em>. Un serrement de gorge. Une pensée qui contredit : <em>« Ah, t'es sûr ? »</em>, <em>« Franchement, tu y crois vraiment ? »</em>, <em>« Regarde-toi, tu es ridicule. »</em> C'est cette voix-là que tu cherches. C'est <strong>elle qui parle tes croyances les plus profondes</strong>. Note-la précisément. C'est ton diagnostic.
+  </p>
+
+  <div class="encadre">
+    <div class="encadre-label">✦ Ce qui remonte souvent</div>
+    <p><em>« Je ne suis pas assez... »</em> (belle / intelligent / crédible / mature / aimable...) — cette phrase-là est reine. Elle vient des blessures les plus vieilles. Elle est souvent sous plein d'autres.</p>
+    <p><em>« Je ne mérite pas... »</em> — celle-là dit qu'on t'a fait sentir, à un moment, que ton existence même était conditionnelle. Elle demande beaucoup de douceur pour se défaire.</p>
+    <p><em>« Je ne suis pas comme les autres. »</em> — souvent une différence perçue tôt qui est devenue une identité de rejet.
+  </div>
+
+  <img class="article-img"
+       src="https://images.unsplash.com/photo-1512438248247-f0f2a5a8b7f0?w=900&q=80"
+       alt="Lumière douce sur un visage — le regard qu'on ose enfin poser sur soi"
+       loading="lazy">
+
+  <!-- ─── PARTIE 3 ─── -->
+  <h2>Étape 4 — Accueille sans corriger</h2>
+
+  <p>
+    C'est là que la plupart des gens dérapent. Ils entendent la voix critique et essaient immédiatement de la faire taire, de la contredire, de se convaincre du contraire. C'est une erreur. La croyance ne disparaît pas parce qu'on la couvre — elle disparaît parce qu'on la <strong>voit</strong>.
+  </p>
+
+  <p>
+    Alors reste dans le miroir. Regarde-toi. Et à voix haute, à toi-même : <em>« Je vois que je pense ça. Je le remarque. »</em> C'est tout. Pas de bataille. Pas de discours motivant. Juste la reconnaissance simple. Le fait de voir la croyance — sans la nourrir, sans la rejeter — commence déjà à la défaire.
+  </p>
+
+  <p>
+    <strong>Étape 5 — Réponds avec douceur.</strong> Quand la voix s'est exprimée et que tu l'as accueillie, tu peux, doucement, lui répondre. Pas en la contredisant frontalement. En lui offrant une autre voix. <em>« Peut-être qu'on t'a dit ça. Mais aujourd'hui, je choisis d'apprendre autre chose. »</em>
+  </p>
+
+  <!-- CTA SECONDAIRE — [B] Guide gratuit -->
+  <div style="background:linear-gradient(135deg,rgba(123,74,58,0.07),rgba(74,122,106,0.07));border:1px solid rgba(123,74,58,0.18);border-radius:18px;padding:28px 32px;margin:36px 0;text-align:center;backdrop-filter:blur(10px);position:relative;overflow:hidden;">
+    <div style="position:absolute;top:0;left:50%;transform:translateX(-50%);width:140px;height:1.5px;background:linear-gradient(90deg,transparent,rgba(123,74,58,0.45),transparent);"></div>
+    <div style="font-size:1.5rem;margin-bottom:10px;">📖</div>
+    <p style="font-family:'Cormorant Garamond',serif;font-size:1.35rem;font-weight:400;color:var(--text-main);line-height:1.3;margin-bottom:8px;">
+      Tu veux les phrases à te dire au miroir <em style="font-style:italic;color:var(--brown)">pour installer de nouvelles croyances ?</em>
+    </p>
+    <p style="font-size:13.5px;color:var(--text-muted);line-height:1.65;margin-bottom:20px;">
+      Notre guide gratuit te propose une vingtaine d'affirmations à répéter face au miroir, formulées avec justesse pour reprogrammer en douceur les croyances qui te limitent.
+    </p>
+    <a href='acces-guide-gratuit.html' onmouseout='this.style.opacity=\'1'' onmouseover='this.style.opacity=\'0.88\'' style='display:inline-block;background:linear-gradient(135deg,var(--brown-dark),var(--brown),var(--brown-light));color:white;text-decoration:none;padding:12px 28px;border-radius:50px;font-size:13px;font-weight:500;letter-spacing:0.04em;box-shadow:0 4px 16px rgba(123,74,58,0.25);'>
+      ✦ &nbsp; Télécharger le guide gratuit
+    </a>
+  </div>
+
+  <!-- ─── PARTIE 4 ─── -->
+  <h2>À quelle fréquence pratiquer ?</h2>
+
+  <p>
+    Cette technique n'a besoin ni d'être longue, ni d'être quotidienne pour agir en profondeur. Voici comment l'intégrer, sans qu'elle devienne une contrainte.
+  </p>
+
+  <ol>
+    <li><strong>Une fois par semaine, 5 minutes maximum.</strong> C'est amplement suffisant. Le but n'est pas la durée mais la sincérité. Une pratique courte et vraie vaut mille pratiques longues et distraites.</li>
+    <li><strong>Choisis une phrase différente à chaque fois.</strong> <em>« Je m'aime »</em>, <em>« Je mérite le meilleur »</em>, <em>« Je suis capable »</em>, <em>« Je fais confiance à ma voie »</em>. Change-la selon ce qui bouge en toi cette semaine-là.</li>
+    <li><strong>Note dans un carnet ce qui remonte.</strong> Ça te construit une carte, semaine après semaine, des croyances profondes qui te structurent. Cette conscience-là est déjà, en elle-même, un demi-chemin vers la transformation.</li>
+  </ol>
+
+  <div class="encadre-yt">
+    <div class="encadre-yt-icon">▶</div>
+    <div class="encadre-yt-text">
+      Pour t'accompagner au quotidien à installer de nouvelles croyances (aussi en dehors du miroir), on partage des affirmations en voix off sur notre chaîne :
+      <a href="https://www.youtube.com/@FREQUENCE.POSITIVE" target="_blank">@FREQUENCE.POSITIVE</a>
+    </div>
+  </div>
+
+  <!-- ─── PARTIE 5 ─── -->
+  <h2>Le vrai cadeau : cesser d'être un mystère pour soi-même</h2>
+
+  <p>
+    Ce que la technique du miroir offre — et c'est très précieux — c'est <strong>de cesser d'être un mystère pour toi-même</strong>. Beaucoup de gens vivent avec des croyances qui les gouvernent sans même savoir lesquelles. Elles agissent en coulisse, décidant à leur place, sans qu'ils puissent réagir.
+  </p>
+
+  <p>
+    Voir clairement ce qu'on croit de soi, c'est <em>reprendre le volant</em>. On peut alors choisir de garder, de transformer, de remplacer. On sort du pilotage automatique. Et ce simple retour à la conscience est déjà, en lui-même, un immense changement.
+  </p>
+
+  <img class="article-img"
+       src="https://images.unsplash.com/photo-1502139214982-d0ad755818d8?w=900&q=80"
+       alt="Lumière douce et paix intérieure — se voir clairement, enfin"
+       loading="lazy">
+
+  <div class="ornament">✦ · · ·</div>
+
+  <!-- ─── CONCLUSION ─── -->
+  <h2>Pour aller plus loin</h2>
+
+  <p>
+    La technique du miroir n'a rien de spectaculaire. C'est cinq minutes par semaine, en silence, avec ton propre regard. Mais ces cinq minutes-là contiennent plus d'informations sur toi que des mois de lectures théoriques. Elles te donnent une chose rare : <em>la vérité de ce que tu crois</em>. Le reste peut alors commencer.
+  </p>
+
+  <p>
+    Une fois que la technique du miroir t'a révélé une croyance limitante, l'étape suivante est de la transformer. Notre article sur <a href="https://frequence-positive.fr/article-transformer-croyance-limitante" style="color:var(--brown);font-weight:500;">Transformer une croyance limitante en croyance aidante — le guide complet</a> te donne le protocole précis. Et pour comprendre à quoi tu touches vraiment quand tu défais tes croyances, l'article <a href="https://frequence-positive.fr/article-croyances-et-identite" style="color:var(--brown);font-weight:500;">Croyances et identité : qui serais-tu sans tes limitations ?</a> pose le cadre.
+  </p>
+
+  <p>
+    Regarde-toi. Vraiment. Et laisse ce qui remonte t'apprendre qui tu es.
+  </p>
+
+</div>
+
+<!-- ══ CTA PRINCIPAL — [C] Séance personnalisée ══ -->
+<div style="max-width:720px;margin:0 auto 40px;padding:0 24px;position:relative;z-index:1;">
+  <div style="background:rgba(255,255,255,0.70);border:1px solid rgba(123,74,58,0.22);border-radius:20px;padding:36px 40px;backdrop-filter:blur(10px);box-shadow:0 4px 32px rgba(123,74,58,0.07);position:relative;overflow:hidden;">
+    <div style="position:absolute;top:0;left:50%;transform:translateX(-50%);width:120px;height:1.5px;background:linear-gradient(90deg,transparent,rgba(123,74,58,0.5),transparent);"></div>
+    <div style="font-size:11px;font-weight:500;letter-spacing:0.14em;text-transform:uppercase;color:#7B4A3A;margin-bottom:14px;">✦ Séance personnalisée</div>
+    <p style="font-family:'Cormorant Garamond',serif;font-size:clamp(1.25rem,3vw,1.7rem);font-weight:400;line-height:1.3;color:#3A2820;margin-bottom:14px;">
+      Une fois tes croyances révélées, <em style="color:#7B4A3A;">tu veux les transformer en profondeur ?</em>
+    </p>
+    <p style="font-size:15px;line-height:1.75;color:#6A5A52;font-weight:300;margin-bottom:24px;">
+      Nos séances audio personnalisées sont créées spécialement pour toi — ton prénom, tes affirmations. Un outil puissant pour installer, jour après jour, les croyances aidantes que la technique du miroir t'a permis de révéler. Sur mesure, à ta fréquence.
+    </p>
+    <div style="text-align:center;">
+      <a href='commander.html#step-1' onmouseout='this.style.background=\'#7B4A3A\'' onmouseover='this.style.background=\'#5A3028\'' style='display:inline-flex;align-items:center;gap:10px;background:#7B4A3A;color:white;text-decoration:none;padding:14px 30px;border-radius:50px;font-size:14px;font-weight:500;letter-spacing:0.03em;'>
+        ✦ &nbsp; Découvrir la séance personnalisée
+      </a>
+      <p style="font-size:12px;color:#9A8A80;margin-top:14px;">Sur mesure · Voix off + musique · Livré sous 7 jours</p>
+    </div>
+  </div>
+</div>
+
+<!-- ══ CARTE PROGRAMME CONTEXTUELLE ══ -->
+<div class="prog-card-wrap">
+  <div class="prog-card">
+    <div class="prog-card-icon">🌿</div>
+    <div class="prog-card-body">
+      <div class="prog-card-label">✦ Le programme Fréquence Positive</div>
+      <div class="prog-card-title">Tu veux transformer les croyances que le miroir t'a révélées ?</div>
+      <p class="prog-card-text">
+        Le programme Fréquence Positive t'accompagne pour transformer, une par une, les croyances profondes que la technique du miroir t'aura permis de mettre au jour.
+      </p>
+    </div>
+    <a class='prog-card-btn' href='index.html'>✦ Découvrir</a>
+  </div>
+</div>
+
+<!-- ══ BLOC YOUTUBE ══ -->
+<div class="yt-bloc">
+  <div class="yt-bloc-title">✦ La chaîne YouTube de Fréquence Positive</div>
+  <p style="text-align:center;font-size:14px;color:var(--text-muted);line-height:1.7;margin:-16px 0 28px;font-weight:300;">
+    Des affirmations en voix off pour transformer les croyances que le miroir t'a révélées — jour après jour.
+  </p>
+  <div class="yt-inner">
+    <div class="yt-card">
+      <div class="yt-logo">
+        <svg viewBox="0 0 90 63" xmlns="http://www.w3.org/2000/svg">
+          <rect width="90" height="63" rx="14" fill="#7B4F2E"/>
+          <polygon points="36,18 36,45 62,31.5" fill="#FDF6EC"/>
+        </svg>
+      </div>
+      <div class="yt-name">Fréquence Positive</div>
+      <p class="yt-desc">Affirmations positives en voix off + musique — pour reprogrammer ton mental au quotidien.</p>
+      <a href="https://www.youtube.com/@FREQUENCE.POSITIVE" target="_blank" class="yt-btn">▶ Voir la chaîne</a>
+    </div>
+  </div>
+</div>
+
+<!-- ══ NAVIGATION ARTICLES ══ -->
+<div class="article-nav">
+  <a class='prev' href='article-croyances-et-identite.html'>
+    <div class="article-nav-label">← Article précédent</div>
+    <div class="article-nav-title">Croyances et identité : qui serais-tu sans tes limitations ?</div>
+  </a>
+  <a class='next' href='blog.html'>
+    <div class="article-nav-label">Tous les articles →</div>
+    <div class="article-nav-title">Retour au blog</div>
+  </a>
+</div>
+
+<!-- ══ FOOTER ══ -->
+<footer>
+  <span class="footer-logo">✦ Fréquence Positive</span>
+  <p>© 2026 Fréquence Positive —
+    <a href='mentions-legales.html'>Mentions légales</a> ·
+    <a href='confidentialite.html'>Confidentialité</a> ·
+    <a href='blog.html'>Blog</a>
+  </p>
+  <p style="margin-top:6px">Avec ✦ par Max &amp; Sandra</p>
+</footer>
+
+<!-- ══ CANVAS VAGUES ══ -->
+<script>
+(function() {
+  const canvas = document.getElementById('waveCanvas');
+  if (!canvas) return;
+  const ctx = canvas.getContext('2d');
+  function resize() {
+    canvas.width  = window.innerWidth;
+    canvas.height = window.innerHeight;
+  }
+  resize();
+  window.addEventListener('resize', resize);
+  const waves = [
+    { y:.22, a:18, f:.007, s:.012, o:0,   c:'rgba(123,74,58,0.50)',  w:1.4 },
+    { y:.38, a:24, f:.005, s:.008, o:2,   c:'rgba(123,74,58,0.32)',  w:1.1 },
+    { y:.55, a:14, f:.009, s:.014, o:4,   c:'rgba(123,74,58,0.44)',  w:1.7 },
+    { y:.70, a:20, f:.006, s:.010, o:1,   c:'rgba(123,74,58,0.24)',  w:0.9 },
+    { y:.32, a:10, f:.011, s:.017, o:3,   c:'rgba(74,122,106,0.26)', w:0.8 },
+    { y:.62, a:28, f:.004, s:.006, o:5,   c:'rgba(74,122,106,0.18)', w:1.9 },
+  ];
+  let tick = 0;
+  function draw() {
+    ctx.clearRect(0, 0, canvas.width, canvas.height);
+    waves.forEach(function(wv) {
+      ctx.beginPath();
+      ctx.strokeStyle = wv.c;
+      ctx.lineWidth   = wv.w;
+      for (var x = 0; x <= canvas.width; x += 2) {
+        var y = canvas.height * wv.y
+          + Math.sin(x * wv.f + tick * wv.s + wv.o) * wv.a
+          + Math.sin(x * wv.f * 0.5 + tick * wv.s * 0.7 + wv.o) * wv.a * 0.5;
+        x === 0 ? ctx.moveTo(x, y) : ctx.lineTo(x, y);
+      }
+      ctx.stroke();
+    });
+    tick++;
+    requestAnimationFrame(draw);
+  }
+  draw();
+})();
+</script>
+
+</body>
+</html>
