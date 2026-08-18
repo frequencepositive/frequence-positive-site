@@ -5,7 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 <title>Fréquence Positive — « Je ne mérite pas d'être heureux(se) » — l'origine de cette croyance</title>
-<meta name="description" content="Tu sabotes ton bonheur dès qu'il arrive ? Cette croyance vient de quelque part. On remonte à sa source — pour enfin t'autoriser à être heureux(se), simplement.">
+<meta name="description" content="Tu sabotes ton bonheur dès qu'il arrive ? Cette croyance vient de quelque part. On remonte à sa source — pour regarder autrement ce droit au bonheur, simplement.">
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400;1,500&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
@@ -458,23 +458,18 @@ nav {
 .article-nav .next { text-align: right; }
 
 footer {
-  position: relative;
-  z-index: 1;
-  text-align: center;
-  padding: 40px 24px 48px;
-  border-top: 1px solid rgba(123,74,58,0.1);
-  font-size: 11px;
-  color: var(--text-light);
-  letter-spacing: 0.04em;
+  position: relative; z-index: 1;
+  background: var(--brown-ultra);
+  padding: 36px 48px;
+  display: flex; align-items: center; justify-content: space-between;
+  flex-wrap: wrap; gap: 16px;
+  font-size: 12px; color: rgba(255,255,255,0.4);
 }
-footer a { color: inherit; text-decoration: underline; opacity: 0.7; }
-footer .footer-logo {
-  font-family: 'Cormorant Garamond', serif;
-  font-size: 1.1rem;
-  color: var(--brown);
-  letter-spacing: 0.06em;
-  margin-bottom: 12px;
-  display: block;
+footer a { color: rgba(255,255,255,0.55); text-decoration: none; transition: color 0.2s; }
+footer a:hover { color: rgba(255,255,255,0.9); }
+.footer-links { display: flex; gap: 24px; flex-wrap: wrap; }
+@media (max-width: 700px) {
+  footer { flex-direction: column; align-items: center; text-align: center; padding: 32px 24px; }
 }
 
 @keyframes fadeDown {
@@ -555,7 +550,7 @@ footer .footer-logo {
     <a href='index.html'>Accueil</a>
     <a href='blog.html'>Blog</a>
     <a href='index.html#programme'>Le Programme</a>
-    <a class='nav-cta' href='acces-prioritaire.html'>Accès Prioritaire</a>
+    <a class='nav-cta' href='commander.html'>✦ Créer ma séance</a>
   </div>
   <button class="nav-burger" aria-label="Menu" aria-expanded="false" onclick="(function(b){var l=document.querySelector('.nav-links');b.classList.toggle('open');l.classList.toggle('open');b.setAttribute('aria-expanded',b.classList.contains('open'));})(this)">
     <span></span><span></span><span></span>
@@ -582,7 +577,7 @@ footer .footer-logo {
 
   <div class="article-intro-card">
     <p>
-      Quand le bonheur arrive, tu le fuis. Tu trouves le défaut. Tu sabotes la relation, l'opportunité, le projet. Et tu te demandes pourquoi, à chaque fois, tu n'arrives pas à laisser entrer ce qui voudrait te faire du bien. <strong>Cette croyance — « je ne mérite pas » — n'est jamais arrivée toute seule</strong>. Elle a été construite, souvent très tôt, avec des messages que tu n'as pas choisis. On va remonter à sa source, en douceur. Parce qu'on ne peut transformer que ce qu'on voit clairement.
+      Quand le bonheur arrive, tu le fuis. Tu trouves le défaut. Tu sabotes la relation, l'opportunité, le projet. Et tu te demandes pourquoi, à chaque fois, tu n'arrives pas à laisser entrer ce qui voudrait te faire du bien. <strong>Cette croyance — « je ne mérite pas » — a souvent une histoire</strong>. Elle a pu se construire tôt, avec des messages que tu n'as pas choisis. On va remonter à sa source, en douceur. Parce qu'on ne peut transformer que ce qu'on voit clairement.
     </p>
   </div>
 
@@ -601,7 +596,7 @@ footer .footer-logo {
   </p>
 
   <p>
-    Tu peux peut-être te reconnaître dans une de ces situations. Tu commences à te sentir bien et, comme par hasard, tu déclenches un conflit. Tu obtiens enfin quelque chose que tu désirais et tu en minimises immédiatement la valeur. Tu es face à une opportunité et tu te trouves <em>très précisément</em> les défauts qu'il faut pour ne pas la prendre. Tout ça, ce n'est pas du hasard.
+    Tu peux peut-être te reconnaître dans une de ces situations. Tu commences à te sentir bien et, comme par hasard, tu déclenches un conflit. Tu obtiens enfin quelque chose que tu désirais et tu en minimises immédiatement la valeur. Tu es face à une opportunité et tu te trouves <em>très précisément</em> les défauts qu'il faut pour ne pas la prendre. Ces situations ont souvent un point commun : quelque chose se referme au moment où ça commence à aller bien.
   </p>
 
   <blockquote>
@@ -635,7 +630,7 @@ footer .footer-logo {
   <h3>3. Une culpabilité héritée envers ceux qui souffrent</h3>
 
   <p>
-    Si quelqu'un autour de toi a beaucoup souffert — un parent dépressif, un frère malade, un proche en difficulté — tu as pu inconsciemment décider qu'il serait <em>indécent</em> d'être heureux(se) pendant que cette personne souffre. Le bonheur devient alors une trahison. Et la culpabilité te pousse à saboter, encore et encore, ce qui pourrait te rendre légitimement joyeux(se).
+    Si quelqu'un autour de toi a beaucoup souffert — un parent qui allait mal, un frère fragilisé, un proche en difficulté — l'idée qu'il serait <em>indécent</em> d'être heureux(se) pendant que cette personne souffre a pu s'installer. Le bonheur peut alors ressembler à une trahison. Et cette culpabilité peut freiner ce qui te ferait du bien.
   </p>
 
   <div class="encadre">
@@ -653,11 +648,11 @@ footer .footer-logo {
   <h2>Le mécanisme du sabotage du bonheur</h2>
 
   <p>
-    Quand le bonheur s'installe et qu'une partie de toi ne se sent pas autorisée à le recevoir, ton cerveau cherche à <strong>rétablir l'équilibre</strong> avec ce qu'il connaît : le manque, la difficulté, l'inquiétude. Pas par méchanceté — par habitude. Tu reviens vers ta zone familière, même quand elle est moins confortable.
+    Quand le bonheur s'installe et qu'une partie de toi ne se sent pas autorisée à le recevoir, quelque chose en toi peut chercher à <strong>revenir au familier</strong> : le manque, la difficulté, l'inquiétude. Pas par méchanceté — par habitude. Tu reviens vers ta zone familière, même quand elle est moins confortable.
   </p>
 
   <p>
-    C'est pour ça qu'au lieu de savourer une bonne nouvelle, tu commences à anticiper sa fin. Au lieu de profiter d'une relation qui marche, tu y crées toi-même les frictions. Au lieu d'accueillir un compliment, tu le redonnes immédiatement. <em>Tout ça, c'est ton système nerveux qui cherche à revenir à ce qu'il considère, à tort, comme la sécurité.</em>
+    C'est pour ça qu'au lieu de savourer une bonne nouvelle, tu commences à anticiper sa fin. Au lieu de profiter d'une relation qui marche, tu y crées toi-même les frictions. Au lieu d'accueillir un compliment, tu le redonnes immédiatement. <em>À chaque fois, le mouvement est le même : reprendre la main avant que la joie ne s'installe.</em>
   </p>
 
   <p>
@@ -665,17 +660,18 @@ footer .footer-logo {
   </p>
 
   <!-- CTA SECONDAIRE — [B] Guide gratuit -->
+  <!-- CTA SECONDAIRE — [C] Séance personnalisée -->
   <div style="background:linear-gradient(135deg,rgba(123,74,58,0.07),rgba(74,122,106,0.07));border:1px solid rgba(123,74,58,0.18);border-radius:18px;padding:28px 32px;margin:36px 0;text-align:center;backdrop-filter:blur(10px);position:relative;overflow:hidden;">
     <div style="position:absolute;top:0;left:50%;transform:translateX(-50%);width:140px;height:1.5px;background:linear-gradient(90deg,transparent,rgba(123,74,58,0.45),transparent);"></div>
-    <div style="font-size:1.5rem;margin-bottom:10px;">📖</div>
+    <div style="font-size:1.5rem;margin-bottom:10px;">✦</div>
     <p style="font-family:'Cormorant Garamond',serif;font-size:1.35rem;font-weight:400;color:var(--text-main);line-height:1.3;margin-bottom:8px;">
-      Tu veux remplacer le <em style="font-style:italic;color:var(--brown)">« je ne mérite pas » par « je m'autorise » ?</em>
+      Et si tu ouvrais un espace autour de <em style="color:#7B4A3A;">cette question du droit d'être heureux(se) ?</em>
     </p>
     <p style="font-size:13.5px;color:var(--text-muted);line-height:1.65;margin-bottom:20px;">
-      Notre guide gratuit te donne les phrases à te répéter pour reconstruire, pas à pas, la conviction profonde que tu as le droit d'être heureux(se) — sans avoir à justifier ta joie.
+      Nos séances audio personnalisées sont créées spécialement pour toi — ton prénom, tes affirmations, tes mots. Conçues comme un espace d'écoute autour du « je ne mérite pas », avec des mots d'autorisation à réécouter à ton rythme.
     </p>
-    <a href='acces-guide-gratuit.html' onmouseout='this.style.opacity=\'1'' onmouseover='this.style.opacity=\'0.88\'' style='display:inline-block;background:linear-gradient(135deg,var(--brown-dark),var(--brown),var(--brown-light));color:white;text-decoration:none;padding:12px 28px;border-radius:50px;font-size:13px;font-weight:500;letter-spacing:0.04em;box-shadow:0 4px 16px rgba(123,74,58,0.25);'>
-      ✦ &nbsp; Télécharger le guide gratuit
+    <a href="commander.html#step-1" style="display:inline-block;background:linear-gradient(135deg,var(--brown-dark),var(--brown),var(--brown-light));color:white;text-decoration:none;padding:12px 28px;border-radius:50px;font-size:13px;font-weight:500;letter-spacing:0.04em;box-shadow:0 4px 16px rgba(123,74,58,0.25);">
+      ✦ &nbsp; Créer ma séance personnalisée
     </a>
   </div>
 
@@ -687,9 +683,9 @@ footer .footer-logo {
   </p>
 
   <ol>
-    <li><strong>Laisser durer la joie 30 secondes de plus.</strong> Quand un moment heureux arrive, au lieu de passer à autre chose, reste avec. Ferme les yeux. Sens-le dans ton corps. Cette pause d'apparence ridicule reprogramme ton système nerveux.</li>
+    <li><strong>Laisser durer la joie 30 secondes de plus.</strong> Quand un moment heureux arrive, au lieu de passer à autre chose, reste avec. Ferme les yeux. Sens-le dans ton corps. Cette pause d'apparence ridicule est une manière de t'offrir un temps d'arrêt.</li>
     <li><strong>Recevoir sans rendre tout de suite.</strong> Quand quelqu'un te fait un cadeau, un compliment, un service — résiste à l'envie de compenser immédiatement. Dire « merci » et s'arrêter là. Apprendre à recevoir, c'est le contraire du « je ne mérite pas ».</li>
-    <li><strong>Te répéter une phrase d'autorisation.</strong> <em>« J'ai le droit d'être heureux(se) sans le justifier. »</em> À répéter chaque matin, même si ça sonne faux au début. Au bout de quelques semaines, ça commence à devenir vrai. C'est comme ça que les croyances changent.</li>
+    <li><strong>Te répéter une phrase d'autorisation.</strong> <em>« J'ai le droit d'être heureux(se) sans le justifier. »</em> À répéter chaque matin, même si ça sonne faux au début. Tu peux simplement observer, semaine après semaine, ce que ça te fait. Sans attendre de résultat précis.</li>
   </ol>
 
   <div class="encadre-yt">
@@ -708,7 +704,7 @@ footer .footer-logo {
   </p>
 
   <p>
-    Le travail intérieur consiste à <em>changer la question</em>. Au lieu de te demander <em>« est-ce que je le mérite ? »</em> — qui te ramène toujours dans le manque — tu peux apprendre à te demander : <em>« est-ce que je suis prêt(e) à recevoir ce qui se présente ? »</em>. C'est une question de présence, pas de mérite. Et la présence, ça se cultive, doucement, jour après jour.
+    Le travail intérieur consiste à <em>changer la question</em>. Au lieu de te demander <em>« est-ce que je le mérite ? »</em> — qui te ramène toujours dans le manque — tu peux apprendre à te demander : <em>« est-ce que je suis prêt(e) à recevoir ce qui se présente ? »</em>. C'est une question de présence, pas de mérite. Et la présence, ça s'explore, doucement, jour après jour.
   </p>
 
   <img class="article-img"
@@ -736,46 +732,31 @@ footer .footer-logo {
 </div>
 
 <!-- ══ CTA PRINCIPAL — [C] Séance personnalisée ══ -->
+
+
+<!-- ══ BLOC YOUTUBE ══ -->
+
+<!-- ══ CTA PRINCIPAL — [B] Guide gratuit ══ -->
 <div style="max-width:720px;margin:0 auto 40px;padding:0 24px;position:relative;z-index:1;">
   <div style="background:rgba(255,255,255,0.70);border:1px solid rgba(123,74,58,0.22);border-radius:20px;padding:36px 40px;backdrop-filter:blur(10px);box-shadow:0 4px 32px rgba(123,74,58,0.07);position:relative;overflow:hidden;">
     <div style="position:absolute;top:0;left:50%;transform:translateX(-50%);width:120px;height:1.5px;background:linear-gradient(90deg,transparent,rgba(123,74,58,0.5),transparent);"></div>
-    <div style="font-size:11px;font-weight:500;letter-spacing:0.14em;text-transform:uppercase;color:#7B4A3A;margin-bottom:14px;">✦ Séance personnalisée</div>
-    <p style="font-family:'Cormorant Garamond',serif;font-size:clamp(1.25rem,3vw,1.7rem);font-weight:400;line-height:1.3;color:#3A2820;margin-bottom:14px;">
-      Et si tu installais en toi <em style="color:#7B4A3A;">la conviction profonde d'avoir le droit d'être heureux(se) ?</em>
+    <div style="font-size:11px;font-weight:500;letter-spacing:0.14em;text-transform:uppercase;color:#7B4A3A;margin-bottom:14px;text-align:center;">📖 Guide gratuit</div>
+    <p style="font-family:'Cormorant Garamond',serif;font-size:clamp(1.25rem,3vw,1.7rem);font-weight:400;line-height:1.3;color:#3A2820;margin-bottom:14px;text-align:center;">
+      Tu veux explorer le <em style="font-style:italic;color:var(--brown)">« je ne mérite pas » du côté du « je m'autorise » ?</em>
     </p>
-    <p style="font-size:15px;line-height:1.75;color:#6A5A52;font-weight:300;margin-bottom:24px;">
-      Nos séances audio personnalisées sont créées spécialement pour toi — ton prénom, tes affirmations, ta nouvelle voix intérieure. Conçues pour transformer le « je ne mérite pas » en une autorisation profonde et tranquille à recevoir le bonheur.
+    <p style="font-size:15px;line-height:1.75;color:#6A5A52;font-weight:300;margin-bottom:24px;text-align:center;">
+      Notre guide gratuit te propose des phrases à explorer autour de cette question du droit au bonheur — sans avoir à justifier ta joie.
     </p>
     <div style="text-align:center;">
-      <a href='commander.html#step-1' onmouseout='this.style.background=\'#7B4A3A\'' onmouseover='this.style.background=\'#5A3028\'' style='display:inline-flex;align-items:center;gap:10px;background:#7B4A3A;color:white;text-decoration:none;padding:14px 30px;border-radius:50px;font-size:14px;font-weight:500;letter-spacing:0.03em;'>
-        ✦ &nbsp; Découvrir la séance personnalisée
+      <a href="acces-guide-gratuit.html" style="display:inline-flex;align-items:center;gap:10px;background:#7B4A3A;color:white;text-decoration:none;padding:14px 30px;border-radius:50px;font-size:14px;font-weight:500;letter-spacing:0.03em;">
+        ✦ &nbsp; Recevoir mon guide gratuit
       </a>
-      <p style="font-size:12px;color:#9A8A80;margin-top:14px;">Sur mesure · Voix off + musique · Livré sous 7 jours</p>
+      <p style="font-size:12px;color:#9A8A80;margin-top:14px;">13 pages · Gratuit · Sans engagement</p>
     </div>
   </div>
 </div>
 
-<!-- ══ CARTE PROGRAMME CONTEXTUELLE ══ -->
-<div class="prog-card-wrap">
-  <div class="prog-card">
-    <div class="prog-card-icon">🌿</div>
-    <div class="prog-card-body">
-      <div class="prog-card-label">✦ Le programme Fréquence Positive</div>
-      <div class="prog-card-title">Tu veux transformer « je ne mérite pas » en autorisation profonde ?</div>
-      <p class="prog-card-text">
-        Le programme Fréquence Positive t'accompagne pour défaire les croyances qui sabotent ta joie et reconstruire un sentiment de légitimité paisible — pas à pas, sans culpabilité.
-      </p>
-    </div>
-    <a class='prog-card-btn' href='index.html'>✦ Découvrir</a>
-  </div>
-</div>
-
-<!-- ══ BLOC YOUTUBE ══ -->
 <div class="yt-bloc">
-  <div class="yt-bloc-title">✦ La chaîne YouTube de Fréquence Positive</div>
-  <p style="text-align:center;font-size:14px;color:var(--text-muted);line-height:1.7;margin:-16px 0 28px;font-weight:300;">
-    Des affirmations en voix off pour t'autoriser le bonheur, jour après jour, sans avoir à le justifier.
-  </p>
   <div class="yt-inner">
     <div class="yt-card">
       <div class="yt-logo">
@@ -784,8 +765,8 @@ footer .footer-logo {
           <polygon points="36,18 36,45 62,31.5" fill="#FDF6EC"/>
         </svg>
       </div>
-      <div class="yt-name">Fréquence Positive</div>
-      <p class="yt-desc">Affirmations positives en voix off + musique — pour reprogrammer ton mental au quotidien.</p>
+      <div class="yt-name">La chaîne YouTube de Fréquence Positive</div>
+      <p class="yt-desc">Affirmations positives en voix off + musique — pour t'accompagner dans ton dialogue intérieur au quotidien.</p>
       <a href="https://www.youtube.com/@FREQUENCE.POSITIVE" target="_blank" class="yt-btn">▶ Voir la chaîne</a>
     </div>
   </div>
@@ -805,13 +786,16 @@ footer .footer-logo {
 
 <!-- ══ FOOTER ══ -->
 <footer>
-  <span class="footer-logo">✦ Fréquence Positive</span>
-  <p>© 2026 Fréquence Positive —
-    <a href='mentions-legales.html'>Mentions légales</a> ·
-    <a href='confidentialite.html'>Confidentialité</a> ·
-    <a href='blog.html'>Blog</a>
-  </p>
-  <p style="margin-top:6px">Avec ✦ par Max &amp; Sandra</p>
+  <div>© 2026 Fréquence Positive — Tous droits réservés</div>
+  <div class="footer-links">
+    <a href="commander.html#step-1">Commander</a>
+    <a href="blog.html">Blog</a>
+    <a href="faq.html">FAQ</a>
+    <a href="mentions-legales.html">Mentions légales</a>
+    <a href="cgv.html">CGV</a>
+    <a href="confidentialite.html">Confidentialité</a>
+    <a href="mailto:hello.frequencepositive@outlook.com">Contact</a>
+  </div>
 </footer>
 
 <!-- ══ CANVAS VAGUES ══ -->

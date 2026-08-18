@@ -4,8 +4,8 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Fréquence Positive — Pourquoi tu sabotes toujours au dernier moment (et comment arrêter)</title>
-<meta name="description" content="Tu remets, tu repousses, tu attends la dernière minute ? Ce n'est pas de la flemme. On t'explique le vrai mécanisme du sabotage — et comment en sortir doucement.">
+<title>Fréquence Positive — Quand on se sabote au dernier moment (et comment le regarder autrement)</title>
+<meta name="description" content="Tu remets, tu repousses, tu attends la dernière minute ? Ce n'est pas forcément de la flemme. On regarde ce que ce report peut protéger — et des pistes pour l'aborder doucement.">
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400;1,500&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
@@ -458,23 +458,18 @@ nav {
 .article-nav .next { text-align: right; }
 
 footer {
-  position: relative;
-  z-index: 1;
-  text-align: center;
-  padding: 40px 24px 48px;
-  border-top: 1px solid rgba(123,74,58,0.1);
-  font-size: 11px;
-  color: var(--text-light);
-  letter-spacing: 0.04em;
+  position: relative; z-index: 1;
+  background: var(--brown-ultra);
+  padding: 36px 48px;
+  display: flex; align-items: center; justify-content: space-between;
+  flex-wrap: wrap; gap: 16px;
+  font-size: 12px; color: rgba(255,255,255,0.4);
 }
-footer a { color: inherit; text-decoration: underline; opacity: 0.7; }
-footer .footer-logo {
-  font-family: 'Cormorant Garamond', serif;
-  font-size: 1.1rem;
-  color: var(--brown);
-  letter-spacing: 0.06em;
-  margin-bottom: 12px;
-  display: block;
+footer a { color: rgba(255,255,255,0.55); text-decoration: none; transition: color 0.2s; }
+footer a:hover { color: rgba(255,255,255,0.9); }
+.footer-links { display: flex; gap: 24px; flex-wrap: wrap; }
+@media (max-width: 700px) {
+  footer { flex-direction: column; align-items: center; text-align: center; padding: 32px 24px; }
 }
 
 @keyframes fadeDown {
@@ -555,7 +550,7 @@ footer .footer-logo {
     <a href='index.html'>Accueil</a>
     <a href='blog.html'>Blog</a>
     <a href='index.html#programme'>Le Programme</a>
-    <a class='nav-cta' href='acces-prioritaire.html'>Accès Prioritaire</a>
+    <a class='nav-cta' href='commander.html'>✦ Créer ma séance</a>
   </div>
   <button class="nav-burger" aria-label="Menu" aria-expanded="false" onclick="(function(b){var l=document.querySelector('.nav-links');b.classList.toggle('open');l.classList.toggle('open');b.setAttribute('aria-expanded',b.classList.contains('open'));})(this)">
     <span></span><span></span><span></span>
@@ -568,8 +563,8 @@ footer .footer-logo {
   <div class="article-tag">✦ Croyances limitantes</div>
 
   <h1 class="article-title">
-    Pourquoi tu sabotes toujours au dernier moment<br>
-    <em>(et comment arrêter)</em>
+    Quand on se sabote au dernier moment<br>
+    <em>(et comment le regarder autrement)</em>
   </h1>
 
   <div class="article-meta">
@@ -582,7 +577,7 @@ footer .footer-logo {
 
   <div class="article-intro-card">
     <p>
-      Tu avais le temps. Tu y pensais depuis des semaines. Et pourtant, à la veille de l'échéance, tu te retrouves à tout faire dans la panique — ou pire, à laisser tomber. Tu te dis que tu manques de discipline. Que tu es flemmard(e). Mais ce n'est pas ça. <strong>Le sabotage de dernière minute n'est presque jamais un problème de motivation</strong> — c'est un mécanisme de protection. Et tant qu'on ne comprend pas ce qu'il protège, on continue de tourner en boucle. On va regarder ce qui se passe vraiment, en dessous.
+      Tu avais le temps. Tu y pensais depuis des semaines. Et pourtant, à la veille de l'échéance, tu te retrouves à tout faire dans la panique — ou pire, à laisser tomber. Tu te dis que tu manques de discipline. Que tu es flemmard(e). Mais ce n'est pas ça. <strong>Le sabotage de dernière minute n'est pas forcément un problème de motivation</strong> — beaucoup de personnes y décrivent plutôt une forme de protection. Et tant qu'on ne comprend pas ce qu'il protège, on continue de tourner en boucle. On va regarder ce qui se passe vraiment, en dessous.
     </p>
   </div>
 
@@ -597,15 +592,15 @@ footer .footer-logo {
   <h2>Ce n'est pas de la flemme — même si ça en a l'air</h2>
 
   <p>
-    La première chose à entendre, c'est ça : <strong>ton cerveau n'est pas paresseux</strong>. Il fait, à chaque fois, un calcul très rapide entre l'effort à fournir et le risque perçu. Et quand il décide d'attendre, ce n'est pas par flemme. C'est parce que quelque chose, dans cette tâche, déclenche une alarme silencieuse.
+    La première chose à entendre, c'est ça : <strong>la paresse n'explique pas tout</strong>. Les recherches sur la procrastination observent qu'un report tient souvent moins à l'effort demandé qu'au risque perçu. Autrement dit : quelque chose, dans cette tâche, peut être vécu comme inconfortable.
   </p>
 
   <p>
-    Tu peux le vérifier toi-même. Pense à une chose que tu as repoussée récemment. Maintenant, pense à une chose que tu as faite immédiatement, sans rechigner. La différence n'est jamais l'énergie disponible. La différence, c'est la <em>charge émotionnelle</em>. Plus une tâche touche à quelque chose de sensible — la peur de mal faire, la peur d'être jugé(e), la peur de réussir aussi parfois — plus le cerveau cherche à la repousser.
+    Tu peux le vérifier toi-même. Pense à une chose que tu as repoussée récemment. Maintenant, pense à une chose que tu as faite immédiatement, sans rechigner. La différence n'est jamais l'énergie disponible. La différence, c'est la <em>charge émotionnelle</em>. Plus une tâche touche à quelque chose de sensible — la peur de mal faire, la peur d'être jugé(e), la peur de réussir aussi parfois — plus l'envie de la repousser peut devenir forte.
   </p>
 
   <blockquote>
-    Tu ne procrastines pas parce que la tâche est difficile. Tu procrastines parce qu'elle te fait peur — d'une peur que tu n'as pas encore nommée.
+    Et si ce n'était pas la difficulté de la tâche qui pesait, mais quelque chose de plus sensible, que tu n'as pas encore nommé ?
   </blockquote>
 
   <img class="article-img"
@@ -629,7 +624,7 @@ footer .footer-logo {
   <h3>2. La peur du jugement extérieur</h3>
 
   <p>
-    Rendre un travail, c'est s'exposer. Et pour beaucoup, s'exposer, c'est risquer la critique, le rejet, la moquerie. Le cerveau préfère parfois la honte du retard à la honte du regard. Au moins, dans le retard, tu gardes le contrôle de l'histoire — c'est toi qui as choisi.
+    Rendre un travail, c'est s'exposer. Et pour beaucoup, s'exposer, c'est risquer la critique, le rejet, la moquerie. On préfère parfois la honte du retard à celle du regard des autres. Au moins, dans le retard, tu gardes le contrôle de l'histoire — c'est toi qui as choisi.
   </p>
 
   <h3>3. La peur, plus secrète, de réussir</h3>
@@ -657,7 +652,7 @@ footer .footer-logo {
   </p>
 
   <p>
-    Plus tu te juges après un sabotage, plus la prochaine tâche similaire devient <strong>chargée d'angoisse</strong>. Le cerveau associe : « cette tâche = douleur, jugement, honte ». Et la fois suivante, il cherche encore plus à l'éviter. C'est ce qu'on appelle la <em>boucle du sabotage</em> — chaque échec en nourrit un nouveau.
+    Plus tu te juges après un sabotage, plus la prochaine tâche similaire devient <strong>chargée d'angoisse</strong>. L'association peut s'installer : « cette tâche = douleur, jugement, honte ». Et la fois suivante, l'évitement peut sembler plus tentant encore. C'est ce qu'on appelle la <em>boucle du sabotage</em> — chaque échec en nourrit un nouveau.
   </p>
 
   <p>
@@ -665,17 +660,18 @@ footer .footer-logo {
   </p>
 
   <!-- CTA SECONDAIRE — [B] Guide gratuit -->
+  <!-- CTA SECONDAIRE — [C] Séance personnalisée -->
   <div style="background:linear-gradient(135deg,rgba(123,74,58,0.07),rgba(74,122,106,0.07));border:1px solid rgba(123,74,58,0.18);border-radius:18px;padding:28px 32px;margin:36px 0;text-align:center;backdrop-filter:blur(10px);position:relative;overflow:hidden;">
     <div style="position:absolute;top:0;left:50%;transform:translateX(-50%);width:140px;height:1.5px;background:linear-gradient(90deg,transparent,rgba(123,74,58,0.45),transparent);"></div>
-    <div style="font-size:1.5rem;margin-bottom:10px;">📖</div>
+    <div style="font-size:1.5rem;margin-bottom:10px;">✦</div>
     <p style="font-family:'Cormorant Garamond',serif;font-size:1.35rem;font-weight:400;color:var(--text-main);line-height:1.3;margin-bottom:8px;">
-      Tu veux remplacer la voix qui te juge <em style="font-style:italic;color:var(--brown)">par une voix qui t'aide ?</em>
+      Et si tu remplaçais la voix qui te sabote <em style="color:#7B4A3A;">par la tienne, plus douce et plus juste ?</em>
     </p>
     <p style="font-size:13.5px;color:var(--text-muted);line-height:1.65;margin-bottom:20px;">
-      Notre guide gratuit te donne les phrases à te dire avant, pendant et après — pour casser la boucle du sabotage et avancer doucement, sans plus te taper dessus.
+      Nos séances audio personnalisées sont créées spécialement pour toi — ton prénom, tes mots, tes affirmations. Pensées comme un espace d'écoute autour de ton rapport à l'action, à la valeur de ton travail et au regard des autres.
     </p>
-    <a href='acces-guide-gratuit.html' onmouseout='this.style.opacity=\'1'' onmouseover='this.style.opacity=\'0.88\'' style='display:inline-block;background:linear-gradient(135deg,var(--brown-dark),var(--brown),var(--brown-light));color:white;text-decoration:none;padding:12px 28px;border-radius:50px;font-size:13px;font-weight:500;letter-spacing:0.04em;box-shadow:0 4px 16px rgba(123,74,58,0.25);'>
-      ✦ &nbsp; Télécharger le guide gratuit
+    <a href="commander.html#step-1" style="display:inline-block;background:linear-gradient(135deg,var(--brown-dark),var(--brown),var(--brown-light));color:white;text-decoration:none;padding:12px 28px;border-radius:50px;font-size:13px;font-weight:500;letter-spacing:0.04em;box-shadow:0 4px 16px rgba(123,74,58,0.25);">
+      ✦ &nbsp; Créer ma séance personnalisée
     </a>
   </div>
 
@@ -687,7 +683,7 @@ footer .footer-logo {
   </p>
 
   <ol>
-    <li><strong>Diviser la tâche en pas si petits qu'ils paraissent ridicules.</strong> Pas « écrire le rapport » mais « ouvrir un document vide et écrire le titre ». Le cerveau se calme quand l'enjeu paraît minuscule.</li>
+    <li><strong>Diviser la tâche en pas si petits qu'ils paraissent ridicules.</strong> Pas « écrire le rapport » mais « ouvrir un document vide et écrire le titre ». L'intention est simple : quand l'enjeu paraît minuscule, se lancer devient souvent moins coûteux.</li>
     <li><strong>Te donner la permission de mal faire la première version.</strong> Le perfectionnisme est l'un des moteurs principaux du sabotage. Une mauvaise première version vaut toujours mieux qu'une parfaite imaginée.</li>
     <li><strong>Remarquer la peur sans lui obéir.</strong> Quand l'envie de fuir arrive, dis-toi simplement : <em>« Tiens, j'ai peur. C'est ok. Je continue quand même, juste cinq minutes. »</em> Souvent, cinq minutes suffisent à amorcer le mouvement.</li>
   </ol>
@@ -695,7 +691,7 @@ footer .footer-logo {
   <div class="encadre-yt">
     <div class="encadre-yt-icon">▶</div>
     <div class="encadre-yt-text">
-      Pour t'accompagner dans ce travail au quotidien, on partage des affirmations en voix off pour reprogrammer le rapport à l'effort et au passage à l'action sur notre chaîne :
+      Pour t'accompagner dans ce travail au quotidien, on partage sur notre chaîne des affirmations en voix off autour du rapport à l'effort et au passage à l'action :
       <a href="https://www.youtube.com/@FREQUENCE.POSITIVE" target="_blank">@FREQUENCE.POSITIVE</a>
     </div>
   </div>
@@ -704,11 +700,11 @@ footer .footer-logo {
   <h2>Ce que tu sabotes, c'est rarement la tâche</h2>
 
   <p>
-    Si tu retiens une seule chose de cet article, retiens celle-ci. Quand tu repousses une tâche, tu ne sabotes pas la tâche — tu sabotes <strong>la version de toi qui réussirait</strong>. Parce que cette version-là, tu n'es pas encore tout à fait sûr(e) qu'elle a le droit d'exister.
+    Si tu retiens une seule chose de cet article, retiens celle-ci. Quand tu repousses une tâche, tu ne sabotes pas la tâche — c'est peut-être <strong>la version de toi qui réussirait</strong> qui attend une permission. Parce que cette version-là, tu n'es pas encore tout à fait sûr(e) qu'elle a le droit d'exister.
   </p>
 
   <p>
-    Le travail à faire, alors, n'est pas du tout dans la productivité. Il est dans la <em>permission</em>. Te permettre de réussir. Te permettre d'être à la hauteur. Te permettre que ce que tu fais soit bien fait, vu, célébré. C'est un changement intérieur — et c'est lui qui change tout, ensuite, dans le rapport au temps et à l'action.
+    Le travail à faire, alors, n'est pas du tout dans la productivité. Il est dans la <em>permission</em>. Te permettre de réussir. Te permettre d'être à la hauteur. Te permettre que ce que tu fais soit bien fait, vu, célébré. C'est un mouvement intérieur — et c'est souvent par là que le rapport au temps et à l'action peut se regarder autrement.
   </p>
 
   <img class="article-img"
@@ -722,7 +718,7 @@ footer .footer-logo {
   <h2>Pour aller plus loin</h2>
 
   <p>
-    Le sabotage de dernière minute n'est pas une faille de caractère. C'est un message. Le message que quelque chose, en toi, demande à être rassuré avant de pouvoir avancer librement. Ce n'est pas en te punissant que tu vas l'apprivoiser. C'est en t'écoutant.
+    Le sabotage de dernière minute n'est pas une faille de caractère. C'est un message. Peut-être le signe que quelque chose, en toi, aurait besoin d'être rassuré avant d'avancer. Ce n'est pas en te punissant que tu vas l'apprivoiser. C'est en t'écoutant.
   </p>
 
   <p>
@@ -736,46 +732,31 @@ footer .footer-logo {
 </div>
 
 <!-- ══ CTA PRINCIPAL — [C] Séance personnalisée ══ -->
+
+
+<!-- ══ BLOC YOUTUBE ══ -->
+
+<!-- ══ CTA PRINCIPAL — [B] Guide gratuit ══ -->
 <div style="max-width:720px;margin:0 auto 40px;padding:0 24px;position:relative;z-index:1;">
   <div style="background:rgba(255,255,255,0.70);border:1px solid rgba(123,74,58,0.22);border-radius:20px;padding:36px 40px;backdrop-filter:blur(10px);box-shadow:0 4px 32px rgba(123,74,58,0.07);position:relative;overflow:hidden;">
     <div style="position:absolute;top:0;left:50%;transform:translateX(-50%);width:120px;height:1.5px;background:linear-gradient(90deg,transparent,rgba(123,74,58,0.5),transparent);"></div>
-    <div style="font-size:11px;font-weight:500;letter-spacing:0.14em;text-transform:uppercase;color:#7B4A3A;margin-bottom:14px;">✦ Séance personnalisée</div>
-    <p style="font-family:'Cormorant Garamond',serif;font-size:clamp(1.25rem,3vw,1.7rem);font-weight:400;line-height:1.3;color:#3A2820;margin-bottom:14px;">
-      Et si tu remplaçais la voix qui te sabote <em style="color:#7B4A3A;">par la tienne, plus douce et plus juste ?</em>
+    <div style="font-size:11px;font-weight:500;letter-spacing:0.14em;text-transform:uppercase;color:#7B4A3A;margin-bottom:14px;text-align:center;">📖 Guide gratuit</div>
+    <p style="font-family:'Cormorant Garamond',serif;font-size:clamp(1.25rem,3vw,1.7rem);font-weight:400;line-height:1.3;color:#3A2820;margin-bottom:14px;text-align:center;">
+      Tu veux faire une place à une voix plus douce <em style="font-style:italic;color:var(--brown)">que celle qui te juge ?</em>
     </p>
-    <p style="font-size:15px;line-height:1.75;color:#6A5A52;font-weight:300;margin-bottom:24px;">
-      Nos séances audio personnalisées sont créées spécialement pour toi — ton prénom, tes mots, tes affirmations. Conçues pour reprogrammer ton rapport à l'action, à la valeur de ton travail et à la peur d'être vu(e).
+    <p style="font-size:15px;line-height:1.75;color:#6A5A52;font-weight:300;margin-bottom:24px;text-align:center;">
+      Notre guide gratuit te donne les phrases à te dire avant, pendant et après — pour t'accompagner dans ces moments-là, doucement, sans te taper dessus.
     </p>
     <div style="text-align:center;">
-      <a href='commander.html#step-1' onmouseout='this.style.background=\'#7B4A3A\'' onmouseover='this.style.background=\'#5A3028\'' style='display:inline-flex;align-items:center;gap:10px;background:#7B4A3A;color:white;text-decoration:none;padding:14px 30px;border-radius:50px;font-size:14px;font-weight:500;letter-spacing:0.03em;'>
-        ✦ &nbsp; Découvrir la séance personnalisée
+      <a href="acces-guide-gratuit.html" style="display:inline-flex;align-items:center;gap:10px;background:#7B4A3A;color:white;text-decoration:none;padding:14px 30px;border-radius:50px;font-size:14px;font-weight:500;letter-spacing:0.03em;">
+        ✦ &nbsp; Recevoir mon guide gratuit
       </a>
-      <p style="font-size:12px;color:#9A8A80;margin-top:14px;">Sur mesure · Voix off + musique · Livré sous 7 jours</p>
+      <p style="font-size:12px;color:#9A8A80;margin-top:14px;">13 pages · Gratuit · Sans engagement</p>
     </div>
   </div>
 </div>
 
-<!-- ══ CARTE PROGRAMME CONTEXTUELLE ══ -->
-<div class="prog-card-wrap">
-  <div class="prog-card">
-    <div class="prog-card-icon">🌿</div>
-    <div class="prog-card-body">
-      <div class="prog-card-label">✦ Le programme Fréquence Positive</div>
-      <div class="prog-card-title">Tu veux transformer la peur d'agir en élan tranquille ?</div>
-      <p class="prog-card-text">
-        Le programme Fréquence Positive t'accompagne pour démonter les croyances qui te paralysent et reconstruire un rapport plus libre à l'action — pas à pas, sans pression.
-      </p>
-    </div>
-    <a class='prog-card-btn' href='index.html'>✦ Découvrir</a>
-  </div>
-</div>
-
-<!-- ══ BLOC YOUTUBE ══ -->
 <div class="yt-bloc">
-  <div class="yt-bloc-title">✦ La chaîne YouTube de Fréquence Positive</div>
-  <p style="text-align:center;font-size:14px;color:var(--text-muted);line-height:1.7;margin:-16px 0 28px;font-weight:300;">
-    Des affirmations en voix off pour casser la boucle du sabotage et oser passer à l'action.
-  </p>
   <div class="yt-inner">
     <div class="yt-card">
       <div class="yt-logo">
@@ -784,8 +765,8 @@ footer .footer-logo {
           <polygon points="36,18 36,45 62,31.5" fill="#FDF6EC"/>
         </svg>
       </div>
-      <div class="yt-name">Fréquence Positive</div>
-      <p class="yt-desc">Affirmations positives en voix off + musique — pour reprogrammer ton mental au quotidien.</p>
+      <div class="yt-name">La chaîne YouTube de Fréquence Positive</div>
+      <p class="yt-desc">Affirmations positives en voix off + musique — pour t'accompagner dans ton dialogue intérieur au quotidien.</p>
       <a href="https://www.youtube.com/@FREQUENCE.POSITIVE" target="_blank" class="yt-btn">▶ Voir la chaîne</a>
     </div>
   </div>
@@ -805,13 +786,16 @@ footer .footer-logo {
 
 <!-- ══ FOOTER ══ -->
 <footer>
-  <span class="footer-logo">✦ Fréquence Positive</span>
-  <p>© 2026 Fréquence Positive —
-    <a href='mentions-legales.html'>Mentions légales</a> ·
-    <a href='confidentialite.html'>Confidentialité</a> ·
-    <a href='blog.html'>Blog</a>
-  </p>
-  <p style="margin-top:6px">Avec ✦ par Max &amp; Sandra</p>
+  <div>© 2026 Fréquence Positive — Tous droits réservés</div>
+  <div class="footer-links">
+    <a href="commander.html#step-1">Commander</a>
+    <a href="blog.html">Blog</a>
+    <a href="faq.html">FAQ</a>
+    <a href="mentions-legales.html">Mentions légales</a>
+    <a href="cgv.html">CGV</a>
+    <a href="confidentialite.html">Confidentialité</a>
+    <a href="mailto:hello.frequencepositive@outlook.com">Contact</a>
+  </div>
 </footer>
 
 <!-- ══ CANVAS VAGUES ══ -->

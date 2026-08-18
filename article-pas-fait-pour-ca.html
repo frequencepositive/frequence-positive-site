@@ -13,7 +13,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 <title>Fréquence Positive — « Je ne suis pas fait(e) pour ça » : démanteler ce mensonge</title>
-<meta name="description" content="« Je ne suis pas fait(e) pour ça » — d'où vient cette phrase, pourquoi elle ment, et comment s'en libérer durablement. Un article pour remettre en question ce plafond invisible.">
+<meta name="description" content="« Je ne suis pas fait(e) pour ça » — d'où vient cette phrase, pourquoi elle est discutable, et par où commencer à la questionner. Un article pour remettre en question ce plafond invisible.">
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400;1,500&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
@@ -466,23 +466,18 @@ nav {
 .article-nav .next { text-align: right; }
 
 footer {
-  position: relative;
-  z-index: 1;
-  text-align: center;
-  padding: 40px 24px 48px;
-  border-top: 1px solid rgba(123,74,58,0.1);
-  font-size: 11px;
-  color: var(--text-light);
-  letter-spacing: 0.04em;
+  position: relative; z-index: 1;
+  background: var(--brown-ultra);
+  padding: 36px 48px;
+  display: flex; align-items: center; justify-content: space-between;
+  flex-wrap: wrap; gap: 16px;
+  font-size: 12px; color: rgba(255,255,255,0.4);
 }
-footer a { color: inherit; text-decoration: underline; opacity: 0.7; }
-footer .footer-logo {
-  font-family: 'Cormorant Garamond', serif;
-  font-size: 1.1rem;
-  color: var(--brown);
-  letter-spacing: 0.06em;
-  margin-bottom: 12px;
-  display: block;
+footer a { color: rgba(255,255,255,0.55); text-decoration: none; transition: color 0.2s; }
+footer a:hover { color: rgba(255,255,255,0.9); }
+.footer-links { display: flex; gap: 24px; flex-wrap: wrap; }
+@media (max-width: 700px) {
+  footer { flex-direction: column; align-items: center; text-align: center; padding: 32px 24px; }
 }
 
 @keyframes fadeDown {
@@ -517,7 +512,7 @@ footer .footer-logo {
     <a href="accueil.html">Accueil</a>
     <a href="blog.html">Blog</a>
     <a href="accueil.html#programme">Le Programme</a>
-    <a href="acces-prioritaire.html" class="nav-cta">Accès Prioritaire</a>
+    <a href="commander.html" class="nav-cta">✦ Créer ma séance</a>
   </div>
 </nav>
 
@@ -564,7 +559,7 @@ footer .footer-logo {
   </p>
 
   <p>
-    Le problème, c'est que le cerveau d'un enfant — ou d'un adulte sous le choc — ne fait pas la distinction entre <strong>une opinion</strong> et <strong>un fait</strong>. Il enregistre tout avec la même certitude. Et il construit autour de ça une identité entière.
+    Le problème, c'est qu'à cet âge — ou dans un moment de choc — la frontière entre <strong>une opinion</strong> et <strong>un fait</strong> est floue. On peut retenir l'une pour l'autre. Et l'enfant construit autour de ça une identité entière.
   </p>
 
   <blockquote>
@@ -590,7 +585,7 @@ footer .footer-logo {
   <h3>Le piège de la confirmation</h3>
 
   <p>
-    Une fois installée, cette croyance devient un filtre actif. Ton cerveau commence à chercher — et à trouver — tout ce qui la confirme. Tu rates quelque chose → preuve. Quelqu'un réussit mieux que toi → preuve. Tu hésites → preuve. Les données qui contredisent la croyance, elles, sont ignorées ou minimisées. C'est ce qu'on appelle le <strong>biais de confirmation</strong> — et il travaille 24h/24 en silence.
+    Une fois installée, cette croyance agit comme un filtre. On a tendance à chercher — et à trouver — ce qui la confirme. Tu rates quelque chose → preuve. Quelqu'un réussit mieux que toi → preuve. Tu hésites → preuve. Les données qui contredisent la croyance, elles, sont ignorées ou minimisées. C'est ce que les chercheurs appellent le <strong>biais de confirmation</strong> — un réflexe qui passe souvent inaperçu.
   </p>
 
   <ul>
@@ -613,7 +608,7 @@ footer .footer-logo {
   <h2>Les 3 questions qui font vaciller la croyance</h2>
 
   <p>
-    Pas besoin d'une longue thérapie pour commencer à démonter cette phrase. Trois questions suffisent à créer la première fissure. Pose-les lentement, honnêtement — avec du papier si tu peux.
+    Pas besoin d'un long détour pour commencer à questionner cette phrase. Trois questions suffisent à créer la première fissure. Pose-les lentement, honnêtement — avec du papier si tu peux.
   </p>
 
   <h3>1. Est-ce que je l'aurais su dès le départ ?</h3>
@@ -635,27 +630,28 @@ footer .footer-logo {
   <h3>3. Qu'est-ce qui se passerait si c'était faux ?</h3>
 
   <p>
-    Juste une minute. Imagine que cette croyance soit inexacte. Qu'est-ce que tu ferais différemment demain ? Dans six mois ? Cette question seule ouvre un espace mental que la croyance avait fermé.
+    Juste une minute. Imagine que cette croyance soit inexacte. Qu'est-ce que tu ferais différemment demain ? Dans six mois ? Cette question seule peut ouvrir un espace que la croyance avait refermé.
   </p>
 
   <div class="encadre">
     <div class="encadre-label">✦ Exercice pratique</div>
     <p>Écris la phrase complète : <em>« Je ne suis pas fait(e) pour… »</em> — et remplis le blanc avec ce qui te vient spontanément.</p>
-    <p>Puis écris juste en dessous : <em>« Cette croyance m'a été donnée par… à un moment où… »</em>. Laisse venir ce qui vient, sans censure. Ce travail de traçabilité change radicalement le rapport qu'on a à la croyance — elle devient une histoire, pas une vérité.</p>
+    <p>Puis écris juste en dessous : <em>« Cette croyance m'a été donnée par… à un moment où… »</em>. Laisse venir ce qui vient, sans censure. Ce travail de traçabilité peut modifier le rapport qu'on a à la croyance — elle ressemble alors davantage à une histoire qu'à une vérité.</p>
   </div>
 
   <!-- CTA SECONDAIRE — [B] Guide gratuit -->
+  <!-- CTA SECONDAIRE — [C] Séance personnalisée -->
   <div style="background:linear-gradient(135deg,rgba(123,74,58,0.07),rgba(74,122,106,0.07));border:1px solid rgba(123,74,58,0.18);border-radius:18px;padding:28px 32px;margin:36px 0;text-align:center;backdrop-filter:blur(10px);position:relative;overflow:hidden;">
     <div style="position:absolute;top:0;left:50%;transform:translateX(-50%);width:140px;height:1.5px;background:linear-gradient(90deg,transparent,rgba(123,74,58,0.45),transparent);"></div>
-    <div style="font-size:1.5rem;margin-bottom:10px;">🌿</div>
+    <div style="font-size:1.5rem;margin-bottom:10px;">✦</div>
     <p style="font-family:'Cormorant Garamond',serif;font-size:1.35rem;font-weight:400;color:var(--text-main);line-height:1.3;margin-bottom:8px;">
-      Tu veux mettre des mots nouveaux <em style="font-style:italic;color:var(--brown)">sur ce que tu es vraiment ?</em>
+      Et si tu entendais une voix t'inviter, chaque jour, <em style="color:#7B4A3A;">à t'autoriser à prendre ta place ?</em>
     </p>
     <p style="font-size:13.5px;color:var(--text-muted);line-height:1.65;margin-bottom:20px;">
-      Notre guide gratuit t'aide à écrire des affirmations qui parlent à ton identité profonde — pas des phrases génériques, mais des mots taillés pour toi.
+      Nous créons pour toi une séance audio personnalisée avec ton prénom, tes mots, tes phrases — un espace d'écoute où entendre une autre voix que celle qui te retient.
     </p>
-    <a href="acces-guide-gratuit.html" style="display:inline-block;background:linear-gradient(135deg,var(--brown-dark),var(--brown),var(--brown-light));color:white;text-decoration:none;padding:12px 28px;border-radius:50px;font-size:13px;font-weight:500;letter-spacing:0.04em;box-shadow:0 4px 16px rgba(123,74,58,0.25);" onmouseover="this.style.opacity='0.88'" onmouseout="this.style.opacity='1'">
-      ✦ &nbsp; Télécharger le guide gratuit
+    <a href="commander.html#step-1" style="display:inline-block;background:linear-gradient(135deg,var(--brown-dark),var(--brown),var(--brown-light));color:white;text-decoration:none;padding:12px 28px;border-radius:50px;font-size:13px;font-weight:500;letter-spacing:0.04em;box-shadow:0 4px 16px rgba(123,74,58,0.25);">
+      ✦ &nbsp; Créer ma séance personnalisée
     </a>
   </div>
 
@@ -663,7 +659,7 @@ footer .footer-logo {
   <h2>Réécrire l'histoire — sans te forcer à y croire d'un coup</h2>
 
   <p>
-    La tentation, c'est de remplacer <em>« je ne suis pas fait(e) pour ça »</em> par <em>« je suis capable de tout »</em>. Ça ne marche pas. Ton cerveau ne gobe pas ce qui lui semble faux — et il a raison.
+    La tentation, c'est de remplacer <em>« je ne suis pas fait(e) pour ça »</em> par <em>« je suis capable de tout »</em>. Ça ne marche pas. On ne croit pas facilement ce qui nous semble faux — et c'est plutôt sain.
   </p>
 
   <p>
@@ -683,7 +679,7 @@ footer .footer-logo {
   <div class="encadre-yt">
     <div class="encadre-yt-icon">▶</div>
     <div class="encadre-yt-text">
-      Sur notre chaîne YouTube, on accompagne ce travail d'identité avec des affirmations en voix off — pour répéter ces nouvelles phrases jusqu'à ce qu'elles deviennent naturelles :
+      Sur notre chaîne YouTube, on accompagne cette exploration avec des affirmations en voix off — des phrases à réécouter aussi souvent que tu le souhaites :
       <a href="https://www.youtube.com/@FREQUENCE.POSITIVE" target="_blank">@FREQUENCE.POSITIVE</a>
     </div>
   </div>
@@ -732,46 +728,31 @@ footer .footer-logo {
 </div>
 
 <!-- ══ CTA PRINCIPAL — [C] Séance personnalisée ══ -->
+
+
+<!-- ══ BLOC YOUTUBE ══ -->
+
+<!-- ══ CTA PRINCIPAL — [B] Guide gratuit ══ -->
 <div style="max-width:720px;margin:0 auto 40px;padding:0 24px;position:relative;z-index:1;">
   <div style="background:rgba(255,255,255,0.70);border:1px solid rgba(123,74,58,0.22);border-radius:20px;padding:36px 40px;backdrop-filter:blur(10px);box-shadow:0 4px 32px rgba(123,74,58,0.07);position:relative;overflow:hidden;">
     <div style="position:absolute;top:0;left:50%;transform:translateX(-50%);width:120px;height:1.5px;background:linear-gradient(90deg,transparent,rgba(123,74,58,0.5),transparent);"></div>
-    <div style="font-size:11px;font-weight:500;letter-spacing:0.14em;text-transform:uppercase;color:#7B4A3A;margin-bottom:14px;">✦ Séance personnalisée</div>
-    <p style="font-family:'Cormorant Garamond',serif;font-size:clamp(1.25rem,3vw,1.7rem);font-weight:400;line-height:1.3;color:#3A2820;margin-bottom:14px;">
-      Et si tu entendais une voix te dire, chaque jour, <em style="color:#7B4A3A;">que tu es exactement à ta place ?</em>
+    <div style="font-size:11px;font-weight:500;letter-spacing:0.14em;text-transform:uppercase;color:#7B4A3A;margin-bottom:14px;text-align:center;">📖 Guide gratuit</div>
+    <p style="font-family:'Cormorant Garamond',serif;font-size:clamp(1.25rem,3vw,1.7rem);font-weight:400;line-height:1.3;color:#3A2820;margin-bottom:14px;text-align:center;">
+      Tu veux mettre des mots nouveaux <em style="font-style:italic;color:var(--brown)">sur ce que tu es vraiment ?</em>
     </p>
-    <p style="font-size:15px;line-height:1.75;color:#6A5A52;font-weight:300;margin-bottom:24px;">
-      Nous créons pour toi une séance audio personnalisée avec ton prénom, tes mots, tes nouvelles croyances — pour remplacer durablement la voix qui te retient par une voix qui te porte.
+    <p style="font-size:15px;line-height:1.75;color:#6A5A52;font-weight:300;margin-bottom:24px;text-align:center;">
+      Notre guide gratuit t'aide à écrire des affirmations qui parlent à ton identité profonde — pas des phrases génériques, mais des mots taillés pour toi.
     </p>
     <div style="text-align:center;">
-      <a href="commander.html" style="display:inline-flex;align-items:center;gap:10px;background:#7B4A3A;color:white;text-decoration:none;padding:14px 30px;border-radius:50px;font-size:14px;font-weight:500;letter-spacing:0.03em;" onmouseover="this.style.background='#5A3028'" onmouseout="this.style.background='#7B4A3A'">
-        ✦ &nbsp; Créer ma séance personnalisée
+      <a href="acces-guide-gratuit.html" style="display:inline-flex;align-items:center;gap:10px;background:#7B4A3A;color:white;text-decoration:none;padding:14px 30px;border-radius:50px;font-size:14px;font-weight:500;letter-spacing:0.03em;">
+        ✦ &nbsp; Recevoir mon guide gratuit
       </a>
-      <p style="font-size:12px;color:#9A8A80;margin-top:14px;">Créée à la main · Livrée par e-mail · Unique pour toi</p>
+      <p style="font-size:12px;color:#9A8A80;margin-top:14px;">13 pages · Gratuit · Sans engagement</p>
     </div>
   </div>
 </div>
 
-<!-- ══ CARTE PROGRAMME CONTEXTUELLE ══ -->
-<div class="prog-card-wrap">
-  <div class="prog-card">
-    <div class="prog-card-icon">🌿</div>
-    <div class="prog-card-body">
-      <div class="prog-card-label">✦ Le programme Fréquence Positive</div>
-      <div class="prog-card-title">Tu veux reconstruire une identité qui te ressemble vraiment ?</div>
-      <p class="prog-card-text">
-        Le programme Fréquence Positive t'accompagne pour aller au fond de ces croyances identitaires et les remplacer par quelque chose de plus juste, de plus libre — à ton rythme.
-      </p>
-    </div>
-    <a href="accueil.html" class="prog-card-btn">✦ Découvrir</a>
-  </div>
-</div>
-
-<!-- ══ BLOC YOUTUBE ══ -->
 <div class="yt-bloc">
-  <div class="yt-bloc-title">✦ La chaîne YouTube de Fréquence Positive</div>
-  <p style="text-align:center;font-size:14px;color:var(--text-muted);line-height:1.7;margin:-16px 0 28px;font-weight:300;">
-    Des affirmations en voix off pour t'accompagner chaque matin dans ce travail d'identité.
-  </p>
   <div class="yt-inner">
     <div class="yt-card">
       <div class="yt-logo">
@@ -780,8 +761,8 @@ footer .footer-logo {
           <polygon points="36,18 36,45 62,31.5" fill="#FDF6EC"/>
         </svg>
       </div>
-      <div class="yt-name">Fréquence Positive</div>
-      <p class="yt-desc">Affirmations positives en voix off + musique — pour nourrir ton dialogue intérieur au quotidien.</p>
+      <div class="yt-name">La chaîne YouTube de Fréquence Positive</div>
+      <p class="yt-desc">Affirmations positives en voix off + musique — pour t'accompagner dans ton dialogue intérieur au quotidien.</p>
       <a href="https://www.youtube.com/@FREQUENCE.POSITIVE" target="_blank" class="yt-btn">▶ Voir la chaîne</a>
     </div>
   </div>
@@ -801,13 +782,16 @@ footer .footer-logo {
 
 <!-- ══ FOOTER ══ -->
 <footer>
-  <span class="footer-logo">✦ Fréquence Positive</span>
-  <p>© 2026 Fréquence Positive —
-    <a href="mentions-legales.html">Mentions légales</a> ·
-    <a href="confidentialite.html">Confidentialité</a> ·
+  <div>© 2026 Fréquence Positive — Tous droits réservés</div>
+  <div class="footer-links">
+    <a href="commander.html#step-1">Commander</a>
     <a href="blog.html">Blog</a>
-  </p>
-  <p style="margin-top:6px">Avec ✦ par Max &amp; Sandra</p>
+    <a href="faq.html">FAQ</a>
+    <a href="mentions-legales.html">Mentions légales</a>
+    <a href="cgv.html">CGV</a>
+    <a href="confidentialite.html">Confidentialité</a>
+    <a href="mailto:hello.frequencepositive@outlook.com">Contact</a>
+  </div>
 </footer>
 
 <!-- ══ CANVAS VAGUES ══ -->

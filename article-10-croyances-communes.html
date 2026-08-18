@@ -458,23 +458,18 @@ nav {
 .article-nav .next { text-align: right; }
 
 footer {
-  position: relative;
-  z-index: 1;
-  text-align: center;
-  padding: 40px 24px 48px;
-  border-top: 1px solid rgba(123,74,58,0.1);
-  font-size: 11px;
-  color: var(--text-light);
-  letter-spacing: 0.04em;
+  position: relative; z-index: 1;
+  background: var(--brown-ultra);
+  padding: 36px 48px;
+  display: flex; align-items: center; justify-content: space-between;
+  flex-wrap: wrap; gap: 16px;
+  font-size: 12px; color: rgba(255,255,255,0.4);
 }
-footer a { color: inherit; text-decoration: underline; opacity: 0.7; }
-footer .footer-logo {
-  font-family: 'Cormorant Garamond', serif;
-  font-size: 1.1rem;
-  color: var(--brown);
-  letter-spacing: 0.06em;
-  margin-bottom: 12px;
-  display: block;
+footer a { color: rgba(255,255,255,0.55); text-decoration: none; transition: color 0.2s; }
+footer a:hover { color: rgba(255,255,255,0.9); }
+.footer-links { display: flex; gap: 24px; flex-wrap: wrap; }
+@media (max-width: 700px) {
+  footer { flex-direction: column; align-items: center; text-align: center; padding: 32px 24px; }
 }
 
 @keyframes fadeDown {
@@ -555,7 +550,7 @@ footer .footer-logo {
     <a href='index.html'>Accueil</a>
     <a href='blog.html'>Blog</a>
     <a href='index.html#programme'>Le Programme</a>
-    <a class='nav-cta' href='acces-prioritaire.html'>Accès Prioritaire</a>
+    <a class='nav-cta' href='commander.html'>✦ Créer ma séance</a>
   </div>
   <button class="nav-burger" aria-label="Menu" aria-expanded="false" onclick="(function(b){var l=document.querySelector('.nav-links');b.classList.toggle('open');l.classList.toggle('open');b.setAttribute('aria-expanded',b.classList.contains('open'));})(this)">
     <span></span><span></span><span></span>
@@ -582,7 +577,7 @@ footer .footer-logo {
 
   <div class="article-intro-card">
     <p>
-      Ces croyances-là, on les a presque tous traversées à un moment. Elles changent un peu de forme selon les histoires de chacun, mais leur fond reste étrangement universel. <strong>Les reconnaître, c'est déjà commencer à les défaire</strong>. Parce qu'une croyance vue, nommée, identifiée comme une croyance — perd une grande partie de son emprise. Voici 10 des plus fréquentes, avec leurs déguisements les plus courants. Pose-toi simplement, en lisant : laquelle te traverse le plus souvent ?
+      Ces croyances-là, on les a presque tous traversées à un moment. Elles changent un peu de forme selon les histoires de chacun, mais leur fond reste étrangement universel. <strong>Les reconnaître, c'est déjà un premier pas d'observation</strong>. Parce qu'une croyance vue, nommée, identifiée comme une croyance — perd une grande partie de son emprise. Voici 10 des plus fréquentes, avec leurs déguisements les plus courants. Pose-toi simplement, en lisant : laquelle te traverse le plus souvent ?
     </p>
   </div>
 
@@ -596,7 +591,7 @@ footer .footer-logo {
   <h2>Pourquoi connaître ces croyances change quelque chose</h2>
 
   <p>
-    Beaucoup de personnes essaient de changer leur vie sans avoir d'abord nommé ce qui les retient. Elles travaillent leurs habitudes, fixent des objectifs, lisent des livres — et reviennent souvent au point de départ. <strong>La raison est simple : si la croyance qui sabote n'est pas identifiée, elle continue d'opérer en arrière-plan</strong>, comme un programme silencieux qui annule chaque effort.
+    Beaucoup de personnes essaient de changer leur vie sans avoir d'abord nommé ce qui les retient. Elles travaillent leurs habitudes, fixent des objectifs, lisent des livres — et reviennent souvent au point de départ. <strong>Une piste possible : une croyance non identifiée peut continuer à peser en arrière-plan</strong>, comme un fond sonore qu'on n'entend plus mais qui reste là.
   </p>
 
   <p>
@@ -617,7 +612,7 @@ footer .footer-logo {
   <h3>1. « Je ne suis pas assez bien »</h3>
 
   <p>
-    La grande classique. Pas assez intelligent(e), pas assez doué(e), pas assez beau/belle, pas assez préparé(e). Cette croyance se déguise souvent en humilité. Elle se renforce à chaque comparaison, à chaque scroll Instagram, à chaque fois qu'on regarde quelqu'un d'autre faire ce qu'on n'ose pas. <strong>Symptôme courant : ne jamais se lancer, parce qu'on n'est jamais "prêt(e)"</strong>.
+    La grande classique. Pas assez intelligent(e), pas assez doué(e), pas assez beau/belle, pas assez préparé(e). Cette croyance se déguise souvent en humilité. Elle se renforce à chaque comparaison, à chaque scroll Instagram, à chaque fois qu'on regarde quelqu'un d'autre faire ce qu'on n'ose pas. <strong>Signe courant : ne jamais se lancer, parce qu'on n'est jamais "prêt(e)"</strong>.
   </p>
 
   <h3>2. « Je ne mérite pas »</h3>
@@ -652,13 +647,13 @@ footer .footer-logo {
   <h3>6. « Je ne peux pas changer »</h3>
 
   <p>
-    <em>« Je suis comme ça, c'est ma personnalité »</em>. Cette croyance est confortable parce qu'elle dispense de toute responsabilité. Mais elle est <strong>scientifiquement fausse</strong> : la neuroplasticité — la capacité du cerveau à se réorganiser — existe à tout âge. On change tous, en permanence. La seule question est : dans quelle direction.
+    <em>« Je suis comme ça, c'est ma personnalité »</em>. Cette croyance est confortable parce qu'elle dispense de toute responsabilité. Mais elle mérite d'être questionnée : selon le principe de neuroplasticité, on sait que le cerveau humain s'adapte progressivement tout au long de la vie. On change tous, en permanence. La seule question est : dans quelle direction.
   </p>
 
   <h3>7. « L'argent est sale » (ou « Les gens riches sont mauvais »)</h3>
 
   <p>
-    Croyance souvent héritée d'un environnement familial où l'argent était associé à des conflits, du manque, ou de la critique des autres. Elle bloque inconsciemment toute relation saine à l'argent : <strong>impossibilité de demander un juste prix, malaise quand on en gagne, sabotage des opportunités financières</strong>.
+    Croyance souvent héritée d'un environnement familial où l'argent était associé à des conflits, du manque, ou de la critique des autres. Elle peut peser sur la relation à l'argent : <strong>difficulté à demander un juste prix, malaise quand on en gagne, hésitation devant certaines opportunités</strong>.
   </p>
 
   <h3>8. « Le bonheur n'est pas pour moi »</h3>
@@ -685,17 +680,18 @@ footer .footer-logo {
        loading="lazy">
 
   <!-- CTA SECONDAIRE — [C] Séance personnalisée -->
+  <!-- CTA SECONDAIRE — [C] Séance personnalisée -->
   <div style="background:linear-gradient(135deg,rgba(123,74,58,0.07),rgba(74,122,106,0.07));border:1px solid rgba(123,74,58,0.18);border-radius:18px;padding:28px 32px;margin:36px 0;text-align:center;backdrop-filter:blur(10px);position:relative;overflow:hidden;">
     <div style="position:absolute;top:0;left:50%;transform:translateX(-50%);width:140px;height:1.5px;background:linear-gradient(90deg,transparent,rgba(123,74,58,0.45),transparent);"></div>
-    <div style="font-size:1.5rem;margin-bottom:10px;">🎧</div>
+    <div style="font-size:1.5rem;margin-bottom:10px;">✦</div>
     <p style="font-family:'Cormorant Garamond',serif;font-size:1.35rem;font-weight:400;color:var(--text-main);line-height:1.3;margin-bottom:8px;">
       Tu as identifié <em style="font-style:italic;color:var(--brown)">la croyance qui te freine le plus ?</em>
     </p>
     <p style="font-size:13.5px;color:var(--text-muted);line-height:1.65;margin-bottom:20px;">
-      Une séance audio personnalisée — avec ton prénom et tes affirmations — peut t'accompagner dans la transformation douce de cette croyance, à ton rythme et selon ton histoire.
+      Une séance audio personnalisée — avec ton prénom et tes affirmations — est un espace d'écoute pensé autour de cette croyance, à ton rythme et selon ton histoire.
     </p>
-    <a href='commander.html#step-1' onmouseout="this.style.opacity='1'" onmouseover="this.style.opacity='0.88'" style='display:inline-block;background:linear-gradient(135deg,var(--brown-dark),var(--brown),var(--brown-light));color:white;text-decoration:none;padding:12px 28px;border-radius:50px;font-size:13px;font-weight:500;letter-spacing:0.04em;box-shadow:0 4px 16px rgba(123,74,58,0.25);'>
-      ✦ &nbsp; Découvrir la séance personnalisée
+    <a href="commander.html#step-1" style="display:inline-block;background:linear-gradient(135deg,var(--brown-dark),var(--brown),var(--brown-light));color:white;text-decoration:none;padding:12px 28px;border-radius:50px;font-size:13px;font-weight:500;letter-spacing:0.04em;box-shadow:0 4px 16px rgba(123,74,58,0.25);">
+      ✦ &nbsp; Créer ma séance personnalisée
     </a>
   </div>
 
@@ -706,7 +702,7 @@ footer .footer-logo {
   </p>
 
   <p>
-    Le travail intérieur consiste à <em>retraduire</em>. Quand tu hésites, repousses, refuses, sabotes — pose-toi cette question simple : <em>« Si une de ces 10 croyances était à l'œuvre dans cette décision, laquelle ce serait ? »</em>. Tu seras souvent surpris(e) de voir laquelle remonte. Et avec elle, la vraie raison du blocage.
+    Le travail intérieur consiste à <em>retraduire</em>. Quand tu hésites, repousses, refuses, sabotes — pose-toi cette question simple : <em>« Si une de ces 10 croyances était à l'œuvre dans cette décision, laquelle ce serait ? »</em>. Tu pourrais être surpris(e) de voir laquelle remonte. Et avec elle, une piste possible pour comprendre l'hésitation.
   </p>
 
   <div class="encadre-yt">
@@ -722,7 +718,7 @@ footer .footer-logo {
   <ol>
     <li><strong>Identifie la croyance qui te traverse le plus souvent</strong> dans cette liste. Une seule. Note-la sur un papier que tu gardes près de toi.</li>
     <li><strong>Pendant 7 jours, observe ses apparitions</strong> sans chercher à les changer. Juste les noter. Combien de fois par jour ? Dans quelles situations ? Avec quelle force ? Cette phase d'observation prépare le terrain.</li>
-    <li><strong>Ensuite, pour chaque apparition, glisse une nouvelle phrase à côté.</strong> Pas l'inverse strict — quelque chose de doux et plausible. À "je ne mérite pas", tu peux opposer <em>« je m'autorise à recevoir »</em>. Ce n'est pas la magie, c'est de la répétition. Et la répétition transforme.</li>
+    <li><strong>Ensuite, pour chaque apparition, glisse une nouvelle phrase à côté.</strong> Pas l'inverse strict — quelque chose de doux et plausible. À "je ne mérite pas", tu peux opposer <em>« je m'autorise à recevoir »</em>. Ce n'est pas la magie, c'est de la répétition. Et l'intention, ici, est simplement de laisser une autre phrase exister à côté.</li>
   </ol>
 
   <img class="article-img"
@@ -735,7 +731,7 @@ footer .footer-logo {
   <h2>Pour aller plus loin</h2>
 
   <p>
-    Cette liste n'est pas exhaustive. Et elle n'est pas un diagnostic. C'est un point de départ — une façon de mettre des mots sur ce qui jusque-là restait flou. <strong>Tu n'as pas à toutes les défaire en même temps.</strong> Tu peux choisir une seule, la travailler avec patience, et la voir doucement perdre sa force. Les autres suivront, à leur rythme.
+    Cette liste n'est pas exhaustive. Et elle n'est pas un diagnostic. C'est un point de départ — une façon de mettre des mots sur ce qui jusque-là restait flou. <strong>Tu n'as pas à toutes les défaire en même temps.</strong> Tu peux en choisir une seule et la regarder avec patience, sans attendre de calendrier. Les autres pourront venir plus tard, si tu le souhaites.
   </p>
 
   <p>
@@ -749,46 +745,31 @@ footer .footer-logo {
 </div>
 
 <!-- ══ CTA PRINCIPAL — [B] Guide gratuit ══ -->
+
+
+<!-- ══ BLOC YOUTUBE ══ -->
+
+<!-- ══ CTA PRINCIPAL — [B] Guide gratuit ══ -->
 <div style="max-width:720px;margin:0 auto 40px;padding:0 24px;position:relative;z-index:1;">
   <div style="background:rgba(255,255,255,0.70);border:1px solid rgba(123,74,58,0.22);border-radius:20px;padding:36px 40px;backdrop-filter:blur(10px);box-shadow:0 4px 32px rgba(123,74,58,0.07);position:relative;overflow:hidden;">
     <div style="position:absolute;top:0;left:50%;transform:translateX(-50%);width:120px;height:1.5px;background:linear-gradient(90deg,transparent,rgba(123,74,58,0.5),transparent);"></div>
-    <div style="font-size:11px;font-weight:500;letter-spacing:0.14em;text-transform:uppercase;color:#7B4A3A;margin-bottom:14px;">✦ Guide gratuit</div>
-    <p style="font-family:'Cormorant Garamond',serif;font-size:clamp(1.25rem,3vw,1.7rem);font-weight:400;line-height:1.3;color:#3A2820;margin-bottom:14px;">
+    <div style="font-size:11px;font-weight:500;letter-spacing:0.14em;text-transform:uppercase;color:#7B4A3A;margin-bottom:14px;text-align:center;">📖 Guide gratuit</div>
+    <p style="font-family:'Cormorant Garamond',serif;font-size:clamp(1.25rem,3vw,1.7rem);font-weight:400;line-height:1.3;color:#3A2820;margin-bottom:14px;text-align:center;">
       Tu veux les <em style="color:#7B4A3A;">phrases précises pour reconstruire un dialogue intérieur plus juste ?</em>
     </p>
-    <p style="font-size:15px;line-height:1.75;color:#6A5A52;font-weight:300;margin-bottom:24px;">
+    <p style="font-size:15px;line-height:1.75;color:#6A5A52;font-weight:300;margin-bottom:24px;text-align:center;">
       Notre guide gratuit de 13 pages te donne des affirmations exactes, organisées par thème, pour répondre à chacune de ces 10 croyances. Un outil concret à imprimer, à glisser dans ton carnet, à relire chaque matin.
     </p>
     <div style="text-align:center;">
-      <a href='acces-guide-gratuit.html' onmouseout="this.style.background='#7B4A3A'" onmouseover="this.style.background='#5A3028'" style='display:inline-flex;align-items:center;gap:10px;background:#7B4A3A;color:white;text-decoration:none;padding:14px 30px;border-radius:50px;font-size:14px;font-weight:500;letter-spacing:0.03em;'>
-        ✦ &nbsp; Télécharger le guide gratuit
+      <a href="acces-guide-gratuit.html" style="display:inline-flex;align-items:center;gap:10px;background:#7B4A3A;color:white;text-decoration:none;padding:14px 30px;border-radius:50px;font-size:14px;font-weight:500;letter-spacing:0.03em;">
+        ✦ &nbsp; Recevoir mon guide gratuit
       </a>
-      <p style="font-size:12px;color:#9A8A80;margin-top:14px;">PDF 13 pages · Affirmations + exercices · 100% gratuit</p>
+      <p style="font-size:12px;color:#9A8A80;margin-top:14px;">13 pages · Gratuit · Sans engagement</p>
     </div>
   </div>
 </div>
 
-<!-- ══ CARTE PROGRAMME CONTEXTUELLE ══ -->
-<div class="prog-card-wrap">
-  <div class="prog-card">
-    <div class="prog-card-icon">🌿</div>
-    <div class="prog-card-body">
-      <div class="prog-card-label">✦ Le programme Fréquence Positive</div>
-      <div class="prog-card-title">Tu veux travailler tes croyances limitantes en profondeur ?</div>
-      <p class="prog-card-text">
-        Le programme Fréquence Positive t'accompagne dans l'identification, le questionnement et la transformation des croyances qui te freinent — pas à pas, sans pression, dans le respect de ton rythme.
-      </p>
-    </div>
-    <a class='prog-card-btn' href='index.html'>✦ Découvrir</a>
-  </div>
-</div>
-
-<!-- ══ BLOC YOUTUBE ══ -->
 <div class="yt-bloc">
-  <div class="yt-bloc-title">✦ La chaîne YouTube de Fréquence Positive</div>
-  <p style="text-align:center;font-size:14px;color:var(--text-muted);line-height:1.7;margin:-16px 0 28px;font-weight:300;">
-    Des affirmations en voix off pour t'accompagner dans la déconstruction de ces 10 croyances, jour après jour.
-  </p>
   <div class="yt-inner">
     <div class="yt-card">
       <div class="yt-logo">
@@ -797,8 +778,8 @@ footer .footer-logo {
           <polygon points="36,18 36,45 62,31.5" fill="#FDF6EC"/>
         </svg>
       </div>
-      <div class="yt-name">Fréquence Positive</div>
-      <p class="yt-desc">Affirmations positives en voix off + musique — pour reprogrammer ton mental au quotidien.</p>
+      <div class="yt-name">La chaîne YouTube de Fréquence Positive</div>
+      <p class="yt-desc">Affirmations positives en voix off + musique — pour t'accompagner dans ton dialogue intérieur au quotidien.</p>
       <a href="https://www.youtube.com/@FREQUENCE.POSITIVE" target="_blank" class="yt-btn">▶ Voir la chaîne</a>
     </div>
   </div>
@@ -817,13 +798,16 @@ footer .footer-logo {
 </div>
 
 <footer>
-  <span class="footer-logo">✦ Fréquence Positive</span>
-  <p>© 2026 Fréquence Positive —
-    <a href='mentions-legales.html'>Mentions légales</a> ·
-    <a href='confidentialite.html'>Confidentialité</a> ·
-    <a href='blog.html'>Blog</a>
-  </p>
-  <p style="margin-top:6px">Avec ✦ par Max &amp; Sandra</p>
+  <div>© 2026 Fréquence Positive — Tous droits réservés</div>
+  <div class="footer-links">
+    <a href="commander.html#step-1">Commander</a>
+    <a href="blog.html">Blog</a>
+    <a href="faq.html">FAQ</a>
+    <a href="mentions-legales.html">Mentions légales</a>
+    <a href="cgv.html">CGV</a>
+    <a href="confidentialite.html">Confidentialité</a>
+    <a href="mailto:hello.frequencepositive@outlook.com">Contact</a>
+  </div>
 </footer>
 
 <!-- ══ CANVAS VAGUES ══ -->

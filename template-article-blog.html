@@ -33,6 +33,13 @@
      ╚══════════════════════════════════════════════════════╝
 
      - Remplace les zones [COMME CECI] par le contenu réel.
+     - RÈGLE D'OR FP : aucune promesse de résultat, aucun mécanisme
+       cerveau/subconscient affirmé comme un fait, aucun diagnostic sur
+       le lecteur, aucun mot clinique (thérapie, guérir, traitement),
+       jamais "reprogrammer". « Syndrome » est toléré uniquement dans
+       l'expression consacrée « syndrome de l'imposteur ».
+       Affirmations uniquement en
+       "Je deviens / Je choisis / Je m'autorise / Je peux".
      - Ne modifie jamais le CSS ni la structure HTML.
      - Conserve toutes les classes et balises telles quelles.
 
@@ -52,7 +59,7 @@
      2. Les affirmations positives fonctionnent-elles vraiment ?
         → https://frequence-positive.netlify.app/article-affirmations-positives-science
 
-     3. 5 phrases que tu te dis chaque jour qui te freinent sans que tu le saches
+     3. 5 phrases qu'on se dit souvent et qui peuvent freiner sans qu'on le remarque
         → https://frequence-positive.netlify.app/article-phrases-qui-freinent
 
      Syntaxe pour un lien dans le corps :
@@ -60,106 +67,101 @@
 
 
      ╔══════════════════════════════════════════════════════╗
-     ║  LES 3 CTAs DISPONIBLES                              ║
+     ║  RÈGLE DES CTAs — MODÈLE FIGÉ (validé 18/08/2026)    ║
      ╚══════════════════════════════════════════════════════╝
 
-     Il existe 3 destinations possibles pour les CTAs :
+     Il n'y a plus de choix à faire. Tout article porte
+     exactement 2 CTAs, toujours les mêmes, toujours dans
+     cet ordre :
 
-     [A] SITE PRINCIPAL
-         URL : https://frequence-positive.netlify.app/
-         Quand : article généraliste, découverte de la marque,
-                 bien-être général.
+     — CTA SECONDAIRE : la SÉANCE PERSONNALISÉE
+       mini-bloc compact, dans le corps de l'article,
+       placé après le passage le plus fort sur le sujet.
+       URL : commander.html#step-1
+       Bouton : « ✦ Créer ma séance personnalisée »
 
-     [B] GUIDE GRATUIT — "exercices pour écrire ses affirmations"
-         URL : acces-guide-gratuit.html
-         Quand : article sur les affirmations, le dialogue intérieur,
-                 les croyances, l'écriture de soi, les phrases limitantes.
+     — CTA PRINCIPAL : le GUIDE GRATUIT
+       grand encadré, tout à la fin, après "Pour aller plus loin",
+       juste avant le bloc YouTube. TOUT est centré :
+       le sur-titre, la question, le paragraphe, le bouton.
+       URL : acces-guide-gratuit.html
+       Bouton : « ✦ Recevoir mon guide gratuit »
+       Ligne de réassurance : « 13 pages · Gratuit · Sans engagement »
 
-     [C] SÉANCE PERSONNALISÉE
-         URL : commander.html
-         Quand : article sur la transformation, le mindset, l'identité,
-                 les émotions, les routines, la confiance en soi.
+     Pourquoi cet ordre : le lecteur qui arrive au bout de
+     l'article est le plus disponible — c'est là qu'on lui
+     propose de laisser son email, pas de payer. La séance
+     reste accessible en permanence par le bouton du haut
+     (« ✦ Créer ma séance ») et par le bloc du milieu.
 
-
-     ╔══════════════════════════════════════════════════════╗
-     ║  RÈGLE DES CTAs — OBLIGATOIRE                        ║
-     ╚══════════════════════════════════════════════════════╝
-
-     CHOISIR EXACTEMENT 2 CTAs parmi [A], [B], [C].
-     JAMAIS les 3 en même temps.
-
-     Les 2 CTAs choisis s'affichent à 2 endroits différents :
-
-     — CTA PRINCIPAL : bloc complet après "Pour aller plus loin"
-       (grand encadré avec titre, description, bouton centré)
-
-     — CTA SECONDAIRE : mini-bloc compact dans le corps de l'article
-       (plus petit, placé après le passage le plus fort sur le sujet)
-
-     EXEMPLES DE COMBINAISONS :
-     • Article sur les affirmations      → [B] principal + [C] secondaire
-     • Article sur les croyances         → [B] principal + [C] secondaire
-     • Article sur les routines/mindset  → [C] principal + [B] secondaire
-     • Article généraliste               → [A] principal + [B] ou [C] secondaire
-
-     Le texte du titre et de la description de chaque bloc
-     doit TOUJOURS être adapté au thème précis de l'article.
-     Ne jamais copier-coller un texte générique.
-
+     ── À NE PLUS FAIRE ──
+     · Ne plus utiliser le CTA [A] « site principal ».
+     · Ne plus mettre le guide au milieu et la séance à la fin.
+     · Ne plus ajouter la « carte programme Fréquence Positive » :
+       elle a été retirée de tous les articles (elle promettait
+       un « programme » qui n'existe pas comme tel).
+     · Ne plus mettre de titre ni de sous-titre au-dessus de la
+       carte YouTube : la carte se suffit à elle-même.
+     · Les textes des 2 blocs sont TOUJOURS réécrits sur le thème
+       précis de l'article — jamais un copier-coller d'un autre.
 
      ╔══════════════════════════════════════════════════════╗
      ║  STRUCTURE HTML DES BLOCS CTA                        ║
      ╚══════════════════════════════════════════════════════╝
 
-     ── BLOC CTA PRINCIPAL (après "Pour aller plus loin") ──
-     (grand format, centré, avec titre Cormorant)
+     ── BLOC CTA PRINCIPAL — GUIDE GRATUIT (tout à la fin) ──
+     (grand encadré, entièrement centré, juste avant le bloc YouTube)
 
      <div style="max-width:720px;margin:0 auto 40px;padding:0 24px;position:relative;z-index:1;">
        <div style="background:rgba(255,255,255,0.70);border:1px solid rgba(123,74,58,0.22);border-radius:20px;padding:36px 40px;backdrop-filter:blur(10px);box-shadow:0 4px 32px rgba(123,74,58,0.07);position:relative;overflow:hidden;">
          <div style="position:absolute;top:0;left:50%;transform:translateX(-50%);width:120px;height:1.5px;background:linear-gradient(90deg,transparent,rgba(123,74,58,0.5),transparent);"></div>
-         <div style="font-size:11px;font-weight:500;letter-spacing:0.14em;text-transform:uppercase;color:#7B4A3A;margin-bottom:14px;">✦ [LABEL — ex : Guide gratuit / Séance personnalisée]</div>
-         <p style="font-family:'Cormorant Garamond',serif;font-size:clamp(1.25rem,3vw,1.7rem);font-weight:400;line-height:1.3;color:#3A2820;margin-bottom:14px;">
-           [TITRE ADAPTÉ AU THÈME] <em style="color:#7B4A3A;">[partie en italique brun]</em>
+         <div style="font-size:11px;font-weight:500;letter-spacing:0.14em;text-transform:uppercase;color:#7B4A3A;margin-bottom:14px;text-align:center;">📖 Guide gratuit</div>
+         <p style="font-family:'Cormorant Garamond',serif;font-size:clamp(1.25rem,3vw,1.7rem);font-weight:400;line-height:1.3;color:#3A2820;margin-bottom:14px;text-align:center;">
+           [QUESTION] <em style="color:#7B4A3A;">[FIN EN ITALIQUE]</em> ?
          </p>
-         <p style="font-size:15px;line-height:1.75;color:#6A5A52;font-weight:300;margin-bottom:24px;">
-           [DESCRIPTION — 2 phrases max, en lien direct avec le thème de l'article.]
+         <p style="font-size:15px;line-height:1.75;color:#6A5A52;font-weight:300;margin-bottom:24px;text-align:center;">
+           [CE QUE LE GUIDE PROPOSE, SUR CE THÈME — sans promesse de résultat.]
          </p>
          <div style="text-align:center;">
-           <a href="[URL]" style="display:inline-flex;align-items:center;gap:10px;background:#7B4A3A;color:white;text-decoration:none;padding:14px 30px;border-radius:50px;font-size:14px;font-weight:500;letter-spacing:0.03em;" onmouseover="this.style.background='#5A3028'" onmouseout="this.style.background='#7B4A3A'">
-             ✦ &nbsp; [TEXTE DU BOUTON]
+           <a href="acces-guide-gratuit.html" style="display:inline-flex;align-items:center;gap:10px;background:#7B4A3A;color:white;text-decoration:none;padding:14px 30px;border-radius:50px;font-size:14px;font-weight:500;letter-spacing:0.03em;">
+             ✦ &nbsp; Recevoir mon guide gratuit
            </a>
-           <p style="font-size:12px;color:#9A8A80;margin-top:14px;">[Ligne de réassurance — ex : Gratuit · Sans engagement · Livré par e-mail]</p>
+           <p style="font-size:12px;color:#9A8A80;margin-top:14px;">13 pages · Gratuit · Sans engagement</p>
          </div>
        </div>
      </div>
 
-     ── BLOC CTA SECONDAIRE (dans le corps de l'article) ──
+     ── BLOC CTA SECONDAIRE — SÉANCE PERSONNALISÉE (dans le corps) ──
      (compact, placé après le passage le plus fort sur le sujet)
 
      <div style="background:linear-gradient(135deg,rgba(123,74,58,0.07),rgba(74,122,106,0.07));border:1px solid rgba(123,74,58,0.18);border-radius:18px;padding:28px 32px;margin:36px 0;text-align:center;backdrop-filter:blur(10px);position:relative;overflow:hidden;">
        <div style="position:absolute;top:0;left:50%;transform:translateX(-50%);width:140px;height:1.5px;background:linear-gradient(90deg,transparent,rgba(123,74,58,0.45),transparent);"></div>
-       <div style="font-size:1.5rem;margin-bottom:10px;">🌿</div>
+       <div style="font-size:1.5rem;margin-bottom:10px;">✦</div>
        <p style="font-family:'Cormorant Garamond',serif;font-size:1.35rem;font-weight:400;color:var(--text-main);line-height:1.3;margin-bottom:8px;">
-         [TITRE COURT] <em style="font-style:italic;color:var(--brown)">[partie en italique]</em>
+         [QUESTION] <em style="font-style:italic;color:var(--brown)">[FIN EN ITALIQUE]</em> ?
        </p>
        <p style="font-size:13.5px;color:var(--text-muted);line-height:1.65;margin-bottom:20px;">
-         [1-2 phrases courtes adaptées au thème.]
+         Nos séances audio personnalisées sont créées spécialement pour toi — ton prénom, tes mots, un espace d'écoute autour de [THÈME DE L'ARTICLE].
        </p>
-       <a href="[URL]" style="display:inline-block;background:linear-gradient(135deg,var(--brown-dark),var(--brown),var(--brown-light));color:white;text-decoration:none;padding:12px 28px;border-radius:50px;font-size:13px;font-weight:500;letter-spacing:0.04em;box-shadow:0 4px 16px rgba(123,74,58,0.25);" onmouseover="this.style.opacity='0.88'" onmouseout="this.style.opacity='1'">
-         ✦ &nbsp; [TEXTE DU BOUTON]
+       <a href="commander.html#step-1" style="display:inline-block;background:linear-gradient(135deg,var(--brown-dark),var(--brown),var(--brown-light));color:white;text-decoration:none;padding:12px 28px;border-radius:50px;font-size:13px;font-weight:500;letter-spacing:0.04em;box-shadow:0 4px 16px rgba(123,74,58,0.25);">
+         ✦ &nbsp; Créer ma séance personnalisée
        </a>
      </div>
 
-
      ╔══════════════════════════════════════════════════════╗
-     ║  CARTE PROGRAMME CONTEXTUELLE                        ║
+     ║  PIED DE PAGE ET BLOC YOUTUBE                        ║
      ╚══════════════════════════════════════════════════════╝
 
-     CONSERVER si l'article parle de : croyances, mindset,
-     transformation, confiance, émotions, énergie, relations.
-     RETIRER si l'article est trop généraliste ou hors-sujet.
+     Le pied de page est le même que sur la page d'accueil :
+     fond marron (--brown-ultra), copyright à gauche, liens à
+     droite (Commander · Blog · FAQ · Mentions légales · CGV ·
+     Confidentialité · Contact). Ne pas y remettre le logo
+     « ✦ Fréquence Positive » ni la signature Max & Sandra.
 
-     ============================================================ -->
+     Le bloc YouTube n'a NI titre NI sous-titre au-dessus.
+     La carte porte « La chaîne YouTube de Fréquence Positive ».
+
+          ============================================================ -->
 
 <title>Fréquence Positive — [TITRE DE L'ARTICLE]</title>
 <meta name="description" content="[MÉTA-DESCRIPTION : 155 caractères max]">
@@ -730,23 +732,18 @@ nav {
 
 /* ── FOOTER ── */
 footer {
-  position: relative;
-  z-index: 1;
-  text-align: center;
-  padding: 40px 24px 48px;
-  border-top: 1px solid rgba(123,74,58,0.1);
-  font-size: 11px;
-  color: var(--text-light);
-  letter-spacing: 0.04em;
+  position: relative; z-index: 1;
+  background: var(--brown-ultra);
+  padding: 36px 48px;
+  display: flex; align-items: center; justify-content: space-between;
+  flex-wrap: wrap; gap: 16px;
+  font-size: 12px; color: rgba(255,255,255,0.4);
 }
-footer a { color: inherit; text-decoration: underline; opacity: 0.7; }
-footer .footer-logo {
-  font-family: 'Cormorant Garamond', serif;
-  font-size: 1.1rem;
-  color: var(--brown);
-  letter-spacing: 0.06em;
-  margin-bottom: 12px;
-  display: block;
+footer a { color: rgba(255,255,255,0.55); text-decoration: none; transition: color 0.2s; }
+footer a:hover { color: rgba(255,255,255,0.9); }
+.footer-links { display: flex; gap: 24px; flex-wrap: wrap; }
+@media (max-width: 700px) {
+  footer { flex-direction: column; align-items: center; text-align: center; padding: 32px 24px; }
 }
 
 /* ── ANIMATIONS ── */
@@ -784,7 +781,7 @@ footer .footer-logo {
     <a href="accueil.html">Accueil</a>
     <a href="blog.html">Blog</a>
     <a href="accueil.html#programme">Le Programme</a>
-    <a href="acces-prioritaire.html" class="nav-cta">Accès Prioritaire</a>
+    <a href="commander.html" class="nav-cta">✦ Créer ma séance</a>
   </div>
 </nav>
 
@@ -925,7 +922,8 @@ footer .footer-logo {
   <p>
     [CONCLUSION — 3 à 5 phrases. Résume l'idée principale en une formule forte.
     Parle directement au lecteur, avec chaleur. Encourage sans forcer.
-    Termine sur une note positive et personnelle.]
+    Termine sur une note positive et personnelle — sans promettre d'état
+    ni de résultat après lecture ou après écoute.]
   </p>
 
   <p>
@@ -942,41 +940,30 @@ footer .footer-logo {
          → https://frequence-positive.netlify.app/article-croyances-limitantes
        - "Les affirmations positives fonctionnent-elles vraiment ?"
          → https://frequence-positive.netlify.app/article-affirmations-positives-science
-       - "5 phrases que tu te dis chaque jour qui te freinent sans que tu le saches"
+       - "5 phrases qu'on se dit souvent et qui peuvent freiner sans qu'on le remarque"
          → https://frequence-positive.netlify.app/article-phrases-qui-freinent
        Exemple : <a href="..." style="color:var(--brown);font-weight:500;">titre de l'article</a>
        ───────────────────────────────────────── -->
 
 </div>
 
-<!-- ══ CTA PRINCIPAL — après "Pour aller plus loin" ══
-     Choisir 1 des 2 CTAs retenus pour cet article.
-     Copier la structure du BLOC CTA PRINCIPAL dans les instructions
-     et adapter : label, titre, description, URL, texte bouton,
-     ligne de réassurance.
-     Thème → choix : [B] guide gratuit ou [C] séance ou [A] site.
--->
-
-<!-- ══ CARTE PROGRAMME CONTEXTUELLE ══
-     À INCLURE uniquement si l'article aborde des thèmes directement
-     en lien avec le programme : croyances, mindset, transformation,
-     confiance, émotions, énergie, relations.
-     RETIRER si l'article est trop généraliste ou hors-sujet programme.
-     Adapter [TEXTE CONTEXTUEL] selon l'article.
--->
-<div class="prog-card-wrap">
-  <div class="prog-card">
-    <div class="prog-card-icon">🌿</div>
-    <div class="prog-card-body">
-      <div class="prog-card-label">✦ Le programme Fréquence Positive</div>
-      <div class="prog-card-title">[TEXTE CONTEXTUEL — ex : "Tu veux aller plus loin sur ce que tu viens de lire ?"]</div>
-      <p class="prog-card-text">
-        [1-2 phrases qui font le lien naturel entre le thème de l'article et ce que propose le programme.
-        Doux, jamais forcé. Ex : "Le programme Fréquence Positive t'accompagne pas à pas pour transformer
-        ce genre de prise de conscience en vrai changement durable."]
-      </p>
+<!-- ══ CTA PRINCIPAL — [B] Guide gratuit ══ -->
+<div style="max-width:720px;margin:0 auto 40px;padding:0 24px;position:relative;z-index:1;">
+  <div style="background:rgba(255,255,255,0.70);border:1px solid rgba(123,74,58,0.22);border-radius:20px;padding:36px 40px;backdrop-filter:blur(10px);box-shadow:0 4px 32px rgba(123,74,58,0.07);position:relative;overflow:hidden;">
+    <div style="position:absolute;top:0;left:50%;transform:translateX(-50%);width:120px;height:1.5px;background:linear-gradient(90deg,transparent,rgba(123,74,58,0.5),transparent);"></div>
+    <div style="font-size:11px;font-weight:500;letter-spacing:0.14em;text-transform:uppercase;color:#7B4A3A;margin-bottom:14px;text-align:center;">📖 Guide gratuit</div>
+    <p style="font-family:'Cormorant Garamond',serif;font-size:clamp(1.25rem,3vw,1.7rem);font-weight:400;line-height:1.3;color:#3A2820;margin-bottom:14px;text-align:center;">
+      [QUESTION SUR LE THÈME DE L'ARTICLE] <em style="color:#7B4A3A;">[FIN DE LA QUESTION EN ITALIQUE]</em> ?
+    </p>
+    <p style="font-size:15px;line-height:1.75;color:#6A5A52;font-weight:300;margin-bottom:24px;text-align:center;">
+      [CE QUE LE GUIDE PROPOSE, FORMULÉ POUR CE THÈME — sans promesse de résultat.]
+    </p>
+    <div style="text-align:center;">
+      <a href="acces-guide-gratuit.html" style="display:inline-flex;align-items:center;gap:10px;background:#7B4A3A;color:white;text-decoration:none;padding:14px 30px;border-radius:50px;font-size:14px;font-weight:500;letter-spacing:0.03em;">
+        ✦ &nbsp; Recevoir mon guide gratuit
+      </a>
+      <p style="font-size:12px;color:#9A8A80;margin-top:14px;">13 pages · Gratuit · Sans engagement</p>
     </div>
-    <a href="accueil.html" class="prog-card-btn">✦ Découvrir</a>
   </div>
 </div>
 
@@ -987,10 +974,6 @@ footer .footer-logo {
      Pour les autres articles, passer en mode .single et retirer la 2e carte.
 -->
 <div class="yt-bloc">
-  <div class="yt-bloc-title">✦ Les chaînes YouTube de Fréquence Positive</div>
-  <p style="text-align:center;font-size:14px;color:var(--text-muted);line-height:1.7;margin:-16px 0 28px;font-weight:300;">
-    Affirmations en voix off ou musique pure pour méditer — deux univers<br>complémentaires pour t'accompagner chaque jour.
-  </p>
   <div class="yt-inner">
 
     <!-- Chaîne principale — TOUJOURS présente -->
@@ -1001,7 +984,7 @@ footer .footer-logo {
           <polygon points="36,18 36,45 62,31.5" fill="#FDF6EC"/>
         </svg>
       </div>
-      <div class="yt-name">Fréquence Positive</div>
+      <div class="yt-name">La chaîne YouTube de Fréquence Positive</div>
       <p class="yt-desc">Affirmations positives en voix off + musique — pour nourrir ton dialogue intérieur au quotidien.</p>
       <a href="https://www.youtube.com/@FREQUENCE.POSITIVE" target="_blank" class="yt-btn">▶ Voir la chaîne</a>
     </div>
@@ -1036,13 +1019,16 @@ footer .footer-logo {
 
 <!-- ══ FOOTER ══ -->
 <footer>
-  <span class="footer-logo">✦ Fréquence Positive</span>
-  <p>© 2026 Fréquence Positive —
-    <a href="mentions-legales.html">Mentions légales</a> ·
-    <a href="confidentialite.html">Confidentialité</a> ·
+  <div>© 2026 Fréquence Positive — Tous droits réservés</div>
+  <div class="footer-links">
+    <a href="commander.html#step-1">Commander</a>
     <a href="blog.html">Blog</a>
-  </p>
-  <p style="margin-top:6px">Avec ✦ par Max &amp; Sandra</p>
+    <a href="faq.html">FAQ</a>
+    <a href="mentions-legales.html">Mentions légales</a>
+    <a href="cgv.html">CGV</a>
+    <a href="confidentialite.html">Confidentialité</a>
+    <a href="mailto:hello.frequencepositive@outlook.com">Contact</a>
+  </div>
 </footer>
 
 <!-- ══ CANVAS VAGUES ══ -->

@@ -737,7 +737,7 @@
 
       <label for="message_cadeau" style="margin-top:18px;display:block;">Un petit mot à joindre (optionnel)</label>
       <p style="font-size:13px;color:var(--text-muted);margin:-4px 0 10px;line-height:1.55;">Ce mot sera inséré dans le mail de livraison envoyé à votre proche.</p>
-      <textarea class="text-input" id="message_cadeau" rows="4" maxlength="800" placeholder="Ex : Joyeux anniversaire ma chérie ✦ J'espère que cette séance t'apportera douceur, confiance et lumière pour cette nouvelle année. Je t'aime fort." oninput="state.message_cadeau = this.value"></textarea>
+      <textarea class="text-input" id="message_cadeau" rows="4" maxlength="800" placeholder="Ex : Joyeux anniversaire ma chérie ✦ J'espère que ce moment d'écoute t'accompagnera avec douceur pour cette nouvelle année. Je t'aime fort." oninput="state.message_cadeau = this.value"></textarea>
 
       <!-- Emplacement où le champ "Prénom de l'auditeur" est déplacé quand c'est un cadeau -->
       <div id="prenom-slot-gift" style="margin-top:18px;"></div>
@@ -809,7 +809,7 @@
           <div class="radio-letter">A</div>
           <div class="radio-content">
             <div class="radio-title">10 minutes — Format Express <span class="price-badge">29,90€</span></div>
-            <div class="radio-desc">Une efficacité ciblée pour vos routines quotidiennes.</div>
+            <div class="radio-desc">Un format court, pensé pour s'intégrer à vos routines quotidiennes.</div>
           </div>
         </label>
         <label class="radio-option" onclick="selectDuree(this, '30 minutes (Immersion Totale)', 54.9)">
@@ -837,25 +837,25 @@
       <p style="font-size:12px; color: var(--text-muted); margin-bottom: 14px; font-style:italic;">Format unique pensé comme un compagnon d'écoute pendant votre sommeil — voix douce, fade-out, diffusion passive.</p>
 
       <div class="radio-group">
-        <label class="radio-option" onclick="selectDuree(this, '10 heures (Nuit Régénératrice)', 79.9)">
+        <label class="radio-option" onclick="selectDuree(this, '10 heures (Nuit Immersive)', 79.9)">
           <input type="radio" name="duree" value="10h">
           <div class="radio-letter">D</div>
           <div class="radio-content">
-            <div class="radio-title">10 heures — Nuit Régénératrice <span class="price-badge">79,90€</span></div>
+            <div class="radio-title">10 heures — Nuit Immersive <span class="price-badge">79,90€</span></div>
             <div class="radio-desc">Un accompagnement nocturne pensé comme un compagnon d'écoute pendant votre sommeil — voix douce, fade-out, diffusion passive.</div>
           </div>
         </label>
       </div>
 
       <div class="tip-box" id="tip-10h" style="display:none">
-        <strong>Conseil Fréquence Positive :</strong> Pour votre format 10 heures, la respiration est vivement recommandée. Elle vous accompagnera vers un sommeil paisible avant que les affirmations ne prennent le relais.
+        <strong>Conseil Fréquence Positive :</strong> Pour votre format 10 heures, la respiration est vivement recommandée. L'intention est de vous offrir un temps de respiration au coucher, avant que les affirmations ne prennent le relais.
       </div>
     </div>
 
     <div class="field">
       <label>Choisissez le nombre d'affirmations :</label>
       <div class="tip-box" style="margin-bottom:16px; margin-top: 12px;">
-        <strong>Le rôle de la répétition :</strong> selon les recherches, c'est la régularité d'écoute qui rend les affirmations plus efficaces sur la durée. Fréquence Positive limite les formats courts à 20 affirmations pour préserver une écoute fluide. Les formats longs (30 min, 1h et 10h) incluent automatiquement jusqu'à 30 affirmations pour une couverture étendue de votre thématique.
+        <strong>Le rôle de la répétition :</strong> selon les recherches, une écoute régulière peut favoriser l'appropriation d'un contenu répété dans le temps. Fréquence Positive limite les formats courts à 20 affirmations pour préserver une écoute fluide. Les formats longs (30 min, 1h et 10h) incluent automatiquement jusqu'à 30 affirmations pour une couverture étendue de votre thématique.
       </div>
       <div class="radio-group">
         <label class="radio-option" id="opt-10aff" onclick="select(this, 'affirmations', '10 Affirmations')">
@@ -908,12 +908,12 @@
       <div id="sub-confiance" class="sub-question hidden">
         <label>Précisez votre besoin pour la Confiance et l'Estime</label>
         <div class="radio-group">
-          <label class="radio-option" onclick="selectSub(this, 'sub_besoin', 'Aisance sociale')"><div class="radio-letter" style="font-size:10px">A</div><div class="radio-content"><div class="radio-title">Aisance sociale</div><div class="radio-desc">Oser prendre la parole, s'exprimer librement en groupe et dépasser la peur du jugement.</div></div></label>
+          <label class="radio-option" onclick="selectSub(this, 'sub_besoin', 'Aisance sociale')"><div class="radio-letter" style="font-size:10px">A</div><div class="radio-content"><div class="radio-title">Aisance sociale</div><div class="radio-desc">Oser prendre la parole et s'exprimer devant un groupe.</div></div></label>
           <label class="radio-option" onclick="selectSub(this, 'sub_besoin', 'Limites et Affirmation')"><div class="radio-letter" style="font-size:10px">B</div><div class="radio-content"><div class="radio-title">Limites et Affirmation</div><div class="radio-desc">Apprendre à dire "non" sans culpabilité et respecter ses propres besoins.</div></div></label>
-          <label class="radio-option" onclick="selectSub(this, 'sub_besoin', 'Image corporelle')"><div class="radio-letter" style="font-size:10px">C</div><div class="radio-content"><div class="radio-title">Image corporelle</div><div class="radio-desc">Développer un regard bienveillant sur son corps et cultiver l'acceptation de soi.</div></div></label>
-          <label class="radio-option" onclick="selectSub(this, 'sub_besoin', 'Force intérieure')"><div class="radio-letter" style="font-size:10px">D</div><div class="radio-content"><div class="radio-title">Force intérieure</div><div class="radio-desc">Se sentir capable de surmonter les défis et de rebondir après un échec.</div></div></label>
-          <label class="radio-option" onclick="selectSub(this, 'sub_besoin', 'Anxiété Sociale')"><div class="radio-letter" style="font-size:10px">E</div><div class="radio-content"><div class="radio-title">Anxiété Sociale</div><div class="radio-desc">Se sentir en sécurité et à l'aise au milieu des autres.</div></div></label>
-          <label class="radio-option" onclick="selectSub(this, 'sub_besoin', 'Pardon de Soi')"><div class="radio-letter" style="font-size:10px">F</div><div class="radio-content"><div class="radio-title">Pardon de Soi</div><div class="radio-desc">Libérer la culpabilité liée aux erreurs passées pour avancer léger.</div></div></label>
+          <label class="radio-option" onclick="selectSub(this, 'sub_besoin', 'Image corporelle')"><div class="radio-letter" style="font-size:10px">C</div><div class="radio-content"><div class="radio-title">Image corporelle</div><div class="radio-desc">Explorer son regard sur son corps et la question de l'acceptation de soi.</div></div></label>
+          <label class="radio-option" onclick="selectSub(this, 'sub_besoin', 'Force intérieure')"><div class="radio-letter" style="font-size:10px">D</div><div class="radio-content"><div class="radio-title">Force intérieure</div><div class="radio-desc">Revenir sur sa manière de traverser les défis et les échecs.</div></div></label>
+          <label class="radio-option" onclick="selectSub(this, 'sub_besoin', 'À l\'aise en groupe')"><div class="radio-letter" style="font-size:10px">E</div><div class="radio-content"><div class="radio-title">À l'aise en groupe</div><div class="radio-desc">Quand la simple présence des autres met mal à l'aise, sans avoir à parler.</div></div></label>
+          <label class="radio-option" onclick="selectSub(this, 'sub_besoin', 'Pardon de Soi')"><div class="radio-letter" style="font-size:10px">F</div><div class="radio-content"><div class="radio-title">Pardon de Soi</div><div class="radio-desc">Regarder autrement les erreurs passées et la culpabilité qui les accompagne.</div></div></label>
           <label class="radio-option" onclick="selectAutres(this, 'Autres_Confiance')"><div class="radio-letter" style="font-size:10px">G</div><div class="radio-content"><div class="radio-title">Autres</div><div id="field-Autres_Confiance" class="hidden" style="margin-top:10px"><input type="text" class="text-input" placeholder="Précisez votre besoin…" style="font-size:13px; padding:8px 12px; background: rgba(255,255,255,0.70); color: var(--text); border: 1px solid rgba(123,74,58,0.22);" oninput="state.sub_besoin = this.value" onclick="event.stopPropagation()"></div></div></label>
         </div>
       </div>
@@ -921,9 +921,9 @@
       <div id="sub-amour" class="sub-question hidden">
         <label>Précisez votre besoin en Amour et Relations harmonieuses</label>
         <div class="radio-group">
-          <label class="radio-option" onclick="selectSub(this, 'sub_besoin', 'Rencontre amoureuse')"><div class="radio-letter" style="font-size:10px">A</div><div class="radio-content"><div class="radio-title">Rencontre amoureuse</div><div class="radio-desc">Cultiver l'ouverture émotionnelle dans le contexte des relations amoureuses.</div></div></label>
-          <label class="radio-option" onclick="selectSub(this, 'sub_besoin', 'Harmonie de couple')"><div class="radio-letter" style="font-size:10px">B</div><div class="radio-content"><div class="radio-title">Harmonie de couple</div><div class="radio-desc">Renforcer la complicité, la communication et la confiance mutuelle.</div></div></label>
-          <label class="radio-option" onclick="selectSub(this, 'sub_besoin', 'Amour de soi')"><div class="radio-letter" style="font-size:10px">C</div><div class="radio-content"><div class="radio-title">Amour de soi</div><div class="radio-desc">Cultiver sa propre valeur comme base de toutes les autres relations.</div></div></label>
+          <label class="radio-option" onclick="selectSub(this, 'sub_besoin', 'Rencontre amoureuse')"><div class="radio-letter" style="font-size:10px">A</div><div class="radio-content"><div class="radio-title">Rencontre amoureuse</div><div class="radio-desc">Explorer l'ouverture émotionnelle dans le contexte des relations amoureuses.</div></div></label>
+          <label class="radio-option" onclick="selectSub(this, 'sub_besoin', 'Harmonie de couple')"><div class="radio-letter" style="font-size:10px">B</div><div class="radio-content"><div class="radio-title">Harmonie de couple</div><div class="radio-desc">Ouvrir un espace autour de la complicité, de la communication et de la confiance dans le couple.</div></div></label>
+          <label class="radio-option" onclick="selectSub(this, 'sub_besoin', 'Amour de soi')"><div class="radio-letter" style="font-size:10px">C</div><div class="radio-content"><div class="radio-title">Amour de soi</div><div class="radio-desc">Interroger le regard que l'on porte sur soi, avant celui des autres.</div></div></label>
           <label class="radio-option" onclick="selectSub(this, 'sub_besoin', 'Cercle social et Familial')"><div class="radio-letter" style="font-size:10px">D</div><div class="radio-content"><div class="radio-title">Cercle social et Familial</div><div class="radio-desc">Créer des liens authentiques, bienveillants et apaisés avec son entourage.</div></div></label>
           <label class="radio-option" onclick="selectAutres(this, 'Autres_Amour')"><div class="radio-letter" style="font-size:10px">E</div><div class="radio-content"><div class="radio-title">Autres</div><div id="field-Autres_Amour" class="hidden" style="margin-top:10px"><input type="text" class="text-input" placeholder="Précisez votre besoin…" style="font-size:13px; padding:8px 12px; background: rgba(255,255,255,0.70); color: var(--text); border: 1px solid rgba(123,74,58,0.22);" oninput="state.sub_besoin = this.value" onclick="event.stopPropagation()"></div></div></label>
         </div>
@@ -932,11 +932,11 @@
       <div id="sub-pro" class="sub-question hidden">
         <label>Précisez votre besoin — Domaine Professionnel & Performance</label>
         <div class="radio-group">
-          <label class="radio-option" onclick="selectSub(this, 'sub_besoin', 'Leadership & Charisme')"><div class="radio-letter" style="font-size:10px">A</div><div class="radio-content"><div class="radio-title">Leadership & Charisme</div><div class="radio-desc">Développer une aura de confiance pour diriger ou influencer positivement.</div></div></label>
+          <label class="radio-option" onclick="selectSub(this, 'sub_besoin', 'Leadership & Charisme')"><div class="radio-letter" style="font-size:10px">A</div><div class="radio-content"><div class="radio-title">Leadership & Charisme</div><div class="radio-desc">Explorer sa manière d'occuper une place de responsabilité auprès des autres.</div></div></label>
           <label class="radio-option" onclick="selectSub(this, 'sub_besoin', 'Focus & Productivité')"><div class="radio-letter" style="font-size:10px">B</div><div class="radio-content"><div class="radio-title">Focus & Productivité</div><div class="radio-desc">Un thème pour accompagner la concentration et la gestion de la procrastination au quotidien.</div></div></label>
-          <label class="radio-option" onclick="selectSub(this, 'sub_besoin', 'Opportunités & Carrière')"><div class="radio-letter" style="font-size:10px">C</div><div class="radio-content"><div class="radio-title">Opportunités & Carrière</div><div class="radio-desc">Attirer des projets passionnants et favoriser l'évolution professionnelle.</div></div></label>
+          <label class="radio-option" onclick="selectSub(this, 'sub_besoin', 'Opportunités & Carrière')"><div class="radio-letter" style="font-size:10px">C</div><div class="radio-content"><div class="radio-title">Opportunités & Carrière</div><div class="radio-desc">Regarder autrement son rapport aux projets professionnels et à l'envie d'évoluer.</div></div></label>
           <label class="radio-option" onclick="selectSub(this, 'sub_besoin', 'Aisance à l\'Oral')"><div class="radio-letter" style="font-size:10px">D</div><div class="radio-content"><div class="radio-title">Aisance à l'Oral</div><div class="radio-desc">Idéal avant une conférence, une réunion importante ou un examen.</div></div></label>
-          <label class="radio-option" onclick="selectSub(this, 'sub_besoin', 'Syndrome de l\'Imposteur')"><div class="radio-letter" style="font-size:10px">E</div><div class="radio-content"><div class="radio-title">Syndrome de l'Imposteur</div><div class="radio-desc">Oser prendre sa place et reconnaître ses compétences.</div></div></label>
+          <label class="radio-option" onclick="selectSub(this, 'sub_besoin', 'Se sentir à sa place')"><div class="radio-letter" style="font-size:10px">E</div><div class="radio-content"><div class="radio-title">Se sentir à sa place</div><div class="radio-desc">Oser prendre sa place et reconnaître ses compétences.</div></div></label>
           <label class="radio-option" onclick="selectAutres(this, 'Autres_Pro')"><div class="radio-letter" style="font-size:10px">F</div><div class="radio-content"><div class="radio-title">Autres</div><div id="field-Autres_Pro" class="hidden" style="margin-top:10px"><input type="text" class="text-input" placeholder="Précisez votre besoin…" style="font-size:13px; padding:8px 12px; background: rgba(255,255,255,0.70); color: var(--text); border: 1px solid rgba(123,74,58,0.22);" oninput="state.sub_besoin = this.value" onclick="event.stopPropagation()"></div></div></label>
         </div>
       </div>
@@ -944,9 +944,9 @@
       <div id="sub-sante" class="sub-question hidden">
         <label>Précisez votre besoin — Santé et Vitalité</label>
         <div class="radio-group">
-          <label class="radio-option" onclick="selectSub(this, 'sub_besoin', 'Énergie matinale')"><div class="radio-letter" style="font-size:10px">A</div><div class="radio-content"><div class="radio-title">Énergie matinale</div><div class="radio-desc">Se réveiller avec dynamisme et vitalité pour bien commencer la journée.</div></div></label>
-          <label class="radio-option" onclick="selectSub(this, 'sub_besoin', 'Régénération et Vitalité')"><div class="radio-letter" style="font-size:10px">B</div><div class="radio-content"><div class="radio-title">Régénération et Vitalité</div><div class="radio-desc">Soutenir les processus naturels de récupération et de bien-être du corps.</div></div></label>
-          <label class="radio-option" onclick="selectSub(this, 'sub_besoin', 'Alimentation consciente')"><div class="radio-letter" style="font-size:10px">C</div><div class="radio-content"><div class="radio-title">Alimentation consciente</div><div class="radio-desc">Développer une relation saine et intuitive avec la nourriture.</div></div></label>
+          <label class="radio-option" onclick="selectSub(this, 'sub_besoin', 'Énergie matinale')"><div class="radio-letter" style="font-size:10px">A</div><div class="radio-content"><div class="radio-title">Énergie matinale</div><div class="radio-desc">Un rendez-vous d'écoute matinal pour ouvrir la journée à votre rythme.</div></div></label>
+          <label class="radio-option" onclick="selectSub(this, 'sub_besoin', 'Régénération et Vitalité')"><div class="radio-letter" style="font-size:10px">B</div><div class="radio-content"><div class="radio-title">Régénération et Vitalité</div><div class="radio-desc">Un temps d'écoute pour vos moments de récupération et de bien-être.</div></div></label>
+          <label class="radio-option" onclick="selectSub(this, 'sub_besoin', 'Alimentation consciente')"><div class="radio-letter" style="font-size:10px">C</div><div class="radio-content"><div class="radio-title">Alimentation consciente</div><div class="radio-desc">Explorer votre relation à la nourriture, à votre rythme.</div></div></label>
           <label class="radio-option" onclick="selectAutres(this, 'Autres_Santé')"><div class="radio-letter" style="font-size:10px">D</div><div class="radio-content"><div class="radio-title">Autres</div><div id="field-Autres_Santé" class="hidden" style="margin-top:10px"><input type="text" class="text-input" placeholder="Précisez votre besoin…" style="font-size:13px; padding:8px 12px; background: rgba(255,255,255,0.70); color: var(--text); border: 1px solid rgba(123,74,58,0.22);" oninput="state.sub_besoin = this.value" onclick="event.stopPropagation()"></div></div></label>
         </div>
       </div>
@@ -954,9 +954,9 @@
       <div id="sub-abondance" class="sub-question hidden">
         <label>Précisez votre besoin — Abondance et Réussite financière</label>
         <div class="radio-group">
-          <label class="radio-option" onclick="selectSub(this, 'sub_besoin', 'Libération des blocages financiers')"><div class="radio-letter" style="font-size:10px">A</div><div class="radio-content"><div class="radio-title">Libération des blocages</div><div class="radio-desc">Nettoyer les croyances limitantes liées au mérite et à l'argent.</div></div></label>
+          <label class="radio-option" onclick="selectSub(this, 'sub_besoin', 'Libération des blocages financiers')"><div class="radio-letter" style="font-size:10px">A</div><div class="radio-content"><div class="radio-title">Libération des blocages</div><div class="radio-desc">Interroger son rapport au mérite et à l'argent.</div></div></label>
           <label class="radio-option" onclick="selectSub(this, 'sub_besoin', 'Mindset de Prospérité')"><div class="radio-letter" style="font-size:10px">B</div><div class="radio-content"><div class="radio-title">Mindset de Prospérité</div><div class="radio-desc">Développer une mentalité de croissance et de gratitude pour les richesses déjà présentes.</div></div></label>
-          <label class="radio-option" onclick="selectSub(this, 'sub_besoin', 'Audace et Entrepreneuriat')"><div class="radio-letter" style="font-size:10px">C</div><div class="radio-content"><div class="radio-title">Audace et Entrepreneuriat</div><div class="radio-desc">Cultiver l'esprit d'initiative et la confiance nécessaire pour investir ou créer.</div></div></label>
+          <label class="radio-option" onclick="selectSub(this, 'sub_besoin', 'Audace et Entrepreneuriat')"><div class="radio-letter" style="font-size:10px">C</div><div class="radio-content"><div class="radio-title">Audace et Entrepreneuriat</div><div class="radio-desc">Explorer l'esprit d'initiative et la confiance utile pour investir ou créer.</div></div></label>
           <label class="radio-option" onclick="selectAutres(this, 'Autres_Abondance')"><div class="radio-letter" style="font-size:10px">D</div><div class="radio-content"><div class="radio-title">Autres</div><div id="field-Autres_Abondance" class="hidden" style="margin-top:10px"><input type="text" class="text-input" placeholder="Précisez votre besoin…" style="font-size:13px; padding:8px 12px; background: rgba(255,255,255,0.70); color: var(--text); border: 1px solid rgba(123,74,58,0.22);" oninput="state.sub_besoin = this.value" onclick="event.stopPropagation()"></div></div></label>
         </div>
       </div>
@@ -964,9 +964,9 @@
       <div id="sub-sommeil" class="sub-question hidden">
         <label>Précisez votre besoin — Sommeil profond et Sérénité</label>
         <div class="radio-group">
-          <label class="radio-option" onclick="selectSub(this, 'sub_besoin', 'Endormissement rapide')"><div class="radio-letter" style="font-size:10px">A</div><div class="radio-content"><div class="radio-title">Endormissement rapide</div><div class="radio-desc">Calmer le flux des pensées pour glisser doucement vers le sommeil.</div></div></label>
-          <label class="radio-option" onclick="selectSub(this, 'sub_besoin', 'Nuits réparatrices')"><div class="radio-letter" style="font-size:10px">B</div><div class="radio-content"><div class="radio-title">Nuits réparatrices</div><div class="radio-desc">Favoriser un sommeil ininterrompu et un repos véritablement régénérant.</div></div></label>
-          <label class="radio-option" onclick="selectSub(this, 'sub_besoin', 'Paix mentale')"><div class="radio-letter" style="font-size:10px">C</div><div class="radio-content"><div class="radio-title">Paix mentale</div><div class="radio-desc">Se libérer du stress quotidien et de l'anxiété pour retrouver un calme immédiat.</div></div></label>
+          <label class="radio-option" onclick="selectSub(this, 'sub_besoin', 'Endormissement rapide')"><div class="radio-letter" style="font-size:10px">A</div><div class="radio-content"><div class="radio-title">Endormissement rapide</div><div class="radio-desc">Un moment posé, à glisser au creux du coucher.</div></div></label>
+          <label class="radio-option" onclick="selectSub(this, 'sub_besoin', 'Nuits réparatrices')"><div class="radio-letter" style="font-size:10px">B</div><div class="radio-content"><div class="radio-title">Nuits réparatrices</div><div class="radio-desc">Un thème pour accompagner vos nuits et vos temps de repos.</div></div></label>
+          <label class="radio-option" onclick="selectSub(this, 'sub_besoin', 'Paix mentale')"><div class="radio-letter" style="font-size:10px">C</div><div class="radio-content"><div class="radio-title">Paix mentale</div><div class="radio-desc">Pour déposer les tensions de la journée et s'offrir un moment de calme.</div></div></label>
           <label class="radio-option" onclick="selectSub(this, 'sub_besoin', 'Lâcher-prise')"><div class="radio-letter" style="font-size:10px">D</div><div class="radio-content"><div class="radio-title">Lâcher-prise</div><div class="radio-desc">Se détacher des événements de la journée pour vivre pleinement l'instant présent.</div></div></label>
           <label class="radio-option" onclick="selectAutres(this, 'Autres_Sommeil')"><div class="radio-letter" style="font-size:10px">E</div><div class="radio-content"><div class="radio-title">Autres</div><div id="field-Autres_Sommeil" class="hidden" style="margin-top:10px"><input type="text" class="text-input" placeholder="Précisez votre besoin…" style="font-size:13px; padding:8px 12px; background: rgba(255,255,255,0.70); color: var(--text); border: 1px solid rgba(123,74,58,0.22);" oninput="state.sub_besoin = this.value" onclick="event.stopPropagation()"></div></div></label>
         </div>
@@ -975,7 +975,7 @@
       <div id="sub-reconstruction" class="sub-question hidden">
         <label>Précisez votre besoin — Reconstruction</label>
         <div class="radio-group">
-          <label class="radio-option" onclick="selectSub(this, 'sub_besoin', 'Après une Rupture')"><div class="radio-letter" style="font-size:10px">A</div><div class="radio-content"><div class="radio-title">Après une Rupture</div><div class="radio-desc">Se reconstruire, retrouver son autonomie affective et s'ouvrir à nouveau.</div></div></label>
+          <label class="radio-option" onclick="selectSub(this, 'sub_besoin', 'Après une Rupture')"><div class="radio-letter" style="font-size:10px">A</div><div class="radio-content"><div class="radio-title">Après une Rupture</div><div class="radio-desc">Un espace d'écoute pour traverser l'après, à votre rythme.</div></div></label>
           <label class="radio-option" onclick="selectSub(this, 'sub_besoin', 'Deuil et Transition')"><div class="radio-letter" style="font-size:10px">B</div><div class="radio-content"><div class="radio-title">Deuil et Transition</div><div class="radio-desc">Accompagner doucement le processus de changement après une perte.</div></div></label>
         </div>
         <div class="field" style="margin-top: 16px">
@@ -987,18 +987,18 @@
       <div id="sub-memoire" class="sub-question hidden">
         <label>Précisez votre besoin — Mémoire et Capacités cognitives</label>
         <div class="radio-group">
-          <label class="radio-option" onclick="selectSub(this, 'sub_besoin', 'Concentration et Focus')"><div class="radio-letter" style="font-size:10px">A</div><div class="radio-content"><div class="radio-title">Concentration et Focus</div><div class="radio-desc">Améliorer la capacité à rester attentif et à éliminer les distractions.</div></div></label>
-          <label class="radio-option" onclick="selectSub(this, 'sub_besoin', 'Apprentissage rapide')"><div class="radio-letter" style="font-size:10px">B</div><div class="radio-content"><div class="radio-title">Apprentissage rapide</div><div class="radio-desc">Optimiser l'assimilation de nouvelles informations ou compétences.</div></div></label>
-          <label class="radio-option" onclick="selectSub(this, 'sub_besoin', 'Clarté et Agilité mentale')"><div class="radio-letter" style="font-size:10px">C</div><div class="radio-content"><div class="radio-title">Clarté et Agilité mentale</div><div class="radio-desc">Maintenir un esprit vif, lucide et rapide dans la résolution de problèmes.</div></div></label>
+          <label class="radio-option" onclick="selectSub(this, 'sub_besoin', 'Concentration et Focus')"><div class="radio-letter" style="font-size:10px">A</div><div class="radio-content"><div class="radio-title">Concentration et Focus</div><div class="radio-desc">Un thème pour accompagner l'attention et la gestion des distractions.</div></div></label>
+          <label class="radio-option" onclick="selectSub(this, 'sub_besoin', 'Apprentissage rapide')"><div class="radio-letter" style="font-size:10px">B</div><div class="radio-content"><div class="radio-title">Apprentissage rapide</div><div class="radio-desc">Un temps d'écoute autour de vos périodes d'apprentissage.</div></div></label>
+          <label class="radio-option" onclick="selectSub(this, 'sub_besoin', 'Clarté et Agilité mentale')"><div class="radio-letter" style="font-size:10px">C</div><div class="radio-content"><div class="radio-title">Clarté et Agilité mentale</div><div class="radio-desc">Un thème autour de la clarté d'esprit et de la façon d'aborder les problèmes.</div></div></label>
         </div>
       </div>
 
       <div id="sub-corps" class="sub-question hidden">
         <label>Précisez votre besoin — Relation au Corps & Habitudes</label>
         <div class="radio-group">
-          <label class="radio-option" onclick="selectSub(this, 'sub_besoin', 'Image Corporelle (Body Love)')"><div class="radio-letter" style="font-size:10px">A</div><div class="radio-content"><div class="radio-title">Image Corporelle (Body Love)</div><div class="radio-desc">Faire la paix avec son miroir et cultiver la gratitude envers son corps.</div></div></label>
-          <label class="radio-option" onclick="selectSub(this, 'sub_besoin', 'Motivation Sportive')"><div class="radio-letter" style="font-size:10px">B</div><div class="radio-content"><div class="radio-title">Motivation Sportive</div><div class="radio-desc">Programmer le plaisir du mouvement et de l'effort physique.</div></div></label>
-          <label class="radio-option" onclick="selectSub(this, 'sub_besoin', 'Libération des Addictions')"><div class="radio-letter" style="font-size:10px">C</div><div class="radio-content"><div class="radio-title">Libération des Addictions</div><div class="radio-desc">Soutenir l'arrêt du tabac, du sucre ou des écrans (en complément d'un suivi adapté).</div></div></label>
+          <label class="radio-option" onclick="selectSub(this, 'sub_besoin', 'Image Corporelle (Body Love)')"><div class="radio-letter" style="font-size:10px">A</div><div class="radio-content"><div class="radio-title">Image Corporelle (Body Love)</div><div class="radio-desc">Ouvrir un espace autour du regard que vous portez sur votre corps.</div></div></label>
+          <label class="radio-option" onclick="selectSub(this, 'sub_besoin', 'Motivation Sportive')"><div class="radio-letter" style="font-size:10px">B</div><div class="radio-content"><div class="radio-title">Motivation Sportive</div><div class="radio-desc">Explorer son rapport au mouvement et à l'effort physique.</div></div></label>
+          <label class="radio-option" onclick="selectSub(this, 'sub_besoin', 'Habitudes difficiles à changer')"><div class="radio-letter" style="font-size:10px">C</div><div class="radio-content"><div class="radio-title">Habitudes difficiles à changer</div><div class="radio-desc">Accompagner votre démarche autour du tabac, du sucre ou des écrans (en complément d'un suivi adapté).</div></div></label>
           <label class="radio-option" onclick="selectSub(this, 'sub_besoin', 'Maternité / Paternité Sereine')"><div class="radio-letter" style="font-size:10px">D</div><div class="radio-content"><div class="radio-title">Maternité / Paternité Sereine</div><div class="radio-desc">Pour les futurs ou nouveaux parents qui ont besoin de calme et de confiance.</div></div></label>
           <label class="radio-option" onclick="selectAutres(this, 'Autres_Corps')"><div class="radio-letter" style="font-size:10px">E</div><div class="radio-content"><div class="radio-title">Autres</div><div id="field-Autres_Corps" class="hidden" style="margin-top:10px"><input type="text" class="text-input" placeholder="Précisez votre besoin…" style="font-size:13px; padding:8px 12px; background: rgba(255,255,255,0.70); color: var(--text); border: 1px solid rgba(123,74,58,0.22);" oninput="state.sub_besoin = this.value" onclick="event.stopPropagation()"></div></div></label>
         </div>
@@ -1007,9 +1007,9 @@
       <div id="sub-spiritualite" class="sub-question hidden">
         <label>Précisez votre besoin — Spiritualité & Connexion Moderne</label>
         <div class="radio-group">
-          <label class="radio-option" onclick="selectSub(this, 'sub_besoin', 'Trouver sa Mission de Vie')"><div class="radio-letter" style="font-size:10px">A</div><div class="radio-content"><div class="radio-title">Trouver sa Mission de Vie</div><div class="radio-desc">S'aligner avec ses valeurs et clarifier son chemin.</div></div></label>
+          <label class="radio-option" onclick="selectSub(this, 'sub_besoin', 'Trouver sa Mission de Vie')"><div class="radio-letter" style="font-size:10px">A</div><div class="radio-content"><div class="radio-title">Trouver sa Mission de Vie</div><div class="radio-desc">Revenir à ses valeurs et regarder son chemin autrement.</div></div></label>
           <label class="radio-option" onclick="selectSub(this, 'sub_besoin', 'Détox Digitale & Présence')"><div class="radio-letter" style="font-size:10px">B</div><div class="radio-content"><div class="radio-title">Détox Digitale & Présence</div><div class="radio-desc">Apprendre à savourer l'instant présent sans le besoin constant de stimulation.</div></div></label>
-          <label class="radio-option" onclick="selectSub(this, 'sub_besoin', 'Intuition & Clarté')"><div class="radio-letter" style="font-size:10px">C</div><div class="radio-content"><div class="radio-title">Intuition & Clarté</div><div class="radio-desc">Faire confiance à sa "petite voix" intérieure pour prendre les meilleures décisions.</div></div></label>
+          <label class="radio-option" onclick="selectSub(this, 'sub_besoin', 'Intuition & Clarté')"><div class="radio-letter" style="font-size:10px">C</div><div class="radio-content"><div class="radio-title">Intuition & Clarté</div><div class="radio-desc">Prêter attention à sa "petite voix" intérieure au moment de décider.</div></div></label>
           <label class="radio-option" onclick="selectSub(this, 'sub_besoin', 'Gratitude Radicale')"><div class="radio-letter" style="font-size:10px">D</div><div class="radio-content"><div class="radio-title">Gratitude Radicale</div><div class="radio-desc">Focaliser son attention sur l'abondance déjà présente dans sa vie au quotidien.</div></div></label>
           <label class="radio-option" onclick="selectAutres(this, 'Autres_Spiritualité')"><div class="radio-letter" style="font-size:10px">E</div><div class="radio-content"><div class="radio-title">Autres</div><div id="field-Autres_Spiritualité" class="hidden" style="margin-top:10px"><input type="text" class="text-input" placeholder="Précisez votre besoin…" style="font-size:13px; padding:8px 12px; background: rgba(255,255,255,0.70); color: var(--text); border: 1px solid rgba(123,74,58,0.22);" oninput="state.sub_besoin = this.value" onclick="event.stopPropagation()"></div></div></label>
         </div>
@@ -1089,7 +1089,7 @@
     <div class="section-header">
       <div class="section-tag">Étape 4 sur 5</div>
       <h2>Vous y êtes presque — <em>une dernière touche.</em></h2>
-      <p>Votre séance est presque prête. Choisissez l'univers sonore qui accompagnera votre écoute. Chaque composition est originale, garantie <strong>sans aucun bruit de pluie</strong>.</p>
+      <p>Votre séance est presque prête. Choisissez l'univers sonore qui accompagnera votre écoute. Chaque composition est originale, et ne contient jamais de <strong>bruit de pluie</strong>.</p>
     </div>
     <div class="field">
       <div class="radio-group">
@@ -1098,7 +1098,7 @@
           <div class="radio-letter">A</div>
           <div class="radio-content">
             <div class="radio-title">✦ Faire confiance à Fréquence Positive (Choix de l'Expert)</div>
-            <div class="radio-desc">Nous sélectionnons pour vous la fréquence et l'ambiance offrant la meilleure synergie sonore avec votre thématique.</div>
+            <div class="radio-desc">Nous sélectionnons pour vous la fréquence et l'ambiance qui nous semblent les plus cohérentes avec votre thématique.</div>
           </div>
         </label>
         <label class="radio-option" onclick="selectAmbiance(this, 'solfeggio')">
@@ -1106,7 +1106,7 @@
           <div class="radio-letter">B</div>
           <div class="radio-content">
             <div class="radio-title">🎵 Les Compositions Musicales (Solfeggio)</div>
-            <div class="radio-desc">Mélodies relaxantes créées sur des fréquences sacrées pour harmoniser le corps et l'esprit.</div>
+            <div class="radio-desc">Mélodies relaxantes composées sur des gammes dites sacrées, pour une écoute enveloppante.</div>
           </div>
         </label>
         <label class="radio-option" onclick="selectAmbiance(this, 'minimaliste')">
@@ -1122,11 +1122,11 @@
 
     <!-- Solfeggio frequencies -->
     <div id="freq-solfeggio" class="sub-question hidden">
-      <label>Sélectionnez votre fréquence sacrée :</label>
+      <label>Sélectionnez votre tonalité (gamme dite sacrée) :</label>
       <div class="radio-group">
-        <label class="radio-option" onclick="selectSub(this, 'frequence', '396 Hz — Libération des peurs')"><div class="radio-letter" style="font-size:10px">A</div><div class="radio-content"><div class="radio-title">396 Hz</div><div class="radio-desc">Libération des peurs et de la culpabilité.</div></div></label>
-        <label class="radio-option" onclick="selectSub(this, 'frequence', '432 Hz — Harmonie naturelle')"><div class="radio-letter" style="font-size:10px">B</div><div class="radio-content"><div class="radio-title">432 Hz</div><div class="radio-desc">Harmonie naturelle et paix intérieure profonde.</div></div></label>
-        <label class="radio-option" onclick="selectSub(this, 'frequence', '639 Hz — Équilibre des relations')"><div class="radio-letter" style="font-size:10px">C</div><div class="radio-content"><div class="radio-title">639 Hz</div><div class="radio-desc">Équilibre des relations et amour de soi.</div></div></label>
+        <label class="radio-option" onclick="selectSub(this, 'frequence', '396 Hz (peurs, culpabilité)')"><div class="radio-letter" style="font-size:10px">A</div><div class="radio-content"><div class="radio-title">396 Hz</div><div class="radio-desc">Une tonalité grave, proposée pour les thèmes liés aux peurs et à la culpabilité.</div></div></label>
+        <label class="radio-option" onclick="selectSub(this, 'frequence', '432 Hz (harmonie, calme)')"><div class="radio-letter" style="font-size:10px">B</div><div class="radio-content"><div class="radio-title">432 Hz</div><div class="radio-desc">Une tonalité douce, proposée pour les thèmes liés au calme intérieur.</div></div></label>
+        <label class="radio-option" onclick="selectSub(this, 'frequence', '639 Hz (relations, amour de soi)')"><div class="radio-letter" style="font-size:10px">C</div><div class="radio-content"><div class="radio-title">639 Hz</div><div class="radio-desc">Une tonalité chaleureuse, proposée pour les thèmes liés aux relations et à soi.</div></div></label>
       </div>
     </div>
 
@@ -1134,9 +1134,9 @@
     <div id="freq-minimaliste" class="sub-question hidden">
       <label>Choisissez votre ambiance minimaliste</label>
       <div class="radio-group">
-        <label class="radio-option" onclick="selectSub(this, 'ambiance_min', 'Bruit Rose — Spécial Sommeil')"><div class="radio-letter" style="font-size:10px">A</div><div class="radio-content"><div class="radio-title">Bruit Rose</div><div class="radio-desc">Spécial Sommeil pour une nuit régénératrice.</div></div></label>
+        <label class="radio-option" onclick="selectSub(this, 'ambiance_min', 'Bruit Rose — Spécial Sommeil')"><div class="radio-letter" style="font-size:10px">A</div><div class="radio-content"><div class="radio-title">Bruit Rose</div><div class="radio-desc">Texture sonore continue, pensée comme fond d'écoute nocturne.</div></div></label>
         <label class="radio-option" onclick="selectSub(this, 'ambiance_min', 'Piano Minimaliste')"><div class="radio-letter" style="font-size:10px">B</div><div class="radio-content"><div class="radio-title">Piano Minimaliste</div><div class="radio-desc">Quelques notes pures et isolées pour une ambiance poétique.</div></div></label>
-        <label class="radio-option" onclick="selectSub(this, 'ambiance_min', 'Silence Pur')"><div class="radio-letter" style="font-size:10px">C</div><div class="radio-content"><div class="radio-title">Silence Pur</div><div class="radio-desc">Léger bourdonnement de fond, sans musique, pour une concentration absolue.</div></div></label>
+        <label class="radio-option" onclick="selectSub(this, 'ambiance_min', 'Silence Pur')"><div class="radio-letter" style="font-size:10px">C</div><div class="radio-content"><div class="radio-title">Silence Pur</div><div class="radio-desc">Léger bourdonnement de fond, sans musique, pour une écoute très épurée.</div></div></label>
       </div>
     </div>
 
@@ -1160,7 +1160,7 @@
       <div class="recap-row"><span class="recap-label">🎯 Affirmations</span><span class="recap-value" id="recap-aff">—</span></div>
       <div class="recap-row"><span class="recap-label">🎵 Ambiance</span><span class="recap-value" id="recap-ambiance">—</span></div>
       <div class="total-row">
-        <span class="total-label">💰 Total de votre investissement</span>
+        <span class="total-label">💰 Total de votre commande</span>
         <span class="total-price" id="recap-total">—</span>
       </div>
     </div>

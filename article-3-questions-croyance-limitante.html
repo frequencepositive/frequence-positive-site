@@ -458,23 +458,18 @@ nav {
 .article-nav .next { text-align: right; }
 
 footer {
-  position: relative;
-  z-index: 1;
-  text-align: center;
-  padding: 40px 24px 48px;
-  border-top: 1px solid rgba(123,74,58,0.1);
-  font-size: 11px;
-  color: var(--text-light);
-  letter-spacing: 0.04em;
+  position: relative; z-index: 1;
+  background: var(--brown-ultra);
+  padding: 36px 48px;
+  display: flex; align-items: center; justify-content: space-between;
+  flex-wrap: wrap; gap: 16px;
+  font-size: 12px; color: rgba(255,255,255,0.4);
 }
-footer a { color: inherit; text-decoration: underline; opacity: 0.7; }
-footer .footer-logo {
-  font-family: 'Cormorant Garamond', serif;
-  font-size: 1.1rem;
-  color: var(--brown);
-  letter-spacing: 0.06em;
-  margin-bottom: 12px;
-  display: block;
+footer a { color: rgba(255,255,255,0.55); text-decoration: none; transition: color 0.2s; }
+footer a:hover { color: rgba(255,255,255,0.9); }
+.footer-links { display: flex; gap: 24px; flex-wrap: wrap; }
+@media (max-width: 700px) {
+  footer { flex-direction: column; align-items: center; text-align: center; padding: 32px 24px; }
 }
 
 @keyframes fadeDown {
@@ -555,7 +550,7 @@ footer .footer-logo {
     <a href='index.html'>Accueil</a>
     <a href='blog.html'>Blog</a>
     <a href='index.html#programme'>Le Programme</a>
-    <a class='nav-cta' href='acces-prioritaire.html'>Accès Prioritaire</a>
+    <a class='nav-cta' href='commander.html'>✦ Créer ma séance</a>
   </div>
   <button class="nav-burger" aria-label="Menu" aria-expanded="false" onclick="(function(b){var l=document.querySelector('.nav-links');b.classList.toggle('open');l.classList.toggle('open');b.setAttribute('aria-expanded',b.classList.contains('open'));})(this)">
     <span></span><span></span><span></span>
@@ -582,7 +577,7 @@ footer .footer-logo {
 
   <div class="article-intro-card">
     <p>
-      Tu sais que cette croyance te freine. Tu l'as identifiée, tu la connais. Mais elle reste là, solide, comme une vérité indiscutable qui pèse sur tes décisions. <strong>Le problème, ce n'est pas que tu n'as pas envie de la lâcher — c'est que ton cerveau la traite comme un fait, pas comme une opinion</strong>. Pour qu'elle commence à vaciller, il faut la questionner. Pas la combattre, juste l'interroger. Voici 3 questions simples, qu'on peut se poser n'importe où, qui ouvrent une fissure dans ce qui paraissait inébranlable.
+      Tu sais que cette croyance te freine. Tu l'as identifiée, tu la connais. Mais elle reste là, solide, comme une vérité indiscutable qui pèse sur tes décisions. <strong>Le problème, ce n'est pas que tu n'as pas envie de la lâcher — c'est qu'elle se présente à toi comme un fait, pas comme une opinion</strong>. Pour qu'elle commence à vaciller, il faut la questionner. Pas la combattre, juste l'interroger. Voici 3 questions simples, qu'on peut se poser n'importe où, qui ouvrent une fissure dans ce qui paraissait inébranlable.
     </p>
   </div>
 
@@ -619,7 +614,7 @@ footer .footer-logo {
   </p>
 
   <p>
-    Souvent, en cherchant des preuves concrètes, tu vas trouver soit <strong>des situations précises et limitées</strong> (une fois, un contexte, un moment) que ton cerveau a généralisées en règle universelle, soit <strong>des projections</strong> (« les autres pensent que… ») qui ne reposent sur aucune donnée vérifiable.
+    Souvent, en cherchant des preuves concrètes, tu vas trouver soit <strong>des situations précises et limitées</strong> (une fois, un contexte, un moment) qui ont fini par être généralisées en règle universelle, soit <strong>des projections</strong> (« les autres pensent que… ») qui ne reposent sur aucune donnée vérifiable.
   </p>
 
   <h3>Comment la pratiquer concrètement</h3>
@@ -638,7 +633,7 @@ footer .footer-logo {
   <h2>Question 2 — « Qui m'a appris à croire ça ? »</h2>
 
   <p>
-    Aucune croyance limitante ne pousse spontanément en nous. Elle a toujours une origine — un message reçu, une expérience interprétée, une voix qu'on a fini par intérioriser. <strong>Quand tu identifies cette source, la croyance perd une partie de sa neutralité apparente.</strong> Elle redevient ce qu'elle a toujours été : l'opinion de quelqu'un, dans un contexte donné, à un moment donné.
+    Une croyance limitante ne pousse presque jamais de nulle part. Elle a souvent une origine — un message reçu, une expérience interprétée, une voix qu'on a fini par intérioriser. <strong>Quand tu identifies cette source, la croyance perd une partie de sa neutralité apparente.</strong> Elle redevient ce qu'elle a toujours été : l'opinion de quelqu'un, dans un contexte donné, à un moment donné.
   </p>
 
   <p>
@@ -648,7 +643,7 @@ footer .footer-logo {
   <h3>Comment la pratiquer concrètement</h3>
 
   <p>
-    Ferme les yeux quelques secondes. Repose-toi cette question : <em>« Si je devais identifier la première fois où j'ai entendu, vu ou ressenti que c'était vrai, ça remonterait à quand ? »</em>. Laisse venir une image, un visage, une scène. Souvent, tu seras surpris(e) par la précision du souvenir qui remonte.
+    Ferme les yeux quelques secondes. Repose-toi cette question : <em>« Si je devais identifier la première fois où j'ai entendu, vu ou ressenti que c'était vrai, ça remonterait à quand ? »</em>. Laisse venir une image, un visage, une scène. Parfois, un souvenir remonte avec beaucoup de précision. Parfois rien ne vient, et c'est très bien aussi.
   </p>
 
   <img class="article-img"
@@ -679,17 +674,18 @@ footer .footer-logo {
   </div>
 
   <!-- CTA SECONDAIRE — [C] Séance personnalisée -->
+  <!-- CTA SECONDAIRE — [C] Séance personnalisée -->
   <div style="background:linear-gradient(135deg,rgba(123,74,58,0.07),rgba(74,122,106,0.07));border:1px solid rgba(123,74,58,0.18);border-radius:18px;padding:28px 32px;margin:36px 0;text-align:center;backdrop-filter:blur(10px);position:relative;overflow:hidden;">
     <div style="position:absolute;top:0;left:50%;transform:translateX(-50%);width:140px;height:1.5px;background:linear-gradient(90deg,transparent,rgba(123,74,58,0.45),transparent);"></div>
-    <div style="font-size:1.5rem;margin-bottom:10px;">🎧</div>
+    <div style="font-size:1.5rem;margin-bottom:10px;">✦</div>
     <p style="font-family:'Cormorant Garamond',serif;font-size:1.35rem;font-weight:400;color:var(--text-main);line-height:1.3;margin-bottom:8px;">
-      Tu veux remplacer une croyance par <em style="font-style:italic;color:var(--brown)">une nouvelle voix intérieure ?</em>
+      Tu veux entendre une autre voix <em style="font-style:italic;color:var(--brown)">à côté de cette croyance ?</em>
     </p>
     <p style="font-size:13.5px;color:var(--text-muted);line-height:1.65;margin-bottom:20px;">
-      Une séance audio personnalisée — avec ton prénom, tes affirmations, créée uniquement pour toi — peut t'accompagner dans cette transformation, à ton rythme.
+      Une séance audio personnalisée — avec ton prénom, tes affirmations, créée uniquement pour toi — est un espace d'écoute qui accompagne ce cheminement, à ton rythme.
     </p>
-    <a href='commander.html#step-1' onmouseout="this.style.opacity='1'" onmouseover="this.style.opacity='0.88'" style='display:inline-block;background:linear-gradient(135deg,var(--brown-dark),var(--brown),var(--brown-light));color:white;text-decoration:none;padding:12px 28px;border-radius:50px;font-size:13px;font-weight:500;letter-spacing:0.04em;box-shadow:0 4px 16px rgba(123,74,58,0.25);'>
-      ✦ &nbsp; Découvrir la séance personnalisée
+    <a href="commander.html#step-1" style="display:inline-block;background:linear-gradient(135deg,var(--brown-dark),var(--brown),var(--brown-light));color:white;text-decoration:none;padding:12px 28px;border-radius:50px;font-size:13px;font-weight:500;letter-spacing:0.04em;box-shadow:0 4px 16px rgba(123,74,58,0.25);">
+      ✦ &nbsp; Créer ma séance personnalisée
     </a>
   </div>
 
@@ -700,9 +696,9 @@ footer .footer-logo {
   </p>
 
   <ol>
-    <li><strong>Choisis UNE croyance pour commencer.</strong> Pas dix. Pas la plus grosse. Une croyance courante, qui revient régulièrement dans ta journée. C'est elle qu'on va questionner pendant 21 jours.</li>
+    <li><strong>Choisis UNE croyance pour commencer.</strong> Pas dix. Pas la plus grosse. Une croyance courante, qui revient régulièrement dans ta journée. C'est elle que tu peux choisir de questionner sur les prochaines semaines, sans compter les jours.</li>
     <li><strong>Garde un mini-carnet ou une note dans ton téléphone.</strong> À chaque fois que la croyance se présente, prends 30 secondes pour te poser une des 3 questions. Pas besoin de répondre longuement — juste de marquer la pause.</li>
-    <li><strong>Fais le bilan le dimanche soir.</strong> Relis ce que tu as noté. Repère les schémas. Tu verras que la croyance se met à perdre en intensité — non pas parce qu'elle a disparu, mais parce qu'elle a perdu son statut d'évidence.</li>
+    <li><strong>Fais le bilan le dimanche soir.</strong> Relis ce que tu as noté. Repère les schémas. Tu pourrais observer que la croyance te paraît moins évidente — non pas parce qu'elle a disparu, mais parce que tu l'as regardée de plus près.</li>
   </ol>
 
   <img class="article-img"
@@ -729,46 +725,31 @@ footer .footer-logo {
 </div>
 
 <!-- ══ CTA PRINCIPAL — [B] Guide gratuit ══ -->
+
+
+<!-- ══ BLOC YOUTUBE ══ -->
+
+<!-- ══ CTA PRINCIPAL — [B] Guide gratuit ══ -->
 <div style="max-width:720px;margin:0 auto 40px;padding:0 24px;position:relative;z-index:1;">
   <div style="background:rgba(255,255,255,0.70);border:1px solid rgba(123,74,58,0.22);border-radius:20px;padding:36px 40px;backdrop-filter:blur(10px);box-shadow:0 4px 32px rgba(123,74,58,0.07);position:relative;overflow:hidden;">
     <div style="position:absolute;top:0;left:50%;transform:translateX(-50%);width:120px;height:1.5px;background:linear-gradient(90deg,transparent,rgba(123,74,58,0.5),transparent);"></div>
-    <div style="font-size:11px;font-weight:500;letter-spacing:0.14em;text-transform:uppercase;color:#7B4A3A;margin-bottom:14px;">✦ Guide gratuit</div>
-    <p style="font-family:'Cormorant Garamond',serif;font-size:clamp(1.25rem,3vw,1.7rem);font-weight:400;line-height:1.3;color:#3A2820;margin-bottom:14px;">
-      Et si tu avais <em style="color:#7B4A3A;">les bonnes phrases pour remplacer chaque croyance ?</em>
+    <div style="font-size:11px;font-weight:500;letter-spacing:0.14em;text-transform:uppercase;color:#7B4A3A;margin-bottom:14px;text-align:center;">📖 Guide gratuit</div>
+    <p style="font-family:'Cormorant Garamond',serif;font-size:clamp(1.25rem,3vw,1.7rem);font-weight:400;line-height:1.3;color:#3A2820;margin-bottom:14px;text-align:center;">
+      Et si tu avais <em style="color:#7B4A3A;">des phrases à poser à côté de chaque croyance ?</em>
     </p>
-    <p style="font-size:15px;line-height:1.75;color:#6A5A52;font-weight:300;margin-bottom:24px;">
+    <p style="font-size:15px;line-height:1.75;color:#6A5A52;font-weight:300;margin-bottom:24px;text-align:center;">
       Notre guide gratuit de 13 pages te donne les affirmations exactes à te répéter pour reconstruire, doucement, un dialogue intérieur plus juste — celui qui t'autorise à te faire confiance, à recevoir, à oser.
     </p>
     <div style="text-align:center;">
-      <a href='acces-guide-gratuit.html' onmouseout="this.style.background='#7B4A3A'" onmouseover="this.style.background='#5A3028'" style='display:inline-flex;align-items:center;gap:10px;background:#7B4A3A;color:white;text-decoration:none;padding:14px 30px;border-radius:50px;font-size:14px;font-weight:500;letter-spacing:0.03em;'>
-        ✦ &nbsp; Télécharger le guide gratuit
+      <a href="acces-guide-gratuit.html" style="display:inline-flex;align-items:center;gap:10px;background:#7B4A3A;color:white;text-decoration:none;padding:14px 30px;border-radius:50px;font-size:14px;font-weight:500;letter-spacing:0.03em;">
+        ✦ &nbsp; Recevoir mon guide gratuit
       </a>
-      <p style="font-size:12px;color:#9A8A80;margin-top:14px;">PDF 13 pages · Affirmations + exercices · 100% gratuit</p>
+      <p style="font-size:12px;color:#9A8A80;margin-top:14px;">13 pages · Gratuit · Sans engagement</p>
     </div>
   </div>
 </div>
 
-<!-- ══ CARTE PROGRAMME CONTEXTUELLE ══ -->
-<div class="prog-card-wrap">
-  <div class="prog-card">
-    <div class="prog-card-icon">🌿</div>
-    <div class="prog-card-body">
-      <div class="prog-card-label">✦ Le programme Fréquence Positive</div>
-      <div class="prog-card-title">Tu veux défaire les croyances qui te freinent en profondeur ?</div>
-      <p class="prog-card-text">
-        Le programme Fréquence Positive t'accompagne pour identifier, questionner et reconstruire en douceur les croyances qui sabotent tes choix au quotidien — sans pression, à ton rythme.
-      </p>
-    </div>
-    <a class='prog-card-btn' href='index.html'>✦ Découvrir</a>
-  </div>
-</div>
-
-<!-- ══ BLOC YOUTUBE ══ -->
 <div class="yt-bloc">
-  <div class="yt-bloc-title">✦ La chaîne YouTube de Fréquence Positive</div>
-  <p style="text-align:center;font-size:14px;color:var(--text-muted);line-height:1.7;margin:-16px 0 28px;font-weight:300;">
-    Des affirmations en voix off pour t'accompagner dans la déconstruction de tes croyances, jour après jour.
-  </p>
   <div class="yt-inner">
     <div class="yt-card">
       <div class="yt-logo">
@@ -777,8 +758,8 @@ footer .footer-logo {
           <polygon points="36,18 36,45 62,31.5" fill="#FDF6EC"/>
         </svg>
       </div>
-      <div class="yt-name">Fréquence Positive</div>
-      <p class="yt-desc">Affirmations positives en voix off + musique — pour reprogrammer ton mental au quotidien.</p>
+      <div class="yt-name">La chaîne YouTube de Fréquence Positive</div>
+      <p class="yt-desc">Affirmations positives en voix off + musique — pour t'accompagner dans ton dialogue intérieur au quotidien.</p>
       <a href="https://www.youtube.com/@FREQUENCE.POSITIVE" target="_blank" class="yt-btn">▶ Voir la chaîne</a>
     </div>
   </div>
@@ -797,13 +778,16 @@ footer .footer-logo {
 </div>
 
 <footer>
-  <span class="footer-logo">✦ Fréquence Positive</span>
-  <p>© 2026 Fréquence Positive —
-    <a href='mentions-legales.html'>Mentions légales</a> ·
-    <a href='confidentialite.html'>Confidentialité</a> ·
-    <a href='blog.html'>Blog</a>
-  </p>
-  <p style="margin-top:6px">Avec ✦ par Max &amp; Sandra</p>
+  <div>© 2026 Fréquence Positive — Tous droits réservés</div>
+  <div class="footer-links">
+    <a href="commander.html#step-1">Commander</a>
+    <a href="blog.html">Blog</a>
+    <a href="faq.html">FAQ</a>
+    <a href="mentions-legales.html">Mentions légales</a>
+    <a href="cgv.html">CGV</a>
+    <a href="confidentialite.html">Confidentialité</a>
+    <a href="mailto:hello.frequencepositive@outlook.com">Contact</a>
+  </div>
 </footer>
 
 <!-- ══ CANVAS VAGUES ══ -->

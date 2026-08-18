@@ -13,7 +13,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 <title>Fréquence Positive — Comment identifier tes croyances limitantes sans te juger</title>
-<meta name="description" content="Tu bloques sans savoir pourquoi ? Découvre comment repérer tes croyances limitantes avec douceur, sans culpabilité, pour enfin avancer librement.">
+<meta name="description" content="Tu bloques sans savoir pourquoi ? Découvre comment repérer tes croyances limitantes avec douceur, sans culpabilité — à ton rythme.">
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400;1,500&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
@@ -611,23 +611,18 @@ nav {
 
 /* ── FOOTER ── */
 footer {
-  position: relative;
-  z-index: 1;
-  text-align: center;
-  padding: 40px 24px 48px;
-  border-top: 1px solid rgba(123,74,58,0.1);
-  font-size: 11px;
-  color: var(--text-light);
-  letter-spacing: 0.04em;
+  position: relative; z-index: 1;
+  background: var(--brown-ultra);
+  padding: 36px 48px;
+  display: flex; align-items: center; justify-content: space-between;
+  flex-wrap: wrap; gap: 16px;
+  font-size: 12px; color: rgba(255,255,255,0.4);
 }
-footer a { color: inherit; text-decoration: underline; opacity: 0.7; }
-footer .footer-logo {
-  font-family: 'Cormorant Garamond', serif;
-  font-size: 1.1rem;
-  color: var(--brown);
-  letter-spacing: 0.06em;
-  margin-bottom: 12px;
-  display: block;
+footer a { color: rgba(255,255,255,0.55); text-decoration: none; transition: color 0.2s; }
+footer a:hover { color: rgba(255,255,255,0.9); }
+.footer-links { display: flex; gap: 24px; flex-wrap: wrap; }
+@media (max-width: 700px) {
+  footer { flex-direction: column; align-items: center; text-align: center; padding: 32px 24px; }
 }
 
 /* ── ANIMATIONS ── */
@@ -665,7 +660,7 @@ footer .footer-logo {
     <a href="accueil.html">Accueil</a>
     <a href="blog.html">Blog</a>
     <a href="accueil.html#programme">Le Programme</a>
-    <a href="commander.html" class="nav-cta">✦ Ma séance</a>
+    <a href="commander.html" class="nav-cta">✦ Créer ma séance</a>
   </div>
 </nav>
 
@@ -758,7 +753,7 @@ footer .footer-logo {
   <h3>Les zones où tu procrastines en boucle</h3>
 
   <p>
-    La procrastination n'est presque jamais de la paresse. C'est souvent de la peur déguisée.
+    La procrastination n'est pas forcément de la paresse. Ce peut être, parfois, de la peur déguisée.
     Quand tu repousses toujours le même projet, la même conversation, la même démarche —
     pose-toi la question : <em>qu'est-ce que je risque de devoir affronter si j'avance vraiment ?</em>
     La réponse pointe souvent vers une croyance.
@@ -803,7 +798,7 @@ footer .footer-logo {
   <div class="encadre">
     <div class="encadre-label">✦ Exercice pratique</div>
     <p>Prends un carnet. En haut d'une page, écris : <strong>"Je ne peux pas / je ne mérite pas / je ne suis pas capable de..."</strong></p>
-    <p>Puis laisse ta main écrire tout ce qui vient, sans corriger, sans juger. Donne-toi 5 minutes chrono. Tu n'as pas à relire tout de suite — le simple fait d'écrire permet déjà à quelque chose de se libérer.</p>
+    <p>Puis laisse ta main écrire tout ce qui vient, sans corriger, sans juger. Donne-toi 5 minutes chrono. Tu n'as pas à relire tout de suite — l'intention de cet exercice est simplement de poser les mots hors de ta tête.</p>
     <p>Quand tu relis, cherche les répétitions. Ce qui revient souvent est rarement un hasard.</p>
   </div>
 
@@ -835,7 +830,7 @@ footer .footer-logo {
 
   <ul>
     <li>Nomme ce que tu observes, sans dramatiser : "Ah, intéressant, j'ai cette croyance que je ne mérite pas de réussir."</li>
-    <li>Pose une main sur ton cœur si tu sens de l'émotion monter — ça ancre la douceur dans le corps.</li>
+    <li>Pose une main sur ton cœur si tu sens de l'émotion monter — c'est un geste simple, à faire si ça te fait du bien.</li>
     <li>Rappelle-toi que tout le monde a des croyances limitantes. Tout le monde. Les avoir ne fait pas de toi quelqu'un de "abîmé".</li>
     <li>Note-les dans un carnet dédié, sans chercher à les "réparer" tout de suite — juste les voir, c'est déjà immense.</li>
   </ul>
@@ -850,7 +845,22 @@ footer .footer-logo {
   <div class="article-img-wrap">
     <img src="https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=800&q=80"
          alt="Horizon au lever du soleil, espace ouvert" loading="lazy">
-    <div class="article-img-caption">Chaque croyance vue avec honnêteté est une porte qui s'ouvre vers plus de liberté.</div>
+    <div class="article-img-caption">Chaque croyance regardée avec honnêteté est une chose de moins qui agit dans l'ombre.</div>
+  </div>
+
+  <!-- CTA SECONDAIRE — [C] Séance personnalisée -->
+  <div style="background:linear-gradient(135deg,rgba(123,74,58,0.07),rgba(74,122,106,0.07));border:1px solid rgba(123,74,58,0.18);border-radius:18px;padding:28px 32px;margin:36px 0;text-align:center;backdrop-filter:blur(10px);position:relative;overflow:hidden;">
+    <div style="position:absolute;top:0;left:50%;transform:translateX(-50%);width:140px;height:1.5px;background:linear-gradient(90deg,transparent,rgba(123,74,58,0.45),transparent);"></div>
+    <div style="font-size:1.5rem;margin-bottom:10px;">✦</div>
+    <p style="font-family:'Cormorant Garamond',serif;font-size:1.35rem;font-weight:400;color:var(--text-main);line-height:1.3;margin-bottom:8px;">
+      Et si tu entendais d'autres mots, <em style="font-style:italic;color:var(--brown)">avec ton prénom dedans ?</em>
+    </p>
+    <p style="font-size:13.5px;color:var(--text-muted);line-height:1.65;margin-bottom:20px;">
+      Nos séances audio personnalisées sont créées spécialement pour toi — ton prénom, tes mots, un espace d'écoute autour des croyances que tu viens d'identifier.
+    </p>
+    <a href="commander.html#step-1" style="display:inline-block;background:linear-gradient(135deg,var(--brown-dark),var(--brown),var(--brown-light));color:white;text-decoration:none;padding:12px 28px;border-radius:50px;font-size:13px;font-weight:500;letter-spacing:0.04em;box-shadow:0 4px 16px rgba(123,74,58,0.25);">
+      ✦ &nbsp; Créer ma séance personnalisée
+    </a>
   </div>
 
   <h2>Pour aller plus loin</h2>
@@ -859,7 +869,7 @@ footer .footer-logo {
     Identifier tes croyances limitantes sans te juger, c'est l'un des actes les plus courageux
     et les plus libérateurs que tu puisses poser pour toi-même. Ce n'est pas un travail de quelques minutes —
     c'est un chemin. Mais chaque fois que tu poses ton regard sur une croyance avec douceur plutôt qu'avec sévérité,
-    <strong>tu changes ta fréquence intérieure.</strong>
+    <strong>tu t'offres un regard un peu plus doux sur toi.</strong>
   </p>
 
   <p>
@@ -870,40 +880,28 @@ footer .footer-logo {
 
 </div>
 
-<!-- ══ CTA FIN D'ARTICLE ══ -->
-<div class="article-cta">
-  <div class="cta-card">
-    <div class="cta-icon">🌿</div>
-    <div class="cta-title">
-      Tu veux aller <em>plus loin</em> ?
-    </div>
-    <p class="cta-text">
-      Si cet article t'a touché, le programme Fréquence Positive est un espace d'écoute pensé pour
-      t'accompagner pas à pas dans ton chemin — à ton rythme, dans la douceur.
+<!-- ══ CTA PRINCIPAL — [B] Guide gratuit ══ -->
+<div style="max-width:720px;margin:0 auto 40px;padding:0 24px;position:relative;z-index:1;">
+  <div style="background:rgba(255,255,255,0.70);border:1px solid rgba(123,74,58,0.22);border-radius:20px;padding:36px 40px;backdrop-filter:blur(10px);box-shadow:0 4px 32px rgba(123,74,58,0.07);position:relative;overflow:hidden;">
+    <div style="position:absolute;top:0;left:50%;transform:translateX(-50%);width:120px;height:1.5px;background:linear-gradient(90deg,transparent,rgba(123,74,58,0.5),transparent);"></div>
+    <div style="font-size:11px;font-weight:500;letter-spacing:0.14em;text-transform:uppercase;color:#7B4A3A;margin-bottom:14px;text-align:center;">📖 Guide gratuit</div>
+    <p style="font-family:'Cormorant Garamond',serif;font-size:clamp(1.25rem,3vw,1.7rem);font-weight:400;line-height:1.3;color:#3A2820;margin-bottom:14px;text-align:center;">
+      Tu veux des phrases pour <em style="color:#7B4A3A;">te parler avec plus de douceur ?</em>
     </p>
-    <a href="commander.html" class="cta-btn">✦ Rejoindre Fréquence Positive</a>
-  </div>
-</div>
-
-<!-- ══ CARTE PROGRAMME CONTEXTUELLE ══ -->
-<div class="prog-card-wrap">
-  <div class="prog-card">
-    <div class="prog-card-icon">🌿</div>
-    <div class="prog-card-body">
-      <div class="prog-card-label">✦ Le programme Fréquence Positive</div>
-      <div class="prog-card-title">Tu veux transformer ces croyances, pas juste les voir ?</div>
-      <p class="prog-card-text">
-        Le programme Fréquence Positive t'accompagne de l'identification à la libération —
-        avec des outils concrets, une communauté bienveillante, et Max &amp; Sandra à tes côtés.
-      </p>
+    <p style="font-size:15px;line-height:1.75;color:#6A5A52;font-weight:300;margin-bottom:24px;text-align:center;">
+      Notre guide gratuit de 13 pages te propose des affirmations à explorer et une méthode pour écrire les tiennes — sans te juger, à ton rythme.
+    </p>
+    <div style="text-align:center;">
+      <a href="acces-guide-gratuit.html" style="display:inline-flex;align-items:center;gap:10px;background:#7B4A3A;color:white;text-decoration:none;padding:14px 30px;border-radius:50px;font-size:14px;font-weight:500;letter-spacing:0.03em;">
+        ✦ &nbsp; Recevoir mon guide gratuit
+      </a>
+      <p style="font-size:12px;color:#9A8A80;margin-top:14px;">13 pages · Gratuit · Sans engagement</p>
     </div>
-    <a href="accueil.html" class="prog-card-btn">✦ Découvrir</a>
   </div>
 </div>
 
 <!-- ══ BLOC YOUTUBE ══ -->
 <div class="yt-bloc">
-  <div class="yt-bloc-title">✦ Continue sur YouTube</div>
   <div class="yt-inner single">
 
     <div class="yt-card">
@@ -913,7 +911,7 @@ footer .footer-logo {
           <polygon points="36,18 36,45 62,31.5" fill="white"/>
         </svg>
       </div>
-      <div class="yt-name">Fréquence Positive</div>
+      <div class="yt-name">La chaîne YouTube de Fréquence Positive</div>
       <p class="yt-desc">Vidéos, conseils et partages sur le développement personnel — avec Max &amp; Sandra.</p>
       <a href="https://www.youtube.com/@FREQUENCE.POSITIVE" target="_blank" class="yt-btn">▶ Voir la chaîne</a>
     </div>
@@ -935,13 +933,16 @@ footer .footer-logo {
 
 <!-- ══ FOOTER ══ -->
 <footer>
-  <span class="footer-logo">✦ Fréquence Positive</span>
-  <p>© 2026 Fréquence Positive —
-    <a href="mentions-legales.html">Mentions légales</a> ·
-    <a href="confidentialite.html">Confidentialité</a> ·
+  <div>© 2026 Fréquence Positive — Tous droits réservés</div>
+  <div class="footer-links">
+    <a href="commander.html#step-1">Commander</a>
     <a href="blog.html">Blog</a>
-  </p>
-  <p style="margin-top:6px">Avec ✦ par Max &amp; Sandra</p>
+    <a href="faq.html">FAQ</a>
+    <a href="mentions-legales.html">Mentions légales</a>
+    <a href="cgv.html">CGV</a>
+    <a href="confidentialite.html">Confidentialité</a>
+    <a href="mailto:hello.frequencepositive@outlook.com">Contact</a>
+  </div>
 </footer>
 
 <!-- ══ CANVAS VAGUES ══ -->

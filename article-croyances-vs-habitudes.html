@@ -4,8 +4,8 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Fréquence Positive — Pourquoi changer ses croyances est plus efficace que changer ses habitudes</title>
-<meta name="description" content="Tu enchaînes les habitudes qui ne tiennent pas ? Ce n'est pas ta volonté. Ce sont tes croyances profondes qui décident. Voici pourquoi il faut commencer par elles.">
+<title>Fréquence Positive — Croyances ou habitudes : pourquoi regarder d'abord une couche en dessous</title>
+<meta name="description" content="Tu enchaînes les habitudes qui ne tiennent pas ? Ce n'est peut-être pas une question de volonté. Et si on regardait aussi du côté de tes croyances profondes ? Voici pourquoi cette couche mérite un détour.">
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400;1,500&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
@@ -458,23 +458,18 @@ nav {
 .article-nav .next { text-align: right; }
 
 footer {
-  position: relative;
-  z-index: 1;
-  text-align: center;
-  padding: 40px 24px 48px;
-  border-top: 1px solid rgba(123,74,58,0.1);
-  font-size: 11px;
-  color: var(--text-light);
-  letter-spacing: 0.04em;
+  position: relative; z-index: 1;
+  background: var(--brown-ultra);
+  padding: 36px 48px;
+  display: flex; align-items: center; justify-content: space-between;
+  flex-wrap: wrap; gap: 16px;
+  font-size: 12px; color: rgba(255,255,255,0.4);
 }
-footer a { color: inherit; text-decoration: underline; opacity: 0.7; }
-footer .footer-logo {
-  font-family: 'Cormorant Garamond', serif;
-  font-size: 1.1rem;
-  color: var(--brown);
-  letter-spacing: 0.06em;
-  margin-bottom: 12px;
-  display: block;
+footer a { color: rgba(255,255,255,0.55); text-decoration: none; transition: color 0.2s; }
+footer a:hover { color: rgba(255,255,255,0.9); }
+.footer-links { display: flex; gap: 24px; flex-wrap: wrap; }
+@media (max-width: 700px) {
+  footer { flex-direction: column; align-items: center; text-align: center; padding: 32px 24px; }
 }
 
 @keyframes fadeDown {
@@ -552,7 +547,7 @@ footer .footer-logo {
     <a href='index.html'>Accueil</a>
     <a href='blog.html'>Blog</a>
     <a href='index.html#programme'>Le Programme</a>
-    <a class='nav-cta' href='acces-prioritaire.html'>Accès Prioritaire</a>
+    <a class='nav-cta' href='commander.html'>✦ Créer ma séance</a>
   </div>
   <button class="nav-burger" aria-label="Menu" aria-expanded="false" onclick="(function(b){var l=document.querySelector('.nav-links');b.classList.toggle('open');l.classList.toggle('open');b.setAttribute('aria-expanded',b.classList.contains('open'));})(this)">
     <span></span><span></span><span></span>
@@ -565,8 +560,8 @@ footer .footer-logo {
   <div class="article-tag">✦ Croyances limitantes</div>
 
   <h1 class="article-title">
-    Pourquoi changer ses croyances<br>
-    <em>est plus efficace que changer ses habitudes</em>
+    Croyances ou habitudes :<br>
+    <em>pourquoi regarder d'abord une couche en dessous</em>
   </h1>
 
   <div class="article-meta">
@@ -594,11 +589,11 @@ footer .footer-logo {
   <h2>Pourquoi les habitudes seules ne suffisent presque jamais</h2>
 
   <p>
-    Il y a une industrie entière du développement personnel qui te vend l'idée que <strong>changer 1% par jour te transformera</strong>. C'est joli. C'est vrai à petite échelle. Mais ça oublie une donnée essentielle : <em>une habitude qui contredit une croyance profonde ne tient pas</em>. Ton système intérieur va tout faire pour te ramener à ce qui te semble familier, cohérent avec l'image que tu as de toi.
+    Il y a une industrie entière du développement personnel qui te vend l'idée que <strong>changer 1% par jour te transformera</strong>. C'est joli. Et ça peut aider, à petite échelle. Mais ça oublie une donnée essentielle : <em>une habitude qui contredit une croyance profonde ne tient pas</em>. Ton système intérieur va tout faire pour te ramener à ce qui te semble familier, cohérent avec l'image que tu as de toi.
   </p>
 
   <p>
-    Prends un exemple simple. Si tu crois, au fond, que <em>« l'argent est sale »</em> ou <em>« les gens riches ne sont pas honnêtes »</em>, tu peux appliquer toutes les techniques d'épargne du monde. Ton cerveau trouvera toujours une raison de dépenser, de saboter une opportunité, de repousser une conversation salariale. Parce que rester sans argent te maintient dans la version de toi que tu connais. C'est <em>ça</em>, la vraie fondation qu'il faut refaire.
+    Prends un exemple simple. Si tu crois, au fond, que <em>« l'argent est sale »</em> ou <em>« les gens riches ne sont pas honnêtes »</em>, tu peux appliquer toutes les techniques d'épargne du monde. Tu pourrais remarquer que des raisons de dépenser, de repousser une opportunité ou une conversation salariale reviennent souvent. Parce que rester sans argent te maintient dans la version de toi que tu connais. C'est <em>ça</em>, la vraie fondation qu'il faut refaire.
   </p>
 
   <blockquote>
@@ -632,7 +627,7 @@ footer .footer-logo {
   <h3>3. Le niveau de l'identité — où tout se joue vraiment</h3>
 
   <p>
-    C'est là que tout se joue. Au lieu de <em>« Je veux courir un marathon »</em> (résultat), au lieu de <em>« Je cours 4 fois par semaine »</em> (processus), on travaille sur <em>« Je deviens quelqu'un qui prend soin de son corps »</em>. Et là, quand une croyance change en toi (<em>« Je suis capable de tenir un engagement envers moi »</em>, <em>« Mon corps mérite de l'attention »</em>), l'habitude qui va avec devient <strong>naturelle</strong>. Elle ne demande plus d'arracher la volonté chaque matin.
+    C'est là que tout se joue. Au lieu de <em>« Je veux courir un marathon »</em> (résultat), au lieu de <em>« Je cours 4 fois par semaine »</em> (processus), on travaille sur <em>« Je deviens quelqu'un qui prend soin de son corps »</em>. Et là, quand une croyance change en toi (<em>« Je peux tenir un engagement envers moi, une fois aujourd'hui »</em>, <em>« Mon corps mérite de l'attention »</em>), l'habitude qui va avec peut devenir <strong>plus simple</strong>. Elle demande parfois moins d'effort chaque matin.
   </p>
 
   <div class="encadre">
@@ -650,7 +645,7 @@ footer .footer-logo {
   <h2>Ce qui se passe quand une croyance change vraiment</h2>
 
   <p>
-    Quand une croyance profonde bascule — pas intellectuellement, mais dans le corps, dans le ressenti — quelque chose de fascinant se produit. <strong>Les habitudes commencent à changer d'elles-mêmes</strong>. Sans forcing. Sans discipline extrême. Parce que ce que tu fais devient enfin cohérent avec ce que tu crois être.
+    Quand une croyance profonde bascule — pas intellectuellement, mais dans le corps, dans le ressenti — quelque chose de fascinant se produit. <strong>Certaines habitudes peuvent devenir moins coûteuses à tenir</strong>. Avec moins de forcing. Sans discipline extrême. Parce que ce que tu fais devient enfin cohérent avec ce que tu crois être.
   </p>
 
   <p>
@@ -662,17 +657,18 @@ footer .footer-logo {
   </p>
 
   <!-- CTA SECONDAIRE — [B] Guide gratuit -->
+  <!-- CTA SECONDAIRE — [C] Séance personnalisée -->
   <div style="background:linear-gradient(135deg,rgba(123,74,58,0.07),rgba(74,122,106,0.07));border:1px solid rgba(123,74,58,0.18);border-radius:18px;padding:28px 32px;margin:36px 0;text-align:center;backdrop-filter:blur(10px);position:relative;overflow:hidden;">
     <div style="position:absolute;top:0;left:50%;transform:translateX(-50%);width:140px;height:1.5px;background:linear-gradient(90deg,transparent,rgba(123,74,58,0.45),transparent);"></div>
-    <div style="font-size:1.5rem;margin-bottom:10px;">📖</div>
+    <div style="font-size:1.5rem;margin-bottom:10px;">✦</div>
     <p style="font-family:'Cormorant Garamond',serif;font-size:1.35rem;font-weight:400;color:var(--text-main);line-height:1.3;margin-bottom:8px;">
-      Tu veux commencer par le vrai niveau : <em style="font-style:italic;color:var(--brown)">l'identité, pas juste l'habitude ?</em>
+      Et si tu ouvrais un espace autour de ce que tu crois de toi <em style="color:#7B4A3A;">à ta fréquence, avec tes mots ?</em>
     </p>
     <p style="font-size:13.5px;color:var(--text-muted);line-height:1.65;margin-bottom:20px;">
-      Notre guide gratuit te donne les phrases à te répéter pour transformer les croyances qui te bloquent — pas en surface, mais en profondeur. Pour que les habitudes suivent naturellement, sans forcing.
+      Nos séances audio personnalisées sont créées spécialement pour toi — ton prénom, tes affirmations, tes mots. Conçues comme un espace d'écoute autour de tes croyances, à réécouter aussi souvent que tu le souhaites, sans forcing ni discipline extrême.
     </p>
-    <a href='acces-guide-gratuit.html' onmouseout='this.style.opacity=\'1'' onmouseover='this.style.opacity=\'0.88\'' style='display:inline-block;background:linear-gradient(135deg,var(--brown-dark),var(--brown),var(--brown-light));color:white;text-decoration:none;padding:12px 28px;border-radius:50px;font-size:13px;font-weight:500;letter-spacing:0.04em;box-shadow:0 4px 16px rgba(123,74,58,0.25);'>
-      ✦ &nbsp; Télécharger le guide gratuit
+    <a href="commander.html#step-1" style="display:inline-block;background:linear-gradient(135deg,var(--brown-dark),var(--brown),var(--brown-light));color:white;text-decoration:none;padding:12px 28px;border-radius:50px;font-size:13px;font-weight:500;letter-spacing:0.04em;box-shadow:0 4px 16px rgba(123,74,58,0.25);">
+      ✦ &nbsp; Créer ma séance personnalisée
     </a>
   </div>
 
@@ -680,19 +676,19 @@ footer .footer-logo {
   <h2>3 pratiques pour travailler au niveau des croyances</h2>
 
   <p>
-    Travailler au niveau des croyances demande de la patience et de la répétition. Voici trois pratiques concrètes qui marchent vraiment — testées, éprouvées, à mettre en place progressivement.
+    Travailler au niveau des croyances demande de la patience et de la répétition. Voici trois pratiques concrètes que beaucoup trouvent utiles — à explorer progressivement, à ton rythme.
   </p>
 
   <ol>
-    <li><strong>Formuler la nouvelle croyance en « Je deviens » plutôt qu'en « Je suis ».</strong> Pas <em>« Je suis discipliné »</em> (trop grand écart, ton cerveau rejette). Mais <em>« Je deviens quelqu'un qui tient ses engagements envers soi »</em>. Le pont s'installe, doucement, en toi.</li>
-    <li><strong>Poser des micro-actions qui prouvent la nouvelle croyance.</strong> Une action minuscule chaque jour, cohérente avec la nouvelle identité. Pas pour perdre 10 kilos — pour prouver à ton cerveau que <em>« oui, je suis quelqu'un qui prend soin de moi »</em>. Les vraies preuves valent mille discours.</li>
-    <li><strong>Répéter les affirmations en voix off au bon moment.</strong> Le matin, avant de dormir — quand l'esprit critique est en veille. C'est là que les nouvelles croyances s'inscrivent le plus vite. Répétition + émotion + régularité = transformation.</li>
+    <li><strong>Formuler la nouvelle croyance en « Je deviens » plutôt qu'en « Je suis ».</strong> Pas <em>« Je suis discipliné »</em> (l'écart peut sembler trop grand pour y croire). Mais <em>« Je deviens quelqu'un qui tient ses engagements envers soi »</em>. L'intention, ici, est de laisser un pont possible, doucement.</li>
+    <li><strong>Poser des micro-actions qui prouvent la nouvelle croyance.</strong> Une action minuscule chaque jour, cohérente avec la nouvelle identité. Pas pour perdre 10 kilos — pour te donner une preuve concrète que <em>« je peux prendre soin de moi, aujourd'hui »</em>. Les vraies preuves valent mille discours.</li>
+    <li><strong>Répéter les affirmations en voix off au bon moment.</strong> Le matin, ou avant de dormir — des moments souvent plus calmes. C'est là que beaucoup trouvent l'écoute la plus agréable. Répétition, émotion, régularité : les trois ingrédients de cette pratique.</li>
   </ol>
 
   <div class="encadre-yt">
     <div class="encadre-yt-icon">▶</div>
     <div class="encadre-yt-text">
-      Pour t'accompagner au quotidien à installer de nouvelles croyances (au niveau de l'identité, pas juste des habitudes), on partage des affirmations en voix off sur notre chaîne :
+      Pour t'accompagner au quotidien à explorer d'autres croyances possibles (du côté de l'identité, pas juste des habitudes), on partage des affirmations en voix off sur notre chaîne :
       <a href="https://www.youtube.com/@FREQUENCE.POSITIVE" target="_blank">@FREQUENCE.POSITIVE</a>
     </div>
   </div>
@@ -701,16 +697,16 @@ footer .footer-logo {
   <h2>Le paradoxe : moins d'effort, plus de transformation</h2>
 
   <p>
-    Si tu retiens une seule chose de cet article, retiens celle-ci. Travailler au niveau des croyances demande <strong>moins d'effort de volonté que travailler au niveau des habitudes</strong>. Parce que quand la croyance change, l'habitude s'installe presque toute seule. Alors qu'en attaquant par l'habitude, tu luttes contre toi-même en permanence.
+    Si tu retiens une seule chose de cet article, retiens celle-ci. Travailler au niveau des croyances demande <strong>moins d'effort de volonté que travailler au niveau des habitudes</strong>. Parce que quand la croyance bouge, l'habitude peut demander moins de lutte. Alors qu'en attaquant par l'habitude, tu luttes contre toi-même en permanence.
   </p>
 
   <p>
-    C'est cette économie invisible qu'on ne voit jamais dans les livres de développement personnel : <em>changer ce qu'on croit de soi rend le reste évident</em>. Ce n'est pas de la magie. C'est juste que ton système intérieur cesse de te freiner. Et quand il cesse de te freiner, tout devient plus fluide — au travail, dans les relations, avec ton corps, avec l'argent.
+    C'est cette économie invisible qu'on ne voit jamais dans les livres de développement personnel : <em>regarder ce qu'on croit de soi peut rendre le reste moins lourd</em>. Ce n'est pas de la magie. C'est juste que la lutte intérieure peut s'apaiser un peu. Et quand elle s'apaise, certaines choses peuvent sembler moins tendues — au travail, dans les relations, avec ton corps, avec l'argent.
   </p>
 
   <img class="article-img"
        src="https://images.unsplash.com/photo-1499209974431-9dddcece7f88?w=900&q=80"
-       alt="Personne qui écrit paisiblement dans un carnet — reprogrammation intérieure"
+       alt="Personne qui écrit paisiblement dans un carnet — moment d'écriture pour soi"
        loading="lazy">
 
   <div class="ornament">✦ · · ·</div>
@@ -719,7 +715,7 @@ footer .footer-logo {
   <h2>Pour aller plus loin</h2>
 
   <p>
-    Si tu n'arrives pas à tenir tes habitudes, ne te bats plus contre toi-même. Regarde une couche en dessous. Les habitudes qui tiennent ne dépendent pas de la volonté — elles dépendent de qui tu crois être. Change ça, et le reste suit avec une facilité qui étonne.
+    Si tu n'arrives pas à tenir tes habitudes, ne te bats plus contre toi-même. Regarde une couche en dessous. Les habitudes qui tiennent ne dépendent pas de la volonté — elles dépendent de qui tu crois être. Regarde ça de près, et le reste pourrait demander un peu moins de lutte.
   </p>
 
   <p>
@@ -727,52 +723,37 @@ footer .footer-logo {
   </p>
 
   <p>
-    Tu n'as pas besoin de plus de volonté. Tu as besoin de croire, doucement, à une nouvelle version de toi. Le reste vient tout seul.
+    Tu n'as pas besoin de plus de volonté. Tu peux commencer par regarder, doucement, ce que tu crois de toi. Le reste, tu l'explores à ton rythme.
   </p>
 
 </div>
 
 <!-- ══ CTA PRINCIPAL — [C] Séance personnalisée ══ -->
+
+
+<!-- ══ BLOC YOUTUBE ══ -->
+
+<!-- ══ CTA PRINCIPAL — [B] Guide gratuit ══ -->
 <div style="max-width:720px;margin:0 auto 40px;padding:0 24px;position:relative;z-index:1;">
   <div style="background:rgba(255,255,255,0.70);border:1px solid rgba(123,74,58,0.22);border-radius:20px;padding:36px 40px;backdrop-filter:blur(10px);box-shadow:0 4px 32px rgba(123,74,58,0.07);position:relative;overflow:hidden;">
     <div style="position:absolute;top:0;left:50%;transform:translateX(-50%);width:120px;height:1.5px;background:linear-gradient(90deg,transparent,rgba(123,74,58,0.5),transparent);"></div>
-    <div style="font-size:11px;font-weight:500;letter-spacing:0.14em;text-transform:uppercase;color:#7B4A3A;margin-bottom:14px;">✦ Séance personnalisée</div>
-    <p style="font-family:'Cormorant Garamond',serif;font-size:clamp(1.25rem,3vw,1.7rem);font-weight:400;line-height:1.3;color:#3A2820;margin-bottom:14px;">
-      Et si tu installais une nouvelle croyance sur toi <em style="color:#7B4A3A;">à ta fréquence, avec tes mots ?</em>
+    <div style="font-size:11px;font-weight:500;letter-spacing:0.14em;text-transform:uppercase;color:#7B4A3A;margin-bottom:14px;text-align:center;">📖 Guide gratuit</div>
+    <p style="font-family:'Cormorant Garamond',serif;font-size:clamp(1.25rem,3vw,1.7rem);font-weight:400;line-height:1.3;color:#3A2820;margin-bottom:14px;text-align:center;">
+      Tu veux commencer par le vrai niveau : <em style="font-style:italic;color:var(--brown)">l'identité, pas juste l'habitude ?</em>
     </p>
-    <p style="font-size:15px;line-height:1.75;color:#6A5A52;font-weight:300;margin-bottom:24px;">
-      Nos séances audio personnalisées sont créées spécialement pour toi — ton prénom, tes affirmations, ta nouvelle identité intérieure. Conçues pour transformer les croyances en profondeur, pour que les habitudes s'installent naturellement, sans forcing ni discipline extrême.
+    <p style="font-size:15px;line-height:1.75;color:#6A5A52;font-weight:300;margin-bottom:24px;text-align:center;">
+      Notre guide gratuit te propose des phrases à explorer pour regarder autrement les croyances qui te freinent. Un point de départ, à ton rythme.
     </p>
     <div style="text-align:center;">
-      <a href='commander.html#step-1' onmouseout='this.style.background=\'#7B4A3A\'' onmouseover='this.style.background=\'#5A3028\'' style='display:inline-flex;align-items:center;gap:10px;background:#7B4A3A;color:white;text-decoration:none;padding:14px 30px;border-radius:50px;font-size:14px;font-weight:500;letter-spacing:0.03em;'>
-        ✦ &nbsp; Découvrir la séance personnalisée
+      <a href="acces-guide-gratuit.html" style="display:inline-flex;align-items:center;gap:10px;background:#7B4A3A;color:white;text-decoration:none;padding:14px 30px;border-radius:50px;font-size:14px;font-weight:500;letter-spacing:0.03em;">
+        ✦ &nbsp; Recevoir mon guide gratuit
       </a>
-      <p style="font-size:12px;color:#9A8A80;margin-top:14px;">Sur mesure · Voix off + musique · Livré sous 7 jours</p>
+      <p style="font-size:12px;color:#9A8A80;margin-top:14px;">13 pages · Gratuit · Sans engagement</p>
     </div>
   </div>
 </div>
 
-<!-- ══ CARTE PROGRAMME CONTEXTUELLE ══ -->
-<div class="prog-card-wrap">
-  <div class="prog-card">
-    <div class="prog-card-icon">🌿</div>
-    <div class="prog-card-body">
-      <div class="prog-card-label">✦ Le programme Fréquence Positive</div>
-      <div class="prog-card-title">Tu veux transformer tes croyances profondes, pas juste tes habitudes ?</div>
-      <p class="prog-card-text">
-        Le programme Fréquence Positive t'accompagne pour travailler au niveau de l'identité — là où les vraies transformations s'installent durablement, sans effort forcé.
-      </p>
-    </div>
-    <a class='prog-card-btn' href='index.html'>✦ Découvrir</a>
-  </div>
-</div>
-
-<!-- ══ BLOC YOUTUBE ══ -->
 <div class="yt-bloc">
-  <div class="yt-bloc-title">✦ La chaîne YouTube de Fréquence Positive</div>
-  <p style="text-align:center;font-size:14px;color:var(--text-muted);line-height:1.7;margin:-16px 0 28px;font-weight:300;">
-    Des affirmations en voix off pour installer de nouvelles croyances au niveau de l'identité, jour après jour.
-  </p>
   <div class="yt-inner">
     <div class="yt-card">
       <div class="yt-logo">
@@ -781,8 +762,8 @@ footer .footer-logo {
           <polygon points="36,18 36,45 62,31.5" fill="#FDF6EC"/>
         </svg>
       </div>
-      <div class="yt-name">Fréquence Positive</div>
-      <p class="yt-desc">Affirmations positives en voix off + musique — pour reprogrammer ton mental au quotidien.</p>
+      <div class="yt-name">La chaîne YouTube de Fréquence Positive</div>
+      <p class="yt-desc">Affirmations positives en voix off + musique — pour t'accompagner dans ton dialogue intérieur au quotidien.</p>
       <a href="https://www.youtube.com/@FREQUENCE.POSITIVE" target="_blank" class="yt-btn">▶ Voir la chaîne</a>
     </div>
   </div>
@@ -802,13 +783,16 @@ footer .footer-logo {
 
 <!-- ══ FOOTER ══ -->
 <footer>
-  <span class="footer-logo">✦ Fréquence Positive</span>
-  <p>© 2026 Fréquence Positive —
-    <a href='mentions-legales.html'>Mentions légales</a> ·
-    <a href='confidentialite.html'>Confidentialité</a> ·
-    <a href='blog.html'>Blog</a>
-  </p>
-  <p style="margin-top:6px">Avec ✦ par Max &amp; Sandra</p>
+  <div>© 2026 Fréquence Positive — Tous droits réservés</div>
+  <div class="footer-links">
+    <a href="commander.html#step-1">Commander</a>
+    <a href="blog.html">Blog</a>
+    <a href="faq.html">FAQ</a>
+    <a href="mentions-legales.html">Mentions légales</a>
+    <a href="cgv.html">CGV</a>
+    <a href="confidentialite.html">Confidentialité</a>
+    <a href="mailto:hello.frequencepositive@outlook.com">Contact</a>
+  </div>
 </footer>
 
 <!-- ══ CANVAS VAGUES ══ -->
