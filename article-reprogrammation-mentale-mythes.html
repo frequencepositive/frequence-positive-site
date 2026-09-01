@@ -146,16 +146,72 @@ nav {
 .article-nav-title { font-family: 'Cormorant Garamond', serif; font-size: 1.05rem; color: var(--text-main); line-height: 1.3; }
 .article-nav .next { text-align: right; }
 
-footer { position: relative; z-index: 1; text-align: center; padding: 40px 24px 48px; border-top: 1px solid rgba(123,74,58,0.1); font-size: 11px; color: var(--text-light); letter-spacing: 0.04em; }
-footer a { color: inherit; text-decoration: underline; opacity: 0.7; }
-footer .footer-logo { font-family: 'Cormorant Garamond', serif; font-size: 1.1rem; color: var(--brown); letter-spacing: 0.06em; margin-bottom: 12px; display: block; }
-
+footer {
+  position: relative; z-index: 1;
+  background: var(--brown-ultra);
+  padding: 36px 48px;
+  display: flex; align-items: center; justify-content: space-between;
+  flex-wrap: wrap; gap: 16px;
+  font-size: 12px; color: rgba(255,255,255,0.4);
+}
+footer a { color: rgba(255,255,255,0.55); text-decoration: none; transition: color 0.2s; }
+footer a:hover { color: rgba(255,255,255,0.9); }
+.footer-links { display: flex; gap: 24px; flex-wrap: wrap; }
+@media (max-width: 700px) {
+  footer { flex-direction: column; align-items: center; text-align: center; padding: 32px 24px; }
+}
 @keyframes fadeDown { from { opacity: 0; transform: translateY(-16px); } to { opacity: 1; transform: translateY(0); } }
 @keyframes fadeUp { from { opacity: 0; transform: translateY(16px); } to { opacity: 1; transform: translateY(0); } }
 
+/* ── BURGER MENU ── */
+.nav-burger {
+  display: none;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 8px;
+  flex-direction: column;
+  justify-content: center;
+  gap: 5px;
+  width: 40px;
+  height: 40px;
+  z-index: 110;
+}
+.nav-burger span {
+  display: block;
+  width: 24px;
+  height: 2px;
+  background: var(--brown);
+  border-radius: 2px;
+  transition: transform 0.25s ease, opacity 0.25s ease;
+}
+.nav-burger.open span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
+.nav-burger.open span:nth-child(2) { opacity: 0; }
+.nav-burger.open span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
+
+@media (max-width: 768px) {
+  nav { padding: 14px 20px; }
+  .nav-burger { display: flex; }
+  .nav-links {
+    display: none;
+    position: fixed;
+    top: 64px;
+    left: 0;
+    right: 0;
+    background: rgba(200,221,208,0.98);
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 24px 28px;
+    gap: 22px;
+    box-shadow: 0 6px 24px rgba(0,0,0,0.1);
+    backdrop-filter: blur(8px);
+  }
+  .nav-links.open { display: flex; }
+  .nav-links a { font-size: 16px; }
+  .nav-links .nav-cta { margin-top: 8px; align-self: flex-start; }
+}
 @media (max-width: 640px) {
   nav { padding: 14px 20px; }
-  .nav-links { display: none; }
   .article-intro-card { padding: 28px 22px; }
   .article-body h2 { margin-top: 40px; }
   .cta-card { padding: 36px 24px; }
@@ -171,14 +227,16 @@ footer .footer-logo { font-family: 'Cormorant Garamond', serif; font-size: 1.1re
 <canvas id="waveCanvas"></canvas>
 
 <nav>
-  <a href="index.html" class="nav-logo">✦ Fréquence Positive</a>
+  <a class='nav-logo' href='/'>✦ Fréquence Positive</a>
   <div class="nav-links">
-    <a href="index.html#ecouter">Écouter</a>
-    <a href="index.html#themes">Thèmes</a>
-    <a href="index.html#avis">Avis</a>
-    <a href="blog.html" class="active">Blog</a>
-    <a href="commander.html#step-1" class="nav-cta">✦ Ma séance</a>
+    <a href='/'>Accueil</a>
+    <a href='/blog' class="active">Blog</a>
+    <a href='/#programme'>Le Programme</a>
+    <a class='nav-cta' href='/commander'>✦ Créer ma séance</a>
   </div>
+  <button class="nav-burger" aria-label="Menu" aria-expanded="false" onclick="(function(b){var l=document.querySelector('.nav-links');b.classList.toggle('open');l.classList.toggle('open');b.setAttribute('aria-expanded',b.classList.contains('open'));})(this)">
+    <span></span><span></span><span></span>
+  </button>
 </nav>
 
 <div class="article-hero">
@@ -308,7 +366,7 @@ footer .footer-logo { font-family: 'Cormorant Garamond', serif; font-size: 1.1re
     <p class="cta-text">
       Une séance audio créée avec ton prénom et des affirmations pensées pour toi, pour t'accompagner dans la durée — sans promesse de délai, avec constance.
     </p>
-    <a href="commander.html#step-1" class="cta-btn">✦ Créer ma séance personnalisée</a>
+    <a href="/commander#step-1" class="cta-btn">✦ Créer ma séance personnalisée</a>
     <p style="font-size:12px;color:#9A8A80;margin-top:14px;">Personnalisée · Livrée par e-mail</p>
   </div>
 </div>
@@ -323,7 +381,7 @@ footer .footer-logo { font-family: 'Cormorant Garamond', serif; font-size: 1.1re
         Le programme Fréquence Positive t'accompagne pas à pas pour transformer ce genre de prise de conscience en vrai changement durable.
       </p>
     </div>
-    <a href="index.html" class="prog-card-btn">✦ Découvrir</a>
+    <a href="/#programme" class="prog-card-btn">✦ Découvrir</a>
   </div>
 </div>
 
@@ -348,24 +406,27 @@ footer .footer-logo { font-family: 'Cormorant Garamond', serif; font-size: 1.1re
 </div>
 
 <div class="article-nav">
-  <a href="article-phrase-professeur-vie.html" class="prev">
+  <a href="/article-phrase-professeur-vie" class="prev">
     <div class="article-nav-label">← Article précédent</div>
     <div class="article-nav-title">Comment une seule phrase d'un professeur peut conditionner toute une vie</div>
   </a>
-  <a href="blog.html" class="next">
+  <a href="/blog" class="next">
     <div class="article-nav-label">Article suivant →</div>
     <div class="article-nav-title">Retour au blog</div>
   </a>
 </div>
 
 <footer>
-  <span class="footer-logo">✦ Fréquence Positive</span>
-  <p>© 2026 Fréquence Positive —
-    <a href="mentions-legales.html">Mentions légales</a> ·
-    <a href="confidentialite.html">Confidentialité</a> ·
-    <a href="blog.html">Blog</a>
-  </p>
-  <p style="margin-top:6px">Avec ✦ par Max &amp; Sandra</p>
+  <div>© 2026 Fréquence Positive — Tous droits réservés</div>
+  <div class="footer-links">
+    <a href='/commander#step-1'>Commander</a>
+    <a href='/blog'>Blog</a>
+    <a href='/faq'>FAQ</a>
+    <a href='/mentions-legales'>Mentions légales</a>
+    <a href='/cgv'>CGV</a>
+    <a href='/confidentialite'>Confidentialité</a>
+    <a href="mailto:hello.frequencepositive@outlook.com">Contact</a>
+  </div>
 </footer>
 
 <script>
