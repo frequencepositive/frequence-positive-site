@@ -783,12 +783,8 @@
     <div id="gift-fields" class="field" style="display:none;background:rgba(123,74,58,0.05);border:1px solid rgba(123,74,58,0.18);border-radius:14px;padding:22px 22px 18px;margin-top:-8px;">
       <div style="font-size:12px;letter-spacing:0.08em;text-transform:uppercase;color:var(--brown);font-weight:500;margin-bottom:14px;">🎁 Détails du cadeau</div>
 
-      <label for="email_destinataire">Email du destinataire <span style="color:#c4674a;">*</span></label>
-      <p style="font-size:13px;color:var(--text-muted);margin:-4px 0 10px;line-height:1.55;">La séance sera envoyée directement à cette adresse, avec votre petit mot.</p>
-      <input type="email" class="text-input" id="email_destinataire" placeholder="prenom@exemple.com" oninput="state.email_destinataire = this.value">
-
-      <label for="message_cadeau" style="margin-top:18px;display:block;">Un petit mot à joindre (optionnel)</label>
-      <p style="font-size:13px;color:var(--text-muted);margin:-4px 0 10px;line-height:1.55;">Ce mot sera inséré dans le mail de livraison envoyé à votre proche.</p>
+      <label for="message_cadeau" style="margin-top:0;display:block;">Un petit mot à joindre (optionnel)</label>
+      <p style="font-size:13px;color:var(--text-muted);margin:-4px 0 10px;line-height:1.55;">Vous recevrez la séance sur votre propre email, avec ce petit mot inclus — pratique pour la retransmettre à votre proche au moment que vous choisirez.</p>
       <textarea class="text-input" id="message_cadeau" rows="4" maxlength="800" placeholder="Ex : Joyeux anniversaire ma chérie ✦ J'espère que cette séance t'apportera douceur, confiance et lumière pour cette nouvelle année. Je t'aime fort." oninput="state.message_cadeau = this.value"></textarea>
 
       <!-- Emplacement où le champ "Prénom de l'auditeur" est déplacé quand c'est un cadeau -->
@@ -1225,7 +1221,7 @@
 <script>
 const state = {
   pour_qui: '', prenom_auditeur: '', genre: '',
-  email_destinataire: '', message_cadeau: '',
+  message_cadeau: '',
   guide: '', offre: '', offre_label: '', prix_base: 0,
   affirmations: '20 Affirmations', sub_besoin: '',
   domaine: '', message_libre: '',
@@ -1292,11 +1288,8 @@ function selectPourQui(el, value, isGift) {
   }
 
   if (!isGift) {
-    state.email_destinataire = '';
     state.message_cadeau = '';
-    const em = document.getElementById('email_destinataire');
     const mc = document.getElementById('message_cadeau');
-    if (em) em.value = '';
     if (mc) mc.value = '';
   }
 }
@@ -1420,8 +1413,6 @@ function validateStep(n) {
   const alerts = {
     1: [
       { check: () => !state.pour_qui, msg: "Merci d'indiquer si la séance est pour vous ou pour offrir." },
-      { check: () => state.pour_qui.includes('Cadeau') && !document.getElementById('email_destinataire').value.trim(), msg: "Merci d'indiquer l'email du destinataire à qui sera envoyée la séance." },
-      { check: () => state.pour_qui.includes('Cadeau') && !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(document.getElementById('email_destinataire').value.trim()), msg: "L'email du destinataire ne semble pas valide." },
       { check: () => !document.getElementById('prenom_auditeur').value.trim(), msg: "Merci d'indiquer le prénom de l'auditeur." },
       { check: () => !state.genre, msg: "Merci de choisir le genre (féminin ou masculin)." }
     ],
@@ -1597,7 +1588,6 @@ async function submitForm() {
           pour_qui: state.pour_qui || '—',
           prenom_auditeur: document.getElementById('prenom_auditeur').value || '—',
           genre: state.genre || '—',
-          email_destinataire: (document.getElementById('email_destinataire') && document.getElementById('email_destinataire').value) || '—',
           message_cadeau: (document.getElementById('message_cadeau') && document.getElementById('message_cadeau').value) || '—',
           guide: state.guide || '—',
           offre: state.offre || '—',
