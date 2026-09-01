@@ -13,7 +13,7 @@ exports.handler = async (event) => {
 
     // 1. Créer la Stripe Checkout Session
     const session = await stripe.checkout.sessions.create({
-      payment_method_types: ['card'],
+      payment_method_types: commande && commande.offre === 'Le programme trois séances' ? ['card', 'klarna'] : ['card'],
       mode: 'payment',
       customer_email: email,
       line_items: [
