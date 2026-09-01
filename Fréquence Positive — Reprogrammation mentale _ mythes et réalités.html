@@ -1,0 +1,462 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-B9Z4S5HD8J"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-B9Z4S5HD8J');
+</script>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Fréquence Positive — Reprogrammation mentale : mythes et réalités</title>
+<meta name="description" content="21 jours pour changer un schéma de pensée ? Ce que la neuroplasticité dit vraiment, ce que le marketing du développement personnel exagère, et ce qui fonctionne réellement.">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400;1,500&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+
+<style>
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+:root {
+  --green-fog: #C8DDD0;
+  --green-mid: #A8C4B8;
+  --green-deep: #7BA898;
+  --green-dark: #4A7A6A;
+  --green-bg: #E8F2ED;
+  --green-bg2: #D4E8DF;
+  --brown: #7B4A3A;
+  --brown-light: #A06B58;
+  --brown-dark: #5A3028;
+  --brown-ultra: #3D1F16;
+  --text-main: #3A2820;
+  --text-muted: #6A5A52;
+  --text-light: #9A8A80;
+  --card-bg: rgba(255,255,255,0.65);
+  --card-border: rgba(123,74,58,0.18);
+}
+
+html { scroll-behavior: smooth; }
+
+body {
+  font-family: 'DM Sans', system-ui, sans-serif;
+  background: var(--green-bg);
+  color: var(--text-main);
+  overflow-x: hidden;
+}
+
+#waveCanvas { position: fixed; inset: 0; width: 100%; height: 100%; pointer-events: none; z-index: 0; opacity: 0.3; }
+
+nav {
+  position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+  padding: 18px 48px; display: flex; align-items: center; justify-content: space-between;
+  background: rgba(200,221,208,0.88); backdrop-filter: blur(12px);
+  border-bottom: 1px solid rgba(123,74,58,0.12);
+}
+.nav-logo { font-family: 'Cormorant Garamond', serif; font-size: 1.15rem; font-weight: 500; color: var(--brown); letter-spacing: 0.06em; text-decoration: none; display: flex; align-items: center; gap: 10px; }
+.nav-links { display: flex; align-items: center; gap: 32px; }
+.nav-links a { color: var(--text-muted); text-decoration: none; font-size: 13px; font-weight: 400; letter-spacing: 0.03em; transition: color 0.2s; }
+.nav-links a:hover { color: var(--brown); }
+.nav-cta { background: var(--brown) !important; color: white !important; padding: 10px 24px !important; border-radius: 50px !important; font-weight: 500 !important; transition: background 0.2s !important; }
+.nav-cta:hover { background: var(--brown-dark) !important; }
+
+.article-hero { position: relative; z-index: 1; padding: 140px 24px 64px; text-align: center; max-width: 780px; margin: 0 auto; }
+.article-tag { display: inline-flex; align-items: center; gap: 8px; background: rgba(123,74,58,0.1); border: 1px solid rgba(123,74,58,0.22); border-radius: 50px; padding: 6px 18px; font-size: 11px; font-weight: 500; letter-spacing: 0.12em; text-transform: uppercase; color: var(--brown); margin-bottom: 28px; animation: fadeDown 0.7s ease both; }
+.article-title { font-family: 'Cormorant Garamond', serif; font-size: clamp(2rem, 5.5vw, 3.6rem); font-weight: 400; line-height: 1.18; color: var(--text-main); margin-bottom: 22px; animation: fadeDown 0.8s 0.08s ease both; }
+.article-title em { font-style: italic; color: var(--brown); }
+.article-meta { display: flex; align-items: center; justify-content: center; gap: 20px; font-size: 12px; color: var(--text-light); letter-spacing: 0.05em; margin-bottom: 48px; animation: fadeDown 0.8s 0.15s ease both; }
+.article-meta span { display: flex; align-items: center; gap: 6px; }
+.meta-divider { width: 3px; height: 3px; border-radius: 50%; background: var(--text-light); }
+
+.article-intro-card { background: var(--card-bg); border: 1px solid var(--card-border); border-radius: 20px; padding: 36px 40px; text-align: left; backdrop-filter: blur(10px); box-shadow: 0 4px 32px rgba(123,74,58,0.06); animation: fadeUp 0.9s 0.2s ease both; position: relative; overflow: hidden; }
+.article-intro-card::before { content: ''; position: absolute; top: 0; left: 50%; transform: translateX(-50%); width: 160px; height: 1.5px; background: linear-gradient(90deg, transparent, var(--brown-light), transparent); }
+.article-intro-card p { font-size: 16.5px; line-height: 1.85; color: var(--text-muted); font-weight: 300; }
+.article-intro-card p strong { color: var(--brown-light); font-weight: 500; }
+
+.ornament { text-align: center; color: var(--brown-light); font-size: 1.1rem; letter-spacing: 0.4em; opacity: 0.5; margin: 48px 0; }
+
+.article-body { position: relative; z-index: 1; max-width: 720px; margin: 0 auto; padding: 0 24px 80px; }
+.article-body p { font-size: 16px; line-height: 1.9; color: var(--text-muted); margin-bottom: 22px; font-weight: 300; }
+.article-body p strong { color: var(--text-main); font-weight: 500; }
+.article-body p em { font-style: italic; color: var(--brown-light); }
+
+.article-body h2 { font-family: 'Cormorant Garamond', serif; font-size: clamp(1.5rem, 3.5vw, 2.1rem); font-weight: 500; color: var(--text-main); margin: 56px 0 18px; line-height: 1.25; position: relative; padding-left: 20px; }
+.article-body h2::before { content: ''; position: absolute; left: 0; top: 8px; width: 3px; height: calc(100% - 8px); background: linear-gradient(to bottom, var(--brown), var(--brown-light)); border-radius: 2px; }
+.article-body h3 { font-family: 'Cormorant Garamond', serif; font-size: 1.25rem; font-weight: 500; color: var(--brown); margin: 36px 0 12px; letter-spacing: 0.02em; }
+
+.article-body ul, .article-body ol { margin: 0 0 22px 0; padding-left: 0; list-style: none; }
+.article-body ul li, .article-body ol li { font-size: 15.5px; line-height: 1.8; color: var(--text-muted); margin-bottom: 10px; padding-left: 26px; position: relative; }
+.article-body ul li::before { content: '✦'; position: absolute; left: 0; color: var(--brown-light); font-size: 11px; top: 4px; }
+.article-body ol { counter-reset: ol-counter; }
+.article-body ol li::before { content: counter(ol-counter); counter-increment: ol-counter; position: absolute; left: 0; width: 18px; height: 18px; background: var(--brown); color: white; border-radius: 50%; font-size: 10px; font-weight: 600; display: flex; align-items: center; justify-content: center; top: 3px; }
+
+.article-body blockquote { background: rgba(123,74,58,0.06); border-left: 3px solid var(--brown); border-radius: 0 12px 12px 0; padding: 22px 28px; margin: 32px 0; font-family: 'Cormorant Garamond', serif; font-size: 1.25rem; font-style: italic; color: var(--brown-dark); line-height: 1.65; }
+
+.encadre { background: var(--card-bg); border: 1px solid var(--card-border); border-radius: 16px; padding: 28px 32px; margin: 36px 0; backdrop-filter: blur(8px); position: relative; }
+.encadre-label { position: absolute; top: -12px; left: 24px; background: var(--brown); color: white; font-size: 10px; font-weight: 600; letter-spacing: 0.12em; text-transform: uppercase; padding: 4px 14px; border-radius: 50px; }
+.encadre p { margin-bottom: 10px !important; }
+.encadre p:last-child { margin-bottom: 0 !important; }
+
+.article-cta { position: relative; z-index: 1; max-width: 720px; margin: 0 auto 80px; padding: 0 24px; }
+.cta-card { background: linear-gradient(135deg, rgba(123,74,58,0.08), rgba(74,122,106,0.08)); border: 1px solid var(--card-border); border-radius: 24px; padding: 48px 44px; text-align: center; position: relative; overflow: hidden; backdrop-filter: blur(10px); }
+.cta-card::before { content: ''; position: absolute; top: 0; left: 50%; transform: translateX(-50%); width: 200px; height: 1.5px; background: linear-gradient(90deg, transparent, var(--brown-light), transparent); }
+.cta-icon { font-size: 2.2rem; margin-bottom: 16px; }
+.cta-title { font-family: 'Cormorant Garamond', serif; font-size: 1.9rem; font-weight: 400; color: var(--text-main); margin-bottom: 12px; line-height: 1.25; }
+.cta-title em { font-style: italic; color: var(--brown); }
+.cta-text { font-size: 15px; color: var(--text-muted); line-height: 1.7; margin-bottom: 32px; max-width: 480px; margin-left: auto; margin-right: auto; }
+.cta-btn { display: inline-block; background: linear-gradient(135deg, var(--brown-dark), var(--brown), var(--brown-light)); color: white; text-decoration: none; padding: 16px 40px; border-radius: 50px; font-size: 15px; font-weight: 500; letter-spacing: 0.04em; box-shadow: 0 4px 20px rgba(123,74,58,0.3); transition: opacity 0.2s, transform 0.15s, box-shadow 0.2s; }
+.cta-btn:hover { opacity: 0.92; transform: translateY(-2px); box-shadow: 0 6px 28px rgba(123,74,58,0.38); }
+
+.yt-bloc { position: relative; z-index: 1; max-width: 720px; margin: 0 auto 48px; padding: 0 24px; }
+.yt-inner { background: var(--card-bg); border: 1px solid var(--card-border); border-radius: 20px; padding: 36px 40px; backdrop-filter: blur(10px); display: grid; grid-template-columns: 1fr 1fr; gap: 24px; }
+.yt-inner.single { grid-template-columns: 1fr; max-width: 420px; margin: 0 auto; }
+.yt-bloc-title { font-family: 'Cormorant Garamond', serif; font-size: 1.1rem; font-weight: 500; color: var(--text-main); text-align: center; margin-bottom: 28px; letter-spacing: 0.04em; }
+.yt-card { background: rgba(255,255,255,0.5); border: 1px solid rgba(123,74,58,0.12); border-radius: 14px; padding: 22px 24px; text-align: center; transition: border-color 0.2s, transform 0.15s; }
+.yt-card:hover { border-color: rgba(123,74,58,0.3); transform: translateY(-2px); }
+.yt-logo { margin-bottom: 12px; }
+.yt-logo svg { width: 52px; height: 36px; }
+.yt-name { font-family: 'Cormorant Garamond', serif; font-size: 1.05rem; font-weight: 500; color: var(--text-main); margin-bottom: 6px; }
+.yt-desc { font-size: 12px; color: var(--text-muted); line-height: 1.6; margin-bottom: 16px; }
+.yt-btn { display: inline-block; background: var(--brown); color: white; text-decoration: none; padding: 9px 22px; border-radius: 50px; font-size: 12px; font-weight: 500; letter-spacing: 0.04em; transition: background 0.2s, transform 0.15s; }
+.yt-btn:hover { background: var(--brown-dark); transform: translateY(-1px); }
+
+.prog-card-wrap { position: relative; z-index: 1; max-width: 720px; margin: 0 auto 40px; padding: 0 24px; }
+.prog-card { background: linear-gradient(135deg, rgba(74,122,106,0.10), rgba(123,74,58,0.08)); border: 1px solid rgba(74,122,106,0.25); border-radius: 20px; padding: 32px 36px; display: flex; align-items: center; gap: 28px; backdrop-filter: blur(10px); }
+.prog-card-icon { font-size: 2.4rem; flex-shrink: 0; }
+.prog-card-body { flex: 1; }
+.prog-card-label { font-size: 10px; letter-spacing: 0.14em; text-transform: uppercase; color: var(--green-dark); font-weight: 600; margin-bottom: 6px; }
+.prog-card-title { font-family: 'Cormorant Garamond', serif; font-size: 1.3rem; font-weight: 500; color: var(--text-main); margin-bottom: 6px; line-height: 1.3; }
+.prog-card-text { font-size: 13px; color: var(--text-muted); line-height: 1.6; }
+.prog-card-btn { display: inline-block; background: linear-gradient(135deg, var(--green-dark), var(--green-deep)); color: white; text-decoration: none; padding: 12px 28px; border-radius: 50px; font-size: 13px; font-weight: 500; letter-spacing: 0.03em; white-space: nowrap; flex-shrink: 0; transition: opacity 0.2s, transform 0.15s; box-shadow: 0 3px 14px rgba(74,122,106,0.28); }
+.prog-card-btn:hover { opacity: 0.9; transform: translateY(-1px); }
+@media (max-width: 580px) { .prog-card { flex-direction: column; text-align: center; } .yt-inner { grid-template-columns: 1fr; } }
+
+.encadre-yt { background: rgba(123,74,58,0.05); border: 1px solid rgba(123,74,58,0.16); border-left: 3px solid var(--brown-light); border-radius: 0 12px 12px 0; padding: 18px 24px; margin: 32px 0; display: flex; align-items: center; gap: 14px; }
+.encadre-yt-icon { font-size: 1.4rem; flex-shrink: 0; }
+.encadre-yt-text { font-size: 14px; color: var(--text-muted); line-height: 1.6; }
+.encadre-yt-text a { color: var(--brown); font-weight: 500; text-decoration: none; }
+.encadre-yt-text a:hover { text-decoration: underline; }
+
+.article-nav { position: relative; z-index: 1; max-width: 720px; margin: 0 auto 80px; padding: 0 24px; display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+.article-nav a { background: var(--card-bg); border: 1px solid var(--card-border); border-radius: 14px; padding: 20px 24px; text-decoration: none; transition: border-color 0.2s, transform 0.15s; backdrop-filter: blur(8px); }
+.article-nav a:hover { border-color: rgba(123,74,58,0.35); transform: translateY(-2px); }
+.article-nav-label { font-size: 10px; letter-spacing: 0.12em; text-transform: uppercase; color: var(--text-light); margin-bottom: 6px; }
+.article-nav-title { font-family: 'Cormorant Garamond', serif; font-size: 1.05rem; color: var(--text-main); line-height: 1.3; }
+.article-nav .next { text-align: right; }
+
+footer { position: relative; z-index: 1; text-align: center; padding: 40px 24px 48px; border-top: 1px solid rgba(123,74,58,0.1); font-size: 11px; color: var(--text-light); letter-spacing: 0.04em; }
+footer a { color: inherit; text-decoration: underline; opacity: 0.7; }
+footer .footer-logo { font-family: 'Cormorant Garamond', serif; font-size: 1.1rem; color: var(--brown); letter-spacing: 0.06em; margin-bottom: 12px; display: block; }
+
+@keyframes fadeDown { from { opacity: 0; transform: translateY(-16px); } to { opacity: 1; transform: translateY(0); } }
+@keyframes fadeUp { from { opacity: 0; transform: translateY(16px); } to { opacity: 1; transform: translateY(0); } }
+
+/* ── BURGER MENU ── */
+.nav-burger {
+  display: none;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 8px;
+  flex-direction: column;
+  justify-content: center;
+  gap: 5px;
+  width: 40px;
+  height: 40px;
+  z-index: 110;
+}
+.nav-burger span {
+  display: block;
+  width: 24px;
+  height: 2px;
+  background: var(--brown);
+  border-radius: 2px;
+  transition: transform 0.25s ease, opacity 0.25s ease;
+}
+.nav-burger.open span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
+.nav-burger.open span:nth-child(2) { opacity: 0; }
+.nav-burger.open span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
+
+@media (max-width: 768px) {
+  nav { padding: 14px 20px; }
+  .nav-burger { display: flex; }
+  .nav-links {
+    display: none;
+    position: fixed;
+    top: 64px;
+    left: 0;
+    right: 0;
+    background: rgba(200,221,208,0.98);
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 24px 28px;
+    gap: 22px;
+    box-shadow: 0 6px 24px rgba(0,0,0,0.1);
+    backdrop-filter: blur(8px);
+  }
+  .nav-links.open { display: flex; }
+  .nav-links a { font-size: 16px; }
+  .nav-links .nav-cta { margin-top: 8px; align-self: flex-start; }
+}
+@media (max-width: 640px) {
+  nav { padding: 14px 20px; }
+  .article-intro-card { padding: 28px 22px; }
+  .article-body h2 { margin-top: 40px; }
+  .cta-card { padding: 36px 24px; }
+  .article-nav { grid-template-columns: 1fr; }
+}
+</style>
+<link rel="icon" type="image/x-icon" href="/favicon.ico">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32.png">
+<link rel="apple-touch-icon" href="/favicon-180.png">
+</head>
+<body>
+
+<canvas id="waveCanvas"></canvas>
+
+<nav>
+  <a class="nav-logo" href="/">
+    <span style="font-family:'Cormorant Garamond',serif;font-size:1.15rem;font-weight:500;">✦</span>
+    Fréquence Positive
+  </a>
+  <div class="nav-links">
+    <a href="/#ecouter">Écouter</a>
+    <a href="/#themes">Thèmes</a>
+    <a href="/#avis-clients">Avis</a>
+    <a href="/blog" class="active">Blog</a>
+    <a class="nav-cta" href="/commander#step-1">✦ Ma séance</a>
+  </div>
+  <button class="nav-burger" aria-label="Menu" aria-expanded="false" onclick="(function(b){var l=document.querySelector('.nav-links');b.classList.toggle('open');l.classList.toggle('open');b.setAttribute('aria-expanded',b.classList.contains('open'));})(this)">
+    <span></span><span></span><span></span>
+  </button>
+</nav>
+
+<div class="article-hero">
+
+  <div class="article-tag">✦ Croyances limitantes</div>
+
+  <h1 class="article-title">
+    Reprogrammation mentale :<br>
+    <em>mythes et réalités</em>
+  </h1>
+
+  <div class="article-meta">
+    <span>✦ Par Max &amp; Sandra</span>
+    <div class="meta-divider"></div>
+    <span>25 septembre 2026</span>
+    <div class="meta-divider"></div>
+    <span>⏱ 9 min</span>
+  </div>
+
+  <div class="article-intro-card">
+    <p>
+      « Change de croyance en 21 jours. » « Recâble ton cerveau en une semaine. » Le développement personnel regorge de promesses chiffrées sur la rapidité avec laquelle on peut changer sa façon de penser. Voici ce que la science de la <strong>neuroplasticité</strong> confirme vraiment — et ce qu'elle ne dit pas du tout.
+    </p>
+  </div>
+
+</div>
+
+<div class="article-body">
+
+  <div class="ornament">✦ · · ·</div>
+
+  <img src="https://images.unsplash.com/photo-1435527173128-983b87201f4d?w=1200&q=80" alt="Agenda mensuel ouvert sur un bureau" loading="lazy" style="width:100%;border-radius:16px;margin:8px 0 32px;display:block;box-shadow:0 4px 24px rgba(123,74,58,0.12);">
+
+  <h2>D'où vient le mythe des 21 jours</h2>
+
+  <p>
+    Ce chiffre est né dans les années 1960, d'une observation du chirurgien Maxwell Maltz : il avait remarqué que ses patients mettaient environ trois semaines à s'habituer à un nouveau visage après une opération. Cette observation, ponctuelle et non contrôlée, est devenue au fil des décennies une règle générale répétée partout — sans qu'aucune étude solide ne l'ait jamais confirmée pour l'ensemble des comportements humains.
+  </p>
+
+  <p>
+    Une étude plus rigoureuse, menée par la chercheuse Phillippa Lally en 2010, a montré que le temps nécessaire pour ancrer une nouvelle habitude variait en réalité <strong>de 18 à 254 jours</strong> selon les personnes et le type de changement visé. Le chiffre unique et universel n'a jamais existé.
+  </p>
+
+  <h2>Ce que la neuroplasticité dit vraiment</h2>
+
+  <p>
+    Le cerveau adulte reste capable de créer de nouvelles connexions tout au long de la vie — c'est un fait bien établi en neurosciences. Mais la neuroplasticité n'est pas un bouton qu'on actionne en trois semaines : c'est un processus progressif, qui dépend de la répétition, du contexte émotionnel, et de la charge que représentait la croyance de départ.
+  </p>
+
+  <p>
+    Une croyance ancienne, installée depuis l'enfance et renforcée pendant des années, ne fonctionne pas comme une habitude récente qu'on cherche à corriger. Elle demande généralement plus de temps et plus de douceur — pas parce que la méthode échoue, mais parce que le point de départ est différent.
+  </p>
+
+  <blockquote>
+    La rapidité annoncée dans un titre accrocheur n'a jamais été la mesure de ce qui fonctionne réellement.
+  </blockquote>
+
+  <h2>Les promesses à regarder avec prudence</h2>
+
+  <img src="https://images.unsplash.com/photo-1719650592946-55163c4994cb?w=1200&q=80" alt="Cellules nerveuses avec nœuds lumineux, symbole de neuroplasticité" loading="lazy" style="width:100%;border-radius:16px;margin:8px 0 32px;display:block;box-shadow:0 4px 24px rgba(123,74,58,0.12);">
+
+  <p>
+    Le marché du développement personnel vend souvent de la vitesse parce que la vitesse se vend bien. Mais aucune méthode sérieuse ne peut garantir un résultat identique, dans un délai identique, pour deux personnes différentes — les recherches en psychologie cognitive insistent au contraire sur la variabilité individuelle.
+  </p>
+
+  <ul>
+    <li>Aucune méthode ne peut promettre un changement de croyance à date fixe.</li>
+    <li>La répétition seule ne suffit pas sans changement de contexte ou de sens associé à la croyance.</li>
+    <li>Le rythme de chacun dépend de l'ancienneté et de l'intensité émotionnelle de la croyance travaillée.</li>
+  </ul>
+
+  <div class="encadre-yt">
+    <div class="encadre-yt-icon">▶</div>
+    <div class="encadre-yt-text">
+      On aborde régulièrement ces sujets en vidéo, retrouve-nous sur YouTube →
+      <a href="https://www.youtube.com/@FREQUENCE.POSITIVE" target="_blank">@FREQUENCE.POSITIVE</a>
+    </div>
+  </div>
+
+  <h2>Ce qui fonctionne réellement, d'après la recherche</h2>
+
+  <p>
+    Les approches qui montrent des résultats documentés — thérapies cognitivo-comportementales, techniques de restructuration cognitive, pratiques répétées d'auto-observation — ont un point commun : elles reposent sur la <strong>répétition régulière</strong> et sur la mise en situation concrète, pas sur une date limite.
+  </p>
+
+  <div class="encadre">
+    <div class="encadre-label">✦ Exercice pratique</div>
+    <p>
+      Choisis une croyance que tu cherches à transformer depuis un moment. Note, sur une échelle de 1 à 10, à quel point tu y crois encore aujourd'hui. Refais cette évaluation une fois par semaine, sans objectif de date.
+    </p>
+    <p>
+      L'idée n'est pas de mesurer un progrès rapide, mais d'observer une tendance sur la durée — souvent plus lente, et plus réelle, que ce qu'annoncent les méthodes express.
+    </p>
+  </div>
+
+  <h2>Se libérer de la pression du calendrier</h2>
+
+  <img src="https://images.unsplash.com/photo-1470115636492-6d2b56f9146d?w=1200&q=80" alt="Route entourée d'arbres avec rayons de soleil, symbole de cheminement" loading="lazy" style="width:100%;border-radius:16px;margin:8px 0 32px;display:block;box-shadow:0 4px 24px rgba(123,74,58,0.12);">
+
+  <p>
+    Une des conséquences les plus sous-estimées du mythe des « 21 jours », c'est la culpabilité qu'il génère quand le changement ne suit pas ce rythme. Beaucoup de personnes abandonnent un travail sur elles-mêmes en pensant avoir échoué, alors qu'elles étaient simplement dans une temporalité normale, différente de la promesse marketing.
+  </p>
+
+  <p>
+    Se défaire de cette pression du calendrier, c'est déjà se donner une chance supplémentaire de tenir dans la durée — ce qui, d'après la littérature scientifique elle-même, compte bien plus que la vitesse.
+  </p>
+
+  <div class="ornament">✦ · · ·</div>
+
+  <h2>Pour aller plus loin</h2>
+
+  <p>
+    La reprogrammation mentale n'est pas un mythe — mais sa rapidité annoncée en est souvent un. Ton rythme n'a pas à ressembler à celui promis dans un titre de vidéo ou un post viral.
+  </p>
+
+  <p>
+    Ce qui compte, c'est la constance, pas la date à laquelle tu penses devoir avoir terminé.
+  </p>
+
+</div>
+
+<div class="article-cta">
+  <div class="cta-card">
+    <div class="cta-icon">✦</div>
+    <p style="font-size:11px;font-weight:500;letter-spacing:0.14em;text-transform:uppercase;color:#7B4A3A;margin-bottom:14px;">✦ Séance personnalisée</p>
+    <p class="cta-title">Un accompagnement <em>à ton propre rythme</em></p>
+    <p class="cta-text">
+      Une séance audio créée avec ton prénom et des affirmations pensées pour toi, pour t'accompagner dans la durée — sans promesse de délai, avec constance.
+    </p>
+    <a href="/commander#step-1" class="cta-btn">✦ Créer ma séance personnalisée</a>
+    <p style="font-size:12px;color:#9A8A80;margin-top:14px;">Personnalisée · Livrée par e-mail</p>
+  </div>
+</div>
+
+<div class="prog-card-wrap">
+  <div class="prog-card">
+    <div class="prog-card-icon">🌿</div>
+    <div class="prog-card-body">
+      <div class="prog-card-label">✦ Le programme Fréquence Positive</div>
+      <div class="prog-card-title">Tu veux aller plus loin sur ce que tu viens de lire ?</div>
+      <p class="prog-card-text">
+        Le programme Fréquence Positive t'accompagne pas à pas pour transformer ce genre de prise de conscience en vrai changement durable.
+      </p>
+    </div>
+    <a href="/#programme" class="prog-card-btn">✦ Découvrir</a>
+  </div>
+</div>
+
+<div class="yt-bloc">
+  <div class="yt-bloc-title">✦ Les chaînes YouTube de Fréquence Positive</div>
+  <p style="text-align:center;font-size:14px;color:var(--text-muted);line-height:1.7;margin:-16px 0 28px;font-weight:300;">
+    Affirmations en voix off pour nourrir ton dialogue intérieur, chaque jour.
+  </p>
+  <div class="yt-inner single">
+    <div class="yt-card">
+      <div class="yt-logo">
+        <svg viewBox="0 0 90 63" xmlns="http://www.w3.org/2000/svg">
+          <rect width="90" height="63" rx="14" fill="#7B4F2E"/>
+          <polygon points="36,18 36,45 62,31.5" fill="#FDF6EC"/>
+        </svg>
+      </div>
+      <div class="yt-name">Fréquence Positive</div>
+      <p class="yt-desc">Affirmations positives en voix off + musique — pour nourrir ton dialogue intérieur au quotidien.</p>
+      <a href="https://www.youtube.com/@FREQUENCE.POSITIVE" target="_blank" class="yt-btn">▶ Voir la chaîne</a>
+    </div>
+  </div>
+</div>
+
+<div class="article-nav">
+  <a href="/article-phrase-professeur-vie" class="prev">
+    <div class="article-nav-label">← Article précédent</div>
+    <div class="article-nav-title">Comment une seule phrase d'un professeur peut conditionner toute une vie</div>
+  </a>
+  <a href="/blog" class="next">
+    <div class="article-nav-label">Article suivant →</div>
+    <div class="article-nav-title">Retour au blog</div>
+  </a>
+</div>
+
+<footer>
+  <span class="footer-logo">✦ Fréquence Positive</span>
+  <p>© 2026 Fréquence Positive —
+    <a href="/mentions-legales">Mentions légales</a> ·
+    <a href="/confidentialite">Confidentialité</a> ·
+    <a href="/blog">Blog</a>
+  </p>
+  <p style="margin-top:6px">Avec ✦ par Max &amp; Sandra</p>
+</footer>
+
+<script>
+(function() {
+  const canvas = document.getElementById('waveCanvas');
+  if (!canvas) return;
+  const ctx = canvas.getContext('2d');
+  function resize() { canvas.width = window.innerWidth; canvas.height = window.innerHeight; }
+  resize();
+  window.addEventListener('resize', resize);
+  const waves = [
+    { y:.22, a:18, f:.007, s:.012, o:0, c:'rgba(123,74,58,0.50)', w:1.4 },
+    { y:.38, a:24, f:.005, s:.008, o:2, c:'rgba(123,74,58,0.32)', w:1.1 },
+    { y:.55, a:14, f:.009, s:.014, o:4, c:'rgba(123,74,58,0.44)', w:1.7 },
+    { y:.70, a:20, f:.006, s:.010, o:1, c:'rgba(123,74,58,0.24)', w:0.9 },
+    { y:.32, a:10, f:.011, s:.017, o:3, c:'rgba(74,122,106,0.26)', w:0.8 },
+    { y:.62, a:28, f:.004, s:.006, o:5, c:'rgba(74,122,106,0.18)', w:1.9 },
+  ];
+  let tick = 0;
+  function draw() {
+    ctx.clearRect(0, 0, canvas.width, canvas.height);
+    waves.forEach(function(wv) {
+      ctx.beginPath();
+      ctx.strokeStyle = wv.c;
+      ctx.lineWidth = wv.w;
+      for (var x = 0; x <= canvas.width; x += 2) {
+        var y = canvas.height * wv.y
+          + Math.sin(x * wv.f + tick * wv.s + wv.o) * wv.a
+          + Math.sin(x * wv.f * 0.5 + tick * wv.s * 0.7 + wv.o) * wv.a * 0.5;
+        x === 0 ? ctx.moveTo(x, y) : ctx.lineTo(x, y);
+      }
+      ctx.stroke();
+    });
+    tick++;
+    requestAnimationFrame(draw);
+  }
+  draw();
+})();
+</script>
+
+</body>
+</html>
