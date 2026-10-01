@@ -1,0 +1,484 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-B9Z4S5HD8J"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-B9Z4S5HD8J');
+</script>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Fréquence Positive — Affirmations positives : pourquoi elles ne marchent pas (et quoi faire à la place)</title>
+<meta name="description" content="Tu répètes tes affirmations mais rien ne bouge ? Découvre pourquoi certaines sonnent faux et comment les reformuler pour qu'elles te ressemblent vraiment">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400;1,500&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+
+<style>
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+:root {
+  --green-fog: #C8DDD0;
+  --green-mid: #A8C4B8;
+  --green-deep: #7BA898;
+  --green-dark: #4A7A6A;
+  --green-bg: #E8F2ED;
+  --green-bg2: #D4E8DF;
+  --brown: #7B4A3A;
+  --brown-light: #A06B58;
+  --brown-dark: #5A3028;
+  --brown-ultra: #3D1F16;
+  --text-main: #3A2820;
+  --text-muted: #6A5A52;
+  --text-light: #9A8A80;
+  --card-bg: rgba(255,255,255,0.65);
+  --card-border: rgba(123,74,58,0.18);
+}
+
+html { scroll-behavior: smooth; }
+
+body {
+  font-family: 'DM Sans', system-ui, sans-serif;
+  background: var(--green-bg);
+  color: var(--text-main);
+  overflow-x: hidden;
+}
+
+#waveCanvas { position: fixed; inset: 0; width: 100%; height: 100%; pointer-events: none; z-index: 0; opacity: 0.3; }
+
+nav {
+  position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+  padding: 18px 48px; display: flex; align-items: center; justify-content: space-between;
+  background: rgba(200,221,208,0.88); backdrop-filter: blur(12px);
+  border-bottom: 1px solid rgba(123,74,58,0.12);
+}
+.nav-logo { font-family: 'Cormorant Garamond', serif; font-size: 1.15rem; font-weight: 500; color: var(--brown); letter-spacing: 0.06em; text-decoration: none; display: flex; align-items: center; gap: 10px; }
+.nav-links { display: flex; align-items: center; gap: 32px; }
+.nav-links a { color: var(--text-muted); text-decoration: none; font-size: 13px; font-weight: 400; letter-spacing: 0.03em; transition: color 0.2s; }
+.nav-links a:hover { color: var(--brown); }
+.nav-cta { background: var(--brown) !important; color: white !important; padding: 10px 24px !important; border-radius: 50px !important; font-weight: 500 !important; transition: background 0.2s !important; }
+.nav-cta:hover { background: var(--brown-dark) !important; }
+
+.article-hero { position: relative; z-index: 1; padding: 140px 24px 64px; text-align: center; max-width: 780px; margin: 0 auto; }
+.article-tag { display: inline-flex; align-items: center; gap: 8px; background: rgba(123,74,58,0.1); border: 1px solid rgba(123,74,58,0.22); border-radius: 50px; padding: 6px 18px; font-size: 11px; font-weight: 500; letter-spacing: 0.12em; text-transform: uppercase; color: var(--brown); margin-bottom: 28px; animation: fadeDown 0.7s ease both; }
+.article-title { font-family: 'Cormorant Garamond', serif; font-size: clamp(2rem, 5.5vw, 3.6rem); font-weight: 400; line-height: 1.18; color: var(--text-main); margin-bottom: 22px; animation: fadeDown 0.8s 0.08s ease both; }
+.article-title em { font-style: italic; color: var(--brown); }
+.article-meta { display: flex; align-items: center; justify-content: center; gap: 20px; font-size: 12px; color: var(--text-light); letter-spacing: 0.05em; margin-bottom: 48px; animation: fadeDown 0.8s 0.15s ease both; }
+.article-meta span { display: flex; align-items: center; gap: 6px; }
+.meta-divider { width: 3px; height: 3px; border-radius: 50%; background: var(--text-light); }
+
+.article-intro-card { background: var(--card-bg); border: 1px solid var(--card-border); border-radius: 20px; padding: 36px 40px; text-align: left; backdrop-filter: blur(10px); box-shadow: 0 4px 32px rgba(123,74,58,0.06); animation: fadeUp 0.9s 0.2s ease both; position: relative; overflow: hidden; }
+.article-intro-card::before { content: ''; position: absolute; top: 0; left: 50%; transform: translateX(-50%); width: 160px; height: 1.5px; background: linear-gradient(90deg, transparent, var(--brown-light), transparent); }
+.article-intro-card p { font-size: 16.5px; line-height: 1.85; color: var(--text-muted); font-weight: 300; }
+.article-intro-card p strong { color: var(--brown-light); font-weight: 500; }
+
+.ornament { text-align: center; color: var(--brown-light); font-size: 1.1rem; letter-spacing: 0.4em; opacity: 0.5; margin: 48px 0; }
+
+.article-body { position: relative; z-index: 1; max-width: 720px; margin: 0 auto; padding: 0 24px 80px; }
+.article-body p { font-size: 16px; line-height: 1.9; color: var(--text-muted); margin-bottom: 22px; font-weight: 300; }
+.article-body p strong { color: var(--text-main); font-weight: 500; }
+.article-body p em { font-style: italic; color: var(--brown-light); }
+
+.article-body h2 { font-family: 'Cormorant Garamond', serif; font-size: clamp(1.5rem, 3.5vw, 2.1rem); font-weight: 500; color: var(--text-main); margin: 56px 0 18px; line-height: 1.25; position: relative; padding-left: 20px; }
+.article-body h2::before { content: ''; position: absolute; left: 0; top: 8px; width: 3px; height: calc(100% - 8px); background: linear-gradient(to bottom, var(--brown), var(--brown-light)); border-radius: 2px; }
+.article-body h3 { font-family: 'Cormorant Garamond', serif; font-size: 1.25rem; font-weight: 500; color: var(--brown); margin: 36px 0 12px; letter-spacing: 0.02em; }
+
+.article-body ul, .article-body ol { margin: 0 0 22px 0; padding-left: 0; list-style: none; }
+.article-body ul li, .article-body ol li { font-size: 15.5px; line-height: 1.8; color: var(--text-muted); margin-bottom: 10px; padding-left: 26px; position: relative; }
+.article-body ul li::before { content: '✦'; position: absolute; left: 0; color: var(--brown-light); font-size: 11px; top: 4px; }
+.article-body ol { counter-reset: ol-counter; }
+.article-body ol li::before { content: counter(ol-counter); counter-increment: ol-counter; position: absolute; left: 0; width: 18px; height: 18px; background: var(--brown); color: white; border-radius: 50%; font-size: 10px; font-weight: 600; display: flex; align-items: center; justify-content: center; top: 3px; }
+
+.article-body blockquote { background: rgba(123,74,58,0.06); border-left: 3px solid var(--brown); border-radius: 0 12px 12px 0; padding: 22px 28px; margin: 32px 0; font-family: 'Cormorant Garamond', serif; font-size: 1.25rem; font-style: italic; color: var(--brown-dark); line-height: 1.65; }
+
+.encadre { background: var(--card-bg); border: 1px solid var(--card-border); border-radius: 16px; padding: 28px 32px; margin: 36px 0; backdrop-filter: blur(8px); position: relative; }
+.encadre-label { position: absolute; top: -12px; left: 24px; background: var(--brown); color: white; font-size: 10px; font-weight: 600; letter-spacing: 0.12em; text-transform: uppercase; padding: 4px 14px; border-radius: 50px; }
+.encadre p { margin-bottom: 10px !important; }
+.encadre p:last-child { margin-bottom: 0 !important; }
+
+.article-cta { position: relative; z-index: 1; max-width: 720px; margin: 0 auto 80px; padding: 0 24px; }
+.cta-card { background: linear-gradient(135deg, rgba(123,74,58,0.08), rgba(74,122,106,0.08)); border: 1px solid var(--card-border); border-radius: 24px; padding: 48px 44px; text-align: center; position: relative; overflow: hidden; backdrop-filter: blur(10px); }
+.cta-card::before { content: ''; position: absolute; top: 0; left: 50%; transform: translateX(-50%); width: 200px; height: 1.5px; background: linear-gradient(90deg, transparent, var(--brown-light), transparent); }
+.cta-icon { font-size: 2.2rem; margin-bottom: 16px; }
+.cta-title { font-family: 'Cormorant Garamond', serif; font-size: 1.9rem; font-weight: 400; color: var(--text-main); margin-bottom: 12px; line-height: 1.25; }
+.cta-title em { font-style: italic; color: var(--brown); }
+.cta-text { font-size: 15px; color: var(--text-muted); line-height: 1.7; margin-bottom: 32px; max-width: 480px; margin-left: auto; margin-right: auto; }
+.cta-btn { display: inline-block; background: linear-gradient(135deg, var(--brown-dark), var(--brown), var(--brown-light)); color: white; text-decoration: none; padding: 16px 40px; border-radius: 50px; font-size: 15px; font-weight: 500; letter-spacing: 0.04em; box-shadow: 0 4px 20px rgba(123,74,58,0.3); transition: opacity 0.2s, transform 0.15s, box-shadow 0.2s; }
+.cta-btn:hover { opacity: 0.92; transform: translateY(-2px); box-shadow: 0 6px 28px rgba(123,74,58,0.38); }
+
+.yt-bloc { position: relative; z-index: 1; max-width: 720px; margin: 0 auto 48px; padding: 0 24px; }
+.yt-inner { background: var(--card-bg); border: 1px solid var(--card-border); border-radius: 20px; padding: 36px 40px; backdrop-filter: blur(10px); display: grid; grid-template-columns: 1fr 1fr; gap: 24px; }
+.yt-inner.single { grid-template-columns: 1fr; max-width: 420px; margin: 0 auto; }
+.yt-bloc-title { font-family: 'Cormorant Garamond', serif; font-size: 1.1rem; font-weight: 500; color: var(--text-main); text-align: center; margin-bottom: 28px; letter-spacing: 0.04em; }
+.yt-card { background: rgba(255,255,255,0.5); border: 1px solid rgba(123,74,58,0.12); border-radius: 14px; padding: 22px 24px; text-align: center; transition: border-color 0.2s, transform 0.15s; }
+.yt-card:hover { border-color: rgba(123,74,58,0.3); transform: translateY(-2px); }
+.yt-logo { margin-bottom: 12px; }
+.yt-logo svg { width: 52px; height: 36px; }
+.yt-name { font-family: 'Cormorant Garamond', serif; font-size: 1.05rem; font-weight: 500; color: var(--text-main); margin-bottom: 6px; }
+.yt-desc { font-size: 12px; color: var(--text-muted); line-height: 1.6; margin-bottom: 16px; }
+.yt-btn { display: inline-block; background: var(--brown); color: white; text-decoration: none; padding: 9px 22px; border-radius: 50px; font-size: 12px; font-weight: 500; letter-spacing: 0.04em; transition: background 0.2s, transform 0.15s; }
+.yt-btn:hover { background: var(--brown-dark); transform: translateY(-1px); }
+
+.prog-card-wrap { position: relative; z-index: 1; max-width: 720px; margin: 0 auto 40px; padding: 0 24px; }
+.prog-card { background: linear-gradient(135deg, rgba(74,122,106,0.10), rgba(123,74,58,0.08)); border: 1px solid rgba(74,122,106,0.25); border-radius: 20px; padding: 32px 36px; display: flex; align-items: center; gap: 28px; backdrop-filter: blur(10px); }
+.prog-card-icon { font-size: 2.4rem; flex-shrink: 0; }
+.prog-card-body { flex: 1; }
+.prog-card-label { font-size: 10px; letter-spacing: 0.14em; text-transform: uppercase; color: var(--green-dark); font-weight: 600; margin-bottom: 6px; }
+.prog-card-title { font-family: 'Cormorant Garamond', serif; font-size: 1.3rem; font-weight: 500; color: var(--text-main); margin-bottom: 6px; line-height: 1.3; }
+.prog-card-text { font-size: 13px; color: var(--text-muted); line-height: 1.6; }
+.prog-card-btn { display: inline-block; background: linear-gradient(135deg, var(--green-dark), var(--green-deep)); color: white; text-decoration: none; padding: 12px 28px; border-radius: 50px; font-size: 13px; font-weight: 500; letter-spacing: 0.03em; white-space: nowrap; flex-shrink: 0; transition: opacity 0.2s, transform 0.15s; box-shadow: 0 3px 14px rgba(74,122,106,0.28); }
+.prog-card-btn:hover { opacity: 0.9; transform: translateY(-1px); }
+@media (max-width: 580px) { .prog-card { flex-direction: column; text-align: center; } .yt-inner { grid-template-columns: 1fr; } }
+
+.encadre-yt { background: rgba(123,74,58,0.05); border: 1px solid rgba(123,74,58,0.16); border-left: 3px solid var(--brown-light); border-radius: 0 12px 12px 0; padding: 18px 24px; margin: 32px 0; display: flex; align-items: center; gap: 14px; }
+.encadre-yt-icon { font-size: 1.4rem; flex-shrink: 0; }
+.encadre-yt-text { font-size: 14px; color: var(--text-muted); line-height: 1.6; }
+.encadre-yt-text a { color: var(--brown); font-weight: 500; text-decoration: none; }
+.encadre-yt-text a:hover { text-decoration: underline; }
+
+.article-nav { position: relative; z-index: 1; max-width: 720px; margin: 0 auto 80px; padding: 0 24px; display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+.article-nav a { background: var(--card-bg); border: 1px solid var(--card-border); border-radius: 14px; padding: 20px 24px; text-decoration: none; transition: border-color 0.2s, transform 0.15s; backdrop-filter: blur(8px); }
+.article-nav a:hover { border-color: rgba(123,74,58,0.35); transform: translateY(-2px); }
+.article-nav-label { font-size: 10px; letter-spacing: 0.12em; text-transform: uppercase; color: var(--text-light); margin-bottom: 6px; }
+.article-nav-title { font-family: 'Cormorant Garamond', serif; font-size: 1.05rem; color: var(--text-main); line-height: 1.3; }
+.article-nav .next { text-align: right; }
+
+footer {
+  position: relative; z-index: 1;
+  background: var(--brown-ultra);
+  padding: 36px 48px;
+  display: flex; align-items: center; justify-content: space-between;
+  flex-wrap: wrap; gap: 16px;
+  font-size: 12px; color: rgba(255,255,255,0.4);
+}
+footer a { color: rgba(255,255,255,0.55); text-decoration: none; transition: color 0.2s; }
+footer a:hover { color: rgba(255,255,255,0.9); }
+.footer-links { display: flex; gap: 24px; flex-wrap: wrap; }
+@media (max-width: 700px) {
+  footer { flex-direction: column; align-items: center; text-align: center; padding: 32px 24px; }
+}
+@keyframes fadeDown { from { opacity: 0; transform: translateY(-16px); } to { opacity: 1; transform: translateY(0); } }
+@keyframes fadeUp { from { opacity: 0; transform: translateY(16px); } to { opacity: 1; transform: translateY(0); } }
+
+/* ── BURGER MENU ── */
+.nav-burger {
+  display: none;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 8px;
+  flex-direction: column;
+  justify-content: center;
+  gap: 5px;
+  width: 40px;
+  height: 40px;
+  z-index: 110;
+}
+.nav-burger span {
+  display: block;
+  width: 24px;
+  height: 2px;
+  background: var(--brown);
+  border-radius: 2px;
+  transition: transform 0.25s ease, opacity 0.25s ease;
+}
+.nav-burger.open span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
+.nav-burger.open span:nth-child(2) { opacity: 0; }
+.nav-burger.open span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
+
+@media (max-width: 768px) {
+  nav { padding: 14px 20px; }
+  .nav-burger { display: flex; }
+  .nav-links {
+    display: none;
+    position: fixed;
+    top: 64px;
+    left: 0;
+    right: 0;
+    background: rgba(200,221,208,0.98);
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 24px 28px;
+    gap: 22px;
+    box-shadow: 0 6px 24px rgba(0,0,0,0.1);
+    backdrop-filter: blur(8px);
+  }
+  .nav-links.open { display: flex; }
+  .nav-links a { font-size: 16px; }
+  .nav-links .nav-cta { margin-top: 8px; align-self: flex-start; }
+}
+@media (max-width: 640px) {
+  nav { padding: 14px 20px; }
+  .article-intro-card { padding: 28px 22px; }
+  .article-body h2 { margin-top: 40px; }
+  .cta-card { padding: 36px 24px; }
+  .article-nav { grid-template-columns: 1fr; }
+}
+</style>
+<link rel="icon" type="image/x-icon" href="/favicon.ico">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32.png">
+<link rel="apple-touch-icon" href="/favicon-180.png">
+</head>
+<body>
+
+<canvas id="waveCanvas"></canvas>
+
+<nav>
+  <a class='nav-logo' href='index.html'>✦ Fréquence Positive</a>
+  <div class="nav-links">
+    <a href='index.html'>Accueil</a>
+    <a href='blog.html' class="active">Blog</a>
+    <a href='index.html#programme'>Le Programme</a>
+    <a class='nav-cta' href='commander.html#step-1'>✦ Créer ma séance</a>
+  </div>
+  <button class="nav-burger" aria-label="Menu" aria-expanded="false" onclick="(function(b){var l=document.querySelector('.nav-links');b.classList.toggle('open');l.classList.toggle('open');b.setAttribute('aria-expanded',b.classList.contains('open'));})(this)">
+    <span></span><span></span><span></span>
+  </button>
+</nav>
+
+<div class="article-hero">
+
+  <div class="article-tag">✦ Croyances limitantes</div>
+
+  <h1 class="article-title">
+    Affirmations positives :<br>
+    <em>pourquoi elles ne marchent pas (et quoi faire à la place)</em>
+  </h1>
+
+  <div class="article-meta">
+    <span>✦ Par Max &amp; Sandra</span>
+    <div class="meta-divider"></div>
+    <span>5 octobre 2026</span>
+    <div class="meta-divider"></div>
+    <span>⏱ 6 min</span>
+  </div>
+
+  <div class="article-intro-card">
+    <p>
+      Tu t'es déjà retrouvé(e) devant le miroir, à répéter « Je suis confiant(e) » ou « Je suis plein(e) d'énergie »… et à sentir une petite voix répondre aussitôt : <em>« Ah oui ? Vraiment ? »</em> Si c'est ton cas, tu n'es ni bizarre ni « fermé(e) ». Tu viens de toucher du doigt la raison la plus fréquente pour laquelle une <strong>affirmation positive</strong> tombe à plat. Et la bonne nouvelle, c'est qu'il existe d'autres façons de les écrire.
+    </p>
+  </div>
+
+</div>
+
+<div class="article-body">
+
+  <div class="ornament">✦ · · ·</div>
+
+  <img src="https://images.unsplash.com/photo-1603572298498-848f70a46d29?w=1200&q=80" alt="Jeune femme se regardant dans un petit miroir rond" loading="lazy" style="width:100%;border-radius:16px;margin:8px 0 32px;display:block;box-shadow:0 4px 24px rgba(123,74,58,0.12);">
+
+  <h2>Le problème n'est pas toi, c'est l'écart</h2>
+
+  <p>
+    Une affirmation fonctionne comme une phrase qu'on se propose de croire. Quand elle est trop éloignée de ce que tu vis aujourd'hui, ton esprit fait ce qu'il fait le mieux : il compare. Et la comparaison tourne rarement à l'avantage de la phrase.
+  </p>
+
+  <p>
+    Tu dis « Je suis serein(e) » un matin où tout déborde. Ton mental sort immédiatement la liste des preuves du contraire. Résultat : au lieu d'un moment de douceur, tu obtiens un petit débat intérieur… que l'affirmation perd.
+  </p>
+
+  <p>
+    Une étude canadienne publiée en 2009 dans la revue <em>Psychological Science</em> (Wood, Perunovic et Lee) a d'ailleurs observé un résultat qui surprend : chez des participants qui avaient une faible estime d'eux-mêmes, répéter « Je suis une personne digne d'amour » était associé à une humeur <strong>moins bonne</strong> qu'en ne la répétant pas. Chez les personnes qui avaient déjà une bonne estime d'elles-mêmes, l'effet était légèrement positif.
+  </p>
+
+  <blockquote>
+    Une affirmation ne remplace pas une croyance d'un coup de baguette. Elle a besoin d'un pont entre ce que tu vis et ce que tu choisis.
+  </blockquote>
+
+  <h2>Les 3 pièges les plus courants</h2>
+
+  <h3>1. La phrase trop grande</h3>
+  <p>
+    « Je suis riche », « Je suis parfaitement en paix », « Tout me réussit ». Plus la phrase est absolue, plus elle déclenche la contradiction intérieure. Le mot « toujours » et le mot « parfaitement » sont souvent les premiers à faire grincer.
+  </p>
+
+  <h3>2. La phrase empruntée</h3>
+  <p>
+    Copier les affirmations d'une liste trouvée en ligne, c'est porter le pull de quelqu'un d'autre. Ça peut tenir chaud, mais ça ne tombe pas toujours juste. Une affirmation qui ne contient aucun de tes mots a du mal à te parler.
+  </p>
+
+  <h3>3. La répétition en pilote automatique</h3>
+  <p>
+    Lire dix phrases en pensant à ta liste de courses, c'est un peu comme arroser une plante en regardant ailleurs. L'intention compte autant que la répétition.
+  </p>
+
+  <img src="https://images.unsplash.com/photo-1591195852468-03a01d1375d6?w=1200&q=80" alt="Carnet ouvert aux pages lignées avec un stylo posé au-dessus" loading="lazy" style="width:100%;border-radius:16px;margin:8px 0 32px;display:block;box-shadow:0 4px 24px rgba(123,74,58,0.12);">
+
+  <h2>Quoi faire à la place : 4 façons de reformuler</h2>
+
+  <p>
+    L'idée n'est pas d'abandonner les affirmations. C'est de les rendre <em>crédibles pour toi, aujourd'hui</em>. Voici quatre façons d'y arriver.
+  </p>
+
+  <ul>
+    <li><strong>Le mode progressif</strong> : remplacer « Je suis confiant(e) » par « Je deviens chaque jour un peu plus à l'aise pour donner mon avis ». Le verbe <em>devenir</em> laisse de la place au chemin.</li>
+    <li><strong>Le mode choix</strong> : « Je choisis de me parler avec plus de gentillesse aujourd'hui ». Un choix est toujours vrai au moment où tu le fais.</li>
+    <li><strong>Le mode question</strong> : « Qu'est-ce qui m'aiderait à me sentir un peu plus calme ce matin ? ». Une étude de 2010 (Senay, Albarracín et Noguchi) a observé que se poser une question (« Est-ce que je vais le faire ? ») avant un exercice d'anagrammes était associé, en moyenne, à de meilleurs résultats que le fait de s'affirmer « Je vais le faire ». Une petite étude, mais une piste intéressante.</li>
+    <li><strong>Le mode concret</strong> : rattacher la phrase à une scène réelle. « Quand on me fait un compliment, je peux dire merci sans me justifier. » Tu peux presque la voir.</li>
+  </ul>
+
+  <div style="background:linear-gradient(135deg,rgba(123,74,58,0.07),rgba(74,122,106,0.07));border:1px solid rgba(123,74,58,0.18);border-radius:18px;padding:28px 32px;margin:36px 0;text-align:center;backdrop-filter:blur(10px);position:relative;overflow:hidden;">
+    <div style="position:absolute;top:0;left:50%;transform:translateX(-50%);width:140px;height:1.5px;background:linear-gradient(90deg,transparent,rgba(123,74,58,0.45),transparent);"></div>
+    <div style="font-size:1.5rem;margin-bottom:10px;">✦</div>
+    <p style="font-family:'Cormorant Garamond',serif;font-size:1.35rem;font-weight:400;color:var(--text-main);line-height:1.3;margin-bottom:8px;">
+      Et si tes affirmations étaient écrites <em style="font-style:italic;color:var(--brown)">avec tes propres mots</em> ?
+    </p>
+    <p style="font-size:13.5px;color:var(--text-muted);line-height:1.65;margin-bottom:20px;">
+      Nos séances audio personnalisées sont créées spécialement pour toi — ton prénom, ta situation, des affirmations formulées pour qu'elles sonnent juste à tes oreilles, à écouter aussi souvent que tu le souhaites.
+    </p>
+    <a href="commander.html#step-1" style="display:inline-block;background:linear-gradient(135deg,var(--brown-dark),var(--brown),var(--brown-light));color:white;text-decoration:none;padding:12px 28px;border-radius:50px;font-size:13px;font-weight:500;letter-spacing:0.04em;box-shadow:0 4px 16px rgba(123,74,58,0.25);">
+      ✦ &nbsp; Créer ma séance personnalisée
+    </a>
+  </div>
+
+  <h2>L'exercice du thermomètre</h2>
+
+  <div class="encadre">
+    <div class="encadre-label">✦ Exercice pratique</div>
+    <p>
+      Prends une affirmation que tu utilises déjà. Lis-la à voix haute, puis note de 0 à 10 à quel point tu y crois <em>là, maintenant</em>.
+    </p>
+    <p>
+      Si tu es en dessous de 5, reformule-la avec « je deviens », « je choisis » ou « je m'autorise », puis note-la à nouveau. Garde la version qui te donne le chiffre le plus haut sans te forcer. C'est celle-là, ta phrase du moment.
+    </p>
+  </div>
+
+  <p>
+    Ce petit thermomètre t'évite le piège le plus courant : répéter des phrases qui te mettent en tension au lieu de t'offrir un espace de respiration.
+  </p>
+
+  <div class="encadre-yt">
+    <div class="encadre-yt-icon">▶</div>
+    <div class="encadre-yt-text">
+      On propose chaque semaine des séances d'affirmations formulées de cette manière progressive, à écouter sur YouTube →
+      <a href="https://www.youtube.com/@FREQUENCE.POSITIVE" target="_blank">@FREQUENCE.POSITIVE</a>
+    </div>
+  </div>
+  <img src="https://images.unsplash.com/photo-1448387473223-5c37445527e7?w=1200&q=80" alt="Personne montant un escalier bleu, un pas après l'autre" loading="lazy" style="width:100%;border-radius:16px;margin:8px 0 32px;display:block;box-shadow:0 4px 24px rgba(123,74,58,0.12);">
+
+  <h2>Petit pas plutôt que grand saut</h2>
+
+  <p>
+    Une affirmation utile ressemble moins à un slogan qu'à une marche d'escalier : assez haute pour avancer, assez basse pour qu'on puisse poser le pied dessus. Si tu veux comprendre ce que la recherche dit plus largement sur le sujet, on l'a détaillé dans l'article <a href="article-affirmations-positives-science.html" style="color:var(--brown);font-weight:500;">Les affirmations positives fonctionnent-elles vraiment ?</a>
+  </p>
+
+  <p>
+    Et si tu sens que la résistance vient d'une croyance plus ancienne, l'article <a href="article-croyances-limitantes.html" style="color:var(--brown);font-weight:500;">Comment identifier tes croyances limitantes sans te juger</a> peut être un bon point de départ.
+  </p>
+
+  <div class="ornament">✦ · · ·</div>
+
+  <h2>Pour aller plus loin</h2>
+
+  <p>
+    Si tes affirmations ne « marchaient pas », ce n'est probablement pas parce que tu t'y prenais mal, ni parce que tu n'y croyais pas assez. C'est souvent qu'elles étaient trop loin de toi. Les rapprocher, c'est déjà une façon de te respecter.
+  </p>
+
+  <p>
+    Commence par une seule phrase. Une phrase à ta taille. Et laisse-la t'accompagner quelques jours, sans rien exiger d'elle.
+  </p>
+
+</div>
+
+<div style="max-width:720px;margin:0 auto 40px;padding:0 24px;position:relative;z-index:1;">
+  <div style="background:rgba(255,255,255,0.70);border:1px solid rgba(123,74,58,0.22);border-radius:20px;padding:36px 40px;backdrop-filter:blur(10px);box-shadow:0 4px 32px rgba(123,74,58,0.07);position:relative;overflow:hidden;">
+    <div style="position:absolute;top:0;left:50%;transform:translateX(-50%);width:120px;height:1.5px;background:linear-gradient(90deg,transparent,rgba(123,74,58,0.5),transparent);"></div>
+    <div style="font-size:11px;font-weight:500;letter-spacing:0.14em;text-transform:uppercase;color:#7B4A3A;margin-bottom:14px;text-align:center;">📖 Guide gratuit</div>
+    <p style="font-family:'Cormorant Garamond',serif;font-size:clamp(1.25rem,3vw,1.7rem);font-weight:400;line-height:1.3;color:#3A2820;margin-bottom:14px;text-align:center;">
+      Tu veux apprendre à écrire des affirmations <em style="color:#7B4A3A;">qui te ressemblent</em> ?
+    </p>
+    <p style="font-size:15px;line-height:1.75;color:#6A5A52;font-weight:300;margin-bottom:24px;text-align:center;">
+      Notre guide gratuit de 13 pages t'accompagne pas à pas pour repérer les phrases qui te freinent et les reformuler avec tes propres mots, à ton rythme.
+    </p>
+    <div style="text-align:center;">
+      <a href="acces-guide-gratuit.html" style="display:inline-flex;align-items:center;gap:10px;background:#7B4A3A;color:white;text-decoration:none;padding:14px 30px;border-radius:50px;font-size:14px;font-weight:500;letter-spacing:0.03em;">
+        ✦ &nbsp; Recevoir mon guide gratuit
+      </a>
+      <p style="font-size:12px;color:#9A8A80;margin-top:14px;">13 pages · Gratuit · Sans engagement</p>
+    </div>
+  </div>
+</div>
+
+<div class="yt-bloc">
+  <div class="yt-inner single">
+    <div class="yt-card">
+      <div class="yt-logo">
+        <svg viewBox="0 0 90 63" xmlns="http://www.w3.org/2000/svg">
+          <rect width="90" height="63" rx="14" fill="#7B4F2E"/>
+          <polygon points="36,18 36,45 62,31.5" fill="#FDF6EC"/>
+        </svg>
+      </div>
+      <div class="yt-name">La chaîne YouTube de Fréquence Positive</div>
+      <p class="yt-desc">Affirmations positives en voix off + musique — pour nourrir ton dialogue intérieur au quotidien.</p>
+      <a href="https://www.youtube.com/@FREQUENCE.POSITIVE" target="_blank" class="yt-btn">▶ Voir la chaîne</a>
+    </div>
+  </div>
+</div>
+
+<div class="article-nav">
+  <a href="article-reprogrammation-mentale-mythes.html" class="prev">
+    <div class="article-nav-label">← Article précédent</div>
+    <div class="article-nav-title">Reprogrammation mentale : mythes et réalités</div>
+  </a>
+  <a href="article-croyances-amour-schemas.html" class="next">
+    <div class="article-nav-label">Article suivant →</div>
+    <div class="article-nav-title">Croyances limitantes sur l'amour : pourquoi les mêmes schémas reviennent</div>
+  </a>
+</div>
+
+<footer>
+  <div>© 2026 Fréquence Positive — Tous droits réservés</div>
+  <div class="footer-links">
+    <a href='commander.html#step-1'>Commander</a>
+    <a href='blog.html'>Blog</a>
+    <a href='faq.html'>FAQ</a>
+    <a href='mentions-legales.html'>Mentions légales</a>
+    <a href='cgv.html'>CGV</a>
+    <a href='confidentialite.html'>Confidentialité</a>
+    <a href="mailto:hello.frequencepositive@outlook.com">Contact</a>
+  </div>
+</footer>
+
+<script>
+(function() {
+  const canvas = document.getElementById('waveCanvas');
+  if (!canvas) return;
+  const ctx = canvas.getContext('2d');
+  function resize() { canvas.width = window.innerWidth; canvas.height = window.innerHeight; }
+  resize();
+  window.addEventListener('resize', resize);
+  const waves = [
+    { y:.22, a:18, f:.007, s:.012, o:0, c:'rgba(123,74,58,0.50)', w:1.4 },
+    { y:.38, a:24, f:.005, s:.008, o:2, c:'rgba(123,74,58,0.32)', w:1.1 },
+    { y:.55, a:14, f:.009, s:.014, o:4, c:'rgba(123,74,58,0.44)', w:1.7 },
+    { y:.70, a:20, f:.006, s:.010, o:1, c:'rgba(123,74,58,0.24)', w:0.9 },
+    { y:.32, a:10, f:.011, s:.017, o:3, c:'rgba(74,122,106,0.26)', w:0.8 },
+    { y:.62, a:28, f:.004, s:.006, o:5, c:'rgba(74,122,106,0.18)', w:1.9 },
+  ];
+  let tick = 0;
+  function draw() {
+    ctx.clearRect(0, 0, canvas.width, canvas.height);
+    waves.forEach(function(wv) {
+      ctx.beginPath();
+      ctx.strokeStyle = wv.c;
+      ctx.lineWidth = wv.w;
+      for (var x = 0; x <= canvas.width; x += 2) {
+        var y = canvas.height * wv.y
+          + Math.sin(x * wv.f + tick * wv.s + wv.o) * wv.a
+          + Math.sin(x * wv.f * 0.5 + tick * wv.s * 0.7 + wv.o) * wv.a * 0.5;
+        x === 0 ? ctx.moveTo(x, y) : ctx.lineTo(x, y);
+      }
+      ctx.stroke();
+    });
+    tick++;
+    requestAnimationFrame(draw);
+  }
+  draw();
+})();
+</script>
+
+</body>
+</html>
