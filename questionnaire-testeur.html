@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="robots" content="noindex, nofollow">
+<title>Vos 3 questions · Application Fréquence Positive</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;1,400&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+  :root { --brun:#3D1F16; --terre:#7b4a3a; --or:#C8A882; --beige:#f5f0ea; --sable:#efe5d8; --texte:#2c2c2c; --bord:#e3d6c6; --bouton:#a07850; }
+  * { box-sizing: border-box; }
+  body { margin:0; background:var(--beige); color:var(--texte); font-family:'DM Sans', Arial, sans-serif; font-size:16px; line-height:1.6; }
+  header { background:var(--brun); color:#f0e8dd; text-align:center; padding:36px 16px 30px; }
+  header .sur { font-size:11px; letter-spacing:3px; text-transform:uppercase; color:var(--or); margin:0 0 8px; }
+  header h1 { font-family:'Cormorant Garamond', Georgia, serif; font-weight:400; font-size:32px; margin:0; line-height:1.2; }
+  main { max-width:600px; margin:0 auto; padding:28px 16px 48px; }
+  .kiwi { display:block; width:150px; max-width:45%; margin:0 auto 20px; border-radius:16px; }
+  .q { background:#fff; border:1px solid var(--bord); border-radius:16px; padding:20px 18px; margin:0 0 18px; }
+  .q h2 { font-family:'Cormorant Garamond', Georgia, serif; font-weight:500; font-size:23px; color:var(--brun); margin:0 0 4px; line-height:1.25; }
+  .q .aide { font-size:14px; color:#7a6a60; margin:0 0 14px; }
+  .puces { display:flex; flex-wrap:wrap; gap:8px; margin:0 0 14px; }
+  .puces label { cursor:pointer; }
+  .puces input { position:absolute; opacity:0; pointer-events:none; }
+  .puces span { display:inline-block; padding:8px 14px; border-radius:20px; border:1px solid var(--bord); background:var(--beige); font-size:15px; }
+  .puces input:checked + span { background:var(--terre); border-color:var(--terre); color:#fff; }
+  .puces input:focus-visible + span { outline:2px solid var(--terre); outline-offset:2px; }
+  textarea { width:100%; min-height:96px; padding:12px; border:1px solid var(--bord); border-radius:12px; font:inherit; background:var(--beige); resize:vertical; }
+  textarea:focus { outline:2px solid var(--or); border-color:var(--or); }
+  button { display:block; width:100%; padding:16px; border:0; border-radius:50px; background:var(--bouton); color:#fff; font:500 17px 'DM Sans', Arial, sans-serif; cursor:pointer; margin-top:8px; }
+  button:disabled { opacity:.6; cursor:wait; }
+  .piege { position:absolute; left:-9999px; }
+  .merci { display:none; text-align:center; background:#fff; border:1px solid var(--bord); border-radius:16px; padding:32px 20px; }
+  .merci h2 { font-family:'Cormorant Garamond', Georgia, serif; font-weight:400; font-size:30px; color:var(--brun); margin:8px 0; }
+  .cadeau { background:var(--sable); border-radius:14px; padding:16px; margin-top:18px; color:var(--brun); font-size:15px; }
+  .erreur { display:none; color:#a03a2a; text-align:center; margin-top:10px; font-size:15px; }
+  footer { text-align:center; font-size:12px; color:#9a8a80; padding:0 16px 30px; }
+</style>
+</head>
+<body>
+<header>
+  <p class="sur">✦ Application Fréquence Positive · Fin du test</p>
+  <h1>Vos 3 petites questions</h1>
+</header>
+<main>
+  <img class="kiwi" src="/emails/kiwi-appli.jpg" alt="Kiwi, le petit panda de l'application">
+
+  <form id="f" novalidate>
+    <p id="bonjour" style="margin:0 0 20px;text-align:center">Merci d'avoir testé l'application pendant ces 14 jours. Quelques mots suffisent, et il n'y a pas de mauvaise réponse.</p>
+
+    <div class="q">
+      <h2>1. Qu'avez-vous le plus aimé&nbsp;?</h2>
+      <p class="aide">Touchez une ou plusieurs parties de l'application.</p>
+      <div class="puces">
+        <label><input type="checkbox" name="aime" value="Kiwi et les humeurs"><span>Kiwi et les humeurs</span></label>
+        <label><input type="checkbox" name="aime" value="Les séances"><span>Les séances</span></label>
+        <label><input type="checkbox" name="aime" value="Le réveil"><span>Le réveil</span></label>
+        <label><input type="checkbox" name="aime" value="Ma voix"><span>Ma voix</span></label>
+        <label><input type="checkbox" name="aime" value="Notification et carnet"><span>Notification et carnet</span></label>
+        <label><input type="checkbox" name="aime" value="Sons et musiques"><span>Sons et musiques</span></label>
+      </div>
+      <textarea name="aimeTexte" placeholder="Un mot de plus ? (facultatif)"></textarea>
+    </div>
+
+    <div class="q">
+      <h2>2. Qu'est-ce qui vous a gêné, ou vous a manqué&nbsp;?</h2>
+      <p class="aide">Un bug, quelque chose de pas clair, une idée…</p>
+      <textarea name="gene" placeholder="Racontez-nous…"></textarea>
+    </div>
+
+    <div class="q">
+      <h2>3. Continueriez-vous à utiliser l'application&nbsp;?</h2>
+      <div class="puces">
+        <label><input type="radio" name="continuer" value="Oui, sûrement"><span>Oui, sûrement</span></label>
+        <label><input type="radio" name="continuer" value="Peut-être"><span>Peut-être</span></label>
+        <label><input type="radio" name="continuer" value="Non, pas vraiment"><span>Non, pas vraiment</span></label>
+      </div>
+      <textarea name="pourquoi" placeholder="Pourquoi ? (facultatif)"></textarea>
+    </div>
+
+    <input class="piege" type="text" name="piege" tabindex="-1" autocomplete="off" aria-hidden="true">
+    <button type="submit" id="envoyer">Envoyer mes réponses</button>
+    <p class="erreur" id="erreur"></p>
+  </form>
+
+  <div class="merci" id="merci">
+    <div style="font-size:42px">💚</div>
+    <h2 id="merciTitre">Merci&nbsp;!</h2>
+    <p>Nous avons bien reçu vos réponses. Nous allons les lire avec attention.</p>
+    <div class="cadeau">🎁 Vos <strong>3 mois offerts</strong> sont notés&nbsp;: nous vous écrirons au lancement de l'application pour vous expliquer comment en profiter.</div>
+  </div>
+</main>
+<footer>Fréquence Positive · L'équipe vous remercie</footer>
+
+<script>
+  const q = new URLSearchParams(location.search);
+  const email = (q.get('email') || '').trim();
+  const prenom = (q.get('prenom') || '').trim();
+  // Brevo laisse parfois la variable vide ou non remplacée
+  const vrai = (s) => s && !s.includes('{');
+  if (vrai(prenom)) {
+    document.getElementById('bonjour').textContent = 'Bonjour ' + prenom + ', merci d’avoir testé l’application pendant ces 14 jours. Quelques mots suffisent, et il n’y a pas de mauvaise réponse.';
+    document.getElementById('merciTitre').textContent = 'Merci ' + prenom + ' !';
+  }
+  document.getElementById('f').addEventListener('submit', async (e) => {
+    e.preventDefault();
+    const f = e.target, err = document.getElementById('erreur'), b = document.getElementById('envoyer');
+    const d = {
+      email: vrai(email) ? email : '', prenom: vrai(prenom) ? prenom : '',
+      aime: [...f.querySelectorAll('input[name=aime]:checked')].map((x) => x.value),
+      aimeTexte: f.aimeTexte.value, gene: f.gene.value,
+      continuer: (f.querySelector('input[name=continuer]:checked') || {}).value || '',
+      pourquoi: f.pourquoi.value, piege: f.piege.value,
+    };
+    if (!d.aime.length && !d.aimeTexte.trim() && !d.gene.trim() && !d.continuer && !d.pourquoi.trim()) {
+      err.textContent = 'Répondez au moins à une question avant d’envoyer.'; err.style.display = 'block'; return;
+    }
+    err.style.display = 'none'; b.disabled = true; b.textContent = 'Envoi…';
+    try {
+      const r = await fetch('/.netlify/functions/questionnaire-testeur', { method: 'POST', headers: { 'content-type': 'application/json' }, body: JSON.stringify(d) });
+      if (!r.ok) throw new Error();
+      f.style.display = 'none'; document.getElementById('merci').style.display = 'block'; scrollTo(0, 0);
+    } catch {
+      b.disabled = false; b.textContent = 'Envoyer mes réponses';
+      err.textContent = 'L’envoi n’a pas marché. Vérifiez votre connexion et réessayez : vos réponses sont toujours là.'; err.style.display = 'block';
+    }
+  });
+</script>
+</body>
+</html>
