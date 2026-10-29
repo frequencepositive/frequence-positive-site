@@ -11,6 +11,19 @@
   to = "/"
   status = 301
 
+# Ancienne offre « séance 10 min à 19,90 € » (automatisation Brevo #4) : remplacée par l'offre guide à 39,90 € (29/10/2026)
+[[redirects]]
+  from = "/commander-offre-seance.html"
+  to = "/commander-offre-guide.html"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/commander-offre-seance"
+  to = "/commander-offre-guide.html"
+  status = 301
+  force = true
+
 [[redirects]]
   from = "/commander"
   to = "/commander.html"
